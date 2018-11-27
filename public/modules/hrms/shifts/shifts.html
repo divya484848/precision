@@ -1,0 +1,172 @@
+<form role='form'>
+				<script type='text/javascript'>
+					$(function () {
+						$('#dt1').datetimepicker({format: 'HH:mm'});
+						$('#dt2').datetimepicker({format: 'HH:mm'});
+					});
+					$('#clear').click(function(){
+						$('#dt1').data('DateTimePicker').clear();
+						$('#dt2').data('DateTimePicker').clear();
+					});
+				</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; min-height: 600px;'>
+			<div class='col-sm-2'>
+				<div ng-controller='shift_menuCtrl' ng-include src="'modules/hrms/shift_menu/shift_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header1 col-sm-2' class='col-sm-2'>Shift registration</span>
+				<div class='col-sm-3'>
+					<div class='input-group'>
+						<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+						<div class='input-group-btn'>
+							<button class='btn btn-success btn-sm searchBox' type='submit'>
+								<i class='glyphicon glyphicon-search'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<span class='header2 col-sm-4' class='col-sm-4'>{{hrms_shift_master_status}}</span>
+				<div class='col-sm-3' style='text-align: right'>
+					<div class='btn-group'>
+						<a  class='btn btn-default btn-sm'  href='#'  ng-click='insert_hrms_shift_master_record()' data-target='#ltDlg' data-toggle='modal'>
+							<span class='glyphicon glyphicon-plus'></span> Add
+						</a>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-upload'></span> Upload
+						</button>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-download'></span> Download
+						</button>
+					</div>
+				</div>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'>
+							<thead>
+								<tr>
+									<th >Shift code</th>
+									<th>Title</th>
+									<th>From time</th>
+									<th>To time</th>
+									<th>From time max limit</th>
+									<th>To time max limit</th>
+									<th>Half-day duration</th>
+									<th>Is lunch included</th>
+									<th>Unit name</th>
+									<th>Status</th>
+									<th ></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in hrms_shift_masterList| filter: search| itemsPerPage: 12'>
+									<td><a  href='#'  ng-click='update_hrms_shift_master_record(x)' ng-model='hrms_shift_master.shift_code' data-target='#ltDlg' data-toggle='modal'> {{x.shift_code}}</a></td>
+									<td>{{x.title}}</td>
+									<td>{{x.from_time}}</td>
+									<td>{{x.to_time}}</td>
+									<td>{{x.from_time_max_limit}}</td>
+									<td>{{x.to_time_max_limit}}</td>
+									<td>{{x.half_day_dur}}</td>
+									<td>{{x.is_lunch_included}}</td>
+									<td>{{x.company_name}}</td>
+									<td>{{x.status}}</td>
+									<td><a  style='color:red;'  href='#'  ng-click='delete_hrms_shift_master_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+			</div>
+		</div>
+		</div>
+	<div class='modal fade'  id='ltDlg' role='dialog'>
+		<div class='modal-dialog' style='height: 700px; ; width: 1000px; '>
+			<div class='modal-content'>
+				<div class='modal-header'>
+					<div class='row'>
+						<span class='header1 col-sm-12' class='col-sm-12'>Shift registration</span>
+					</div>
+				</div>
+				<div class='modal-body'>
+					<div class='row'>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Shift code</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_shift_master.shift_code'>
+								</div>
+								<label class='col-sm-5'>Title</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_shift_master.title'>
+								</div>
+								<label class='col-sm-5'>From time</label>
+								<div class='col-sm-7'>
+									<div datetimepicker class='input-group date'  id='dt1' ng-model='hrms_shift_master.from_time'>
+										<input type='text' class='form-control datepicker' placeholder='HH:mm'>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-calendar'></span>
+										</span>
+									</div>
+								</div>
+								<label class='col-sm-5'>To time</label>
+								<div class='col-sm-7'>
+									<div datetimepicker class='input-group date'  id='dt2' ng-model='hrms_shift_master.to_time'>
+										<input type='text' class='form-control datepicker' placeholder='HH:mm'>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-calendar'></span>
+										</span>
+									</div>
+								</div>
+								<label class='col-sm-5'>From time max limit</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_shift_master.from_time_max_limit'>
+								</div>
+							</div>
+						</div>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>To time max limit</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_shift_master.to_time_max_limit'>
+								</div>
+								<label class='col-sm-5'>Half day dur</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_shift_master.half_day_dur'>
+								</div>
+								<label class='col-sm-5'>Is lunch included</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_shift_master.is_lunch_included'>
+								</div>
+								<label class='col-sm-5'>Company id</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='hrms_shift_master.company_id' ng-init='hrms_shift_master.company_id=admin_company[0].sysid' ng-options='x.sysid as x.company_name for x in admin_companyList'></select>
+								</div>
+								<label class='col-sm-5'>Status</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='hrms_shift_master.status' ng-init='hrms_shift_master.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='footer'>
+					<div class='row'  style='padding: 10px;'>
+						<span class='header2 col-sm-7' class='col-sm-7'>{{hrms_shift_master_status}}</span>
+						<div class='col-sm-5' style='text-align: right'>
+							<div class='btn-group'>
+								<button  class='btn btn-default btn-sm'  ng-click='save_hrms_shift_master_record()'>
+									<span class='glyphicon glyphicon-saved'></span> Save
+								</button>
+								<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+									<span class='glyphicon glyphicon-remove'></span> Close
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</form>

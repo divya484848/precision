@@ -1,0 +1,177 @@
+<form role='form'>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff'>
+			<div class='col-sm-1'>
+			</div>
+			<div class='col-sm-10'>
+				<div class='row'  style='padding-top: 15px'>
+					<span class='header-title col-sm-2'  style='color: #c70039' class='col-sm-2'>Customer details</span>
+					<span class='header2 col-sm-8' class='col-sm-8'>{{inv_customer_status}}</span>
+					<div class='col-sm-2' style='text-align: right'>
+						<div class='btn-group'>
+							<button  class='btn btn-default btn-sm'  ng-click='save_inv_customer_record()'>
+								<span class='glyphicon glyphicon-saved'></span> Save
+							</button>
+							<a  class='btn btn-default btn-sm'  href='/custlist'>
+								<span class='glyphicon glyphicon-arrow-left'></span> Back
+							</a>
+						</div>
+					</div>
+				</div>
+					<div class='row'>
+						<div class='col-sm-12' style='padding-top: 5px'>
+							<hr>
+						</div>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>Short code</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_customer.cust_code'>
+									</div>
+									<label class='col-sm-5'>Customer name</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_customer.cust_name'>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>Currency</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_customer.currency_code' ng-init='inv_customer.currency_code=admin_currency[0].sysid' ng-options='x.sysid as x.curr_name for x in admin_currencyList'></select>
+									</div>
+									<label class='col-sm-5'>Status</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_customer.status' ng-init='inv_customer.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+									</div>
+								</div>
+							</div>
+					</div>
+						<div class='row'  style='padding-top: 10px;'>
+							<span class='header1 col-sm-12'  style='color: #00557f;' class='col-sm-12'>Addresses</span>
+							<div class='col-sm-12'>
+								<hr style='padding-left: 0px; padding-right: 0px'>
+							</div>
+								<div class='col-sm-4'>
+									<div class='row'>
+										<span class='header1 col-sm-12'  style='text-align: center; color: #00557f;' class='col-sm-12'>Delivery address</span>
+										<label class='col-sm-5'>Line 1</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.del_address1'>
+										</div>
+										<label class='col-sm-5'>Line 2</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.del_address2'>
+										</div>
+										<label class='col-sm-5'>City</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.del_city'>
+										</div>
+										<label class='col-sm-5'>State</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.del_state'>
+										</div>
+										<label class='col-sm-5'>Country</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.del_country'>
+										</div>
+										<label class='col-sm-5'>Pincode</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.del_pincode'>
+										</div>
+									</div>
+								</div>
+								<div class='col-sm-4'>
+									<div class='row'>
+										<span class='header1 col-sm-12'  style='text-align: center; color: #00557f;' class='col-sm-12'>Bank address</span>
+										<label class='col-sm-5'>Line 1</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.bank_address1'>
+										</div>
+										<label class='col-sm-5'>Line 2</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.bank_address2'>
+										</div>
+										<label class='col-sm-5'>City</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.bank_city'>
+										</div>
+										<label class='col-sm-5'>State</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.bank_state'>
+										</div>
+										<label class='col-sm-5'>Country</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.bank_country'>
+										</div>
+										<label class='col-sm-5'>Pincode</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.bank_pincode'>
+										</div>
+									</div>
+								</div>
+								<div class='col-sm-4'>
+									<div class='row'>
+										<span class='header1 col-sm-12'  style='text-align: center; color: #00557f;' class='col-sm-12'>Buyer details</span>
+										<label class='col-sm-5'>Buyer code</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.buyer_code'>
+										</div>
+										<label class='col-sm-5'>Buyer name</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.buyer_name'>
+										</div>
+										<label class='col-sm-5'>Line 1</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.buyer_address1'>
+										</div>
+										<label class='col-sm-5'>Line 2</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.buyer_address2'>
+										</div>
+										<label class='col-sm-5'>City</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.buyer_city'>
+										</div>
+										<label class='col-sm-5'>State</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.buyer_state'>
+										</div>
+										<label class='col-sm-5'>Country</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.buyer_country'>
+										</div>
+										<label class='col-sm-5'>Pincode</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_customer.buyer_pincode'>
+										</div>
+									</div>
+								</div>
+						</div>
+							<div class='row'>
+								<div class='col-sm-12' style='padding-top: 10px'>
+									<hr>
+								</div>
+									<span class='header1 col-sm-12'  style='color: #00557f;' class='col-sm-12'>Contact details</span>
+									<div class='col-sm-12'>
+										<hr>
+									</div>
+										<label class='col-sm-1'>Contact person</label>
+										<div class='col-sm-3'>
+											<input class='form-control'  type='text' ng-model='inv_customer.contact_person'>
+										</div>
+										<label class='col-sm-1'>Contact no</label>
+										<div class='col-sm-3'>
+											<input class='form-control'  type='text' ng-model='inv_customer.contact_no'>
+										</div>
+										<label class='col-sm-1'>Email</label>
+										<div class='col-sm-3'>
+											<input class='form-control'  type='text' ng-model='inv_customer.email'>
+										</div>
+							</div>
+			</div>
+								<div class='col-sm-1'>
+								</div>
+		</div>
+	</div>
+</form>

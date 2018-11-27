@@ -1,0 +1,134 @@
+<form role='form'>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'>
+			<div ng-controller='item_menuCtrl' ng-include src="'modules/inv/item_menu/item_menu.html'"></div>
+		</div>
+	<div class='row'  style='background-color: #ffffff; padding-top: 10px'>
+		<div class='col-sm-1'>
+		</div>
+		<div class='col-sm-10'>
+			<span class='header1 col-sm-12'  style='color: #C70039; padding: 0px; padding-bottom: 10px;' class='col-sm-12'>Raw material</span>
+			<div class='row'>
+				<ul class='nav nav-tabs'>
+					<li class='active'><a data-toggle='tab' data-target='#details'><b>Details</b></a></li>
+					<li><a data-toggle='tab' data-target='#attrTab'><b>Attributes</b></a></li>
+					<li><a data-toggle='tab' data-target='#suppTab'><b>Supplier</b></a></li>
+				</ul>
+				<div class='tab-content'>
+					<div id='details' class='tab-pane fade in active'>
+					<div class='row'  style='padding-bottom: 10px; padding-top: 6px;'>
+						<span class='header2 col-sm-10' class='col-sm-10'>{{inv_item_master_status}}</span>
+						<div class='col-sm-2' style='text-align: right'>
+							<div class='btn-group'>
+								<button  class='btn btn-default btn-sm'  ng-click='save_inv_item_master_record()'>
+									<span class='glyphicon glyphicon-saved'></span> Save
+								</button>
+								<a  class='btn btn-default btn-sm'  href='/itemlist'>
+									<span class='glyphicon glyphicon-arrow-left'></span> Back
+								</a>
+							</div>
+						</div>
+					</div>
+						<div class='row'>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>Short code</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_item_master.short_code'>
+									</div>
+									<label class='col-sm-5'>Item name</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_item_master.item_name'>
+									</div>
+									<label class='col-sm-5'>Description</label>
+									<div class='col-sm-7'>
+										<textarea class='form-control' ng-model='inv_item_master.item_descr' rows='5'></textarea>
+									</div>
+									<label class='col-sm-5'>Item serial</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_item_master.item_serial'>
+									</div>
+									<label class='col-sm-5'>Item type</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_item_master.item_type' ng-init='inv_item_master.item_type=admin_lov[0].sysid' ng-options='x.sysid as x.type_name for x in admin_lovList'></select>
+									</div>
+									<label class='col-sm-5'>Item subtype</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_item_master.item_subtype' ng-init='inv_item_master.item_subtype=admin_lov[0].sysid' ng-options='x.sysid as x.type_name for x in admin_lovList'></select>
+									</div>
+									<label class='col-sm-5'>Item category</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_item_master.item_category' ng-init='inv_item_master.item_category=admin_lov[0].sysid' ng-options='x.sysid as x.type_name for x in admin_lovList'></select>
+									</div>
+									<label class='col-sm-5'>Item source</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_item_master.item_source' ng-init='inv_item_master.item_source=admin_lov[0].sysid' ng-options='x.sysid as x.type_name for x in admin_lovList'></select>
+									</div>
+									<label class='col-sm-5'>Unit wt</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_item_master.unit_wt'>
+									</div>
+									<label class='col-sm-5'>Unit wt uom</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_item_master.unit_wt_uom' ng-init='inv_item_master.unit_wt_uom=wtUomList[0]' ng-options='x as x for x in wtUomList'></select>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>HSN no</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_item_master.hsn_no'>
+									</div>
+									<label class='col-sm-5'>Drawing no</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  readonly='true' ng-model='inv_item_master.drg_no'>
+									</div>
+									<label class='col-sm-5'>Drawing file</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  readonly='true' ng-model='inv_item_master.drg_file'>
+									</div>
+									<label class='col-sm-5'>Die serial</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_item_master.die_serial'>
+									</div>
+									<label class='col-sm-5'>Specification</label>
+									<div class='col-sm-7'>
+										<textarea class='form-control' ng-model='inv_item_master.specification' rows='5'></textarea>
+									</div>
+									<label class='col-sm-5'>UoM</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_item_master.uom' ng-init='inv_item_master.uom=uomList[0]' ng-options='x as x for x in uomList'></select>
+									</div>
+									<label class='col-sm-5'>Is QA required</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_item_master.is_qa_required' ng-init='inv_item_master.is_qa_required=qareqList[0]' ng-options='x as x for x in qareqList'></select>
+									</div>
+									<label class='col-sm-5'>Reject action</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_item_master.reject_action' ng-init='inv_item_master.reject_action=rejActList[0]' ng-options='x as x for x in rejActList'></select>
+									</div>
+									<label class='col-sm-5'>Item group ID</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_item_master.item_group_id' ng-init='inv_item_master.item_group_id=inv_item_group[0].sysid' ng-options='x.sysid as x.group_name for x in inv_item_groupList'></select>
+									</div>
+									<label class='col-sm-5'>Status</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_item_master.status' ng-init='inv_item_master.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+						<div id='attrTab' class='tab-pane fade'>
+						</div>
+						<div id='suppTab' class='tab-pane fade'>
+						</div>
+				</div>
+			</div>
+		</div>
+			<div class='col-sm-1'>
+			</div>
+	</div>
+	</div>
+</form>

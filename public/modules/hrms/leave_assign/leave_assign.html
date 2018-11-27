@@ -1,0 +1,139 @@
+<form role='form'>
+				<script type='text/javascript'>
+					$(function () {
+						$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+						$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+						$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+					});
+					$('#clear').click(function(){
+						$('#dt1').data('DateTimePicker').clear();
+						$('#dt2').data('DateTimePicker').clear();
+						$('#dt3').data('DateTimePicker').clear();
+					});
+				</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; min-height: 600px;'>
+			<div class='col-sm-2'>
+				<div ng-controller='leaves_menuCtrl' ng-include src="'modules/hrms/leaves_menu/leaves_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header1 col-sm-2' class='col-sm-2'>Leave assignment</span>
+				<div class='col-sm-3'>
+					<div class='input-group'>
+						<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+						<div class='input-group-btn'>
+							<button class='btn btn-success btn-sm searchBox' type='submit'>
+								<i class='glyphicon glyphicon-search'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<span class='header2 col-sm-4' class='col-sm-4'></span>
+				<div class='col-sm-3' style='text-align: right'>
+					<div class='btn-group'>
+						<a  class='btn btn-default btn-sm'  href='#'  ng-click='insert_hrms_leave_balance_record()' data-target='#ltDlg' data-toggle='modal'>
+							<span class='glyphicon glyphicon-plus'></span> Add
+						</a>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-upload'></span> Upload
+						</button>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-download'></span> Download
+						</button>
+					</div>
+				</div>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'>
+							<thead>
+								<tr>
+									<th >Emp id</th>
+									<th>Leave type id</th>
+									<th>Carried fwd prev</th>
+									<th>Current year leaves</th>
+									<th>Total leaves</th>
+									<th>Used till date</th>
+									<th>Status</th>
+									<th >Header</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in hrms_leave_balanceList| filter: search| itemsPerPage: 12'>
+									<td><a  href='#' ng-model='hrms_leave_balance.emp_id'> {{x.emp_id}}</a></td>
+									<td>{{x.leave_type_id}}</td>
+									<td>{{x.carried_fwd_prev}}</td>
+									<td>{{x.current_year_leaves}}</td>
+									<td>{{x.total_leaves}}</td>
+									<td>{{x.used_till_date}}</td>
+									<td>{{x.status}}</td>
+									<td><a  href='#'  ng-click='delete_hrms_leave_balance_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+			</div>
+		</div>
+		</div>
+	<div class='modal fade'  id='ltDlg' role='dialog'>
+		<div class='modal-dialog' style='height: 700px; ; width: 1000px; '>
+			<div class='modal-content'>
+				<div class='modal-header'>
+					<div class='row'>
+						<span class='header1 col-sm-12' class='col-sm-12'>Leave assignment
+</span>
+					</div>
+				</div>
+				<div class='modal-body'>
+					<div class='row'>
+						<label class='col-sm-5'>Emp id</label>
+						<div class='col-sm-7'>
+							<select class='form-control' ng-model='hrms_leave_balance.emp_id' ng-init='hrms_leave_balance.emp_id=hrms_employees[0].sysid' ng-options='x.sysid as x.complete_name for x in hrms_employeesList'></select>
+						</div>
+						<label class='col-sm-5'>Leave type id</label>
+						<div class='col-sm-7'>
+							<select class='form-control' ng-model='hrms_leave_balance.leave_type_id' ng-init='hrms_leave_balance.leave_type_id=hrms_leave_type[0].sysid' ng-options='x.sysid as x.leave_type for x in hrms_leave_typeList'></select>
+						</div>
+						<label class='col-sm-5'>Carried fwd prev</label>
+						<div class='col-sm-7'>
+							<input class='form-control'  type='text' ng-model='hrms_leave_balance.carried_fwd_prev'>
+						</div>
+						<label class='col-sm-5'>Current year leaves</label>
+						<div class='col-sm-7'>
+							<input class='form-control'  type='text' ng-model='hrms_leave_balance.current_year_leaves'>
+						</div>
+						<label class='col-sm-5'>Total leaves</label>
+						<div class='col-sm-7'>
+							<input class='form-control'  type='text' ng-model='hrms_leave_balance.total_leaves'>
+						</div>
+						<label class='col-sm-5'>Used till date</label>
+						<div class='col-sm-7'>
+							<input class='form-control'  type='text' ng-model='hrms_leave_balance.used_till_date'>
+						</div>
+						<label class='col-sm-5'>Status</label>
+						<div class='col-sm-7'>
+							<select class='form-control' ng-model='hrms_leave_balance.status' ng-init='hrms_leave_balance.status=statuslist[0]' ng-options='x as x for x in statuslist'></select>
+						</div>
+					</div>
+				</div>
+				<div class='footer'>
+					<div class='row'  style='padding: 10px;'>
+						<span class='header2 col-sm-7' class='col-sm-7'>{{hrms_leave_balance_status}}</span>
+						<div class='col-sm-5' style='text-align: right'>
+							<div class='btn-group'>
+								<button  class='btn btn-default btn-sm'  ng-click='save_hrms_leave_type_record()'>
+									<span class='glyphicon glyphicon-saved'></span> Save
+								</button>
+								<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+									<span class='glyphicon glyphicon-remove'></span> Close
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</form>

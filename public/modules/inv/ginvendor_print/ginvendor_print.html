@@ -1,0 +1,74 @@
+<form role='form'>
+	<div class='container-fluid'  style='margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; background-color: #ffffff'>
+		<div class='row'  style='text-align: right; padding-left: 0px; padding-right: 0px; padding-top: 10px; padding-bottom: 10px; padding-left: 0px; padding-right: 0px'  id='printMenu'>
+			<div class='col-sm-4'>
+			</div>
+			<div class='col-sm-4'>
+				<div class='row'  style='text-align: center'>
+					<div class='col-sm-12'>
+						<div class='btn-group'>
+							<button  class='btn btn-success btn-sm'  style='color: #000000;'  ng-click='doPrint()'>
+								<span class='glyphicon glyphicon-print'></span> Print
+							</button>
+							<a  class='btn btn-success btn-sm'  style='color: #000000;'  href='/gindept_list'>
+								<span class='glyphicon glyphicon-arrow-left'></span> Back
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class='col-sm-4'>
+				</div>
+		</div>
+			<div class='row'  style='width: 80mm; height: 148mm; float: none; margin-left: auto; margin-right: auto; background-color: #fff; border: 1px solid #000; text-align: center'>
+				<div class='col-sm-12' style='padding: 0px; padding-top: 20px;'>
+					<table class='table table-bordered table-condensed table-bordered'>
+						<tbody>
+							<tr>
+								<td colspan=5 style='border-bottom: 1px solid #000 !important'><span class='header1'>Goods Issue Note (External)</span></td>
+								
+							</tr>
+							<tr>
+								<td colspan=2  style='text-align: left'><span class='header3'>Challan No.:</span></td>
+								<td colspan=3 style='text-align: left'><span class='header3'>{{inv_mat_header.sysid}}</span></td>
+							</tr>
+							<tr>
+								<td colspan=2 style='text-align: left'><span class='header3'>Date:</span></td>
+								<td colspan=3 style='text-align: left'><span class='header3'>{{inv_mat_header.trans_date}}</span></td>
+							</tr>
+							<tr>
+								<td colspan=2 style='text-align: left'><span class='header3'>Vendor name:</span></td>
+								<td colspan=3 style='text-align: left'><span class='header3'>{{inv_mat_header.supp_name}}</span></td>
+							</tr>
+						</tbody>
+					</table>
+					<table class='table table-condensed'>
+						<tbody>
+							<tr style='border-bottom: 1px solid #000 !important; border-top: 1px solid #000  !important'>
+								<td colspan=3 style='border-bottom: 1px solid #000 !important; border-top: 1px solid #000  !important'><span class='header3'><b>Item description</b></span></td>
+								<td style='border-bottom: 1px solid #000 !important; border-top: 1px solid #000 !important' width='20%'><span class='header3'><b>Qty</b></span></td>
+								<td style='border-bottom: 1px solid #000 !important; border-top: 1px solid #000 !important' width='20%'><span class='header3'><b>Total Wt.</b></span></td>
+							</tr>
+							<tr ng-repeat='x in inv_mat_detailsList'>
+								<td colspan=3 style='text-align: left'><span class='header3'>{{x.item_name}}</span></td>
+								<td style='text-align: right' width='20%'><span class='header3'>{{x.iss_qty}} {{x.item_uom}}</span></td>
+								<td style='text-align: right' width='20%'><span class='header3'>{{x.iss_wt}} {{x.wt_uom}}</span></td>
+							</tr>
+							<tr>
+								<td colspan=3 style='text-align: left; border-top: 1px solid #000 !important'><span class='header3'><b>Prepared by</b></span></td>
+								<td colspan=2 style='text-align: left; border-top: 1px solid #000 !important'><span class='header3'>{{logged_user}}</span></td>
+							</tr>
+							<tr>
+								<td colspan=3 style='text-align: left'><span class='header3'><b>Ledger No:</b></span></td>
+								<td colspan=2 style='text-align: left'><span class='header3'></span></td>
+							</tr>
+							<tr>
+								<td colspan=3 style='text-align: left'><span class='header3'><b>Page No.:</b></span></td>
+								<td colspan=2 style='text-align: left'><span class='header3'></span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+	</div>
+</form>

@@ -1,0 +1,182 @@
+<form role='form'>
+					<script type='text/javascript'>
+						$(function () {
+							$('#').datetimepicker({format: 'YYYY-MM-DD'});
+							$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+							$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+							$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+							$('#dt4').datetimepicker({format: 'YYYY-MM-DD'});
+							$('#dt5').datetimepicker({format: 'YYYY-MM-DD'});
+						});
+						$('#clear').click(function(){
+							$('#').data('DateTimePicker').clear();
+							$('#dt1').data('DateTimePicker').clear();
+							$('#dt2').data('DateTimePicker').clear();
+							$('#dt3').data('DateTimePicker').clear();
+							$('#dt4').data('DateTimePicker').clear();
+							$('#dt5').data('DateTimePicker').clear();
+						});
+							$('#').click(function(){
+								var sysdate = new Date();
+								$('#').data('DateTimePicker').date(sysdate);
+							})
+							$('#dt1').click(function(){
+								var sysdate = new Date();
+								$('#dt1').data('DateTimePicker').date(sysdate);
+							})
+							$('#dt2').click(function(){
+								var sysdate = new Date();
+								$('#dt2').data('DateTimePicker').date(sysdate);
+							})
+							$('#dt3').click(function(){
+								var sysdate = new Date();
+								$('#dt3').data('DateTimePicker').date(sysdate);
+							})
+							$('#dt4').click(function(){
+								var sysdate = new Date();
+								$('#dt4').data('DateTimePicker').date(sysdate);
+							})
+							$('#dt5').click(function(){
+								var sysdate = new Date();
+								$('#dt5').data('DateTimePicker').date(sysdate);
+							})
+					</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; padding-top: 15px; min-height: 600px;'>
+			<div class='col-sm-1'>
+			</div>
+			<div class='col-sm-10'>
+				<div class='row'  style='padding-bottom: 5px;'>
+					<span class='header1 col-sm-1'  style='color: #C70039; padding-top: 5px;' class='col-sm-1'>Holidays</span>
+					<span class='header2 col-sm-5'  style='padding-top: 5px' class='col-sm-5'>{{hrms_holiday_status}}</span>
+					<div style='text-align: right' class='col-sm-3'>
+						<div class='input-group'>
+							<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+							<div class='input-group-btn'>
+								<button class='btn btn-success btn-sm searchBox' type='submit' class='searchBox'>
+									<i class='glyphicon glyphicon-search'></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class='col-sm-3' style='text-align: right'>
+						<div class='btn-group'>
+							<a  class='btn btn-default btn-sm'  href='#'  ng-click='insert_hrms_holiday_record()' data-target='#deptDlg' data-toggle='modal'>
+								<span class='glyphicon glyphicon-plus'></span> Add
+							</a>
+							<button  class='btn btn-default btn-sm'>
+								<span class='glyphicon glyphicon-refresh'></span> Refresh
+							</button>
+						</div>
+					</div>
+				</div>
+					<div class='row'>
+						<div class='col-sm-12'>
+							<table class='table table-bordered table-condensed table-bordered'>
+								<thead>
+									<tr>
+										<th >Title</th>
+										<th>Holiday date</th>
+										<th>Holiday Hrs</th>
+										<th>Alternate work day</th>
+										<th>Can choose</th>
+										<th>Unit name</th>
+										<th>Status</th>
+										<th ></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr dir-paginate='x in hrms_holidayList| filter: search| itemsPerPage: 10'>
+										<td><a  href='#'  ng-click='update_hrms_holiday_record(x)' ng-model='hrms_holiday.title' data-target='#deptDlg' data-toggle='modal'> {{x.title}}</a></td>
+										<td>{{x.holiday_date}}</td>
+										<td>{{x.holiday_hrs}}</td>
+										<td>{{x.alternate_work_day}}</td>
+										<td>{{x.can_choose}}</td>
+										<td>{{x.company_id}}</td>
+										<td>{{x.status}}</td>
+										<td><a  style='color: #ef2929'  href='#'  ng-click='delete_hrms_holiday_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+									</tr>
+								</tbody>
+							</table>
+							<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+							</dir-pagination-controls>
+						</div>
+					</div>
+			</div>
+			<div class='col-sm-1'>
+			</div>
+		</div>
+		<div class='modal fade'  id='deptDlg' role='dialog'>
+			<div class='modal-dialog' style='min-height: 700px; ; min-width: 700px; '>
+				<div class='modal-content'>
+					<div class='modal-header'>
+						<div class='row'>
+							<span class='header1 col-sm-12' class='col-sm-12'>Holidays</span>
+						</div>
+					</div>
+					<div class='modal-body'>
+						<div class='row'>
+							<div class='col-sm-12'>
+								<div class='row'>
+									<label class='col-sm-3'>Title</label>
+									<div class='col-sm-9'>
+										<input class='form-control'  type='text' ng-model='hrms_holiday.title'>
+									</div>
+									<label class='col-sm-3'>Holiday date</label>
+									<div class='col-sm-9'>
+										<div datetimepicker class='input-group date'  id='dt1' ng-model='hrms_holiday.holiday_date'>
+											<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+									<label class='col-sm-3'>Holiday Hrs</label>
+									<div class='col-sm-9'>
+										<input class='form-control'  type='text' ng-model='hrms_holiday.holiday_hrs'>
+									</div>
+									<label class='col-sm-3'>Alternate work day</label>
+									<div class='col-sm-9'>
+										<div datetimepicker class='input-group date'  id='dt2' ng-model='hrms_holiday.alternate_work_day'>
+											<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+									<label class='col-sm-3'>Can choose</label>
+									<div class='col-sm-9'>
+										<select class='form-control' ng-model='hrms_holiday.can_choose' ng-init='hrms_holiday.can_choose=chooseList[0]' ng-options='x as x for x in chooseList'></select>
+									</div>
+									<label class='col-sm-3'>Unit name</label>
+									<div class='col-sm-9'>
+										<select class='form-control' ng-model='hrms_holiday.company_id' ng-init='hrms_holiday.company_id=admin_company[0].sysid' ng-options='x.sysid as x.company_name for x in admin_companyList'></select>
+									</div>
+									<label class='col-sm-3'>Status</label>
+									<div class='col-sm-9'>
+										<select class='form-control' ng-model='hrms_holiday.status' ng-init='hrms_holiday.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='footer'>
+						<div class='row'  style='padding: 10px'>
+							<span class='header2 col-sm-9' class='col-sm-9'>{{hrms_holiday_status}}</span>
+							<div class='col-sm-3' style='text-align: right'>
+								<div class='btn-group'>
+									<button  class='btn btn-default btn-sm'  ng-click='save_hrms_holiday_record()'>
+										<span class='glyphicon glyphicon-saved'></span> Save
+									</button>
+									<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+										<span class='glyphicon glyphicon-remove'></span> Close
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,122 @@
+<form role='form'>
+				<script type='text/javascript'>
+					$(function () {
+						$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+						$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+						$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+					});
+					$('#clear').click(function(){
+						$('#dt1').data('DateTimePicker').clear();
+						$('#dt2').data('DateTimePicker').clear();
+						$('#dt3').data('DateTimePicker').clear();
+					});
+						$('#dt1').click(function(){
+							var sysdate = new Date();
+							$('#dt1').data('DateTimePicker').date(sysdate);
+						})
+						$('#dt2').click(function(){
+							var sysdate = new Date();
+							$('#dt2').data('DateTimePicker').date(sysdate);
+						})
+						$('#dt3').click(function(){
+							var sysdate = new Date();
+							$('#dt3').data('DateTimePicker').date(sysdate);
+						})
+				</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; padding-top: 10px;'>
+			<div class='col-sm-2'>
+				<div ng-controller='invoice_settings_menuCtrl' ng-include src="'modules/sales/invoice_settings_menu/invoice_settings_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-2' class='col-sm-2'>Payment terms</span>
+				<div class='col-sm-3'>
+					<div class='input-group'>
+						<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+						<div class='input-group-btn'>
+							<button class='btn btn-success btn-sm searchBox' type='submit'>
+								<i class='glyphicon glyphicon-search'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<span class='header2 col-sm-5' class='col-sm-5'>{{sales_payment_terms_status}}</span>
+				<div class='col-sm-2' style='text-align: right'>
+					<div class='btn-group'>
+						<a  class='btn btn-default btn-sm'  href='#'  ng-click='insert_sales_payment_terms_record()' data-target='#fgDlg' data-toggle='modal'>
+							<span class='glyphicon glyphicon-plus'></span> Add new
+						</a>
+					</div>
+				</div>
+			</div>
+				<div class='row'>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'  style='padding-top: 5px'>
+							<thead>
+								<tr>
+									<th >Trans ID</th>
+									<th>Description</th>
+									<th>Status</th>
+									<th ></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in sales_payment_termsList| filter: search| itemsPerPage: 12'>
+									<td><a  href='#'  ng-click='update_sales_payment_terms_record(x)' ng-model='sales_payment_terms.sysid' data-target='#fgDlg' data-toggle='modal'> {{x.sysid}}</a></td>
+									<td>{{x.term_descr}}</td>
+									<td>{{x.status}}</td>
+									<td><a  style='color: red'  href='#'  ng-click='delete_sales_payment_terms_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+				</div>
+		</div>
+		</div>
+	<div class='modal fade'  id='fgDlg' role='dialog'>
+		<div class='modal-dialog' style='height: 700px; ; width: 700px; '>
+			<div class='modal-content'>
+				<div class='modal-header'>
+					<div class='row'>
+						<span class='header1 col-sm-12' class='col-sm-12'>Payment terms</span>
+					</div>
+				</div>
+				<div class='modal-body'>
+					<div class='row'>
+						<label class='col-sm-3'>Trans ID</label>
+						<div class='col-sm-9'>
+							<input class='form-control'  type='text'  ng-readonly='true' ng-model='sales_payment_terms.sysid'>
+						</div>
+						<label class='col-sm-3'>Description</label>
+						<div class='col-sm-9'>
+							<textarea class='form-control' ng-model='sales_payment_terms.term_descr' rows='5'></textarea>
+						</div>
+						<label class='col-sm-3'>Status</label>
+						<div class='col-sm-9'>
+							<select class='form-control' ng-model='sales_payment_terms.status' ng-init='sales_payment_terms.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+						</div>
+					</div>
+				</div>
+				<div class='footer'>
+					<div class='row'  style='padding: 10px;'>
+						<span class='header2 col-sm-9' class='col-sm-9'>{{sales_payment_terms_status}}</span>
+						<div class='col-sm-3' style='text-align: right'>
+							<div class='btn-group'>
+								<button  class='btn btn-default btn-sm'  ng-click='save_sales_payment_terms_record()'>
+									<span class='glyphicon glyphicon-saved'></span> Save
+								</button>
+								<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+									<span class='glyphicon glyphicon-remove'></span> Close
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</form>

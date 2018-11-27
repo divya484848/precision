@@ -1,0 +1,129 @@
+<form role='form'>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-2'>
+				<div class='row'  style='padding: 0px;'>
+					<div ng-controller='rules_menuCtrl' ng-include src="'modules/admin/rules_menu/rules_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-2' class='col-sm-2'>Custom rules</span>
+				<div class='col-sm-3'>
+					<div class='input-group'>
+						<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+						<div class='input-group-btn'>
+							<button class='btn btn-success btn-sm searchBox' type='submit'>
+								<i class='glyphicon glyphicon-search'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<span class='header2 col-sm-5' class='col-sm-5'>{{admin_ebs_rules_status}}</span>
+				<div class='col-sm-2' style='text-align: right'>
+					<div class='btn-group'>
+						<button  class='btn btn-default btn-sm'  ng-click='insert_admin_ebs_rules_record()' data-target='#ruleDlg' data-toggle='modal'>
+							<span class='glyphicon glyphicon-plus'></span> Add
+						</button>
+					</div>
+				</div>
+					<div class='col-sm-12'>
+						<hr>
+					</div>
+			</div>
+					<div class='row'>
+						<div class='col-sm-12'>
+							<table class='table table-bordered table-condensed table-bordered'>
+								<thead>
+									<tr>
+										<th >Rule name</th>
+										<th>Rule ID</th>
+										<th>Module name</th>
+										<th>Request params</th>
+										<th>Response params</th>
+										<th>Status</th>
+										<th >Header</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr dir-paginate='x in admin_ebs_rulesList| filter: search| itemsPerPage: 12'>
+										<td><a  href='#'  ng-click='update_admin_ebs_rules_record(x)' ng-model='admin_ebs_rules.rule_name' data-target='#ruleDlg' data-toggle='modal'> {{x.rule_name}}</a></td>
+										<td>{{x.sysid}}</td>
+										<td>{{x.module_name}}</td>
+										<td>{{x.request_params}}</td>
+										<td>{{x.response_params}}</td>
+										<td>{{x.status}}</td>
+										<td><a  style='color: red'  href='#'  ng-click='delete_admin_ebs_rules_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+									</tr>
+								</tbody>
+							</table>
+							<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+							</dir-pagination-controls>
+						</div>
+					</div>
+		</div>
+		</div>
+		<div class='modal fade'  id='ruleDlg' role='dialog'>
+			<div class='modal-dialog' style=''>
+				<div class='modal-content'>
+					<div class='modal-header'>
+						<div class='row'>
+							<span class='header1 col-sm-12' class='col-sm-12'>Custom rules</span>
+						</div>
+					</div>
+					<div class='modal-body'>
+						<div class='row'>
+							<label class='col-sm-3'>Rule ID</label>
+							<div class='col-sm-9'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='admin_ebs_rules.sysid'>
+							</div>
+							<label class='col-sm-3'>Rule name</label>
+							<div class='col-sm-9'>
+								<input class='form-control'  type='text' ng-model='admin_ebs_rules.rule_name'>
+							</div>
+							<label class='col-sm-3'>Rule text</label>
+							<div class='col-sm-9'>
+								<textarea class='form-control' ng-model='admin_ebs_rules.rule_text' rows='5'></textarea>
+							</div>
+							<label class='col-sm-3'>Module name</label>
+							<div class='col-sm-9'>
+								<input class='form-control'  type='text' ng-model='admin_ebs_rules.module_name'>
+							</div>
+							<label class='col-sm-3'>Request params</label>
+							<div class='col-sm-9'>
+								<textarea class='form-control' ng-model='admin_ebs_rules.request_params' rows='5'></textarea>
+							</div>
+							<label class='col-sm-3'>Response params</label>
+							<div class='col-sm-9'>
+								<textarea class='form-control' ng-model='admin_ebs_rules.response_params' rows='5'></textarea>
+							</div>
+							<label class='col-sm-3'>Header</label>
+							<div class='col-sm-9'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='admin_ebs_rules.rule_type'>
+							</div>
+							<label class='col-sm-3'>Status</label>
+							<div class='col-sm-9'>
+								<select class='form-control' ng-model='admin_ebs_rules.status' ng-init='admin_ebs_rules.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+							</div>
+						</div>
+					</div>
+					<div class='footer'>
+						<div class='row'  style='padding: 10px;'>
+							<span class='header2 col-sm-9' class='col-sm-9'>{{admin_ebs_rules_status}}</span>
+							<div class='col-sm-3' style='text-align: right'>
+								<div class='btn-group'>
+									<button  class='btn btn-default btn-sm'  ng-click='save_admin_ebs_rules_record()'>
+										<span class='glyphicon glyphicon-saved'></span> Save
+									</button>
+									<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+										<span class='glyphicon glyphicon-remove'></span> Close
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

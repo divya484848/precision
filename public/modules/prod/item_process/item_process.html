@@ -1,0 +1,180 @@
+<form role='form'>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; padding-top: 10px;'>
+			<div class='col-sm-1'>
+			</div>
+			<div class='col-sm-10'>
+				<div class='row'  style='padding-top: 20px'>
+					<span class='header-title col-sm-2' class='col-sm-2'>Process management</span>
+					<span class='header2 col-sm-7' class='col-sm-7'>{{prod_process_status}}</span>
+					<div class='col-sm-3' style='text-align: right'>
+						<div class='btn-group'>
+							<button  class='btn btn-default btn-sm'  ng-click='save_prod_process_record()'>
+								<span class='glyphicon glyphicon-saved'></span> Save
+							</button>
+							<a  class='btn btn-default btn-sm'  href='/item_process_list'>
+								<span class='glyphicon glyphicon-arrow-left'></span> Back
+							</a>
+						</div>
+					</div>
+						<div class='col-sm-12' style='padding-top: 5px'>
+							<hr>
+						</div>
+				</div>
+						<div class='row'>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>Trans ID</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='prod_process.sysid'>
+									</div>
+									<label class='col-sm-5'>Item name</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='prod_process.item_id' ng-init='prod_process.item_id=inv_finished_goods[0].sysid' ng-options='x.sysid as x.int_item_name for x in inv_finished_goodsList'></select>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>Total duration (Hrs)</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='prod_process.total_duration_hrs'>
+									</div>
+									<label class='col-sm-5'>Status</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='prod_process.status' ng-init='prod_process.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-12' style='padding-top: 5px'>
+								<hr>
+							</div>
+						</div>
+							<div class='row'>
+								<div class='col-sm-12' style='text-align: right; padding-bottom: 10px'>
+									<button  class='btn btn-default btn-sm'  ng-click='insert_prod_process_details_record()' data-target='#procDlg' data-toggle='modal'>
+										<span class='glyphicon glyphicon-plus'></span> Add
+									</button>
+								</div>
+								<div class='col-sm-12'>
+									<table class='table table-bordered table-condensed table-bordered'>
+										<thead>
+											<tr>
+												<th >Task name</th>
+												<th>Sequence ID</th>
+												<th>Duration (Min)</th>
+												<th>Qty per duration</th>
+												<th>Resource qty</th>
+												<th>Machine name</th>
+												<th>Status</th>
+												<th >Header</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr dir-paginate='x in prod_process_detailsList| itemsPerPage: 12'>
+												<td><a  href='#'  ng-click='update_prod_process_details_record(x)' ng-model='prod_process_details.task_name' data-target='#procDlg' data-toggle='modal'> {{x.task_name}}</a></td>
+												<td>{{x.task_seq_id}}</td>
+												<td>{{x.duration_min}}</td>
+												<td>{{x.qty_per_duation}}</td>
+												<td>{{x.resource_qty}}</td>
+												<td>{{x.mac_name}}</td>
+												<td>{{x.status}}</td>
+												<td><a  style='color: red'  href='#'  ng-click='delete_prod_process_details_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+											</tr>
+										</tbody>
+									</table>
+									<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+									</dir-pagination-controls>
+								</div>
+							</div>
+			</div>
+					<div class='col-sm-1'>
+					</div>
+		</div>
+				<div class='modal fade'  id='procDlg' role='dialog'>
+					<div class='modal-dialog' style='height: 700px; ; width: 1000px; '>
+						<div class='modal-content'>
+							<div class='modal-header'>
+								<div class='row'>
+									<span class='header1 col-sm-12' class='col-sm-12'>Process management</span>
+								</div>
+							</div>
+							<div class='modal-body'>
+								<div class='row'>
+									<div class='col-sm-6'>
+										<div class='row'>
+											<label class='col-sm-5'>Trans ID</label>
+											<div class='col-sm-5'>
+												<input class='form-control'  type='text'  ng-readonly='true' ng-model='prod_process_details.sysid'>
+											</div>
+											<div class='col-sm-2'>
+												<input class='form-control'  type='text'  ng-readonly='true' ng-model='prod_process_details.proc_id'>
+											</div>
+											<label class='col-sm-5'>Task name</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='prod_process_details.task_name'>
+											</div>
+											<label class='col-sm-5'>Description</label>
+											<div class='col-sm-7'>
+												<textarea class='form-control' ng-model='prod_process_details.task_descr' rows='5'></textarea>
+											</div>
+											<label class='col-sm-5'>Sequence ID</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='prod_process_details.task_seq_id'>
+											</div>
+										</div>
+									</div>
+									<div class='col-sm-6'>
+										<div class='row'>
+											<label class='col-sm-5'>Duration (Min)</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='prod_process_details.duration_min'>
+											</div>
+											<label class='col-sm-5'>Qty per duration</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='prod_process_details.qty_per_duation'>
+											</div>
+											<label class='col-sm-5'>Resource qty</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='prod_process_details.resource_qty'>
+											</div>
+											<label class='col-sm-5'>Machine name</label>
+											<div class='col-sm-7'>
+												<select class='form-control' ng-model='prod_process_details.mac_id' ng-init='prod_process_details.mac_id=inv_machines[0].sysid' ng-options='x.sysid as x.mac_name for x in inv_machinesList'></select>
+											</div>
+											<label class='col-sm-5'>Task location</label>
+											<div class='col-sm-7'>
+												<select class='form-control' ng-model='prod_process_details.task_location' ng-init='prod_process_details.task_location=taskLocList[0]' ng-options='x as x for x in taskLocList'></select>
+											</div>
+											<label class='col-sm-5'>Transport duration (Hr)</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='prod_process_details.transport_duration_hr'>
+											</div>
+											<label class='col-sm-5'>Status</label>
+											<div class='col-sm-7'>
+												<select class='form-control' ng-model='prod_process_details.status' ng-init='prod_process_details.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='footer'>
+								<div class='row'  style='padding: 10px;'>
+									<span class='header2 col-sm-9' class='col-sm-9'>{{prod_process_details_status}}</span>
+									<div class='col-sm-3' style='text-align: right'>
+										<div class='btn-group'>
+											<button  class='btn btn-default btn-sm'  ng-click='save_prod_process_details_record()'>
+												<span class='glyphicon glyphicon-saved'></span> Save
+											</button>
+											<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+												<span class='glyphicon glyphicon-remove'></span> Close
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	</div>
+</form>

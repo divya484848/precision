@@ -1,0 +1,147 @@
+<form role='form'>
+<script type='text/javascript'>
+$(function () {
+$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+$('#dt2').datetimepicker({format: 'HH:mm'});
+$('#dt3').datetimepicker({format: 'HH:mm'});
+});
+$('#clear').click(function(){
+$('#dt1').data('DateTimePicker').clear();
+$('#dt2').data('DateTimePicker').clear();
+$('#dt3').data('DateTimePicker').clear();
+});
+$('#dt1').click(function(){
+var sysdate = new Date();
+$('#dt1').data('DateTimePicker').date(sysdate);
+})
+$('#dt2').click(function(){
+var sysdate = new Date();
+$('#dt2').data('DateTimePicker').date(sysdate);
+})
+$('#dt3').click(function(){
+var sysdate = new Date();
+$('#dt3').data('DateTimePicker').date(sysdate);
+})
+</script>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-2'>
+				<div class='row'  style='padding: 0px;'>
+					<div ng-controller='att_menuCtrl' ng-include src="'modules/hrms/att_menu/att_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-8' class='col-sm-8'>Regularize</span>
+				<div class='col-sm-4' style='text-align: right'>
+					<div class='btn-group'>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-print'></span> Print
+						</button>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-download'></span> Download
+						</button>
+						<a  class='btn btn-default btn-sm'  href='/sr_report'>
+							<span class='glyphicon glyphicon-arrow-left'></span> Back
+						</a>
+					</div>
+				</div>
+					<div class='col-sm-12' style='padding-top: 5px'>
+						<hr>
+					</div>
+						<label class='col-sm-1'>Employee</label>
+						<div class='col-sm-3'>
+							<select class='form-control' ng-model='hrms_att_daily_log.emp_id' ng-init='hrms_att_daily_log.emp_id=hrms_employees[0].sysid' ng-options='x.sysid as x.complete_name for x in hrms_employeesList'></select>
+						</div>
+						<label class='col-sm-1'>From date</label>
+						<div class='col-sm-2'>
+							<div datetimepicker class='input-group date'  id='dt1' ng-model='hrms_att_daily_log.from_date'>
+								<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+								<span class='input-group-addon'>
+									<span class='glyphicon glyphicon-calendar'></span>
+								</span>
+							</div>
+						</div>
+						<label class='col-sm-1'>To date</label>
+						<div class='col-sm-2'>
+							<div datetimepicker class='input-group date'  id='dt2' ng-model='hrms_att_daily_log.to_date'>
+								<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+								<span class='input-group-addon'>
+									<span class='glyphicon glyphicon-calendar'></span>
+								</span>
+							</div>
+						</div>
+						<div class='col-sm-2' style='text-align: right'>
+							<button  class='btn btn-default btn-sm'  ng-click='select_hrms_att_daily_log_record()'>
+								<span class='glyphicon glyphicon-cog'></span> Generate report
+							</button>
+						</div>
+			</div>
+					<div class='row'>
+						<div class='col-sm-12'>
+							<table class='table table-bordered table-condensed table-bordered'>
+								<thead>
+									<tr>
+										<th>Trans ID</th>
+										<th>Emp ID</th>
+										<th>Employee name</th>
+										<th>Tag ID</th>
+										<th>Machine datetime</th>
+										<th>Attendance date</th>
+								<th>In time</th>
+						<th>Out time</th>
+				<th>Is regularized</th>
+				<th>In machine ID</th>
+				<th>Out machine ID</th>
+				<th ></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr dir-paginate='x in hrms_att_daily_logList| itemsPerPage: 12'>
+										<td>{{x.sysid}}</td>
+										<td>{{x.emp_name}}</td>
+										<td>{{x.complete_name}}</td>
+										<td>{{x.tag_id}}</td>
+										<td>{{x.machine_datetime}}</td>
+										<td>
+											<div datetimepicker class='input-group date'  id='dt1' ng-model='hrms_att_daily_log.att_date'>
+												<input type='text' class='form-control' placeholder='YYYY-MM-DD'>
+													<span class='input-group-addon'>
+														<span class='glyphicon glyphicon-calendar'></span>
+													</span>
+												</div>
+											</div>
+										</td>
+								<td>
+									<div datetimepicker class='input-group date'  id='dt2' ng-model='hrms_att_daily_log.in_time'>
+										<input type='text' class='form-control' placeholder='HH:mm'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+								</td>
+						<td>
+							<div datetimepicker class='input-group date'  id='dt3' ng-model='hrms_att_daily_log.out_time'>
+								<input type='text' class='form-control' placeholder='HH:mm'>
+									<span class='input-group-addon'>
+										<span class='glyphicon glyphicon-calendar'></span>
+									</span>
+								</div>
+							</div>
+						</td>
+				<td>{{x.is_regularized}}</td>
+				<td>{{x.in_machine_id}}</td>
+				<td>{{x.out_machine_id}}</td>
+				<td><a  class='btn btn-default btn-sm'  href='#'> Update</a></td>
+									</tr>
+								</tbody>
+							</table>
+							<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+							</dir-pagination-controls>
+						</div>
+					</div>
+		</div>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,271 @@
+<form role='form'>
+								<script type='text/javascript'>
+									$(function () {
+										$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+										$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+										$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+										$('#dt4').datetimepicker({format: 'YYYY-MM-DD'});
+									});
+									$('#clear').click(function(){
+										$('#dt1').data('DateTimePicker').clear();
+										$('#dt2').data('DateTimePicker').clear();
+										$('#dt3').data('DateTimePicker').clear();
+										$('#dt4').data('DateTimePicker').clear();
+									});
+										$('#dt1').click(function(){
+											var sysdate = new Date();
+											$('#dt1').data('DateTimePicker').date(sysdate);
+										})
+										$('#dt2').click(function(){
+											var sysdate = new Date();
+											$('#dt2').data('DateTimePicker').date(sysdate);
+										})
+										$('#dt3').click(function(){
+											var sysdate = new Date();
+											$('#dt3').data('DateTimePicker').date(sysdate);
+										})
+										$('#dt4').click(function(){
+											var sysdate = new Date();
+											$('#dt4').data('DateTimePicker').date(sysdate);
+										})
+								</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; padding-top: 10px;'>
+			<div class='col-sm-1'>
+			</div>
+			<div class='col-sm-10'>
+				<div class='row'  style='padding-top: 20px'>
+					<span class='header-title col-sm-2' class='col-sm-2'>Sales order</span>
+					<span class='header2 col-sm-8' class='col-sm-8'>{{sales_so_status}}</span>
+					<div class='col-sm-2' style='text-align: right'>
+						<div class='btn-group'>
+							<button  class='btn btn-default btn-sm'  ng-click='save_sales_so_record()'>
+								<span class='glyphicon glyphicon-saved'></span> Save
+							</button>
+							<a  class='btn btn-default btn-sm'  href='/sales_order_list'>
+								<span class='glyphicon glyphicon-arrow-left'></span> Back
+							</a>
+						</div>
+					</div>
+						<div class='col-sm-12' style='padding-top: 5px'>
+							<hr>
+						</div>
+				</div>
+						<div class='row'>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>Trans ID</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='sales_so.sysid'>
+									</div>
+									<label class='col-sm-5'>SO No</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='sales_so.so_no'>
+									</div>
+									<label class='col-sm-5'>SO date</label>
+									<div class='col-sm-7'>
+										<div datetimepicker class='input-group date'  id='dt1' ng-model='sales_so.so_date'>
+											<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+									<label class='col-sm-5'>Customer</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='sales_so.cust_id' ng-init='sales_so.cust_id=inv_customer[0].sysid' ng-options='x.sysid as x.cust_name for x in inv_customerList'></select>
+									</div>
+									<label class='col-sm-5'>Customer PO</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='sales_so.cust_po'>
+									</div>
+									<label class='col-sm-5'>PO date</label>
+									<div class='col-sm-7'>
+										<div datetimepicker class='input-group date'  id='dt2' ng-model='sales_so.cust_po_date'>
+											<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+									<label class='col-sm-5'>SO type</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='sales_so.so_type' ng-init='sales_so.so_type=soTypeList[0]' ng-options='x as x for x in soTypeList'></select>
+									</div>
+									<label class='col-sm-5'>SO channel</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='sales_so.so_channel' ng-init='sales_so.so_channel=channelList[0]' ng-options='x as x for x in channelList'></select>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>Exp start date</label>
+									<div class='col-sm-7'>
+										<div datetimepicker class='input-group date'  id='dt3' ng-model='sales_so.exp_start_date'>
+											<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+									<label class='col-sm-5'>Exp end date</label>
+									<div class='col-sm-7'>
+										<div datetimepicker class='input-group date'  id='dt4' ng-model='sales_so.exp_end_date'>
+											<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+									<label class='col-sm-5'>Delivery mode</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='sales_so.del_mode' ng-init='sales_so.del_mode=delModeList[0]' ng-options='x as x for x in delModeList'></select>
+									</div>
+									<label class='col-sm-5'>SO value</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='sales_so.so_value'>
+									</div>
+									<label class='col-sm-5'>Remarks</label>
+									<div class='col-sm-7'>
+										<textarea class='form-control' ng-model='sales_so.remarks' rows='5'></textarea>
+									</div>
+									<label class='col-sm-5'>Status</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='sales_so.status' ng-init='sales_so.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-12' style='padding-top: 10px'>
+								<hr>
+							</div>
+						</div>
+							<div class='row'>
+								<div class='col-sm-12' style='text-align: right'>
+									<div class='btn-group'>
+										<button  class='btn btn-default btn-sm'  ng-click='insert_sales_so_details_record()' data-target='#soDlg' data-toggle='modal'>
+											<span class='glyphicon glyphicon-plus'></span> Add
+										</button>
+									</div>
+								</div>
+							</div>
+								<div class='row'  style='padding-top: 10px'>
+									<div class='col-sm-12'>
+										<table class='table table-bordered table-condensed table-bordered'>
+											<thead>
+												<tr>
+													<th >Trans ID</th>
+													<th>Item</th>
+													<th>Quantity</th>
+													<th>Unit rate</th>
+													<th>Discount</th>
+													<th>Discount type</th>
+													<th>Tax code</th>
+													<th>Item value</th>
+													<th>Status</th>
+													<th >Header</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr dir-paginate='x in sales_so_detailsList| itemsPerPage: 12'>
+													<td><a  ng-click='update_sales_so_details_record(x)' ng-model='sales_so_details.sysid' data-target='#soDlg' data-toggle='modal'> {{x.sysid}}</a></td>
+													<td>{{x.fg_name}}</td>
+													<td>{{x.so_qty}}</td>
+													<td>{{x.unit_rate}}</td>
+													<td>{{x.discount}}</td>
+													<td>{{x.discount_uom}}</td>
+													<td>{{x.tax_code}}</td>
+													<td>{{x.item_value}}</td>
+													<td>{{x.status}}</td>
+													<td><a  style='color: red'  href='#'  ng-click='delete_sales_so_details_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+												</tr>
+											</tbody>
+										</table>
+										<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+										</dir-pagination-controls>
+									</div>
+								</div>
+			</div>
+						<div class='col-sm-1'>
+						</div>
+		</div>
+					<div class='modal fade'  id='soDlg' role='dialog'>
+						<div class='modal-dialog' style='height: 700px; ; width: 1000px; '>
+							<div class='modal-content'>
+								<div class='modal-header'>
+									<div class='row'>
+										<span class='header1 col-sm-12' class='col-sm-12'>SO Items</span>
+									</div>
+								</div>
+								<div class='modal-body'>
+									<div class='row'>
+										<div class='col-sm-6'>
+											<div class='row'>
+												<label class='col-sm-5'>Trans ID</label>
+												<div class='col-sm-7'>
+													<input class='form-control'  type='text'  ng-readonly='true' ng-model='sales_so_details.sysid'>
+												</div>
+												<label class='col-sm-5'>SO ID</label>
+												<div class='col-sm-7'>
+													<input class='form-control'  type='text'  ng-readonly='true' ng-model='sales_so_details.so_id'>
+												</div>
+												<label class='col-sm-5'>Item</label>
+												<div class='col-sm-7'>
+													<select class='form-control'  ng-change='get_rate()' ng-model='sales_so_details.item_id' ng-init='sales_so_details.item_id=inv_finished_goods[0].sysid' ng-options='x.sysid as x.fg_name for x in inv_finished_goodsList'></select>
+												</div>
+												<label class='col-sm-5'>Quantity</label>
+												<div class='col-sm-7'>
+													<input class='form-control'  type='text'  ng-change='update_item_value()' ng-model='sales_so_details.so_qty'>
+												</div>
+												<label class='col-sm-5'>Unit rate</label>
+												<div class='col-sm-7'>
+													<input class='form-control'  type='text'  ng-readonly='true' ng-model='sales_so_details.unit_rate'>
+												</div>
+											</div>
+										</div>
+										<div class='col-sm-6'>
+											<div class='row'>
+												<label class='col-sm-5'>Discount</label>
+												<div class='col-sm-7'>
+													<input class='form-control'  type='text'  ng-change='update_discount()' ng-model='sales_so_details.discount'>
+												</div>
+												<label class='col-sm-5'>Discount type</label>
+												<div class='col-sm-7'>
+													<select class='form-control'  ng-change='update_discount()' ng-model='sales_so_details.discount_uom' ng-init='sales_so_details.discount_uom=duomList[0]' ng-options='x as x for x in duomList'></select>
+												</div>
+												<label class='col-sm-5'>Tax code</label>
+												<div class='col-sm-7'>
+													<input class='form-control'  type='text' ng-model='sales_so_details.tax_code'>
+												</div>
+												<label class='col-sm-5'>Item value</label>
+												<div class='col-sm-7'>
+													<input class='form-control'  type='text' ng-model='sales_so_details.item_value'>
+												</div>
+												<label class='col-sm-5'>Status</label>
+												<div class='col-sm-7'>
+													<select class='form-control' ng-model='sales_so_details.status' ng-init='sales_so_details.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class='footer'>
+									<div class='row'  style='padding: 10px;'>
+										<span class='header2 col-sm-9' class='col-sm-9'>{{sales_so_details_status}}</span>
+										<div class='col-sm-3' style='text-align: right'>
+											<div class='btn-group'>
+												<button  class='btn btn-default btn-sm'  ng-click='save_sales_so_details_record()'>
+													<span class='glyphicon glyphicon-saved'></span> Save
+												</button>
+												<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+													<span class='glyphicon glyphicon-remove'></span> Close
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+	</div>
+</form>

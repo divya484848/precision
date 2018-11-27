@@ -1,0 +1,57 @@
+<form role='form'>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-2'>
+				<div class='row'  style='padding: 0px;'>
+					<div ng-controller='rules_menuCtrl' ng-include src="'modules/admin/rules_menu/rules_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-2' class='col-sm-2'>Rules entity dictionary</span>
+				<div class='col-sm-3'>
+					<div class='input-group'>
+						<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+						<div class='input-group-btn'>
+							<button class='btn btn-success btn-sm searchBox' type='submit'>
+								<i class='glyphicon glyphicon-search'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class='col-sm-12'>
+					<hr>
+				</div>
+			</div>
+				<div class='row'>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'>
+							<thead>
+								<tr>
+									<th>DB entity</th>
+									<th>Column name</th>
+									<th>Description</th>
+									<th>Data type</th>
+									<th>Default value</th>
+									<th>Status</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in admin_rule_dictList| filter: search| itemsPerPage: 12'>
+									<td>{{x.db_entity}}</td>
+									<td>{{x.column_name}}</td>
+									<td>{{x.column_descr}}</td>
+									<td>{{x.data_type}}</td>
+									<td>{{x.default_value}}</td>
+									<td>{{x.status}}</td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+				</div>
+		</div>
+		</div>
+	</div>
+</form>

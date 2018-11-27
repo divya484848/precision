@@ -1,0 +1,119 @@
+<form role='form' enctype="multipart/form-data">
+			<script type='text/javascript'>
+				$(function () {
+					$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+					$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+				});
+				$('#clear').click(function(){
+					$('#dt1').data('DateTimePicker').clear();
+					$('#dt2').data('DateTimePicker').clear();
+				});
+					$('#dt1').click(function(){
+						var sysdate = new Date();
+						$('#dt1').data('DateTimePicker').date(sysdate);
+					})
+					$('#dt2').click(function(){
+						var sysdate = new Date();
+						$('#dt2').data('DateTimePicker').date(sysdate);
+					})
+			</script>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-2'>
+				<div class='row'  style='padding: 0px;'>
+					<div ng-controller='travel_menuCtrl' ng-include src="'modules/admin/tickets_menu/tickets_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-2' class='col-sm-2'>Travel policies</span>
+				<span class='header2 col-sm-6' class='col-sm-6'>{{payroll_sal_policies_status}}</span>
+				<div class='col-sm-4' style='text-align: right'>
+					<div class='btn-group'>
+						<button  class='btn btn-default btn-sm'  ng-click='save_payroll_sal_policies_record()'>
+							<span class='glyphicon glyphicon-saved'></span> Save
+						</button>
+						<a  class='btn btn-default btn-sm'  href='/travel_policies'>
+							<span class='glyphicon glyphicon-arrow-left'></span> Back
+						</a>
+					</div>
+				</div>
+					<div class='col-sm-12' style='padding-top: 5px'>
+						<hr>
+					</div>
+			</div>
+					<div class='row'  style='padding-top: 5px'>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Trans ID</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='payroll_sal_policies.sysid'>
+								</div>
+								<label class='col-sm-5'>Policy code</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_sal_policies.policy_code'>
+								</div>
+								<label class='col-sm-5'>Title</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_sal_policies.title'>
+								</div>
+								<label class='col-sm-5'>Start date</label>
+								<div class='col-sm-7'>
+									<div datetimepicker class='input-group date'  id='dt1' ng-model='payroll_sal_policies.start_date'>
+										<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-calendar'></span>
+										</span>
+									</div>
+								</div>
+								<label class='col-sm-5'>End date</label>
+								<div class='col-sm-7'>
+									<div datetimepicker class='input-group date'  id='dt2' ng-model='payroll_sal_policies.end_date'>
+										<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-calendar'></span>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Version no</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_sal_policies.version_no'>
+								</div>
+								<label class='col-sm-5'>Prepared by</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='payroll_sal_policies.prepared_by' ng-init='payroll_sal_policies.prepared_by=hrms_employees[0].sysid' ng-options='x.sysid as x.complete_name for x in hrms_employeesList'></select>
+								</div>
+								<label class='col-sm-5'>Approved by</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='payroll_sal_policies.approved_by' ng-init='payroll_sal_policies.approved_by=hrms_employees[0].sysid' ng-options='x.sysid as x.complete_name for x in hrms_employeesList'></select>
+								</div>
+								<label class='col-sm-5'>Policy document</label>
+								<div class='col-sm-5'>
+									<input class='form-control'  type='file'  id='travel_doc' ng-model='payroll_sal_policies.policy_doc'>
+								</div>
+								<div class='col-sm-2'>
+									<button  class='btn btn-default btn-sm'  ng-click='upload_file()'>
+										<span class='glyphicon glyphicon-upload'></span> Upload
+									</button>
+								</div>
+								<label class='col-sm-5'>Status</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='payroll_sal_policies.status' ng-init='payroll_sal_policies.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='row'  style='padding-left: 10px;'>
+						<span class='col-sm-12 header2'>Policy contents</span>
+						<div class='col-sm-12'>
+							<textarea class='form-control' ng-model='payroll_sal_policies.policy_contents' rows='20'></textarea>
+						</div>
+					</div>
+		</div>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,688 @@
+{
+    "child": [
+        {
+            "child": [
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "IncludePage",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "Controller": "stores_menuCtrl",
+                                        "ID": "",
+                                        "PageSource": "modules/inv/stores_menu/stores_menu.html",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "IncludePage"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding: 0px; ",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "2",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header-title",
+                                        "Columns": "2",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "Material issue (External)",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "SearchBox",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "",
+                                        "ClickEvent": "",
+                                        "Columns": "3",
+                                        "Condition": "",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Model": "search",
+                                        "Parent-style": "",
+                                        "Placeholder": "Enter search text",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "SearchBox"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header2",
+                                        "Columns": "5",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "{{inv_mat_reg_header_status}}",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Link",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "DisplayLabel": "Header",
+                                                "Glyphicon": "plus",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Label-type": "label",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Ref": "/ginvendor",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Add",
+                                                "Visible": ""
+                                            },
+                                            "type": "Link"
+                                        }
+                                    ],
+                                    "name": "ButtonGroup",
+                                    "props": {
+                                        "Class": "btn-group",
+                                        "Columns": "2",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "text-align: right",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ButtonGroup"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding-top: 20px",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "sysid",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_mat_header",
+                                                "DisplayLabel": "Trans ID",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "sysid",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "supp_id",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_mat_header",
+                                                "DisplayLabel": "Vendor name",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "supp_name",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "trans_type",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_mat_header",
+                                                "DisplayLabel": "Trans type",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "trans_type",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "trans_date",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_mat_header",
+                                                "DisplayLabel": "Trans date",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "trans_date",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "return_type",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_mat_header",
+                                                "DisplayLabel": "Return type",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "return_type",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "status",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_mat_header",
+                                                "DisplayLabel": "Status",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "status",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Link",
+                                            "props": {
+                                                "Class": "",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "DisplayLabel": "",
+                                                "Glyphicon": "print",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Label-type": "label",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Ref": "/ginvendor_print/{{x.sysid}}",
+                                                "Style": "color: red",
+                                                "TableColumnWidth": "",
+                                                "Value": "Print",
+                                                "Visible": ""
+                                            },
+                                            "type": "Link"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Link",
+                                            "props": {
+                                                "Class": "",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "#queDlg",
+                                                "Data-toggle": "modal",
+                                                "DisplayLabel": "",
+                                                "Glyphicon": "search",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Label-type": "label",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Ref": "#",
+                                                "Style": "color: red",
+                                                "TableColumnWidth": "",
+                                                "Value": "View",
+                                                "Visible": "false"
+                                            },
+                                            "type": "Link"
+                                        }
+                                    ],
+                                    "name": "Table",
+                                    "props": {
+                                        "Class": "table table-bordered table-condensed table-bordered",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "DataSource": "inv_mat_headerList",
+                                        "Filter": "",
+                                        "ID": "",
+                                        "ItemsPerPage": "12",
+                                        "NoOfPagesDisplay": "10",
+                                        "Pagination": "Yes",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Table"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "10",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                }
+            ],
+            "name": "Row",
+            "props": {
+                "Class": "row",
+                "Control Name": "",
+                "DB-table": "",
+                "ID": "",
+                "Parent-style": "",
+                "Repeat": "",
+                "Style": "background-color: #ffffff; padding: 0px; ",
+                "Visible": ""
+            },
+            "type": "Row"
+        },
+        {
+            "child": [
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header1",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "Cancel GIN?",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogHeader",
+                    "props": {
+                        "Class": "modal-header",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogHeader"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header2",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "Are you sure, you want to cancel this document? You will not be able to use this again.",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogBody",
+                    "props": {
+                        "Class": "modal-body",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogBody"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header2",
+                                        "Columns": "9",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "{{inv_mat_header_status}}",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "saved",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Save",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "modal",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "remove",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Close",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        }
+                                    ],
+                                    "name": "ButtonGroup",
+                                    "props": {
+                                        "Class": "btn-group",
+                                        "Columns": "3",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "text-align: right",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ButtonGroup"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding: 10px; ",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogFooter",
+                    "props": {
+                        "Class": "footer",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogFooter"
+                }
+            ],
+            "name": "Dialog",
+            "props": {
+                "Class": "modal fade",
+                "Columns": "12",
+                "Control Name": "",
+                "ID": "queDlg",
+                "Parent-style": "height: 700px; ; width: 700px; ",
+                "Style": "",
+                "Visible": ""
+            },
+            "type": "Dialog"
+        }
+    ],
+    "name": "Container",
+    "props": {
+        "Class": "container-fluid",
+        "Control Name": "",
+        "ID": "",
+        "Style": "",
+        "Visible": ""
+    },
+    "type": "Container"
+}

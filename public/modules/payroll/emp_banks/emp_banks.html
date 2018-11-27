@@ -1,0 +1,124 @@
+<form role='form'>
+			<script type='text/javascript'>
+				$(function () {
+					$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+					$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+					$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+				});
+				$('#clear').click(function(){
+					$('#dt1').data('DateTimePicker').clear();
+					$('#dt2').data('DateTimePicker').clear();
+					$('#dt3').data('DateTimePicker').clear();
+				});
+					$('#dt1').click(function(){
+						var sysdate = new Date();
+						$('#dt1').data('DateTimePicker').date(sysdate);
+					})
+					$('#dt2').click(function(){
+						var sysdate = new Date();
+						$('#dt2').data('DateTimePicker').date(sysdate);
+					})
+					$('#dt3').click(function(){
+						var sysdate = new Date();
+						$('#dt3').data('DateTimePicker').date(sysdate);
+					})
+			</script>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-2'>
+				<div class='row'  style='padding: 0px;'>
+					<div ng-controller='bank_menuCtrl' ng-include src="'modules/payroll/bank_menu/bank_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-3' class='col-sm-3'>Employee bank registration</span>
+				<span class='header2 col-sm-6' class='col-sm-6'>{{payroll_banks_status}}</span>
+				<div class='col-sm-3' style='text-align: right'>
+					<div class='btn-group'>
+						<button  class='btn btn-default btn-sm'  ng-click='save_payroll_banks_record()'>
+							<span class='glyphicon glyphicon-saved'></span> Save
+						</button>
+						<button  class='btn btn-default btn-sm'  ng-click='delete_payroll_banks_record(x.sysid)'>
+							<span class='glyphicon glyphicon-trash'></span> Delete
+						</button>
+					</div>
+				</div>
+					<div class='col-sm-12' style='padding-top: 10px'>
+						<hr>
+					</div>
+			</div>
+					<div class='row'>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Employee ID</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='payroll_banks.emp_id'>
+								</div>
+								<label class='col-sm-5'>Employee name</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='payroll_banks.complete_name'>
+								</div>
+								<label class='col-sm-5'>Account type</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='payroll_banks.acc_type' ng-init='payroll_banks.acc_type=accTypeList[0]' ng-options='x as x for x in accTypeList'></select>
+								</div>
+								<label class='col-sm-5'>Bank code</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.bank_code'>
+								</div>
+								<label class='col-sm-5'>Bank name</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.bank_name'>
+								</div>
+								<label class='col-sm-5'>IFSC code</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.ifsc_code'>
+								</div>
+								<label class='col-sm-5'>Account no</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.acc_no'>
+								</div>
+								<label class='col-sm-5'>Status</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='payroll_banks.status'>
+								</div>
+							</div>
+						</div>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Branch address line1</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.branch_address_line1'>
+								</div>
+								<label class='col-sm-5'>Branch address line2</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.branch_address_line2'>
+								</div>
+								<label class='col-sm-5'>Branch address line3</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.branch_address_line3'>
+								</div>
+								<label class='col-sm-5'>Branch city</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.branch_city'>
+								</div>
+								<label class='col-sm-5'>Branch state</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.branch_state'>
+								</div>
+								<label class='col-sm-5'>Branch country</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.branch_country'>
+								</div>
+								<label class='col-sm-5'>Branch pin</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.branch_pin'>
+								</div>
+							</div>
+						</div>
+					</div>
+		</div>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,551 @@
+{
+    "child": [
+        {
+            "child": [
+                {
+                    "child": [
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "1",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header-title",
+                                        "Columns": "2",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "Item master (Raw)",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "SearchBox",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "",
+                                        "ClickEvent": "",
+                                        "Columns": "3",
+                                        "Condition": "",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Model": "search",
+                                        "Parent-style": "",
+                                        "Placeholder": "Enter search text",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "SearchBox"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header2",
+                                        "Columns": "3",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Link",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "DisplayLabel": "Header",
+                                                "Glyphicon": "plus",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Label-type": "label",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Ref": "/item_master_springs",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Add new",
+                                                "Visible": ""
+                                            },
+                                            "type": "Link"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "refresh",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Refresh",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "download",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Download",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "upload",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Upload",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        }
+                                    ],
+                                    "name": "ButtonGroup",
+                                    "props": {
+                                        "Class": "btn-group",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "text-align: right",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ButtonGroup"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding-top: 20px",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "item_name",
+                                            "props": {
+                                                "Class": "",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_item_master_springs",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "DisplayLabel": "Item name",
+                                                "Glyphicon": "",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Label-type": "label",
+                                                "Model": "item_name",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Ref": "/item_master_springs/{{x.sysid}}",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Link"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "short_code",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_item_master_springs",
+                                                "DisplayLabel": "Short code",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "short_code",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "item_type",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_item_master_springs",
+                                                "DisplayLabel": "Item type",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "item_type",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "item_subtype",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_item_master_springs",
+                                                "DisplayLabel": "Item subtype",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "item_subtype",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "item_category",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_item_master_springs",
+                                                "DisplayLabel": "Item category",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "item_category",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "hsn_no",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_item_master_springs",
+                                                "DisplayLabel": "HSN no",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "hsn_no",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "drg_no",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_item_master_springs",
+                                                "DisplayLabel": "Drg no",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "drg_no",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "uom",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_item_master_springs",
+                                                "DisplayLabel": "UoM",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "uom",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "status",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_item_master_springs",
+                                                "DisplayLabel": "Status",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "status",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Link",
+                                            "props": {
+                                                "Class": "",
+                                                "ClickEvent": "delete_inv_item_master_springs_record(x.sysid)",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "DisplayLabel": "Header",
+                                                "Glyphicon": "trash",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Label-type": "label",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Ref": "#",
+                                                "Style": "color: red",
+                                                "TableColumnWidth": "",
+                                                "Value": "Delete",
+                                                "Visible": ""
+                                            },
+                                            "type": "Link"
+                                        }
+                                    ],
+                                    "name": "Table",
+                                    "props": {
+                                        "Class": "table table-bordered table-condensed table-bordered",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "DataSource": "inv_item_master_springsList",
+                                        "Filter": "search",
+                                        "ID": "",
+                                        "ItemsPerPage": "12",
+                                        "NoOfPagesDisplay": "10",
+                                        "Pagination": "Yes",
+                                        "Parent-style": "",
+                                        "Style": "padding-top: 5px",
+                                        "Visible": ""
+                                    },
+                                    "type": "Table"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "10",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                },
+                {
+                    "child": [
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "1",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                }
+            ],
+            "name": "Row",
+            "props": {
+                "Class": "row",
+                "Control Name": "",
+                "DB-table": "",
+                "ID": "",
+                "Parent-style": "",
+                "Repeat": "",
+                "Style": "background-color: #ffffff; padding-top: 10px;",
+                "Visible": ""
+            },
+            "type": "Row"
+        }
+    ],
+    "name": "Container",
+    "props": {
+        "Class": "container-fluid",
+        "Control Name": "",
+        "ID": "",
+        "Style": "padding: 0px; ",
+        "Visible": ""
+    },
+    "type": "Container"
+}

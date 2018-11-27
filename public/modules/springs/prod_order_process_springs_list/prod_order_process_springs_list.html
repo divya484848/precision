@@ -1,0 +1,67 @@
+<form role='form'>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; padding-top: 10px;'>
+			<div class='col-sm-1'>
+			</div>
+			<div class='col-sm-10'>
+				<div class='row'  style='padding-top: 20px'>
+					<span class='header-title col-sm-2' class='col-sm-2'>Production Order list</span>
+					<div class='col-sm-3'>
+						<div class='input-group'>
+							<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+							<div class='input-group-btn'>
+								<button class='btn btn-success btn-sm searchBox' type='submit'>
+									<i class='glyphicon glyphicon-search'></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<span class='header2 col-sm-5' class='col-sm-5'>{{prod_order_process_springs_status}}</span>
+					<div class='col-sm-2' style='text-align: right'>
+						<div class='btn-group'>
+							<a  class='btn btn-default btn-sm'  href='/prod_order_process_springs'>
+								<span class='glyphicon glyphicon-plus'></span> Add new
+							</a>
+						</div>
+					</div>
+				</div>
+					<div class='row'>
+						<div class='col-sm-12'>
+							<table class='table table-bordered table-condensed table-bordered'  style='padding-top: 5px'>
+								<thead>
+									<tr>
+										<th >Trans ID</th>
+										<th>Order id</th>
+										<th>Order date</th>
+										<th>Item Name</th>
+										<th>Item start date</th>
+										<th>Item end date</th>
+										<th>Item status</th>
+										<th>Order status</th>
+										<th ></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr dir-paginate='x in prod_order_process_springsList| filter: search| itemsPerPage: 12'>
+										<td><a  href='/prod_order_process_springs/{{x.sysid}}' ng-model='prod_order_process_springs.sysid'> {{x.sysid}}</a></td>
+										<td>{{x.so_no}}</td>
+										<td>{{x.order_date}}</td>
+										<td>{{x.item_name}}</td>
+										<td>{{x.item_start_date}}</td>
+										<td>{{x.item_end_date}}</td>
+										<td>{{x.item_status}}</td>
+										<td>{{x.order_status}}</td>
+										<td><a  style='color: red'  href='#'  ng-click='delete_prod_order_process_springs_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+									</tr>
+								</tbody>
+							</table>
+							<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+							</dir-pagination-controls>
+						</div>
+					</div>
+			</div>
+			<div class='col-sm-1'>
+			</div>
+		</div>
+	</div>
+</form>

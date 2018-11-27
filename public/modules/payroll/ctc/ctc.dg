@@ -1,0 +1,1719 @@
+{
+    "child": [
+        {
+            "child": [
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "IncludePage",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "Controller": "sal_menuCtrl",
+                                        "ID": "",
+                                        "PageSource": "modules/payroll/sal_menu/sal_menu.html",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "IncludePage"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding: 0px; ",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "2",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header-title",
+                                        "Columns": "2",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "Compensation",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header2",
+                                        "Columns": "7",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "{{payroll_ctc_status}}",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "save_payroll_ctc_record()",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "saved",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Save",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Link",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "DisplayLabel": "Header",
+                                                "Glyphicon": "arrow-left",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Label-type": "label",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Ref": "/ctc_list",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Back",
+                                                "Visible": ""
+                                            },
+                                            "type": "Link"
+                                        }
+                                    ],
+                                    "name": "ButtonGroup",
+                                    "props": {
+                                        "Class": "btn-group",
+                                        "Columns": "3",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "text-align: right",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ButtonGroup"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "HLine",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "padding-top: 5px",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "HLine"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding-top: 20px",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "emp_id",
+                                                    "props": {
+                                                        "ChangeEvent": "update_emp_details()",
+                                                        "Class": "form-control",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "DB-table": "payroll_ctc",
+                                                        "DataSource": "sysid.complete_name.hrms_employees",
+                                                        "DisplayLabel": "Employee",
+                                                        "ID": "",
+                                                        "Init": "Yes",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "emp_id",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "StaticValues": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "ComboBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "from_date",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "input-group date",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "DB-table": "payroll_ctc",
+                                                        "DateFormat": "YYYY-MM-DD",
+                                                        "DisplayLabel": "From date",
+                                                        "ID": "dt1",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "from_date",
+                                                        "Parent-style": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Date"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "to_date",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "input-group date",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "DB-table": "payroll_ctc",
+                                                        "DateFormat": "YYYY-MM-DD",
+                                                        "DisplayLabel": "To date",
+                                                        "ID": "dt2",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "to_date",
+                                                        "Parent-style": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Date"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "e_id",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "e_id",
+                                                        "Control-type": "text",
+                                                        "DB-table": "payroll_ctc",
+                                                        "DisplayLabel": "Employee ID",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "v_emp_id",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "dept_name",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "dept_name",
+                                                        "Control-type": "text",
+                                                        "DB-table": "payroll_ctc",
+                                                        "DisplayLabel": "Department",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "dept_name",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "status",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "DB-table": "payroll_ctc",
+                                                        "DataSource": "statusList",
+                                                        "DisplayLabel": "Status",
+                                                        "ID": "",
+                                                        "Init": "Yes",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "status",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "StaticValues": "Active,Inactive",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "ComboBox"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "ctc_per_month",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "payroll_ctc",
+                                                        "DisplayLabel": "CTC per month",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "ctc_per_month",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "ctc_per_annum",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "payroll_ctc",
+                                                        "DisplayLabel": "CTC per annum",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "ctc_per_annum",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "company_id",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "DB-table": "payroll_ctc",
+                                                        "DataSource": "sysid.company_name.admin_company",
+                                                        "DisplayLabel": "Unit name",
+                                                        "ID": "",
+                                                        "Init": "Yes",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "company_id",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "StaticValues": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "ComboBox"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Button",
+                                    "props": {
+                                        "Class": "btn btn-default btn-sm",
+                                        "ClickEvent": "insert_payroll_ctc_details_record()",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "Data-dismiss": "",
+                                        "Data-target": "#ctcDlg",
+                                        "Data-toggle": "modal",
+                                        "Glyphicon": "plus",
+                                        "ID": "",
+                                        "Icon": "",
+                                        "Model": "",
+                                        "Parent-style": "text-align: right; padding-top: 10px;",
+                                        "Readonly": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "Add component",
+                                        "Visible": ""
+                                    },
+                                    "type": "Button"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "HLine",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "padding-top: 10px",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "HLine"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header-title",
+                                        "Columns": "6",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "text-align: center",
+                                        "TableColumnWidth": "",
+                                        "Value": "Earnings",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header-title",
+                                        "Columns": "6",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "text-align: center",
+                                        "TableColumnWidth": "",
+                                        "Value": "Deductions",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "HLine",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "HLine"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding-top: 5px",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "4",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "text-align: center",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Component",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "4",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "text-align: center",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Amount",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "4",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "text-align: center",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Frequency",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "HLine",
+                                                    "props": {
+                                                        "Class": "",
+                                                        "Columns": "12",
+                                                        "Control Name": "",
+                                                        "ID": "",
+                                                        "Parent-style": "",
+                                                        "Style": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "HLine"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        },
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "ctc_comp_id",
+                                                    "props": {
+                                                        "Class": "",
+                                                        "ClickEvent": "update_payroll_ctc_details_record(x)",
+                                                        "Columns": "4",
+                                                        "Control Name": "",
+                                                        "DB-table": "payroll_ctc_details",
+                                                        "Data-dismiss": "",
+                                                        "Data-target": "#ctcDlg",
+                                                        "Data-toggle": "modal",
+                                                        "DisplayLabel": "Component",
+                                                        "Glyphicon": "",
+                                                        "ID": "",
+                                                        "Icon": "",
+                                                        "Label-type": "label",
+                                                        "Model": "ctc_comp_id",
+                                                        "Parent-style": "text-align: right",
+                                                        "Readonly": "",
+                                                        "Ref": "#",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "{{x.comp_header}}",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Link"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "amount",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "4",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "x",
+                                                        "DisplayLabel": "Amount",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "amount",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "{{x.amount}}",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "freq",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "4",
+                                                        "Control Name": "freq",
+                                                        "Control-type": "text",
+                                                        "DB-table": "x",
+                                                        "DisplayLabel": "Header",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "x in payroll_ctc_detailsList| filter: {comp_type:\"Earning\"}",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "6",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "4",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "text-align: center",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Component",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "4",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "text-align: center",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Amount",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "4",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "text-align: center",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Frequency",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "HLine",
+                                                    "props": {
+                                                        "Class": "",
+                                                        "Columns": "12",
+                                                        "Control Name": "",
+                                                        "ID": "",
+                                                        "Parent-style": "",
+                                                        "Style": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "HLine"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        },
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "ctc_comp_id",
+                                                    "props": {
+                                                        "Class": "",
+                                                        "ClickEvent": "update_payroll_ctc_details_record(x)",
+                                                        "Columns": "4",
+                                                        "Control Name": "",
+                                                        "DB-table": "payroll_ctc_details",
+                                                        "Data-dismiss": "",
+                                                        "Data-target": "#ctcDlg",
+                                                        "Data-toggle": "modal",
+                                                        "DisplayLabel": "Component",
+                                                        "Glyphicon": "",
+                                                        "ID": "",
+                                                        "Icon": "",
+                                                        "Label-type": "label",
+                                                        "Model": "ctc_comp_id",
+                                                        "Parent-style": "text-align: right",
+                                                        "Readonly": "",
+                                                        "Ref": "#",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "{{x.comp_header}}",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Link"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "amount",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "4",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "x",
+                                                        "DisplayLabel": "Amount",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "amount",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "{{x.amount}}",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "freq",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "4",
+                                                        "Control Name": "freq",
+                                                        "Control-type": "text",
+                                                        "DB-table": "x",
+                                                        "DisplayLabel": "Header",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "x in payroll_ctc_detailsList| filter: {comp_type:\"Deduction\"}",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "6",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "10",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                }
+            ],
+            "name": "Row",
+            "props": {
+                "Class": "row",
+                "Control Name": "",
+                "DB-table": "",
+                "ID": "",
+                "Parent-style": "",
+                "Repeat": "",
+                "Style": "background-color: #ffffff; padding: 0px; ",
+                "Visible": ""
+            },
+            "type": "Row"
+        },
+        {
+            "child": [
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header1",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "Salary components",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogHeader",
+                    "props": {
+                        "Class": "modal-header",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogHeader"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "ctc_id",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "4,8",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "payroll_ctc_details",
+                                                        "DisplayLabel": "CTC  ID",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "ctc_id",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "ctc_comp_id",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "4,8",
+                                                        "Control Name": "",
+                                                        "DB-table": "payroll_ctc_details",
+                                                        "DataSource": "sysid.comp_header.payroll_ctc_comp",
+                                                        "DisplayLabel": "Component",
+                                                        "ID": "",
+                                                        "Init": "Yes",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "ctc_comp_id",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "StaticValues": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "ComboBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "amount",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "4,8",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "payroll_ctc_details",
+                                                        "DisplayLabel": "Amount",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "amount",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "rev_from_date",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "input-group date",
+                                                        "Columns": "4,8",
+                                                        "Control Name": "",
+                                                        "DB-table": "payroll_ctc_details",
+                                                        "DateFormat": "YYYY-MM-DD",
+                                                        "DisplayLabel": "Rev from date",
+                                                        "ID": "dt3",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "rev_from_date",
+                                                        "Parent-style": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Date"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "rev_to_date",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "input-group date",
+                                                        "Columns": "4,8",
+                                                        "Control Name": "",
+                                                        "DB-table": "payroll_ctc_details",
+                                                        "DateFormat": "YYYY-MM-DD",
+                                                        "DisplayLabel": "Rev to date",
+                                                        "ID": "dt4",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "rev_to_date",
+                                                        "Parent-style": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Date"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "arrears_month_year",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "input-group date",
+                                                        "Columns": "4,8",
+                                                        "Control Name": "",
+                                                        "DB-table": "payroll_ctc_details",
+                                                        "DateFormat": "YYYY-MM-DD",
+                                                        "DisplayLabel": "Arrears from",
+                                                        "ID": "dt5",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "arr_month_year",
+                                                        "Parent-style": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Date"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "5",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "comp_type",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "2,4",
+                                                        "Control Name": "comp_type",
+                                                        "Control-type": "text",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "Comp type",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "freq",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "2,4",
+                                                        "Control Name": "freq",
+                                                        "Control-type": "text",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "Frequency",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "min_limit",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "2,4",
+                                                        "Control Name": "min_limit",
+                                                        "Control-type": "text",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "Min limit",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "max_limit",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "2,4",
+                                                        "Control Name": "max_limit",
+                                                        "Control-type": "text",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "Max limit",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "emp_grade",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "2,4",
+                                                        "Control Name": "emp_grade",
+                                                        "Control-type": "text",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "Grade",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "7",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogBody",
+                    "props": {
+                        "Class": "modal-body",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogBody"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header2",
+                                        "Columns": "9",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "{{payroll_ctc_details_status}}",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "save_payroll_ctc_details_record()",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "saved",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Save",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "modal",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "remove",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Close",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        }
+                                    ],
+                                    "name": "ButtonGroup",
+                                    "props": {
+                                        "Class": "btn-group",
+                                        "Columns": "3",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "text-align: right",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ButtonGroup"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding: 10px; ",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogFooter",
+                    "props": {
+                        "Class": "footer",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogFooter"
+                }
+            ],
+            "name": "Dialog",
+            "props": {
+                "Class": "modal fade",
+                "Columns": "12",
+                "Control Name": "",
+                "ID": "ctcDlg",
+                "Parent-style": "height: 700px; ; width: 1000px; ",
+                "Style": "",
+                "Visible": ""
+            },
+            "type": "Dialog"
+        }
+    ],
+    "name": "Container",
+    "props": {
+        "Class": "container-fluid",
+        "Control Name": "",
+        "ID": "",
+        "Style": "",
+        "Visible": ""
+    },
+    "type": "Container"
+}

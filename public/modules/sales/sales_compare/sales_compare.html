@@ -1,0 +1,73 @@
+<form role='form'>
+			<script type='text/javascript'>
+				$(function () {
+					$('#dt1').datetimepicker({format: 'YYYY-MM'});
+					$('#dt2').datetimepicker({format: 'YYYY-MM'});
+				});
+				$('#clear').click(function(){
+					$('#dt1').data('DateTimePicker').clear();
+					$('#dt2').data('DateTimePicker').clear();
+				});
+					$('#dt1').click(function(){
+						var sysdate = new Date();
+						$('#dt1').data('DateTimePicker').date(sysdate);
+					})
+					$('#dt2').click(function(){
+						var sysdate = new Date();
+						$('#dt2').data('DateTimePicker').date(sysdate);
+					})
+			</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; padding-top: 10px;'>
+			<div class='col-sm-2'>
+				<div ng-controller='invoice_reports_menuCtrl' ng-include src="'modules/sales/invoice_reports_menu/invoice_reports_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-9' class='col-sm-9'>Sales comparision</span>
+				<div class='col-sm-3' style='text-align: right'>
+					<div class='btn-group'>
+						<button  class='btn btn-default btn-sm'  ng-click='select_sales_invoice_record()'>
+							<span class='glyphicon glyphicon-cog'></span> Show
+						</button>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-download'></span> Download
+						</button>
+					</div>
+				</div>
+			</div>
+				<div class='row'  style='padding-top: 10px; padding-bottom: 10px'>
+					<span class='col-sm-1 header3'>Customer</span>
+					<div class='col-sm-3'>
+						<select class='form-control' ng-model='sales_invoice.cust_id' ng-init='sales_invoice.cust_id=inv_customer[0].sysid' ng-options='x.sysid as x.cust_name for x in inv_customerList'></select>
+					</div>
+					<label class='col-sm-1'>From date</label>
+					<div class='col-sm-3'>
+						<div datetimepicker class='input-group date'  id='dt1' ng-model='sales_invoice.from_date'>
+							<input type='text' class='form-control datepicker' placeholder='YYYY-MM'>
+							<span class='input-group-addon'>
+								<span class='glyphicon glyphicon-calendar'></span>
+							</span>
+						</div>
+					</div>
+					<label class='col-sm-1'>To date</label>
+					<div class='col-sm-3'>
+						<div datetimepicker class='input-group date'  id='dt2' ng-model='sales_invoice.to_date'>
+							<input type='text' class='form-control datepicker' placeholder='YYYY-MM'>
+							<span class='input-group-addon'>
+								<span class='glyphicon glyphicon-calendar'></span>
+							</span>
+						</div>
+					</div>
+					<div class='col-sm-12' style='padding-top: 10px'>
+						<hr>
+					</div>
+				</div>
+					<div class='row'  style='padding-top: 0px'>
+						<div style='padding-top: 0px'  id='sales'>
+						</div>
+					</div>
+		</div>
+		</div>
+	</div>
+</form>

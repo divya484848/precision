@@ -1,0 +1,780 @@
+{
+    "child": [
+        {
+            "child": [
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "IncludePage",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "Controller": "rules_menuCtrl",
+                                        "ID": "",
+                                        "PageSource": "modules/admin/rules_menu/rules_menu.html",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "IncludePage"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding: 0px; ",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "2",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header-title",
+                                        "Columns": "2",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "Rule mapping",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "SearchBox",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "",
+                                        "ClickEvent": "",
+                                        "Columns": "3",
+                                        "Condition": "",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Model": "search",
+                                        "Parent-style": "",
+                                        "Placeholder": "Enter search text",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "SearchBox"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header2",
+                                        "Columns": "5",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "{{admin_ebs_rules_status}}",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "insert_admin_ebs_rules_record()",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "#ruleDlg",
+                                                "Data-toggle": "modal",
+                                                "Glyphicon": "plus",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Add",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        }
+                                    ],
+                                    "name": "ButtonGroup",
+                                    "props": {
+                                        "Class": "btn-group",
+                                        "Columns": "2",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "text-align: right",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ButtonGroup"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "HLine",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "HLine"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding-top: 20px",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "profile_name",
+                                            "props": {
+                                                "Class": "",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "admin_rules_mapping",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "DisplayLabel": "Profile name",
+                                                "Glyphicon": "",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Label-type": "label",
+                                                "Model": "profile_name",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Ref": "#",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Link"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "profile_descr",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "admin_rules_mapping",
+                                                "DisplayLabel": "Profile descr",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "profile_descr",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "status",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "admin_rules_mapping",
+                                                "DisplayLabel": "Status",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "status",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Link",
+                                            "props": {
+                                                "Class": "",
+                                                "ClickEvent": "delete_admin_ebs_rules_record(x.sysid)",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "DisplayLabel": "",
+                                                "Glyphicon": "trash",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Label-type": "label",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Ref": "#",
+                                                "Style": "color: red",
+                                                "TableColumnWidth": "",
+                                                "Value": "Delete",
+                                                "Visible": ""
+                                            },
+                                            "type": "Link"
+                                        }
+                                    ],
+                                    "name": "Table",
+                                    "props": {
+                                        "Class": "table table-bordered table-condensed table-bordered",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "DataSource": "admin_ebs_rulesList",
+                                        "Filter": "search",
+                                        "ID": "",
+                                        "ItemsPerPage": "12",
+                                        "NoOfPagesDisplay": "10",
+                                        "Pagination": "Yes",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Table"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "10",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                }
+            ],
+            "name": "Row",
+            "props": {
+                "Class": "row",
+                "Control Name": "",
+                "DB-table": "",
+                "ID": "",
+                "Parent-style": "",
+                "Repeat": "",
+                "Style": "background-color: #ffffff; padding: 0px; ",
+                "Visible": ""
+            },
+            "type": "Row"
+        },
+        {
+            "child": [
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header1",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "EBS rules",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogHeader",
+                    "props": {
+                        "Class": "modal-header",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogHeader"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "sysid",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "form-control",
+                                        "Columns": "3,9",
+                                        "Control Name": "",
+                                        "Control-type": "text",
+                                        "DB-table": "admin_ebs_rules",
+                                        "DisplayLabel": "Rule ID",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "label",
+                                        "Model": "sysid",
+                                        "Parent-style": "",
+                                        "Placeholder": "",
+                                        "Readonly": "true",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "TextBox"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "rule_name",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "form-control",
+                                        "Columns": "3,9",
+                                        "Control Name": "",
+                                        "Control-type": "text",
+                                        "DB-table": "admin_ebs_rules",
+                                        "DisplayLabel": "Rule name",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "label",
+                                        "Model": "rule_name",
+                                        "Parent-style": "",
+                                        "Placeholder": "",
+                                        "Readonly": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "TextBox"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "rule_text",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "form-control",
+                                        "Columns": "3,9",
+                                        "Control Name": "",
+                                        "DB-table": "admin_ebs_rules",
+                                        "DisplayLabel": "Rule text",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "label",
+                                        "Model": "rule_text",
+                                        "Parent-style": "",
+                                        "Placeholder": "",
+                                        "Readonly": "",
+                                        "Required": "",
+                                        "Rows": "5",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "TextArea"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "module_name",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "form-control",
+                                        "Columns": "3,9",
+                                        "Control Name": "",
+                                        "Control-type": "text",
+                                        "DB-table": "admin_ebs_rules",
+                                        "DisplayLabel": "Module name",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "label",
+                                        "Model": "module_name",
+                                        "Parent-style": "",
+                                        "Placeholder": "",
+                                        "Readonly": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "TextBox"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "request_params",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "form-control",
+                                        "Columns": "3,9",
+                                        "Control Name": "",
+                                        "DB-table": "admin_ebs_rules",
+                                        "DisplayLabel": "Request params",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "label",
+                                        "Model": "request_params",
+                                        "Parent-style": "",
+                                        "Placeholder": "",
+                                        "Readonly": "",
+                                        "Required": "",
+                                        "Rows": "5",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "TextArea"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "response_params",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "form-control",
+                                        "Columns": "3,9",
+                                        "Control Name": "",
+                                        "DB-table": "admin_ebs_rules",
+                                        "DisplayLabel": "Response params",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "label",
+                                        "Model": "response_params",
+                                        "Parent-style": "",
+                                        "Placeholder": "",
+                                        "Readonly": "",
+                                        "Required": "",
+                                        "Rows": "5",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "TextArea"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "status",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "form-control",
+                                        "Columns": "3,9",
+                                        "Control Name": "",
+                                        "DB-table": "admin_ebs_rules",
+                                        "DataSource": "statusList",
+                                        "DisplayLabel": "Status",
+                                        "ID": "",
+                                        "Init": "Yes",
+                                        "Label class": "",
+                                        "Label-type": "label",
+                                        "Model": "status",
+                                        "Parent-style": "",
+                                        "Placeholder": "",
+                                        "Readonly": "",
+                                        "Required": "",
+                                        "StaticValues": "Active,Inactive",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ComboBox"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogBody",
+                    "props": {
+                        "Class": "modal-body",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogBody"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header2",
+                                        "Columns": "9",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "{{admin_ebs_rules_status}}",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "save_admin_ebs_rules_record()",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "saved",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Save",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "modal",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "remove",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Close",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        }
+                                    ],
+                                    "name": "ButtonGroup",
+                                    "props": {
+                                        "Class": "btn-group",
+                                        "Columns": "3",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "text-align: right",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ButtonGroup"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding: 10px; ",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogFooter",
+                    "props": {
+                        "Class": "footer",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogFooter"
+                }
+            ],
+            "name": "Dialog",
+            "props": {
+                "Class": "modal fade",
+                "Columns": "12",
+                "Control Name": "",
+                "ID": "ruleDlg",
+                "Parent-style": "",
+                "Style": "",
+                "Visible": ""
+            },
+            "type": "Dialog"
+        }
+    ],
+    "name": "Container",
+    "props": {
+        "Class": "container-fluid",
+        "Control Name": "",
+        "ID": "",
+        "Style": "",
+        "Visible": ""
+    },
+    "type": "Container"
+}

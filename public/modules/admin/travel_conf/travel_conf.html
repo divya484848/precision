@@ -1,0 +1,316 @@
+<form role='form'>
+										<script type='text/javascript'>
+											$(function () {
+												$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+												$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+												$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+											});
+											$('#clear').click(function(){
+												$('#dt1').data('DateTimePicker').clear();
+												$('#dt2').data('DateTimePicker').clear();
+												$('#dt3').data('DateTimePicker').clear();
+											});
+												$('#dt1').click(function(){
+													var sysdate = new Date();
+													$('#dt1').data('DateTimePicker').date(sysdate);
+												})
+												$('#dt2').click(function(){
+													var sysdate = new Date();
+													$('#dt2').data('DateTimePicker').date(sysdate);
+												})
+												$('#dt3').click(function(){
+													var sysdate = new Date();
+													$('#dt3').data('DateTimePicker').date(sysdate);
+												})
+										</script>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-2'>
+				<div class='row'  style='padding: 0px;'>
+					<div ng-controller='travel_menuCtrl' ng-include src="'modules/admin/travel_menu/travel_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-12' class='col-sm-12'>Travel configurations</span>
+				<div class='col-sm-12'>
+					<hr>
+				</div>
+			</div>
+				<div class='row'  style='padding-left: 20px; padding-right: 20px; padding-bottom: 10px'>
+					<div class='col-sm-3'  style='max-width: 200px;'>
+						<div class='row'  style='background-color: #fcaf3e; padding: 10px;'>
+							<div class='col-sm-4'>
+								<img src='images/country2.png'></img>
+							</div>
+								<div class='col-sm-8' style='padding-top: 15px'>
+									<a  class='header2'  style='color: #ffffff;'  href='#'  ng-click='insert_admin_travel_country_record()' data-target='#countryDlg' data-toggle='modal'>
+										 Register country
+									</a>
+								</div>
+								<span class='header2 col-sm-12' class='col-sm-12'>Define country type and its class</span>
+						</div>
+					</div>
+						<div class='col-sm-3'  style='margin-left: 8px; max-width: 200px;'>
+							<div class='row'  style='background-color: #4e9a06; padding: 10px;'>
+								<div class='col-sm-4'>
+									<img src='images/city.png'></img>
+								</div>
+									<div class='col-sm-8' style='padding-top: 15px'>
+										<a  class='header2'  style='color: #ffffff;'  href='#'  ng-click='insert_admin_travel_city_record()' data-target='#cityDlg' data-toggle='modal'>
+											 Register city
+										</a>
+									</div>
+									<span class='header2 col-sm-12' class='col-sm-12'>Define city type and its class</span>
+							</div>
+						</div>
+							<div class='col-sm-3'  style='margin-left: 8px; max-width: 200px;'>
+								<div class='row'  style='background-color: #ef2929; padding: 10px;'>
+									<div class='col-sm-4'>
+										<img src='images/expense.png'></img>
+									</div>
+										<div class='col-sm-8' style='padding-top: 15px'>
+											<a  class='header2'  style='color: #ffffff;'  href='#' data-target='expDlg' data-toggle='modal'>
+												 Expense heads
+											</a>
+										</div>
+										<span class='header2 col-sm-12' class='col-sm-12'>Define all allowed expenses</span>
+								</div>
+							</div>
+								<div class='col-sm-3'  style='margin-left: 8px; max-width: 200px;'>
+									<div class='row'  style='background-color: #c4a000; padding: 10px;'>
+										<div class='col-sm-4'>
+											<img src='images/class.png'></img>
+										</div>
+											<div class='col-sm-8' style='padding-top: 15px'>
+												<a  class='header2'  style='color: #ffffff;'  href='#' data-target='typeDlg' data-toggle='modal'>
+													 Travel types
+												</a>
+											</div>
+											<span class='header2 col-sm-12' class='col-sm-12'>Define travel types for commute</span>
+									</div>
+								</div>
+				</div>
+								<div class='row'  style='padding: 20px;'>
+									<div class='col-sm-12'>
+										<div class='row'>
+											<ul class='nav nav-tabs'>
+												<li class='active'><a data-toggle='tab' data-target='#country'><b>Countries</b></a></li>
+												<li><a data-toggle='tab' data-target='#city'><b>Cities</b></a></li>
+												<li><a data-toggle='tab' data-target='#exp_heads'><b>Expense heads</b></a></li>
+											</ul>
+											<div class='tab-content'>
+												<div id='country' class='tab-pane fade in active'>
+												<div class='row'  style='padding-top: 10px'>
+													<div class='col-sm-12'>
+														<table class='table table-bordered table-condensed table-bordered'>
+															<thead>
+																<tr>
+																	<th >Country code</th>
+																	<th>Country name</th>
+																	<th>Language</th>
+																	<th>Currency</th>
+																	<th>Country class</th>
+																	<th>Status</th>
+																	<th ></th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr dir-paginate='x in admin_travel_countryList| itemsPerPage: 12'>
+																	<td><a  href='#'  ng-click='update_admin_travel_country_record(x)' ng-model='admin_travel_country.country_code' data-target='#countryDlg' data-toggle='modal'> {{x.country_code}}</a></td>
+																	<td>{{x.country_name}}</td>
+																	<td>{{x.language}}</td>
+																	<td>{{x.curr_name}}</td>
+																	<td>{{x.country_class}}</td>
+																	<td>{{x.status}}</td>
+																	<td><a  style='color: red'  href='#'  ng-click='delete_admin_travel_country_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+																</tr>
+															</tbody>
+														</table>
+														<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+														</dir-pagination-controls>
+													</div>
+												</div>
+												</div>
+											<div id='city' class='tab-pane fade'>
+											<div class='row'  style='padding-top: 10px'>
+												<div class='col-sm-12'>
+													<table class='table table-bordered table-condensed table-bordered'>
+														<thead>
+															<tr>
+																<th >City code</th>
+																<th>City name</th>
+																<th>Country</th>
+																<th>Language</th>
+																<th>Currency</th>
+																<th>City class</th>
+																<th>Status</th>
+																<th ></th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr dir-paginate='x in admin_travel_cityList| itemsPerPage: 12'>
+																<td><a  href='#'  ng-click='update_admin_travel_city_record(x)' ng-model='admin_travel_city.city_code' data-target='#cityDlg' data-toggle='modal'> {{x.city_code}}</a></td>
+																<td>{{x.city_name}}</td>
+																<td>{{x.country_name}}</td>
+																<td>{{x.language}}</td>
+																<td>{{x.curr_name}}</td>
+																<td>{{x.city_class}}</td>
+																<td>{{x.status}}</td>
+																<td><a  style='color: red'  href='#'  ng-click='delete_admin_travel_city_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+															</tr>
+														</tbody>
+													</table>
+													<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+													</dir-pagination-controls>
+												</div>
+											</div>
+											</div>
+										<div id='exp_heads' class='tab-pane fade'>
+										<div class='row'>
+										</div>
+										</div>
+											</div>
+										</div>
+									</div>
+								</div>
+		</div>
+		</div>
+				<div class='modal fade'  id='countryDlg' role='dialog'>
+					<div class='modal-dialog' style='height: 700px; ; width: 1000px; '>
+						<div class='modal-content'>
+							<div class='modal-header'>
+								<div class='row'>
+									<span class='header1 col-sm-12' class='col-sm-12'>Register country</span>
+								</div>
+							</div>
+							<div class='modal-body'>
+								<div class='row'>
+									<div class='col-sm-6'>
+										<div class='row'>
+											<label class='col-sm-3'>Country code</label>
+											<div class='col-sm-9'>
+												<input class='form-control'  type='text' ng-model='admin_travel_country.country_code'>
+											</div>
+											<label class='col-sm-3'>Country name</label>
+											<div class='col-sm-9'>
+												<input class='form-control'  type='text' ng-model='admin_travel_country.country_name'>
+											</div>
+											<label class='col-sm-3'>Description</label>
+											<div class='col-sm-9'>
+												<textarea class='form-control' ng-model='admin_travel_country.descr' rows='5'></textarea>
+											</div>
+										</div>
+									</div>
+									<div class='col-sm-6'>
+										<div class='row'>
+											<label class='col-sm-3'>Language</label>
+											<div class='col-sm-9'>
+												<input class='form-control'  type='text' ng-model='admin_travel_country.language'>
+											</div>
+											<label class='col-sm-3'>Currency</label>
+											<div class='col-sm-9'>
+												<select class='form-control' ng-model='admin_travel_country.curr_id' ng-init='admin_travel_country.curr_id=admin_currency[0].sysid' ng-options='x.sysid as x.curr_name for x in admin_currencyList'></select>
+											</div>
+											<label class='col-sm-3'>Country class</label>
+											<div class='col-sm-9'>
+												<input class='form-control'  type='text' ng-model='admin_travel_country.country_class'>
+											</div>
+											<label class='col-sm-3'>Status</label>
+											<div class='col-sm-9'>
+												<select class='form-control' ng-model='admin_travel_country.status' ng-init='admin_travel_country.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='footer'>
+								<div class='row'  style='padding: 10px;'>
+									<span class='header2 col-sm-9' class='col-sm-9'>{{admin_travel_country_status}}</span>
+									<div class='col-sm-3' style='text-align: right'>
+										<div class='btn-group'>
+											<button  class='btn btn-default btn-sm'  ng-click='save_admin_travel_country_record()'>
+												<span class='glyphicon glyphicon-saved'></span> Save
+											</button>
+											<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+												<span class='glyphicon glyphicon-remove'></span> Close
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+							<div class='modal fade'  id='cityDlg' role='dialog'>
+								<div class='modal-dialog' style='height: 700px; ; width: 1000px; '>
+									<div class='modal-content'>
+										<div class='modal-header'>
+											<div class='row'>
+												<span class='header1 col-sm-12' class='col-sm-12'>Register city</span>
+											</div>
+										</div>
+										<div class='modal-body'>
+											<div class='row'>
+												<div class='col-sm-6'>
+													<div class='row'>
+														<label class='col-sm-3'>City code</label>
+														<div class='col-sm-9'>
+															<input class='form-control'  type='text'  ng-show=',' ng-model='admin_travel_city.city_code'>
+														</div>
+														<label class='col-sm-3'>City name</label>
+														<div class='col-sm-9'>
+															<input class='form-control'  type='text' ng-model='admin_travel_city.city_name'>
+														</div>
+														<label class='col-sm-3'>Description</label>
+														<div class='col-sm-9'>
+															<textarea class='form-control' ng-model='admin_travel_city.descr' rows='5'></textarea>
+														</div>
+													</div>
+												</div>
+												<div class='col-sm-6'>
+													<div class='row'>
+														<label class='col-sm-3'>Country</label>
+														<div class='col-sm-9'>
+															<select class='form-control' ng-model='admin_travel_city.country_id' ng-init='admin_travel_city.country_id=admin_travel_country[0].sysid' ng-options='x.sysid as x.country_name for x in admin_travel_countryList'></select>
+														</div>
+														<label class='col-sm-3'>Language</label>
+														<div class='col-sm-9'>
+															<input class='form-control'  type='text' ng-model='admin_travel_city.language'>
+														</div>
+														<label class='col-sm-3'>Currency</label>
+														<div class='col-sm-9'>
+															<select class='form-control' ng-model='admin_travel_city.curr_id' ng-init='admin_travel_city.curr_id=admin_currency[0].sysid' ng-options='x.sysid as x.curr_name for x in admin_currencyList'></select>
+														</div>
+														<label class='col-sm-3'>City class</label>
+														<div class='col-sm-9'>
+															<input class='form-control'  type='text' ng-model='admin_travel_city.city_class'>
+														</div>
+														<label class='col-sm-3'>Status</label>
+														<div class='col-sm-9'>
+															<select class='form-control' ng-model='admin_travel_city.status' ng-init='admin_travel_city.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class='footer'>
+											<div class='row'  style='padding: 10px;'>
+												<span class='header2 col-sm-9' class='col-sm-9'>{{admin_travel_city_status}}</span>
+												<div class='col-sm-3' style='text-align: right'>
+													<div class='btn-group'>
+														<button  class='btn btn-default btn-sm'  ng-click='save_admin_travel_city_record()'>
+															<span class='glyphicon glyphicon-saved'></span> Save
+														</button>
+														<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+															<span class='glyphicon glyphicon-remove'></span> Close
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+	</div>
+</form>

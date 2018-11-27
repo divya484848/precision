@@ -1,0 +1,500 @@
+{
+    "child": [
+        {
+            "child": [
+                {
+                    "child": [
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "1",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header-title",
+                                        "Columns": "2",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "DBK details",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "from_date",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "input-group date",
+                                        "Columns": "1,2",
+                                        "Control Name": "from_date",
+                                        "DB-table": "sales_invoice",
+                                        "DateFormat": "YYYY-MM-DD",
+                                        "DisplayLabel": "From date",
+                                        "ID": "dt1",
+                                        "Label class": "",
+                                        "Label-type": "label",
+                                        "Model": "from_date",
+                                        "Parent-style": "",
+                                        "Readonly": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Date"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "to_date",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "input-group date",
+                                        "Columns": "1,2",
+                                        "Control Name": "to_date",
+                                        "DB-table": "sales_invoice",
+                                        "DateFormat": "YYYY-MM-DD",
+                                        "DisplayLabel": "To date",
+                                        "ID": "dt2",
+                                        "Label class": "",
+                                        "Label-type": "label",
+                                        "Model": "to_date",
+                                        "Parent-style": "",
+                                        "Readonly": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Date"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Link",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "select_sales_invoice_record()",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "DisplayLabel": "Header",
+                                                "Glyphicon": "cog",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Label-type": "label",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Ref": "#",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Generate",
+                                                "Visible": ""
+                                            },
+                                            "type": "Link"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Link",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "DisplayLabel": "Header",
+                                                "Download": "DBK_REPORT.xlsx",
+                                                "Glyphicon": "download",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Label-type": "label",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Ref": "./data/DBK_REPORT.xlsx",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Target": "_self",
+                                                "Value": "Download",
+                                                "Visible": ""
+                                            },
+                                            "type": "Link"
+                                        }
+                                    ],
+                                    "name": "ButtonGroup",
+                                    "props": {
+                                        "Class": "btn-group",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "text-align: right",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ButtonGroup"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding-top: 20px",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "inv_no",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "sales_invoice",
+                                                "DisplayLabel": "Inv no",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "inv_no",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "inv_date",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "sales_invoice",
+                                                "DisplayLabel": "Invoice date",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "inv_date",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "curr_id",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "sales_invoice",
+                                                "DisplayLabel": "Currency",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "curr_name",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "exchange_rate",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "sales_invoice",
+                                                "DisplayLabel": "Exchange rate",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "exchange_rate",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "inr_final_amount",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "sales_invoice",
+                                                "DisplayLabel": "INR (Value)",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "inr_final_amount",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "final_total_inv_amt",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "sales_invoice",
+                                                "DisplayLabel": "Shipping value",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "final_total_inv_amt",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "inv_date",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "sales_invoice",
+                                                "DisplayLabel": "Shipping date",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "inv_date",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "dom_port_code",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "sales_invoice",
+                                                "DisplayLabel": "Port code (Indian)",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "dom_port_code",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "dbk_amount",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "sales_invoice",
+                                                "DisplayLabel": "DBK amount",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "dbk_amount",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "dbk_date",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "sales_invoice",
+                                                "DisplayLabel": "DBK date",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "dbk_date",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        }
+                                    ],
+                                    "name": "Table",
+                                    "props": {
+                                        "Class": "table table-bordered table-condensed table-bordered",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "DataSource": "sales_invoiceList",
+                                        "Filter": "search",
+                                        "ID": "",
+                                        "ItemsPerPage": "12",
+                                        "NoOfPagesDisplay": "10",
+                                        "Pagination": "Yes",
+                                        "Parent-style": "",
+                                        "Style": "padding-top: 5px",
+                                        "Visible": ""
+                                    },
+                                    "type": "Table"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "10",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                },
+                {
+                    "child": [
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "1",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                }
+            ],
+            "name": "Row",
+            "props": {
+                "Class": "row",
+                "Control Name": "",
+                "DB-table": "",
+                "ID": "",
+                "Parent-style": "",
+                "Repeat": "",
+                "Style": "background-color: #ffffff; padding-top: 10px;",
+                "Visible": ""
+            },
+            "type": "Row"
+        }
+    ],
+    "name": "Container",
+    "props": {
+        "Class": "container-fluid",
+        "Control Name": "",
+        "ID": "",
+        "Style": "padding: 0px; ",
+        "Visible": ""
+    },
+    "type": "Container"
+}

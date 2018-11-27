@@ -1,0 +1,97 @@
+<form role='form'>
+		<script type='text/javascript'>
+			$(function () {
+				$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+				$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+				$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+				$('#dt4').datetimepicker({format: 'YYYY-MM-DD'});
+			});
+			$('#clear').click(function(){
+				$('#dt1').data('DateTimePicker').clear();
+				$('#dt2').data('DateTimePicker').clear();
+				$('#dt3').data('DateTimePicker').clear();
+				$('#dt4').data('DateTimePicker').clear();
+			});
+				$('#dt1').click(function(){
+					var sysdate = new Date();
+					$('#dt1').data('DateTimePicker').date(sysdate);
+				})
+				$('#dt2').click(function(){
+					var sysdate = new Date();
+					$('#dt2').data('DateTimePicker').date(sysdate);
+				})
+				$('#dt3').click(function(){
+					var sysdate = new Date();
+					$('#dt3').data('DateTimePicker').date(sysdate);
+				})
+				$('#dt4').click(function(){
+					var sysdate = new Date();
+					$('#dt4').data('DateTimePicker').date(sysdate);
+				})
+		</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; padding-top: 10px;'>
+			<div class='col-sm-1'>
+			</div>
+			<div class='col-sm-10'>
+				<div class='row'  style='padding-top: 20px'>
+					<span class='header-title col-sm-2' class='col-sm-2'>Sales order</span>
+					<div class='col-sm-3'>
+						<div class='input-group'>
+							<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+							<div class='input-group-btn'>
+								<button class='btn btn-success btn-sm searchBox' type='submit'>
+									<i class='glyphicon glyphicon-search'></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<span class='header2 col-sm-5' class='col-sm-5'>{{sales_so_status}}</span>
+					<div class='col-sm-2' style='text-align: right'>
+						<div class='btn-group'>
+							<a  class='btn btn-default btn-sm'  href='/sales_order'>
+								<span class='glyphicon glyphicon-plus'></span> Add new
+							</a>
+						</div>
+					</div>
+				</div>
+					<div class='row'>
+						<div class='col-sm-12'>
+							<table class='table table-bordered table-condensed table-bordered'  style='padding-top: 5px'>
+								<thead>
+									<tr>
+										<th >Trans ID</th>
+										<th>SO No</th>
+										<th>SO date</th>
+										<th>Customer</th>
+										<th>Exp start date</th>
+										<th>Exp end date</th>
+										<th>SO value</th>
+										<th>Status</th>
+										<th ></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr dir-paginate='x in sales_soList| filter: search| itemsPerPage: 12'>
+										<td><a  href='/sales_order/{{x.sysid}}' ng-model='sales_so.sysid'> {{x.sysid}}</a></td>
+										<td>{{x.so_no}}</td>
+										<td>{{x.so_date}}</td>
+										<td>{{x.cust_name}}</td>
+										<td>{{x.exp_start_date}}</td>
+										<td>{{x.exp_end_date}}</td>
+										<td>{{x.so_value}}</td>
+										<td>{{x.status}}</td>
+										<td><a  style='color: red'  href='#'  ng-click='delete_sales_so_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+									</tr>
+								</tbody>
+							</table>
+							<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+							</dir-pagination-controls>
+						</div>
+					</div>
+			</div>
+			<div class='col-sm-1'>
+			</div>
+		</div>
+	</div>
+</form>

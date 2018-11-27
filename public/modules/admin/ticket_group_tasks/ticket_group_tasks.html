@@ -1,0 +1,90 @@
+<form role='form'>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-2'>
+				<div class='row'  style='padding: 0px;'>
+					<div ng-controller='tickets_menuCtrl' ng-include src="'modules/admin/tickets_menu/tickets_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header1 col-sm-8' class='col-sm-8'>Ticket groups</span>
+				<div class='col-sm-4' style='text-align: right'>
+					<div class='btn-group'>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-saved'></span> Save
+						</button>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-refresh'></span> Refresh
+						</button>
+						<button  class='btn btn-default btn-sm' data-target='#dlg1' data-toggle='modal'>
+							<span class='glyphicon glyphicon-user'></span> Manage members
+						</button>
+					</div>
+				</div>
+					<div class='col-sm-12' style='padding-top: 10px'>
+						<hr>
+					</div>
+			</div>
+					<div class='row'>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Group name</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='admin_ticket_groups_tasks.group_id' ng-init='admin_ticket_groups_tasks.group_id=[0]' ng-options='x as x for x in '></select>
+								</div>
+								<label class='col-sm-5'>Task sequence no</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='admin_ticket_groups_tasks.task_seq_no'>
+								</div>
+								<label class='col-sm-5'>Task name</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='admin_ticket_groups_tasks.task_name'>
+								</div>
+								<label class='col-sm-5'>Status</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='admin_ticket_groups_tasks.status' ng-init='admin_ticket_groups_tasks.status=[0]' ng-options='x as x for x in '></select>
+								</div>
+							</div>
+						</div>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Task description</label>
+								<div class='col-sm-7'>
+									<textarea class='form-control' ng-model='admin_ticket_groups_tasks.task_descr' rows='5'></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='row'  style='margin-top: 20px'>
+						<div class='col-sm-12'>
+							<table class='table table-bordered table-condensed table-bordered'  style='padding-top: 20px'>
+								<thead>
+									<tr>
+										<th >Group name</th>
+										<th>Task name</th>
+										<th>Task sequence no</th>
+										<th>Task description</th>
+										<th>Status</th>
+										<th ></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr dir-paginate='x in | itemsPerPage: 12'>
+										<td><a  href='#' ng-model='admin_ticket_groups_tasks.group_id'> {{x.group_id}}</a></td>
+										<td>{{x.task_name}}</td>
+										<td>{{x.task_seq_no}}</td>
+										<td>{{x.task_descr}}</td>
+										<td>{{x.status}}</td>
+										<td><a  href='#'> </a></td>
+									</tr>
+								</tbody>
+							</table>
+							<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+							</dir-pagination-controls>
+						</div>
+					</div>
+		</div>
+		</div>
+	</div>
+</form>

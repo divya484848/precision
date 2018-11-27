@@ -1,0 +1,787 @@
+{
+    "child": [
+        {
+            "child": [
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "IncludePage",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "Controller": "vendor_mgmt_menuCtrl",
+                                        "ID": "",
+                                        "PageSource": "modules/inv/vendor_mgmt_menu/vendor_mgmt_menu.html",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "IncludePage"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "2",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header-title",
+                                        "Columns": "2",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "Vendor bill",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Date",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "input-group date",
+                                                        "Columns": "2,4",
+                                                        "Control Name": "",
+                                                        "DB-table": "inv_ledger_view",
+                                                        "DateFormat": "YYYY-MM-DD",
+                                                        "DisplayLabel": "From date",
+                                                        "ID": "dt1",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "from_date",
+                                                        "Parent-style": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Date"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Date",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "input-group date",
+                                                        "Columns": "2,4",
+                                                        "Control Name": "",
+                                                        "DB-table": "inv_ledger_view",
+                                                        "DateFormat": "YYYY-MM-DD",
+                                                        "DisplayLabel": "To date",
+                                                        "ID": "dt2",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "to_date",
+                                                        "Parent-style": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Date"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "6",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "select_inv_ledger_view_record()",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "search",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Show",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "generate_report()",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "cog",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Generate",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "download",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Download",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "refresh",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Clear",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        }
+                                    ],
+                                    "name": "ButtonGroup",
+                                    "props": {
+                                        "Class": "btn-group",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "text-align: right",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ButtonGroup"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding-top: 20px",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "emp_name",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "form-control",
+                                        "Columns": "1,2",
+                                        "Control Name": "emp_name",
+                                        "DB-table": "inv_ledger_view",
+                                        "DataSource": "sysid.complete_name.hrms_employees",
+                                        "DisplayLabel": "Employee",
+                                        "ID": "",
+                                        "Init": "Yes",
+                                        "Label class": "",
+                                        "Label-type": "label",
+                                        "Model": "emp_name",
+                                        "Parent-style": "",
+                                        "Placeholder": "",
+                                        "Readonly": "",
+                                        "Required": "",
+                                        "StaticValues": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ComboBox"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "dept_name",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "form-control",
+                                        "Columns": "1,2",
+                                        "Control Name": "dept_name",
+                                        "DB-table": "inv_ledger_view",
+                                        "DataSource": "sysid.dept_name.admin_dept",
+                                        "DisplayLabel": "Department",
+                                        "ID": "",
+                                        "Init": "Yes",
+                                        "Label class": "",
+                                        "Label-type": "label",
+                                        "Model": "dept_name",
+                                        "Parent-style": "",
+                                        "Placeholder": "",
+                                        "Readonly": "",
+                                        "Required": "",
+                                        "StaticValues": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ComboBox"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "supp_name",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "form-control",
+                                        "Columns": "1,2",
+                                        "Control Name": "supp_name",
+                                        "DB-table": "inv_ledger_view",
+                                        "DataSource": "sysid.supp_name.inv_supplier",
+                                        "DisplayLabel": "Vendor",
+                                        "ID": "",
+                                        "Init": "Yes",
+                                        "Label class": "",
+                                        "Label-type": "label",
+                                        "Model": "supp_name",
+                                        "Parent-style": "",
+                                        "Placeholder": "",
+                                        "Readonly": "",
+                                        "Required": "",
+                                        "StaticValues": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ComboBox"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "proc_name",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "form-control",
+                                        "Columns": "1,2",
+                                        "Control Name": "proc_name",
+                                        "DB-table": "inv_ledger_view",
+                                        "DataSource": "sysid.proc_name.inv_supp_process",
+                                        "DisplayLabel": "Process",
+                                        "ID": "",
+                                        "Init": "Yes",
+                                        "Label class": "",
+                                        "Label-type": "label",
+                                        "Model": "proc_name",
+                                        "Parent-style": "",
+                                        "Placeholder": "",
+                                        "Readonly": "",
+                                        "Required": "",
+                                        "StaticValues": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ComboBox"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding-top: 10px",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "sysid",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_ledger_view",
+                                                "DisplayLabel": "Trans ID",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "sysid",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "complete_name",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_ledger_view",
+                                                "DisplayLabel": "Employee",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "complete_name",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "dept_name",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_ledger_view",
+                                                "DisplayLabel": "Department",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "dept_name",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "supp_name",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_ledger_view",
+                                                "DisplayLabel": "Supplier",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "supp_name",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "item_name",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_ledger_view",
+                                                "DisplayLabel": "Item",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "item_name",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "trans_type",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_ledger_view",
+                                                "DisplayLabel": "Trans type",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "trans_type",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "trans_date",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_ledger_view",
+                                                "DisplayLabel": "Trans date",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "trans_date",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "return_type",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_ledger_view",
+                                                "DisplayLabel": "Return type",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "return_type",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "iss_qty",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_ledger_view",
+                                                "DisplayLabel": "Issue qty",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "iss_qty",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "iss_wt",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "inv_ledger_view",
+                                                "DisplayLabel": "Issue wt",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "iss_wt",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "proc_type",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "proc_type",
+                                                "DB-table": "inv_ledger_view",
+                                                "DisplayLabel": "Process type",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "proc_name",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "unit_rate",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "unit_rate",
+                                                "DB-table": "inv_ledger_view",
+                                                "DisplayLabel": "Unit rate",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "unit_rate",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "item_value",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "item_value",
+                                                "DB-table": "inv_ledger_view",
+                                                "DisplayLabel": "Item value",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "item_cost",
+                                                "Required": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        }
+                                    ],
+                                    "name": "Table",
+                                    "props": {
+                                        "Class": "table table-bordered table-condensed table-bordered table-responsive",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "DataSource": "inv_ledger_viewList",
+                                        "Filter": "search",
+                                        "ID": "",
+                                        "ItemsPerPage": "12",
+                                        "NoOfPagesDisplay": "10",
+                                        "Pagination": "Yes",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Table"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row table-responsive",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "10",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                }
+            ],
+            "name": "Row",
+            "props": {
+                "Class": "row",
+                "Control Name": "",
+                "DB-table": "",
+                "ID": "",
+                "Parent-style": "",
+                "Repeat": "",
+                "Style": "background-color: #ffffff; padding: 0px; ",
+                "Visible": ""
+            },
+            "type": "Row"
+        }
+    ],
+    "name": "Container",
+    "props": {
+        "Class": "container-fluid",
+        "Control Name": "",
+        "ID": "",
+        "Style": "",
+        "Visible": ""
+    },
+    "type": "Container"
+}

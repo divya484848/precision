@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html ng-app='ebs2App'>
+<head>
+	<title>EBS 3.0(Enterprise Business Solution)</title>
+	<base href='/'>
+	<!-- Thirdparty css -->
+	<link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'>
+	<link rel='stylesheet' type='text/css' href='css/bootstrap-datetimepicker.css'>
+	
+	<!-- Custom css -->
+	<link rel='stylesheet' type='text/css' href='css/ebs3.css'>
+	<link rel='stylesheet' type='text/css' href='css/print.css' media='print'>
+	
+	<!-- Thirdparty scripts -->
+	<script src='lib/jquery.min.js'></script>
+	<script src='lib/bootstrap.min.js'></script>
+	<script src='lib/angular.min.js'></script>
+	<script src='lib/angular-route.min.js'></script>
+	<script src='lib/moment.min.js'></script>
+	<script src='lib/angular-moment.min.js'></script>
+	<script src='lib/bootstrap-datetimepicker.js'></script>
+	<script src='lib/dirPagination.js'></script>
+	<script src='lib/FileSaver.js'></script>
+	<script src='lib/underscore-min.js'></script>
+	<script src='lib/loader.js'></script>
+	<script src='app.js'></script>
+
+<!-- Custom scripts starts -->
+	<script src='modules/admin/login/login.js'></script>
+	<script src='modules/admin/dashboard/dashboard.js'></script>
+	<script src='modules/admin/company/company.js'></script>
+	<script src='modules/admin/dept/dept.js'></script>
+	<script src='modules/admin/roles/roles.js'></script>
+	<script src='modules/admin/currency/currency.js'></script>
+	<script src='modules/admin/user_accounts/user_accounts.js'></script>
+	<script src='modules/hrms/emp/emp.js'></script>
+	<script src='modules/hrms/emp_menu/emp_menu.js'></script>
+	<script src='modules/hrms/emp_form/emp_form.js'></script>
+	<script src='modules/hrms/emplist/emplist.js'></script>
+	<script src='modules/hrms/shift_menu/shift_menu.js'></script>
+	<script src='modules/hrms/shifts/shifts.js'></script>
+	<script src='modules/inv/custlist/custlist.js'></script>
+	<script src='modules/inv/supplist/supplist.js'></script>
+	<script src='modules/inv/supp/supp.js'></script>
+	<script src='modules/inv/cust/cust.js'></script>
+	<script src='modules/inv/item_master_list/item_master_list.js'></script>
+	<script src='modules/inv/item_master/item_master.js'></script>
+	<script src='modules/inv/fglist/fglist.js'></script>
+	<script src='modules/inv/stores_menu/stores_menu.js'></script>
+	<script src='modules/inv/stores/stores.js'></script>
+	<script src='modules/sales/tax_invoice_list/tax_invoice_list.js'></script>
+	<script src='modules/sales/dbk_details/dbk_details.js'></script>
+	<script src='modules/sales/dbk_update/dbk_update.js'></script>
+	<script src='modules/admin/access_control/access_control.js'></script>
+	<script src='modules/inv/opbal/opbal.js'></script>
+	<script src='modules/inv/machines/machines.js'></script>
+	<script src='modules/prod/item_process_list/item_process_list.js'></script>
+	<script src='modules/prod/item_process/item_process.js'></script>
+	<script src='modules/inv/gindept_list/gindept_list.js'></script>
+	<script src='modules/inv/gindept/gindept.js'></script>
+	<script src='modules/inv/gindept_print/gindept_print.js'></script>
+	<script src='modules/inv/ginvendor_list/ginvendor_list.js'></script>
+	<script src='modules/inv/ginvendor/ginvendor.js'></script>
+	<script src='modules/inv/grndept_list/grndept_list.js'></script>
+	<script src='modules/inv/grndept/grndept.js'></script>
+	<script src='modules/inv/grnvendor_list/grnvendor_list.js'></script>
+	<script src='modules/inv/grnvendor/grnvendor.js'></script>
+	<script src='modules/inv/ginvendor_print/ginvendor_print.js'></script>
+	<script src='modules/inv/grndept_print/grndept_print.js'></script>
+	<script src='modules/inv/grnvendor_print/grnvendor_print.js'></script>
+	<script src='modules/inv/mat_ledger/mat_ledger.js'></script>
+	<script src='modules/inv/brass_ledger/brass_ledger.js'></script>
+	<script src='modules/inv/all_ledger/all_ledger.js'></script>
+	<script src='modules/inv/diecast_ledger/diecast_ledger.js'></script>
+	<script src='modules/inv/app_center/app_center.js'></script>
+	<script src='modules/sales/invoice_reports_menu/invoice_reports_menu.js'></script>
+	<script src='modules/sales/invoice_reports/invoice_reports.js'></script>
+	<script src='modules/sales/invoice_settings_menu/invoice_settings_menu.js'></script>
+	<script src='modules/sales/invoice_settings/invoice_settings.js'></script>
+	<script src='modules/sales/pay_terms/pay_terms.js'></script>
+	<script src='modules/sales/invoice_mat_type/invoice_mat_type.js'></script>
+	<script src='modules/sales/sales_order_list/sales_order_list.js'></script>
+	<script src='modules/sales/sales_order/sales_order.js'></script>
+	<script src='modules/sales/missing_hsn/missing_hsn.js'></script>
+	<script src='modules/sales/hsn_report/hsn_report.js'></script>
+	<script src='modules/sales/cust_sales_report/cust_sales_report.js'></script>
+	<script src='modules/sales/sales_compare/sales_compare.js'></script>
+	<script src='modules/inv/op_bal_update/op_bal_update.js'></script>
+	<script src='modules/inv/gindeptrep/gindeptrep.js'></script>
+	<script src='modules/inv/inv_reports_menu/inv_reports_menu.js'></script>
+	<script src='modules/inv/inv_reports/inv_reports.js'></script>
+	<script src='modules/inv/polish_report_issue/polish_report_issue.js'></script>
+	<script src='modules/prod/prod_mat_list/prod_mat_list.js'></script>
+	<script src='modules/prod/prod_mat/prod_mat.js'></script>
+	<script src='modules/inv/vendor_mgmt_menu/vendor_mgmt_menu.js'></script>
+	<script src='modules/inv/vendor_mgmt/vendor_mgmt.js'></script>
+	<script src='modules/inv/supp_item_process/supp_item_process.js'></script>
+	<script src='modules/inv/supp_items/supp_items.js'></script>
+	<script src='modules/inv/vendor_bill/vendor_bill.js'></script>
+	<script src='modules/inv/gindept_list_master/gindept_list_master.js'></script>
+	<script src='modules/inv/master_stores/master_stores.js'></script>
+	<script src='modules/inv/master_stores_menu/master_stores_menu.js'></script>
+	<script src='modules/inv/gindept_master/gindept_master.js'></script>
+	<script src='modules/admin/access_profile/access_profile.js'></script>
+	<script src='modules/inv/om_require/om_require.js'></script>
+	<script src='modules/prod/prod_planning/prod_planning.js'></script>
+	<script src='modules/prod/prod_planning_menu/prod_planning_menu.js'></script>
+	<script src='modules/prod/so_mat_reqmt/so_mat_reqmt.js'></script>
+	<script src='modules/prod/prod_dash/prod_dash.js'></script>
+	<script src='modules/inv/stock_report/stock_report.js'></script>
+	<script src='modules/prod/product_group/product_group.js'></script>
+	<script src='modules/prod/packing_dash/packing_dash.js'></script>
+	<script src='modules/prod/plating_dash/plating_dash.js'></script>
+	<script src='modules/prod/polish_dash/polish_dash.js'></script>
+	<script src='modules/inv/dept_ledger/dept_ledger.js'></script>
+	<script src='modules/inv/vendor_ledger/vendor_ledger.js'></script>
+	<script src='modules/springs/cust_springs/cust_springs.js'></script>
+	<script src='modules/springs/item_master_springs/item_master_springs.js'></script>
+	<script src='modules/springs/cust_springslist/cust_springslist.js'></script>
+	<script src='modules/springs/item_master_springslist/item_master_springslist.js'></script>
+	<script src='modules/springs/machines_springs/machines_springs.js'></script>
+	<script src='modules/springs/prod_order_process_springs_list/prod_order_process_springs_list.js'></script>
+	<script src='modules/springs/prod_dash/prod_dash.js'></script>
+	<script src='modules/springs/prod_grinding/prod_grinding.js'></script>
+	<script src='modules/springs/sales_order_springs/sales_order_springs.js'></script>
+	<script src='modules/springs/sales_order_springs_list/sales_order_springs_list.js'></script>
+	<script src='modules/springs/prod_plating/prod_plating.js'></script>
+	<script src='modules/springs/prod_packing/prod_packing.js'></script>
+	<script src='modules/springs/prod_order_process_springs/prod_order_process_springs.js'></script>
+	<script src='modules/springs/prod_item_details_springs/prod_item_details_springs.js'></script>
+	<script src='modules/springs/prod_cust_item_list/prod_cust_item_list.js'></script>
+	
+<!-- Custom scripts ends -->
+</head>
+<body ng-controller='ebs2Ctrl'>
+	<div class='container-fluid'>
+		<div class='row' style='border:1px solid #C70039; background-color: #C70039;' id='printMenu'>
+			<div class='col-sm-1 logo'>
+				ebs
+			</div>
+			<div class='col-sm-11' ng-show='show_menus' style='background-color: #C70039;'>
+				<ul class='nav navbar-nav' ng-show='show_menus'>
+					<li ng-repeat='x in main_menu_list'>
+						<a href='#' class='dropdown-toggle' data-toggle='dropdown'>{{x.menu_name}}<span class='caret'></span></a>
+						<ul class='dropdown-menu'>
+							<li ng-repeat='y in sub_main_menu_list | filter:{parent_id:x.sysid}: true'>
+								<a href='/{{y.menu_route}}'>{{y.menu_name}}</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class='nav navbar-nav navbar-right'>
+					<li style="padding-top: 10px;"><span style="color: #fff; margin-right: 15px;" class="header2"><span class='glyphicon glyphicon-user'></span> {{logged_user}}</span></li>
+					<li><a ng-href='/' target='_self' style="color: #fff"><span class='glyphicon glyphicon-log-in'></span> Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<div ng-view></div>
+	</div>
+</body>
+</html>

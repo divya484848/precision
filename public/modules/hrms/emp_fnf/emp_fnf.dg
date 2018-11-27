@@ -1,0 +1,748 @@
+{
+    "child": [
+        {
+            "child": [
+                {
+                    "child": [
+                        {
+                            "child": [
+                            ],
+                            "name": "IncludePage",
+                            "props": {
+                                "Class": "",
+                                "Columns": "12",
+                                "Control Name": "",
+                                "Controller": "emp_sep_menuCtrl",
+                                "ID": "",
+                                "PageSource": "modules/hrms/emp_sep_menu/emp_sep_menu.html",
+                                "Parent-style": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "IncludePage"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "2",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header1",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "Full and final settlement",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header2",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "{{hrms_emp_fnf_status}}",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "HLine",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "HLine"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding-top: 20px; padding-bottom: 15px",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "emp_id",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Employee id",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "emp_id",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "TextBox",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "Employee name",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "logged_user",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "sal_days",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Salary days",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "sal_days",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "sal_amount",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Salary amount",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "sal_amount",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "gratuity_months",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Gratuity months",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "gratuity_months",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "gratuity_amount",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Gratuity amount",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "gratuity_amount",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "loan_recovery_amount",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Loan recovery amount",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "loan_recovery_amount",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "adv_recovery_amount",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Advance recovery amount",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "adv_recovery_amount",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "bond_recovery_amount",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Bond recovery amount",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "bond_recovery_amount",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "leaves_encash_days",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Leaves encash days",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "leaves_encash_days",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "leaves_encash_amount",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Leaves encash amount",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "leaves_encash_amount",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "prepared_by",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Prepared by",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "prepared_by",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "6",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "prepare_date",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Prepare date",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "prepare_date",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "remarks",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Remarks",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "remarks",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Rows": "5",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextArea"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "approved_by",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Approved by",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "approved_by",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "approval_date",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Approval date",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "approval_date",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "approval_remarks",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Approval remarks",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "approval_remarks",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Rows": "5",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextArea"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "company_id",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Unit name",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "company_id",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "status",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_emp_fnf",
+                                                        "DisplayLabel": "Status",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "status",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "true",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "6",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "10",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                }
+            ],
+            "name": "Row",
+            "props": {
+                "Class": "row",
+                "Control Name": "",
+                "DB-table": "",
+                "ID": "",
+                "Parent-style": "",
+                "Repeat": "",
+                "Style": "background-color: #ffffff; min-height: 600px;",
+                "Visible": ""
+            },
+            "type": "Row"
+        }
+    ],
+    "name": "Container",
+    "props": {
+        "Class": "container-fluid",
+        "Control Name": "",
+        "ID": "",
+        "Style": "padding: 0px; ",
+        "Visible": ""
+    },
+    "type": "Container"
+}

@@ -1,0 +1,302 @@
+{
+    "child": [
+        {
+            "child": [
+                {
+                    "child": [
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "7",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                        {
+                                                            "child": [
+                                                            ],
+                                                            "name": "user_name",
+                                                            "props": {
+                                                                "ChangeEvent": "",
+                                                                "Class": "form-control",
+                                                                "Columns": "12,12",
+                                                                "Control Name": "",
+                                                                "Control-type": "text",
+                                                                "DB-table": "admin_user_login",
+                                                                "DisplayLabel": "<b>User name</b>",
+                                                                "ID": "",
+                                                                "Label-type": "span",
+                                                                "Model": "username",
+                                                                "Parent-style": "",
+                                                                "Placeholder": "",
+                                                                "Readonly": "",
+                                                                "Style": "padding-bottom: 15px",
+                                                                "TableColumnWidth": "",
+                                                                "Value": "",
+                                                                "Visible": ""
+                                                            },
+                                                            "type": "TextBox"
+                                                        },
+                                                        {
+                                                            "child": [
+                                                            ],
+                                                            "name": "password",
+                                                            "props": {
+                                                                "ChangeEvent": "",
+                                                                "Class": "form-control",
+                                                                "Columns": "12,12",
+                                                                "Control Name": "",
+                                                                "Control-type": "password",
+                                                                "DB-table": "admin_user_login",
+                                                                "DisplayLabel": "<b>Password</b>",
+                                                                "ID": "",
+                                                                "Label-type": "span",
+                                                                "Model": "password",
+                                                                "Parent-style": "",
+                                                                "Placeholder": "",
+                                                                "Readonly": "",
+                                                                "Style": "padding-bottom: 15px",
+                                                                "TableColumnWidth": "",
+                                                                "Value": "",
+                                                                "Visible": ""
+                                                            },
+                                                            "type": "TextBox"
+                                                        },
+                                                        {
+                                                            "child": [
+                                                            ],
+                                                            "name": "Label",
+                                                            "props": {
+                                                                "Class": "col-sm",
+                                                                "Columns": "12",
+                                                                "Control Name": "",
+                                                                "DB-table": "",
+                                                                "DisplayLabel": "",
+                                                                "ID": "",
+                                                                "Label-type": "span",
+                                                                "Model": "",
+                                                                "Style": "color: #ff0000",
+                                                                "TableColumnWidth": "",
+                                                                "Value": "{{admin_user_login_status}}",
+                                                                "Visible": ""
+                                                            },
+                                                            "type": "Label"
+                                                        },
+                                                        {
+                                                            "child": [
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "Link",
+                                                                    "props": {
+                                                                        "Class": "btn btn-default btn-sm",
+                                                                        "ClickEvent": "",
+                                                                        "Columns": "12",
+                                                                        "Control Name": "",
+                                                                        "DB-table": "",
+                                                                        "Data-dismiss": "",
+                                                                        "Data-target": "",
+                                                                        "Data-toggle": "",
+                                                                        "DisplayLabel": "Header",
+                                                                        "Glyphicon": "lock",
+                                                                        "ID": "",
+                                                                        "Icon": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "",
+                                                                        "Parent-style": "",
+                                                                        "Readonly": "",
+                                                                        "Ref": "#",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "Forgot password",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "Link"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "Link",
+                                                                    "props": {
+                                                                        "Class": "btn btn-default btn-sm",
+                                                                        "ClickEvent": "auth_me()",
+                                                                        "Columns": "12",
+                                                                        "Control Name": "",
+                                                                        "DB-table": "",
+                                                                        "Data-dismiss": "",
+                                                                        "Data-target": "",
+                                                                        "Data-toggle": "",
+                                                                        "DisplayLabel": "Header",
+                                                                        "Glyphicon": "user",
+                                                                        "ID": "",
+                                                                        "Icon": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "",
+                                                                        "Parent-style": "",
+                                                                        "Readonly": "",
+                                                                        "Ref": "#",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "Login",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "Link"
+                                                                }
+                                                            ],
+                                                            "name": "ButtonGroup",
+                                                            "props": {
+                                                                "Class": "btn-group btn-group-justified",
+                                                                "Columns": "12",
+                                                                "Control Name": "",
+                                                                "ID": "",
+                                                                "Parent-style": "",
+                                                                "Style": "padding-top: 15px",
+                                                                "TableColumnWidth": "",
+                                                                "Visible": ""
+                                                            },
+                                                            "type": "ButtonGroup"
+                                                        }
+                                                    ],
+                                                    "name": "Row",
+                                                    "props": {
+                                                        "Class": "row",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "ID": "",
+                                                        "Parent-style": "",
+                                                        "Repeat": "",
+                                                        "Style": "padding: 20px; ",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Row"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Row",
+                                                    "props": {
+                                                        "Class": "row",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "ID": "",
+                                                        "Parent-style": "",
+                                                        "Repeat": "",
+                                                        "Style": "background-color: #363636; min-height: 200px; ",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Row"
+                                                }
+                                            ],
+                                            "name": "PanelBody",
+                                            "props": {
+                                                "Class": "panel-body",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "PanelBody"
+                                        }
+                                    ],
+                                    "name": "Panel",
+                                    "props": {
+                                        "Class": "panel panel-default",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Panel"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding-top: 50px",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "4",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                },
+                {
+                    "child": [
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "1",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                }
+            ],
+            "name": "Row",
+            "props": {
+                "Class": "row",
+                "Control Name": "",
+                "DB-table": "",
+                "ID": "",
+                "Parent-style": "",
+                "Repeat": "",
+                "Style": "background-image: url(images/w9.jpg); background-size: cover; min-height: 600px;",
+                "Visible": ""
+            },
+            "type": "Row"
+        }
+    ],
+    "name": "Container",
+    "props": {
+        "Class": "container-fluid",
+        "Control Name": "",
+        "ID": "",
+        "Style": "padding-left: 0px; padding-right: 0px",
+        "Visible": ""
+    },
+    "type": "Container"
+}

@@ -1,0 +1,820 @@
+{
+    "child": [
+        {
+            "child": [
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header-title",
+                                        "Columns": "2",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "padding-right: 0px",
+                                        "TableColumnWidth": "",
+                                        "Value": "Access control settings",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "profile_id",
+                                    "props": {
+                                        "ChangeEvent": "select_menu_record()",
+                                        "Class": "form-control",
+                                        "Columns": "2,3",
+                                        "Control Name": "profile_id",
+                                        "DB-table": "admin_access_control",
+                                        "DataSource": "sysid.profile_name.admin_access_profile",
+                                        "DisplayLabel": "Profile name",
+                                        "ID": "",
+                                        "Init": "Yes",
+                                        "Label class": "header2",
+                                        "Label-type": "label",
+                                        "Model": "profile_id",
+                                        "Parent-style": "",
+                                        "Placeholder": "",
+                                        "Readonly": "",
+                                        "Required": "",
+                                        "StaticValues": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ComboBox"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "HLine",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "HLine"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding-top: 20px",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header2",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "text-align: center; color: #c70039;",
+                                        "TableColumnWidth": "",
+                                        "Value": "Main menu",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header2",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "text-align: center; color: #c70039;",
+                                        "TableColumnWidth": "",
+                                        "Value": "Sub-menu",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header2",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "text-align: center; color: #c70039;",
+                                        "TableColumnWidth": "",
+                                        "Value": "Side menu",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "HLine",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "HLine"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "6",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Menu name",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "2",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "text-align: center",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Read",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "2",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "text-align: center",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Write",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "HLine",
+                                                    "props": {
+                                                        "Class": "",
+                                                        "Columns": "12",
+                                                        "Control Name": "",
+                                                        "ID": "",
+                                                        "Parent-style": "",
+                                                        "Style": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "HLine"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "8",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Menu name",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "2",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Read",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "2",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Write",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "HLine",
+                                                    "props": {
+                                                        "Class": "",
+                                                        "Columns": "12",
+                                                        "Control Name": "",
+                                                        "ID": "",
+                                                        "Parent-style": "",
+                                                        "Style": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "HLine"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "8",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Menu name",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "2",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Read",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "2",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Write",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "HLine",
+                                                    "props": {
+                                                        "Class": "",
+                                                        "Columns": "12",
+                                                        "Control Name": "",
+                                                        "ID": "",
+                                                        "Parent-style": "",
+                                                        "Style": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "HLine"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "menu_id",
+                                                    "props": {
+                                                        "Class": "",
+                                                        "ClickEvent": "",
+                                                        "Columns": "6",
+                                                        "Control Name": "",
+                                                        "DB-table": "admin_access_control",
+                                                        "Data-dismiss": "",
+                                                        "Data-target": "",
+                                                        "Data-toggle": "",
+                                                        "DisplayLabel": "Menu id",
+                                                        "Download": "",
+                                                        "Glyphicon": "",
+                                                        "ID": "",
+                                                        "Icon": "",
+                                                        "Label-type": "label",
+                                                        "Model": "menu_id",
+                                                        "Parent-style": "",
+                                                        "Readonly": "",
+                                                        "Ref": "#",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Target": "",
+                                                        "Value": "{{x.menu_name}}",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Link"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "access_read",
+                                                    "props": {
+                                                        "Class": "",
+                                                        "ClickEvent": "toggle_choice_read(x.access_read)",
+                                                        "Columns": "2",
+                                                        "Control Name": "",
+                                                        "DB-table": "admin_access_control",
+                                                        "Data-dismiss": "",
+                                                        "Data-target": "",
+                                                        "Data-toggle": "",
+                                                        "DisplayLabel": "Access read",
+                                                        "Download": "",
+                                                        "Glyphicon": "",
+                                                        "ID": "",
+                                                        "Icon": "",
+                                                        "Label-type": "label",
+                                                        "Model": "access_read",
+                                                        "Parent-style": "",
+                                                        "Readonly": "",
+                                                        "Ref": "#",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Target": "",
+                                                        "Value": "{{x.access_read=0?\"Yes\":\"No\"}}",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Link"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "access_write",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "",
+                                                        "Columns": "2",
+                                                        "Control Name": "",
+                                                        "Control-type": "checkbox",
+                                                        "DB-table": "abc",
+                                                        "DisplayLabel": "Access write",
+                                                        "False-value": "0",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "access_write",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "True-value": "x.access_write",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "CheckBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Link",
+                                                    "props": {
+                                                        "Class": "",
+                                                        "ClickEvent": "save_admin_access_control_record(x)",
+                                                        "Columns": "2",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "Data-dismiss": "",
+                                                        "Data-target": "",
+                                                        "Data-toggle": "",
+                                                        "DisplayLabel": "Header",
+                                                        "Download": "",
+                                                        "Glyphicon": "",
+                                                        "ID": "",
+                                                        "Icon": "",
+                                                        "Label-type": "label",
+                                                        "Model": "",
+                                                        "Parent-style": "",
+                                                        "Readonly": "",
+                                                        "Ref": "#",
+                                                        "Style": "color: #c70039",
+                                                        "TableColumnWidth": "",
+                                                        "Target": "",
+                                                        "Value": "Apply",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Link"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "x in admin_access_controlList| filter: {menu_type: 0}",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                }
+            ],
+            "name": "Row",
+            "props": {
+                "Class": "row",
+                "Control Name": "",
+                "DB-table": "",
+                "ID": "",
+                "Parent-style": "",
+                "Repeat": "",
+                "Style": "",
+                "Visible": ""
+            },
+            "type": "Row"
+        }
+    ],
+    "name": "Container",
+    "props": {
+        "Class": "container-fluid",
+        "Control Name": "",
+        "ID": "",
+        "Style": "",
+        "Visible": ""
+    },
+    "type": "Container"
+}

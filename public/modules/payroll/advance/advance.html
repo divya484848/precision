@@ -1,0 +1,241 @@
+<form role='form'>
+							<script type='text/javascript'>
+								$(function () {
+									$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+								});
+								$('#clear').click(function(){
+									$('#dt1').data('DateTimePicker').clear();
+								});
+							</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='padding-top: 0px'>
+			<div class='col-sm-2'  style='background-color: #edd440'>
+				<div class='row'>
+					<span class='header1 col-sm-12'  style='padding-top: 5px' class='col-sm-12'>Advance</span>
+				</div>
+			</div>
+			<div class='col-sm-10'>
+				<label class='col-sm-5'>Tai</label>
+				<div class='col-sm-7'>
+					<input class='form-control'  type='text'>
+				</div>
+			</div>
+		</div>
+		<div class='row'  style='background-color: #ffffff; padding-top: 10px; min-height: 600px;'  id='printMenu'>
+			<div class='col-sm-2'>
+				<div ng-controller='stores_menuCtrl' ng-include src="'modules/inv/stores_menu/stores_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 10px; padding-bottom: 10px'>
+				<span class='header1 col-sm-3' class='col-sm-3'>Material Issue - Internal</span>
+				<span class='header2 col-sm-6' class='col-sm-6'>{{inv_mat_reg_header_status}}</span>
+				<div class='col-sm-3' style='text-align: right'>
+					<div class='btn-group'>
+						<button  class='btn btn-default btn-sm'  ng-click='save_inv_mat_reg_header_record()'>
+							<span class='glyphicon glyphicon-saved'></span> Save
+						</button>
+						<a  class='btn btn-default btn-sm'  href='/gindept_print/{{inv_mat_reg_header.sysid}}'>
+							<span class='glyphicon glyphicon-print'></span> Print
+						</a>
+						<a  class='btn btn-default btn-sm'  href='/gindept_list'>
+							<span class='glyphicon glyphicon-arrow-left'></span> Back
+						</a>
+					</div>
+				</div>
+			</div>
+				<div class='col-sm-12' style='padding-left: 0px; padding-right: 0px'>
+					<hr>
+				</div>
+					<div class='row'>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Transaction #</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_reg_header.sysid'>
+								</div>
+								<label class='col-sm-5'>Department</label>
+								<div class='col-sm-7'>
+									<select class='form-control'  ng-change='filter_emp()' ng-model='inv_mat_reg_header.dept_id' ng-init='inv_mat_reg_header.dept_id=admin_dept[0].sysid' ng-options='x.sysid as x.dept_name for x in admin_deptList'></select>
+								</div>
+								<label class='col-sm-5'>Employee name</label>
+								<div class='col-sm-7'>
+									<select class='form-control'  ng-change='update_ename()' ng-model='inv_mat_reg_header.party_id' ng-init='inv_mat_reg_header.party_id=hrms_employees[0].sysid' ng-options='x.sysid as x.complete_name for x in hrms_employeesList'></select>
+								</div>
+							</div>
+						</div>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Transaction date</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_reg_header.trans_date'>
+								</div>
+								<label class='col-sm-5'>Ref doc no</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='inv_mat_reg_header.ref_doc_no'>
+								</div>
+								<label class='col-sm-5'>Ref doc date</label>
+								<div class='col-sm-7'>
+									<div datetimepicker class='input-group date'  id='dt1' ng-model='inv_mat_reg_header.ref_doc_date'>
+										<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-calendar'></span>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='col-sm-12' style='padding-top: 10px'>
+							<hr>
+						</div>
+					</div>
+						<div class='row'>
+							<div class='col-sm-10'>
+							</div>
+							<div class='col-sm-2'>
+								<div class='row'  style='text-align: right; padding-bottom: 10px'>
+									<div class='col-sm-12'>
+										<a  class='btn btn-default btn-sm'  href='#'  ng-click='insert_inv_mat_reg_details_record()' data-target='#ginDlg' data-toggle='modal'>
+											<span class='glyphicon glyphicon-plus'></span> Add items
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='col-sm-12'>
+								<table class='table table-bordered table-condensed table-bordered'>
+									<thead>
+										<tr>
+											<th >Item name</th>
+											<th>Issue qty</th>
+											<th>Qty UoM</th>
+											<th>Unit wt</th>
+											<th>Issue wt</th>
+											<th>Wt UoM</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr dir-paginate='x in inv_mat_reg_detailsList| itemsPerPage: 12'>
+											<td><a  href='#'  ng-click='update_inv_mat_reg_details_record(x)' ng-model='inv_mat_reg_details.item_name' data-target='#ginDlg' data-toggle='modal'> {{x.item_name}}</a></td>
+											<td>{{x.iss_qty}}</td>
+											<td>{{x.item_uom}}</td>
+											<td>{{x.unit_wt}}</td>
+											<td>{{x.iss_wt}}</td>
+											<td>{{x.wt_uom}}</td>
+										</tr>
+									</tbody>
+								</table>
+								<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+								</dir-pagination-controls>
+							</div>
+						</div>
+					<div class='row'>
+						<div class='col-sm-3'>
+							<div class='row'>
+							</div>
+						</div>
+						<div class='col-sm-3'>
+							<div class='row'>
+							</div>
+						</div>
+						<div class='col-sm-3'>
+							<div class='row'>
+							</div>
+						</div>
+						<div class='col-sm-3'>
+							<div class='row'>
+							</div>
+						</div>
+					</div>
+		</div>
+		</div>
+			<div class='modal fade'  id='ginDlg' role='dialog'>
+				<div class='modal-dialog' style='height: 700px; ; width: 1000px; '>
+					<div class='modal-content'>
+						<div class='modal-header'>
+							<div class='row'>
+								<span class='header1 col-sm-12' class='col-sm-12'>Add items</span>
+							</div>
+						</div>
+						<div class='modal-body'>
+							<div class='row'>
+								<div class='col-sm-6'>
+									<div class='row'>
+										<label class='col-sm-3'>Header ID</label>
+										<div class='col-sm-6'>
+											<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_reg_details.hdr_id'>
+										</div>
+										<div class='col-sm-3'>
+											<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_reg_details.sysid'>
+										</div>
+										<label class='col-sm-3'>Item name</label>
+										<div class='col-sm-9'>
+											<select class='form-control'  ng-change='update_item_attribs()' ng-model='inv_mat_reg_details.item_id' ng-init='inv_mat_reg_details.item_id=inv_item_master[0].sysid' ng-options='x.sysid as x.short_code for x in inv_item_masterList'></select>
+										</div>
+										<label class='col-sm-3'>Issue qty</label>
+										<div class='col-sm-6'>
+											<input class='form-control'  type='text'  ng-change='update_cl_bal_qty()'  ng-readonly='op_avail' ng-model='inv_mat_reg_details.iss_qty'>
+										</div>
+										<div class='col-sm-3'>
+											<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_reg_details.item_uom'>
+										</div>
+										<label class='col-sm-3'>Unit wt</label>
+										<div class='col-sm-6'>
+											<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_reg_details.unit_wt'>
+										</div>
+										<div class='col-sm-3'>
+											<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_reg_details.wt_uom'>
+										</div>
+										<label class='col-sm-3'>Issue wt</label>
+										<div class='col-sm-9'>
+											<input class='form-control'  type='text'  ng-change='update_cl_bal_wt()'  ng-readonly='op_avail' ng-model='inv_mat_reg_details.iss_wt'>
+										</div>
+									</div>
+								</div>
+								<div class='col-sm-6'>
+									<div class='row'>
+										<span class='header1 col-sm-12'  style='text-align: center' class='col-sm-12'>Opening balance</span>
+										<label class='col-sm-2'>Quantity</label>
+										<div class='col-sm-4'>
+											<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_reg_details.op_qty'>
+										</div>
+										<label class='col-sm-2'>Weight</label>
+										<div class='col-sm-4'>
+											<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_reg_details.op_wt'>
+										</div>
+										<div class='col-sm-12' style='padding-top: 10px'>
+											<hr>
+										</div>
+											<span class='header1 col-sm-12'  style='text-align: center' class='col-sm-12'>Closing balance</span>
+											<label class='col-sm-2'>Quantity</label>
+											<div class='col-sm-4'>
+												<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_reg_details.cl_qty'>
+											</div>
+											<label class='col-sm-2'>Weight</label>
+											<div class='col-sm-4'>
+												<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_reg_details.cl_wt'>
+											</div>
+									</div>
+								</div>
+							</div>
+						</div>
+							<div class='footer'>
+								<div class='row'  style='padding: 10px;'>
+									<span class='header2 col-sm-9' class='col-sm-9'>{{inv_mat_reg_details_status}}</span>
+									<div class='col-sm-3' style='text-align: right'>
+										<div class='btn-group'>
+											<button  class='btn btn-default btn-sm'  ng-click='save_inv_mat_reg_details_record()'>
+												<span class='glyphicon glyphicon-saved'></span> Save
+											</button>
+											<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+												<span class='glyphicon glyphicon-remove'></span> Close
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+	</div>
+</form>

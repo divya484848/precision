@@ -1,0 +1,111 @@
+<form role='form'>
+		<script type='text/javascript'>
+			$(function () {
+				$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+			});
+			$('#clear').click(function(){
+				$('#dt1').data('DateTimePicker').clear();
+			});
+				$('#dt1').click(function(){
+					var sysdate = new Date();
+					$('#dt1').data('DateTimePicker').date(sysdate);
+				})
+		</script>
+	<div class='container-fluid'>
+		<div class='row'>
+			<div class='col-sm-2'>
+				<div class='row'>
+					<div ng-controller='stores_menuCtrl' ng-include src="'modules/inv/stores_menu/stores_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-2' class='col-sm-2'>Opening balance (Raw)</span>
+				<div class='col-sm-3'>
+					<div class='input-group'>
+						<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+						<div class='input-group-btn'>
+							<button class='btn btn-success btn-sm searchBox' type='submit'>
+								<i class='glyphicon glyphicon-search'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<span class='header2 col-sm-5' class='col-sm-5'>{{inv_op_bal_raw_status}}</span>
+				<div class='col-sm-2' style='text-align: right'>
+					<div class='btn-group'>
+						<button  class='btn btn-default btn-sm'  ng-click='save_inv_op_bal_raw_record()'>
+							<span class='glyphicon glyphicon-saved'></span> Save
+						</button>
+					</div>
+				</div>
+					<div class='col-sm-12' style='padding-top: 5px'>
+						<hr>
+					</div>
+			</div>
+					<div class='row'>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-3'>Item</label>
+								<div class='col-sm-9'>
+									<input class='form-control'  type='text' ng-model='inv_op_bal_raw.item_id' placeholder='Enter item text' list='items'>
+									<datalist id='items'>
+										<option ng-repeat='x in inv_item_masterList' value='{{x.item_name+":"+x.sysid}}'></option>
+									</datalist>
+								</div>
+								<label class='col-sm-3'>Date</label>
+								<div class='col-sm-9'>
+									<div datetimepicker class='input-group date'  id='dt1' ng-model='inv_op_bal_raw.op_bal_date'>
+										<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-calendar'></span>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-3'>Item qty</label>
+								<div class='col-sm-9'>
+									<input class='form-control'  type='text' ng-model='inv_op_bal_raw.item_qty'>
+								</div>
+								<label class='col-sm-3'>Item wt</label>
+								<div class='col-sm-9'>
+									<input class='form-control'  type='text' ng-model='inv_op_bal_raw.item_wt'>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='row'  style='padding-top: 5px'>
+						<div class='col-sm-12'>
+							<table class='table table-bordered table-condensed table-bordered'>
+								<thead>
+									<tr>
+										<th>Trans ID</th>
+										<th>Item name</th>
+										<th>Short code</th>
+										<th>Item qty</th>
+										<th>Item wt</th>
+										<th>Balance date</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr dir-paginate='x in inv_op_bal_rawList| filter: search| itemsPerPage: 12'>
+										<td>{{x.sysid}}</td>
+										<td>{{x.item_name}}</td>
+										<td>{{x.item_code}}</td>
+										<td>{{x.item_qty}}</td>
+										<td>{{x.item_wt}}</td>
+										<td>{{x.op_bal_date}}</td>
+									</tr>
+								</tbody>
+							</table>
+							<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+							</dir-pagination-controls>
+						</div>
+					</div>
+		</div>
+		</div>
+	</div>
+</form>

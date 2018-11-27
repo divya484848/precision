@@ -1,0 +1,77 @@
+<form role='form'>
+	<script type='text/javascript'>
+		$(function () {
+			$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+		});
+		$('#clear').click(function(){
+			$('#dt1').data('DateTimePicker').clear();
+			$('#dt2').data('DateTimePicker').clear();
+			$('#dt3').data('DateTimePicker').clear();
+		});
+	</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; min-height: 600px;'>
+			<div class='col-sm-2'>
+				<div ng-controller='cont_menuCtrl' ng-include src="'modules/hrms/cont_menu/cont_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header1 col-sm-1' class='col-sm-1'>Registration</span>
+				<div class='col-sm-3'>
+					<div class='input-group'>
+						<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+						<div class='input-group-btn'>
+							<button class='btn btn-success btn-sm searchBox' type='submit'>
+								<i class='glyphicon glyphicon-search'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<span class='header2 col-sm-5' class='col-sm-5'>{{hrms_contractor_status}}</span>
+				<div class='col-sm-3' style='text-align: right'>
+					<div class='btn-group'>
+						<a  class='btn btn-default btn-sm'  href='cont_reg'  ng-click='insert_hrms_contractor_record()'>
+							<span class='glyphicon glyphicon-plus'></span> Add
+						</a>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-download'></span> Download
+						</button>
+					</div>
+				</div>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'>
+							<thead>
+								<tr>
+									<th >Firm name</th>
+									<th>Firm registration no</th>
+									<th>GST no</th>
+									<th>Contact person</th>
+									<th>Contact phone no</th>
+									<th>Unit name</th>
+									<th>Status</th>
+									<th ></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in hrms_contractorList| filter: search| itemsPerPage: 12'>
+									<td><a  href='/cont_reg/{{x.sysid}}'  ng-click='update_hrms_contractor_record(x)' ng-model='hrms_contractor.firm_name'> {{x.firm_name}}</a></td>
+									<td>{{x.firm_reg_no}}</td>
+									<td>{{x.gst_no}}</td>
+									<td>{{x.contact_person}}</td>
+									<td>{{x.contact_person_phone}}</td>
+									<td>{{x.company_name}}</td>
+									<td>{{x.status}}</td>
+									<td><a  style='color:red;'  href='#'  ng-click='delete_hrms_contractor_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</form>

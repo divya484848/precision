@@ -1,0 +1,110 @@
+<form role='form'>
+	<script type='text/javascript'>
+		$(function () {
+			$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt4').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt5').datetimepicker({format: 'YYYY-MM-DD'});
+		});
+		$('#clear').click(function(){
+			$('#dt1').data('DateTimePicker').clear();
+			$('#dt2').data('DateTimePicker').clear();
+			$('#dt3').data('DateTimePicker').clear();
+			$('#dt4').data('DateTimePicker').clear();
+			$('#dt5').data('DateTimePicker').clear();
+		});
+			$('#dt1').click(function(){
+				var sysdate = new Date();
+				$('#dt1').data('DateTimePicker').date(sysdate);
+			})
+			$('#dt2').click(function(){
+				var sysdate = new Date();
+				$('#dt2').data('DateTimePicker').date(sysdate);
+			})
+			$('#dt3').click(function(){
+				var sysdate = new Date();
+				$('#dt3').data('DateTimePicker').date(sysdate);
+			})
+			$('#dt4').click(function(){
+				var sysdate = new Date();
+				$('#dt4').data('DateTimePicker').date(sysdate);
+			})
+			$('#dt5').click(function(){
+				var sysdate = new Date();
+				$('#dt5').data('DateTimePicker').date(sysdate);
+			})
+	</script>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-2'>
+				<div class='row'  style='padding: 0px;'>
+					<div ng-controller='sal_menuCtrl' ng-include src="'modules/payroll/sal_menu/sal_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-2' class='col-sm-2'>Salary policies</span>
+				<div class='col-sm-3'>
+					<div class='input-group'>
+						<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+						<div class='input-group-btn'>
+							<button class='btn btn-success btn-sm searchBox' type='submit'>
+								<i class='glyphicon glyphicon-search'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<span class='header2 col-sm-3' class='col-sm-3'></span>
+				<div class='col-sm-4' style='text-align: right'>
+					<div class='btn-group'>
+						<a  class='btn btn-default btn-sm'  href='/sal_policy_form'>
+							<span class='glyphicon glyphicon-plus'></span> Add
+						</a>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-search'></span> View
+						</button>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-download'></span> Download
+						</button>
+					</div>
+				</div>
+			</div>
+				<div class='row'  style='padding-top: 5px'>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'>
+							<thead>
+								<tr>
+									<th >Policy code</th>
+									<th>Title</th>
+									<th>Start date</th>
+									<th>End date</th>
+									<th>Version no</th>
+									<th>Prepared by</th>
+									<th>Approved by</th>
+									<th>Status</th>
+									<th ></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in payroll_sal_policiesList| filter: search| itemsPerPage: 12'>
+									<td><a  href='/sal_policy_form/{{x.sysid}}' ng-model='payroll_sal_policies.policy_code'> {{x.policy_code}}</a></td>
+									<td>{{x.title}}</td>
+									<td>{{x.start_date}}</td>
+									<td>{{x.end_date}}</td>
+									<td>{{x.version_no}}</td>
+									<td>{{x.prepared_by}}</td>
+									<td>{{x.approved_by}}</td>
+									<td>{{x.status}}</td>
+									<td><a  style='color: red'  href='#'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+				</div>
+		</div>
+		</div>
+	</div>
+</form>

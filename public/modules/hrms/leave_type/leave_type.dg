@@ -1,0 +1,1080 @@
+{
+    "child": [
+        {
+            "child": [
+                {
+                    "child": [
+                        {
+                            "child": [
+                            ],
+                            "name": "IncludePage",
+                            "props": {
+                                "Class": "",
+                                "Columns": "12",
+                                "Control Name": "",
+                                "Controller": "leaves_menuCtrl",
+                                "ID": "",
+                                "PageSource": "modules/hrms/leaves_menu/leaves_menu.html",
+                                "Parent-style": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "IncludePage"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "2",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header1",
+                                        "Columns": "2",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "Leave type",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "SearchBox",
+                                    "props": {
+                                        "ChangeEvent": "",
+                                        "Class": "",
+                                        "ClickEvent": "",
+                                        "Columns": "3",
+                                        "Condition": "",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Model": "search",
+                                        "Parent-style": "",
+                                        "Placeholder": "Enter search text",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "SearchBox"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header2",
+                                        "Columns": "4",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Link",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "insert_hrms_leave_type_record()",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "#ltDlg",
+                                                "Data-toggle": "modal",
+                                                "DisplayLabel": "Header",
+                                                "Glyphicon": "plus",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Label-type": "label",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Ref": "#",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Add",
+                                                "Visible": ""
+                                            },
+                                            "type": "Link"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "upload",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Upload",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "download",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Download",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        }
+                                    ],
+                                    "name": "ButtonGroup",
+                                    "props": {
+                                        "Class": "btn-group",
+                                        "Columns": "3",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "text-align: right",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ButtonGroup"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "name",
+                                            "props": {
+                                                "Class": "",
+                                                "ClickEvent": "update_hrms_leave_type_record(x)",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "hrms_leave_type",
+                                                "Data-dismiss": "",
+                                                "Data-target": "#ltDlg",
+                                                "Data-toggle": "modal",
+                                                "DisplayLabel": "Name",
+                                                "Glyphicon": "",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Label-type": "label",
+                                                "Model": "leave_type",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Ref": "#",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Link"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "short_code",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "hrms_leave_type",
+                                                "DisplayLabel": "Short code",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "short_code",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "total_leaves_per_year",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "hrms_leave_type",
+                                                "DisplayLabel": "Total leaves per year",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "total_leaves_per_year",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "applicable_from",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "hrms_leave_type",
+                                                "DisplayLabel": "Applicable from",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "applicable_from",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "applicable_to",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "hrms_leave_type",
+                                                "DisplayLabel": "Applicable to",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "applicable_to",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "carry_forward",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "hrms_leave_type",
+                                                "DisplayLabel": "Carry forward",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "carry_forward",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "encashable",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "hrms_leave_type",
+                                                "DisplayLabel": "Encashable",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "encashable",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "status",
+                                            "props": {
+                                                "Class": "header2",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "hrms_leave_type",
+                                                "DisplayLabel": "Status",
+                                                "ID": "",
+                                                "Label class": "",
+                                                "Label-type": "span",
+                                                "Model": "status",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Label"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Link",
+                                            "props": {
+                                                "Class": "",
+                                                "ClickEvent": "delete_hrms_leave_type_record(x.sysid)",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "DisplayLabel": "Header",
+                                                "Glyphicon": "trash",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Label-type": "label",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Ref": "#",
+                                                "Style": "color:red;",
+                                                "TableColumnWidth": "",
+                                                "Value": "Delete",
+                                                "Visible": ""
+                                            },
+                                            "type": "Link"
+                                        }
+                                    ],
+                                    "name": "Table",
+                                    "props": {
+                                        "Class": "table table-bordered table-condensed table-bordered",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "DataSource": "hrms_leave_typeList",
+                                        "Filter": "search",
+                                        "ID": "",
+                                        "ItemsPerPage": "12",
+                                        "NoOfPagesDisplay": "10",
+                                        "Pagination": "Yes",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Table"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding-top: 20px",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "10",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                }
+            ],
+            "name": "Row",
+            "props": {
+                "Class": "row",
+                "Control Name": "",
+                "DB-table": "",
+                "ID": "",
+                "Parent-style": "",
+                "Repeat": "",
+                "Style": "background-color: #ffffff; min-height: 600px;",
+                "Visible": ""
+            },
+            "type": "Row"
+        },
+        {
+            "child": [
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header1",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "Leave type",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogHeader",
+                    "props": {
+                        "Class": "modal-header",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogHeader"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "name",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_leave_type",
+                                                        "DisplayLabel": "Name",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "leave_type",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "short_code",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_leave_type",
+                                                        "DisplayLabel": "Short code",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "short_code",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "total_leaves_per_year",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_leave_type",
+                                                        "DisplayLabel": "Total leaves per year",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "total_leaves_per_year",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "applicable_from",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "input-group date",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "DB-table": "hrms_leave_type",
+                                                        "DateFormat": "YYYY-MM-DD",
+                                                        "DisplayLabel": "Applicable from",
+                                                        "ID": "dt1",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "applicable_from",
+                                                        "Parent-style": "",
+                                                        "Readonly": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Date"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "applicable_to",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "input-group date",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "DB-table": "hrms_leave_type",
+                                                        "DateFormat": "YYYY-MM-DD",
+                                                        "DisplayLabel": "Applicable to",
+                                                        "ID": "dt2",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "applicable_to",
+                                                        "Parent-style": "",
+                                                        "Readonly": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Date"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "carry_forward",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "DB-table": "hrms_leave_type",
+                                                        "DataSource": "carryFwdList",
+                                                        "DisplayLabel": "Carry forward",
+                                                        "ID": "",
+                                                        "Init": "Yes",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "carry_forward",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "StaticValues": "Yes,No",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "ComboBox"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "6",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "carry_fwd_qty",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_leave_type",
+                                                        "DisplayLabel": "Carry forward qty",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "carry_fwd_qty",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "encashable",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "DB-table": "hrms_leave_type",
+                                                        "DataSource": "encashList",
+                                                        "DisplayLabel": "Encashable",
+                                                        "ID": "",
+                                                        "Init": "Yes",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "encashable",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "StaticValues": "Yes,No",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "ComboBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "encash_rate_on",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "DB-table": "hrms_leave_type",
+                                                        "DataSource": "encashrateList",
+                                                        "DisplayLabel": "Encash rate on",
+                                                        "ID": "",
+                                                        "Init": "Yes",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "encash_rate_on",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "StaticValues": "Basic,Gross,Fixed",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "ComboBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "encash_rate",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "hrms_leave_type",
+                                                        "DisplayLabel": "Encash rate",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "encash_rate",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "company_id",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "DB-table": "hrms_leave_type",
+                                                        "DataSource": "sysid.company_name.admin_company",
+                                                        "DisplayLabel": "Unit name",
+                                                        "ID": "",
+                                                        "Init": "Yes",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "company_id",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "StaticValues": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "ComboBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "status",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "5,7",
+                                                        "Control Name": "",
+                                                        "DB-table": "hrms_leave_type",
+                                                        "DataSource": "statusList",
+                                                        "DisplayLabel": "Status",
+                                                        "ID": "",
+                                                        "Init": "Yes",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "status",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "StaticValues": "Active,Inactive",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "ComboBox"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "6",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogBody",
+                    "props": {
+                        "Class": "modal-body",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogBody"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header2",
+                                        "Columns": "7",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "{{hrms_leave_type_status}}",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "save_hrms_leave_type_record()",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "saved",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Save",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "modal",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "remove",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Close",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        }
+                                    ],
+                                    "name": "ButtonGroup",
+                                    "props": {
+                                        "Class": "btn-group",
+                                        "Columns": "5",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "text-align: right",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ButtonGroup"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding: 10px; ",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogFooter",
+                    "props": {
+                        "Class": "footer",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogFooter"
+                }
+            ],
+            "name": "Dialog",
+            "props": {
+                "Class": "modal fade",
+                "Columns": "12",
+                "Control Name": "",
+                "ID": "ltDlg",
+                "Parent-style": "height: 700px; ; width: 1000px; ",
+                "Style": "",
+                "Visible": ""
+            },
+            "type": "Dialog"
+        }
+    ],
+    "name": "Container",
+    "props": {
+        "Class": "container-fluid",
+        "Control Name": "",
+        "ID": "",
+        "Style": "padding: 0px; ",
+        "Visible": ""
+    },
+    "type": "Container"
+}

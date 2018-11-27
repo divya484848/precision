@@ -1,0 +1,21 @@
+<form role='form'>
+	<script type='text/javascript'>
+		$(function () {
+			$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+		});
+		$('#clear').click(function(){
+			$('#dt1').data('DateTimePicker').clear();
+			$('#dt2').data('DateTimePicker').clear();
+		});
+	</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; min-height: 600px;'>
+			<div class='col-sm-2'>
+				<div ng-controller='cont_menuCtrl' ng-include src="'modules/hrms/cont_menu/cont_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+		</div>
+		</div>
+	</div>
+</form>

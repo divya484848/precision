@@ -1,0 +1,152 @@
+<form role='form'>
+		<script type='text/javascript'>
+			$(function () {
+				$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+				$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+			});
+			$('#clear').click(function(){
+				$('#dt1').data('DateTimePicker').clear();
+				$('#dt2').data('DateTimePicker').clear();
+			});
+				$('#dt1').click(function(){
+					var sysdate = new Date();
+					$('#dt1').data('DateTimePicker').date(sysdate);
+				})
+				$('#dt2').click(function(){
+					var sysdate = new Date();
+					$('#dt2').data('DateTimePicker').date(sysdate);
+				})
+		</script>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-12'>
+				<div class='row'  style='padding-top: 20px'>
+					<span class='header-title col-sm-2' class='col-sm-2'>Diecast ledger</span>
+					<div class='col-sm-7'>
+						<div class='row'>
+							<label class='col-sm-2'>From date</label>
+							<div class='col-sm-4'>
+								<div datetimepicker class='input-group date'  id='dt1' ng-model='inv_ledger_view.from_date'>
+									<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+									<span class='input-group-addon'>
+										<span class='glyphicon glyphicon-calendar'></span>
+									</span>
+								</div>
+							</div>
+							<label class='col-sm-2'>To date</label>
+							<div class='col-sm-4'>
+								<div datetimepicker class='input-group date'  id='dt2' ng-model='inv_ledger_view.to_date'>
+									<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+									<span class='input-group-addon'>
+										<span class='glyphicon glyphicon-calendar'></span>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='col-sm-3' style='text-align: right'>
+						<div class='btn-group'>
+							<button  class='btn btn-default btn-sm'  ng-click='select_inv_ledger_view_record()'>
+								<span class='glyphicon glyphicon-cog'></span> Generate
+							</button>
+							<a  class='btn btn-default btn-sm' href='./data/diecast_ledger.xlsx' target='_self' download='diecast_ledger.xlsx'>
+								<span class='glyphicon glyphicon-download'></span> Download
+							</a>
+							<a  class='btn btn-default btn-sm'  href='/mat_ledger'>
+								<span class='glyphicon glyphicon-arrow-left'></span> Back
+							</a>
+						</div>
+					</div>
+				</div>
+					<div class='row'>
+						<div class='col-sm-3'>
+							<div class='input-group'>
+								<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+								<div class='input-group-btn'>
+									<button class='btn btn-success btn-sm searchBox' type='submit'>
+										<i class='glyphicon glyphicon-search'></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='row table-responsive'>
+						<div class='col-sm-12'>
+							<table class='table table-bordered table-condensed table-bordered table-responsive'>
+								<thead>
+									<tr>
+										<th>Trans ID</th>
+										<th>Employee</th>
+										<th>Department</th>
+										<th>Supplier</th>
+										<th>SO id</th>
+										<th>Item</th>
+										<th>Trans type</th>
+										<th>Trans date</th>
+										<th>Return type</th>
+										<th>Ref issue ID</th>
+										<th>Op qty</th>
+										<th>Item uom</th>
+										<th>Op wt</th>
+										<th>Wt UoM</th>
+										<th>Issue qty</th>
+										<th>Issue wt</th>
+										<th>Rec ok qty</th>
+										<th>Rec ok wt</th>
+										<th>Rec rej qty</th>
+										<th>Rec rej wt</th>
+										<th>Rec scrap qty</th>
+										<th>Rec scrap wt</th>
+										<th>Rec unused qty</th>
+										<th>Rec unused wt</th>
+										<th>Loss qty</th>
+										<th>Loss wt</th>
+										<th>Cl qty</th>
+										<th>Cl wt</th>
+										<th>Status</th>
+										<th>Remarks</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr dir-paginate='x in inv_ledger_viewList| filter: search| itemsPerPage: 12'>
+										<td>{{x.sysid}}</td>
+										<td>{{x.complete_name}}</td>
+										<td>{{x.dept_name}}</td>
+										<td>{{x.supp_name}}</td>
+										<td>{{x.so_id}}</td>
+										<td>{{x.item_name}}</td>
+										<td>{{x.trans_type}}</td>
+										<td>{{x.trans_date}}</td>
+										<td>{{x.return_type}}</td>
+										<td>{{x.ref_issue_id}}</td>
+										<td>{{x.op_qty}}</td>
+										<td>{{x.item_uom}}</td>
+										<td>{{x.op_wt}}</td>
+										<td>{{x.wt_uom}}</td>
+										<td>{{x.iss_qty}}</td>
+										<td>{{x.iss_wt}}</td>
+										<td>{{x.rec_ok_qty}}</td>
+										<td>{{x.rec_ok_wt}}</td>
+										<td>{{x.rec_rej_qty}}</td>
+										<td>{{x.rec_rej_wt}}</td>
+										<td>{{x.rec_scrap_qty}}</td>
+										<td>{{x.rec_scrap_wt}}</td>
+										<td>{{x.rec_unused_qty}}</td>
+										<td>{{x.rec_unused_wt}}</td>
+										<td>{{x.loss_qty}}</td>
+										<td>{{x.loss_wt}}</td>
+										<td>{{x.cl_qty}}</td>
+										<td>{{x.cl_wt}}</td>
+										<td>{{x.status}}</td>
+										<td>{{x.remarks}}</td>
+									</tr>
+								</tbody>
+							</table>
+							<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+							</dir-pagination-controls>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+</form>

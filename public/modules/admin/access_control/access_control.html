@@ -1,0 +1,90 @@
+<form role='form'>
+	<div class='container-fluid'>
+		<div class='row'>
+			<div class='col-sm-12'>
+				<div class='row'  style='padding-top: 20px'>
+					<span class='header-title col-sm-2'  style='padding-right: 0px' class='col-sm-2'>Access control settings</span>
+					<label class='col-sm-2 header2'>Profile name</label>
+					<div class='col-sm-3'>
+						<select class='form-control'  ng-change='select_menu_record()' ng-model='admin_access_control.profile_id' ng-init='admin_access_control.profile_id=admin_access_profile[0].sysid' ng-options='x.sysid as x.profile_name for x in admin_access_profileList'></select>
+					</div>
+					<div class='col-sm-12'>
+						<hr>
+					</div>
+				</div>
+					<div class='row'>
+						<span class='header2 col-sm-4'  style='text-align: center; color: #c70039;' class='col-sm-4'>Main menu</span>
+						<span class='header2 col-sm-4'  style='text-align: center; color: #c70039;' class='col-sm-4'>Sub-menu</span>
+						<span class='header2 col-sm-4'  style='text-align: center; color: #c70039;' class='col-sm-4'>Side menu</span>
+						<div class='col-sm-12'>
+							<hr>
+						</div>
+					</div>
+						<div class='row'>
+							<div class='col-sm-4'>
+								<div class='row'>
+									<span class='header2 col-sm-6' class='col-sm-6'>Menu name</span>
+									<span class='header2 col-sm-2'  style='text-align: center' class='col-sm-2'>Read</span>
+									<span class='header2 col-sm-2'  style='text-align: center' class='col-sm-2'>Write</span>
+									<div class='col-sm-12'>
+										<hr>
+									</div>
+								</div>
+							</div>
+								<div class='col-sm-4'>
+									<div class='row'>
+										<span class='header2 col-sm-8' class='col-sm-8'>Menu name</span>
+										<span class='header2 col-sm-2' class='col-sm-2'>Read</span>
+										<span class='header2 col-sm-2' class='col-sm-2'>Write</span>
+										<div class='col-sm-12'>
+											<hr>
+										</div>
+									</div>
+								</div>
+									<div class='col-sm-4'>
+										<div class='row'>
+											<span class='header2 col-sm-8' class='col-sm-8'>Menu name</span>
+											<span class='header2 col-sm-2' class='col-sm-2'>Read</span>
+											<span class='header2 col-sm-2' class='col-sm-2'>Write</span>
+											<div class='col-sm-12'>
+												<hr>
+											</div>
+										</div>
+									</div>
+						</div>
+									<div class='row'>
+										<div class='col-sm-4'>
+											<div class='row' ng-repeat='x in admin_access_controlList| filter: {menu_type: 0}'>
+												<div class='col-sm-6'>
+													<a  href='#' ng-model='admin_access_control.menu_id'>
+														 {{x.menu_name}}
+													</a>
+												</div>
+												<div class='col-sm-2'>
+													<a  href='#'  ng-click='toggle_choice_read(x.access_read)' ng-model='admin_access_control.access_read'>
+														 {{x.access_read=0?"Yes":"No"}}
+													</a>
+												</div>
+												<div class='col-sm-2'>
+													<label><input type='checkbox' ng-model='admin_access_control' ng-change='x.access_write' ng-click='exists(x)' > </label>
+												</div>
+												<div class='col-sm-2'>
+													<a  style='color: #c70039'  href='#'  ng-click='save_admin_access_control_record(x)'>
+														 Apply
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class='col-sm-4'>
+											<div class='row'>
+											</div>
+										</div>
+										<div class='col-sm-4'>
+											<div class='row'>
+											</div>
+										</div>
+									</div>
+			</div>
+		</div>
+	</div>
+</form>

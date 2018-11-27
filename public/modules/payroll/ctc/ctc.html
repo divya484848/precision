@@ -1,0 +1,284 @@
+<form role='form'>
+										<script type='text/javascript'>
+											$(function () {
+												$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+												$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+												$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+												$('#dt4').datetimepicker({format: 'YYYY-MM-DD'});
+												$('#dt5').datetimepicker({format: 'YYYY-MM-DD'});
+											});
+											$('#clear').click(function(){
+												$('#dt1').data('DateTimePicker').clear();
+												$('#dt2').data('DateTimePicker').clear();
+												$('#dt3').data('DateTimePicker').clear();
+												$('#dt4').data('DateTimePicker').clear();
+												$('#dt5').data('DateTimePicker').clear();
+											});
+												$('#dt1').click(function(){
+													var sysdate = new Date();
+													$('#dt1').data('DateTimePicker').date(sysdate);
+												})
+												$('#dt2').click(function(){
+													var sysdate = new Date();
+													$('#dt2').data('DateTimePicker').date(sysdate);
+												})
+												$('#dt3').click(function(){
+													var sysdate = new Date();
+													$('#dt3').data('DateTimePicker').date(sysdate);
+												})
+												$('#dt4').click(function(){
+													var sysdate = new Date();
+													$('#dt4').data('DateTimePicker').date(sysdate);
+												})
+												$('#dt5').click(function(){
+													var sysdate = new Date();
+													$('#dt5').data('DateTimePicker').date(sysdate);
+												})
+										</script>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-2'>
+				<div class='row'  style='padding: 0px;'>
+					<div ng-controller='sal_menuCtrl' ng-include src="'modules/payroll/sal_menu/sal_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-2' class='col-sm-2'>Compensation</span>
+				<span class='header2 col-sm-7' class='col-sm-7'>{{payroll_ctc_status}}</span>
+				<div class='col-sm-3' style='text-align: right'>
+					<div class='btn-group'>
+						<button  class='btn btn-default btn-sm'  ng-click='save_payroll_ctc_record()'>
+							<span class='glyphicon glyphicon-saved'></span> Save
+						</button>
+						<a  class='btn btn-default btn-sm'  href='/ctc_list'>
+							<span class='glyphicon glyphicon-arrow-left'></span> Back
+						</a>
+					</div>
+				</div>
+					<div class='col-sm-12' style='padding-top: 5px'>
+						<hr>
+					</div>
+			</div>
+					<div class='row'  style='padding-top: 5px'>
+						<div class='col-sm-4'>
+							<div class='row'>
+								<label class='col-sm-3'>Employee</label>
+								<div class='col-sm-9'>
+									<select class='form-control'  ng-change='update_emp_details()' ng-model='payroll_ctc.emp_id' ng-init='payroll_ctc.emp_id=hrms_employees[0].sysid' ng-options='x.sysid as x.complete_name for x in hrms_employeesList'></select>
+								</div>
+								<label class='col-sm-3'>From date</label>
+								<div class='col-sm-9'>
+									<div datetimepicker class='input-group date'  id='dt1' ng-model='payroll_ctc.from_date'>
+										<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-calendar'></span>
+										</span>
+									</div>
+								</div>
+								<label class='col-sm-3'>To date</label>
+								<div class='col-sm-9'>
+									<div datetimepicker class='input-group date'  id='dt2' ng-model='payroll_ctc.to_date'>
+										<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-calendar'></span>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='col-sm-4'>
+							<div class='row'>
+								<label class='col-sm-5'>Employee ID</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='payroll_ctc.v_emp_id'>
+								</div>
+								<label class='col-sm-5'>Department</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='payroll_ctc.dept_name'>
+								</div>
+								<label class='col-sm-5'>Status</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='payroll_ctc.status' ng-init='payroll_ctc.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+								</div>
+							</div>
+						</div>
+						<div class='col-sm-4'>
+							<div class='row'>
+								<label class='col-sm-5'>CTC per month</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='payroll_ctc.ctc_per_month'>
+								</div>
+								<label class='col-sm-5'>CTC per annum</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='payroll_ctc.ctc_per_annum'>
+								</div>
+								<label class='col-sm-5'>Unit name</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='payroll_ctc.company_id' ng-init='payroll_ctc.company_id=admin_company[0].sysid' ng-options='x.sysid as x.company_name for x in admin_companyList'></select>
+								</div>
+							</div>
+						</div>
+						<div class='col-sm-12' style='text-align: right; padding-top: 10px;'>
+							<button  class='btn btn-default btn-sm'  ng-click='insert_payroll_ctc_details_record()' data-target='#ctcDlg' data-toggle='modal'>
+								<span class='glyphicon glyphicon-plus'></span> Add component
+							</button>
+						</div>
+						<div class='col-sm-12' style='padding-top: 10px'>
+							<hr>
+						</div>
+							<span class='header-title col-sm-6'  style='text-align: center' class='col-sm-6'>Earnings</span>
+							<span class='header-title col-sm-6'  style='text-align: center' class='col-sm-6'>Deductions</span>
+							<div class='col-sm-12'>
+								<hr>
+							</div>
+					</div>
+							<div class='row'>
+								<div class='col-sm-6'>
+									<div class='row'>
+										<span class='header2 col-sm-4'  style='text-align: center' class='col-sm-4'>Component</span>
+										<span class='header2 col-sm-4'  style='text-align: center' class='col-sm-4'>Amount</span>
+										<span class='header2 col-sm-4'  style='text-align: center' class='col-sm-4'>Frequency</span>
+										<div class='col-sm-12'>
+											<hr>
+										</div>
+									</div>
+										<div class='row' ng-repeat='x in payroll_ctc_detailsList| filter: {comp_type:"Earning"}'>
+											<div class='col-sm-4' style='text-align: right'>
+												<a  href='#'  ng-click='update_payroll_ctc_details_record(x)' ng-model='payroll_ctc_details.ctc_comp_id' data-target='#ctcDlg' data-toggle='modal'>
+													 {{x.comp_header}}
+												</a>
+											</div>
+											<div class='col-sm-4'>
+												<input class='form-control'  type='text'  ng-readonly='true' ng-model='x.amount'>
+											</div>
+											<div class='col-sm-4'>
+												<input class='form-control'  type='text'  ng-readonly='true'>
+											</div>
+										</div>
+								</div>
+									<div class='col-sm-6'>
+										<div class='row'>
+											<span class='header2 col-sm-4'  style='text-align: center' class='col-sm-4'>Component</span>
+											<span class='header2 col-sm-4'  style='text-align: center' class='col-sm-4'>Amount</span>
+											<span class='header2 col-sm-4'  style='text-align: center' class='col-sm-4'>Frequency</span>
+											<div class='col-sm-12'>
+												<hr>
+											</div>
+										</div>
+											<div class='row' ng-repeat='x in payroll_ctc_detailsList| filter: {comp_type:"Deduction"}'>
+												<div class='col-sm-4' style='text-align: right'>
+													<a  href='#'  ng-click='update_payroll_ctc_details_record(x)' ng-model='payroll_ctc_details.ctc_comp_id' data-target='#ctcDlg' data-toggle='modal'>
+														 {{x.comp_header}}
+													</a>
+												</div>
+												<div class='col-sm-4'>
+													<input class='form-control'  type='text'  ng-readonly='true' ng-model='x.amount'>
+												</div>
+												<div class='col-sm-4'>
+													<input class='form-control'  type='text'  ng-readonly='true'>
+												</div>
+											</div>
+									</div>
+							</div>
+		</div>
+		</div>
+							<div class='modal fade'  id='ctcDlg' role='dialog'>
+								<div class='modal-dialog' style='height: 700px; ; width: 1000px; '>
+									<div class='modal-content'>
+										<div class='modal-header'>
+											<div class='row'>
+												<span class='header1 col-sm-12' class='col-sm-12'>Salary components</span>
+											</div>
+										</div>
+										<div class='modal-body'>
+											<div class='row'>
+												<div class='col-sm-5'>
+													<div class='row'>
+														<label class='col-sm-4'>CTC  ID</label>
+														<div class='col-sm-8'>
+															<input class='form-control'  type='text'  ng-readonly='true' ng-model='payroll_ctc_details.ctc_id'>
+														</div>
+														<label class='col-sm-4'>Component</label>
+														<div class='col-sm-8'>
+															<select class='form-control' ng-model='payroll_ctc_details.ctc_comp_id' ng-init='payroll_ctc_details.ctc_comp_id=payroll_ctc_comp[0].sysid' ng-options='x.sysid as x.comp_header for x in payroll_ctc_compList'></select>
+														</div>
+														<label class='col-sm-4'>Amount</label>
+														<div class='col-sm-8'>
+															<input class='form-control'  type='text' ng-model='payroll_ctc_details.amount'>
+														</div>
+														<label class='col-sm-4'>Rev from date</label>
+														<div class='col-sm-8'>
+															<div datetimepicker class='input-group date'  id='dt3' ng-model='payroll_ctc_details.rev_from_date'>
+																<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+																<span class='input-group-addon'>
+																	<span class='glyphicon glyphicon-calendar'></span>
+																</span>
+															</div>
+														</div>
+														<label class='col-sm-4'>Rev to date</label>
+														<div class='col-sm-8'>
+															<div datetimepicker class='input-group date'  id='dt4' ng-model='payroll_ctc_details.rev_to_date'>
+																<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+																<span class='input-group-addon'>
+																	<span class='glyphicon glyphicon-calendar'></span>
+																</span>
+															</div>
+														</div>
+														<label class='col-sm-4'>Arrears from</label>
+														<div class='col-sm-8'>
+															<div datetimepicker class='input-group date'  id='dt5' ng-model='payroll_ctc_details.arr_month_year'>
+																<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+																<span class='input-group-addon'>
+																	<span class='glyphicon glyphicon-calendar'></span>
+																</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class='col-sm-7'>
+													<div class='row'>
+														<label class='col-sm-2'>Comp type</label>
+														<div class='col-sm-4'>
+															<input class='form-control'  type='text'  ng-readonly='true'>
+														</div>
+														<label class='col-sm-2'>Frequency</label>
+														<div class='col-sm-4'>
+															<input class='form-control'  type='text'  ng-readonly='true'>
+														</div>
+														<label class='col-sm-2'>Min limit</label>
+														<div class='col-sm-4'>
+															<input class='form-control'  type='text'  ng-readonly='true'>
+														</div>
+														<label class='col-sm-2'>Max limit</label>
+														<div class='col-sm-4'>
+															<input class='form-control'  type='text'  ng-readonly='true'>
+														</div>
+														<label class='col-sm-2'>Grade</label>
+														<div class='col-sm-4'>
+															<input class='form-control'  type='text'  ng-readonly='true'>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class='footer'>
+											<div class='row'  style='padding: 10px;'>
+												<span class='header2 col-sm-9' class='col-sm-9'>{{payroll_ctc_details_status}}</span>
+												<div class='col-sm-3' style='text-align: right'>
+													<div class='btn-group'>
+														<button  class='btn btn-default btn-sm'  ng-click='save_payroll_ctc_details_record()'>
+															<span class='glyphicon glyphicon-saved'></span> Save
+														</button>
+														<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+															<span class='glyphicon glyphicon-remove'></span> Close
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+	</div>
+</form>

@@ -1,0 +1,256 @@
+<form role='form'>
+					<script type='text/javascript'>
+						$(function () {
+							$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+							$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+							$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+						});
+						$('#clear').click(function(){
+							$('#dt1').data('DateTimePicker').clear();
+							$('#dt2').data('DateTimePicker').clear();
+							$('#dt3').data('DateTimePicker').clear();
+						});
+							$('#dt1').click(function(){
+								var sysdate = new Date();
+								$('#dt1').data('DateTimePicker').date(sysdate);
+							})
+							$('#dt2').click(function(){
+								var sysdate = new Date();
+								$('#dt2').data('DateTimePicker').date(sysdate);
+							})
+							$('#dt3').click(function(){
+								var sysdate = new Date();
+								$('#dt3').data('DateTimePicker').date(sysdate);
+							})
+					</script>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-2'>
+				<div class='row'  style='padding: 0px;'>
+					<div ng-controller='emp_menuCtrl' ng-include src="'modules/hrms/emp_menu/emp_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header1 col-sm-2' class='col-sm-2'>Register employee</span>
+				<span class='header2 col-sm-8' class='col-sm-8'>{{hrms_employees_status}}</span>
+				<div class='col-sm-2' style='text-align: right'>
+					<div class='btn-group'>
+						<button  class='btn btn-default btn-sm'  ng-click='save_hrms_employees_record()'>
+							<span class='glyphicon glyphicon-saved'></span> Save
+						</button>
+						<a  class='btn btn-default btn-sm'  href='/emplist'>
+							<span class='glyphicon glyphicon-arrow-left'></span> Back
+						</a>
+					</div>
+				</div>
+					<div class='col-sm-12' style='padding-top: 10px'>
+						<hr>
+					</div>
+			</div>
+					<div class='row'>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<div class='col-sm-8' style='text-align: right'>
+									<img src='images/user.png'></img>
+								</div>
+									<div class='col-sm-4' style='text-align: right'>
+										<button  class='btn btn-default btn-sm'>
+											<span class='glyphicon glyphicon-upload'></span> Upload photo
+										</button>
+									</div>
+									<label class='col-sm-5'>Employee ID</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='hrms_employees.emp_id'>
+									</div>
+									<label class='col-sm-5'>Salutation</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='hrms_employees.salutation' ng-init='hrms_employees.salutation=salList[0]' ng-options='x as x for x in salList'></select>
+									</div>
+									<label class='col-sm-5'>First name</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-change='update_complete_name()' ng-model='hrms_employees.first_name'>
+									</div>
+									<label class='col-sm-5'>Middle name</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-change='update_complete_name()' ng-model='hrms_employees.middle_name'>
+									</div>
+									<label class='col-sm-5'>Last name</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-change='update_complete_name()' ng-model='hrms_employees.last_name'>
+									</div>
+									<label class='col-sm-5'>Complete name</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='hrms_employees.complete_name'>
+									</div>
+									<label class='col-sm-5'>Birth date</label>
+									<div class='col-sm-7'>
+										<div datetimepicker class='input-group date'  id='dt1' ng-model='hrms_employees.birth_date'>
+											<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+									<label class='col-sm-5'>Joining date</label>
+									<div class='col-sm-7'>
+										<div datetimepicker class='input-group date'  id='dt2' ng-model='hrms_employees.joining_date'>
+											<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+									<label class='col-sm-5'>Leaving date</label>
+									<div class='col-sm-7'>
+										<div datetimepicker class='input-group date'  id='dt3' ng-model='hrms_employees.leaving_date'>
+											<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+									<label class='col-sm-5'>Tag ID</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='hrms_employees.tag_id'>
+									</div>
+							</div>
+						</div>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>Phone1</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='hrms_employees.phone1'>
+									</div>
+									<label class='col-sm-5'>Phone2</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='hrms_employees.phone2'>
+									</div>
+									<label class='col-sm-5'>Email</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='hrms_employees.email'>
+									</div>
+									<label class='col-sm-5'>Unit name</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='hrms_employees.company_id' ng-init='hrms_employees.company_id=admin_company[0].sysid' ng-options='x.sysid as x.company_name for x in admin_companyList'></select>
+									</div>
+									<label class='col-sm-5'>Department</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='hrms_employees.dept_id' ng-init='hrms_employees.dept_id=admin_dept[0].sysid' ng-options='x.sysid as x.dept_name for x in admin_deptList'></select>
+									</div>
+									<label class='col-sm-5'>Designation</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='hrms_employees.role_id' ng-init='hrms_employees.role_id=admin_roles[0].sysid' ng-options='x.sysid as x.role_name for x in admin_rolesList'></select>
+									</div>
+									<label class='col-sm-5'>Manager</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='hrms_employees.mgr_id' ng-init='hrms_employees.mgr_id=hrms_employees[0].sysid' ng-options='x.sysid as x.complete_name for x in hrms_employeesList'></select>
+									</div>
+									<label class='col-sm-5'>Grade</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='hrms_employees.grade_id' ng-init='hrms_employees.grade_id=hrms_emp_grade[0].sysid' ng-options='x.sysid as x.grade_code for x in hrms_emp_gradeList'></select>
+									</div>
+									<label class='col-sm-5'>Profile</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='hrms_employees.profile_id' ng-init='hrms_employees.profile_id=admin_access_profile[0].sysid' ng-options='x.sysid as x.profile_name for x in admin_access_profileList'></select>
+									</div>
+									<label class='col-sm-5'>Gender</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='hrms_employees.gender' ng-init='hrms_employees.gender=genderList[0]' ng-options='x as x for x in genderList'></select>
+									</div>
+									<label class='col-sm-5'>PF No</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='hrms_employees.pf_no'>
+									</div>
+									<label class='col-sm-5'>UAN No</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='hrms_employees.uan_no'>
+									</div>
+									<label class='col-sm-5'>ESI No</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='hrms_employees.esi_no'>
+									</div>
+									<label class='col-sm-5'>Status</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='hrms_employees.status' ng-init='hrms_employees.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+									</div>
+								</div>
+							</div>
+					</div>
+						<div class='row'  style='padding-top: 10px'>
+							<div class='col-sm-12'>
+								<hr>
+							</div>
+						</div>
+							<div class='row'>
+								<div class='col-sm-6'>
+									<div class='row'>
+										<span class='header1 col-sm-12'  style='text-align: center' class='col-sm-12'>Present address</span>
+										<label class='col-sm-5'>Address</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='hrms_employees.present_address1'>
+										</div>
+										<label class='col-sm-5'></label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='hrms_employees.present_address2'>
+										</div>
+										<label class='col-sm-5'></label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='hrms_employees.present_address3'>
+										</div>
+										<label class='col-sm-5'>City</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='hrms_employees.present_city'>
+										</div>
+										<label class='col-sm-5'>State</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='hrms_employees.present_state'>
+										</div>
+										<label class='col-sm-5'>Country</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='hrms_employees.present_country'>
+										</div>
+										<label class='col-sm-5'>Pincode</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='hrms_employees.present_pincode'>
+										</div>
+									</div>
+								</div>
+								<div class='col-sm-6'>
+									<div class='row'>
+										<span class='header1 col-sm-12'  style='text-align: center' class='col-sm-12'>Permanent address</span>
+										<label class='col-sm-5'>Address</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='hrms_employees.perm_address1'>
+										</div>
+										<label class='col-sm-5'></label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='hrms_employees.perm_address2'>
+										</div>
+										<label class='col-sm-5'></label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='hrms_employees.perm_address3'>
+										</div>
+										<label class='col-sm-5'>City</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='hrms_employees.perm_city'>
+										</div>
+										<label class='col-sm-5'>State</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='hrms_employees.perm_state'>
+										</div>
+										<label class='col-sm-5'>Country</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='hrms_employees.perm_country'>
+										</div>
+										<label class='col-sm-5'>Pincode</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='hrms_employees.perm_pincode'>
+										</div>
+									</div>
+								</div>
+							</div>
+		</div>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,416 @@
+<form role='form'>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; padding-top: 10px;'>
+			<div class='col-sm-1'>
+			</div>
+			<div class='col-sm-10'>
+				<div class='row'  style='padding-top: 20px'>
+					<span class='header-title col-sm-2' class='col-sm-2'>Item master (Raw)</span>
+				</div>
+				<div class='row'>
+					<ul class='nav nav-tabs'>
+						<li class='active'><a data-toggle='tab' data-target='#a1'><b>Item details</b></a></li>
+						<li><a data-toggle='tab' data-target='#a2'><b>Attributes</b></a></li>
+						<li><a data-toggle='tab' data-target='#a3'><b>Heat Treatment</b></a></li>
+						<li><a data-toggle='tab' data-target='#a4'><b>Load Test</b></a></li>
+					</ul>
+					<div class='tab-content'>
+						<div id='a1' class='tab-pane fade in active'>
+						<div class='row'  style='padding-top: 10px'>
+							<span class='header2 col-sm-8'  style='color: #c70039' class='col-sm-8'>{{inv_item_master_springs_status}}</span>
+							<div class='col-sm-4' style='text-align: right'>
+								<div class='btn-group'>
+									<button  class='btn btn-default btn-sm'  ng-click='save_inv_item_master_springs_record()'>
+										<span class='glyphicon glyphicon-saved'></span> Save
+									</button>
+									<a  class='btn btn-default btn-sm'  href='/item_master_springslist'>
+										<span class='glyphicon glyphicon-arrow-left'></span> Back
+									</a>
+								</div>
+							</div>
+						</div>
+							<div class='row'  style='padding-top: 10px'>
+								<div class='col-sm-6'>
+									<div class='row'>
+										<label class='col-sm-5'>Short code</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master_springs.short_code'>
+										</div>
+										<label class='col-sm-5'>Item name</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master_springs.item_name'>
+										</div>
+										<label class='col-sm-5'>Description</label>
+										<div class='col-sm-7'>
+											<textarea class='form-control' ng-model='inv_item_master_springs.item_descr' rows='5'></textarea>
+										</div>
+										<label class='col-sm-5'>Item serial</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master_springs.item_serial'>
+										</div>
+										<label class='col-sm-5'>Spring finish</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master_springs.spring_finish'>
+										</div>
+										<label class='col-sm-5'>Wire size mm</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master_springs.wire_size_mm'>
+										</div>
+										<label class='col-sm-5'>Wire finish</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master_springs.wire_finish'>
+										</div>
+										<label class='col-sm-5'>Other material req spec</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master_springs.other_material_req_spec'>
+										</div>
+										<label class='col-sm-5'>Drg no</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master_springs.drg_no'>
+										</div>
+									</div>
+								</div>
+								<div class='col-sm-6'>
+									<div class='row'>
+										<label class='col-sm-5'>Drg file</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master_springs.drg_file'>
+										</div>
+										<label class='col-sm-5'>Die serial</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master_springs.die_serial'>
+										</div>
+										<label class='col-sm-5'>Specification</label>
+										<div class='col-sm-7'>
+											<textarea class='form-control' ng-model='inv_item_master_springs.specification' rows='5'></textarea>
+										</div>
+										<label class='col-sm-5'>UoM</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master_springs.uom'>
+										</div>
+										<label class='col-sm-5'>Unit wt</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master_springs.unit_wt'>
+										</div>
+										<label class='col-sm-5'>Unit wt UoM</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master_springs.unit_wt_uom'>
+										</div>
+										<label class='col-sm-5'>QA required</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master_springs.is_qa_required'>
+										</div>
+										<label class='col-sm-5'>Status</label>
+										<div class='col-sm-7'>
+											<select class='form-control' ng-model='inv_item_master__springs.status' ng-init='inv_item_master__springs.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+							<div id='a2' class='tab-pane fade'>
+							<div class='row'  style='padding-top: 10px'>
+								<span class='header2 col-sm-8'  style='color: #c70039' class='col-sm-8'>{{inv_item_attribs_springs_master_status}}</span>
+								<div class='col-sm-4' style='text-align: right'>
+									<div class='btn-group'>
+										<button  class='btn btn-default btn-sm'  ng-click='save_inv_item_attribs_springs_master_record()'>
+											<span class='glyphicon glyphicon-saved'></span> Save
+										</button>
+										<a  class='btn btn-default btn-sm'  href='/item_master_springslist'>
+											<span class='glyphicon glyphicon-arrow-left'></span> Back
+										</a>
+									</div>
+								</div>
+							</div>
+								<div class='row'  style='padding-top: 10px'>
+									<div class='col-sm-6'>
+										<div class='row'>
+											<label class='col-sm-5'>Item id</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_item_attribs_springs_master.item_id'>
+											</div>
+											<label class='col-sm-5'>Short code</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_item_master_springs.short_code'>
+											</div>
+											<label class='col-sm-5'>Process name</label>
+											<div class='col-sm-7'>
+												<select class='form-control' ng-model='inv_item_attribs_springs_master.process_name' ng-init='inv_item_attribs_springs_master.process_name=processNameList[0]' ng-options='x as x for x in processNameList'></select>
+											</div>
+											<label class='col-sm-5'>Process time</label>
+											<div class='col-sm-7'>
+												<select class='form-control' ng-model='inv_item_attribs_springs_master.process_time' ng-init='inv_item_attribs_springs_master.process_time=processTimeList[0]' ng-options='x as x for x in processTimeList'></select>
+											</div>
+											<label class='col-sm-5'>Attribute name</label>
+											<div class='col-sm-7'>
+												<select class='form-control' ng-model='inv_item_attribs_springs_master.attrib_id' ng-init='inv_item_attribs_springs_master.attrib_id=inv_attribs_springs_master[0].sysid' ng-options='x.sysid as x.short_code for x in inv_attribs_springs_masterList'></select>
+											</div>
+										</div>
+									</div>
+									<div class='col-sm-6'>
+										<div class='row'>
+											<label class='col-sm-5'>Attrib value</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='inv_item_attribs_springs_master.attrib_value'>
+											</div>
+											<label class='col-sm-5'>Attrib uom</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='inv_item_attribs_springs_master.attrib_uom'>
+											</div>
+											<label class='col-sm-5'>Attrib min dev</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='inv_item_attribs_springs_master.attrib_min_dev'>
+											</div>
+											<label class='col-sm-5'>Attrib max dev</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='inv_item_attribs_springs_master.attrib_max_dev'>
+											</div>
+											<label class='col-sm-5'>Status</label>
+											<div class='col-sm-7'>
+												<select class='form-control' ng-model='inv_item_attribs_springs_master.status' ng-init='inv_item_attribs_springs_master.status=attrSatusList[0]' ng-options='x as x for x in attrSatusList'></select>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class='row'>
+									<div class='col-sm-12'>
+										<table class='table table-bordered table-condensed table-bordered'>
+											<thead>
+												<tr>
+													<th >Header</th>
+													<th>Process time</th>
+													<th>Process name</th>
+													<th>Attribute Name</th>
+													<th>Attrib value</th>
+													<th>Attrib uom</th>
+													<th>Attrib min dev</th>
+													<th>Attrib max dev</th>
+													<th>Status</th>
+													<th >Header</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr dir-paginate='x in inv_item_attribs_springs_master1List| itemsPerPage: 12'>
+													<td><a  href='#'  ng-click='update_inv_item_attribs_springs_master_record(x)' ng-model='inv_item_attribs_springs_master1.item_id'> {{x.item_id}}</a></td>
+													<td>{{x.process_time}}</td>
+													<td>{{x.process_name}}</td>
+													<td>{{x.short_code}}</td>
+													<td>{{x.attrib_value}}</td>
+													<td>{{x.attrib_uom}}</td>
+													<td>{{x.attrib_min_dev}}</td>
+													<td>{{x.attrib_max_dev}}</td>
+													<td>{{x.status}}</td>
+													<td><a  class='btn btn-default btn-sm'  style='color:red'  ng-click='delete_inv_item_attribs_springs_master_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+												</tr>
+											</tbody>
+										</table>
+										<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+										</dir-pagination-controls>
+									</div>
+								</div>
+							</div>
+							<div id='a3' class='tab-pane fade'>
+							<div class='row'  style='padding-top: 10px'>
+								<span class='header2 col-sm-8'  style='color: #c70039' class='col-sm-8'>{{inv_item_heating1_status}}</span>
+								<div class='col-sm-4' style='text-align: right'>
+									<div class='btn-group'>
+										<button  class='btn btn-default btn-sm'  ng-click='save_inv_item_heating_record()'>
+											<span class='glyphicon glyphicon-saved'></span> Save
+										</button>
+										<a  class='btn btn-default btn-sm'  href='/item_master_springslist'>
+											<span class='glyphicon glyphicon-arrow-left'></span> Back
+										</a>
+									</div>
+								</div>
+							</div>
+								<div class='row'  style='padding-top: 10px'>
+									<div class='col-sm-6'>
+										<div class='row'>
+											<label class='col-sm-5'>Item id</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_item_heating.item_id'>
+											</div>
+											<label class='col-sm-5'>Furnace name</label>
+											<div class='col-sm-7'>
+												<select class='form-control' ng-model='inv_item_heating.furnace_name' ng-init='inv_item_heating.furnace_name=furnanceNameList[0]' ng-options='x as x for x in furnanceNameList'></select>
+											</div>
+											<label class='col-sm-5'>Heating temp</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='inv_item_heating.heating_temp'>
+											</div>
+											<label class='col-sm-5'>Temprature uom</label>
+											<div class='col-sm-7'>
+												<select class='form-control' ng-model='inv_item_heating.temprature_uom' ng-init='inv_item_heating.temprature_uom=temperatureUOMList[0]' ng-options='x as x for x in temperatureUOMList'></select>
+											</div>
+										</div>
+									</div>
+									<div class='col-sm-6'>
+										<div class='row'>
+											<label class='col-sm-5'>Heating time</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='inv_item_heating.heating_time'>
+											</div>
+											<label class='col-sm-5'>Heating time uom</label>
+											<div class='col-sm-7'>
+												<select class='form-control' ng-model='inv_item_heating.heating_time_uom' ng-init='inv_item_heating.heating_time_uom=heatingTimeList[0]' ng-options='x as x for x in heatingTimeList'></select>
+											</div>
+											<label class='col-sm-5'>Status</label>
+											<div class='col-sm-7'>
+												<select class='form-control'  style='Active,Inactive' ng-model='inv_item_heating.status' ng-init='inv_item_heating.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class='row'>
+									<div class='col-sm-12'>
+										<table class='table table-bordered table-condensed table-bordered'>
+											<thead>
+												<tr>
+													<th >Item Id</th>
+													<th>Furnace name</th>
+													<th>Heating temp</th>
+													<th>Temprature uom</th>
+													<th>Heating time</th>
+													<th>Heating time uom</th>
+													<th>Status</th>
+													<th >Header</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr dir-paginate='x in inv_item_heating1List| itemsPerPage: 12'>
+													<td><a  href='#'  ng-click='update_inv_item_heating_record(x)' ng-model='inv_item_heating1.item_id'> {{x.item_id}}</a></td>
+													<td>{{x.furnace_name}}</td>
+													<td>{{x.heating_temp}}</td>
+													<td>{{x.temprature_uom}}</td>
+													<td>{{x.heating_time}}</td>
+													<td>{{x.heating_time_uom}}</td>
+													<td>{{x.status}}</td>
+													<td><a  class='btn btn-default btn-sm'  style='color:red'  ng-click='delete_inv_item_heating_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+												</tr>
+											</tbody>
+										</table>
+										<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+										</dir-pagination-controls>
+									</div>
+								</div>
+							</div>
+							<div id='a4' class='tab-pane fade'>
+							<div class='row'>
+								<span class='header2 col-sm-12' class='col-sm-12'>Load test</span>
+							</div>
+							<div class='row'  style='padding-top: 10px'>
+								<span class='header2 col-sm-8'  style='color: #c70039' class='col-sm-8'>{{inv_item_load_test1_status}}</span>
+								<div class='col-sm-4' style='text-align: right'>
+									<div class='btn-group'>
+										<button  class='btn btn-default btn-sm'  ng-click='save_inv_item_load_test_record()'>
+											<span class='glyphicon glyphicon-saved'></span> Save
+										</button>
+										<a  class='btn btn-default btn-sm'  href='/item_master_springslist'>
+											<span class='glyphicon glyphicon-arrow-left'></span> Back
+										</a>
+									</div>
+								</div>
+							</div>
+								<div class='row'  style='padding-top: 10px'>
+									<div class='col-sm-6'>
+										<div class='row'>
+											<label class='col-sm-5'>Item id</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='inv_item_load_test.item_id'>
+											</div>
+											<label class='col-sm-5'>Load seq</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='inv_item_load_test.load_seq'>
+											</div>
+											<label class='col-sm-5'>Load value</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='inv_item_load_test.load_value'>
+											</div>
+											<label class='col-sm-5'>Load uom</label>
+											<div class='col-sm-7'>
+												<select class='form-control' ng-model='inv_item_load_test.load_uom' ng-init='inv_item_load_test.load_uom=loadUOMList[0]' ng-options='x as x for x in loadUOMList'></select>
+											</div>
+											<label class='col-sm-5'>Load time</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='inv_item_load_test.load_time'>
+											</div>
+											<label class='col-sm-5'>Load time uom</label>
+											<div class='col-sm-7'>
+												<select class='form-control' ng-model='inv_item_load_test.load_time_uom' ng-init='inv_item_load_test.load_time_uom=loadTimeUOMList[0]' ng-options='x as x for x in loadTimeUOMList'></select>
+											</div>
+										</div>
+									</div>
+									<div class='col-sm-6'>
+										<div class='row'>
+											<label class='col-sm-5'>Length original</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='inv_item_load_test.length_original'>
+											</div>
+											<label class='col-sm-5'>Length final</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='inv_item_load_test.length_final'>
+											</div>
+											<label class='col-sm-5'>Length variance allowed</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='inv_item_load_test.length_variance_allowed'>
+											</div>
+											<label class='col-sm-5'>Length uom</label>
+											<div class='col-sm-7'>
+												<select class='form-control' ng-model='inv_item_load_test.length_uom' ng-init='inv_item_load_test.length_uom=lengthUOMList[0]' ng-options='x as x for x in lengthUOMList'></select>
+											</div>
+											<label class='col-sm-5'>Status</label>
+											<div class='col-sm-7'>
+												<select class='form-control' ng-model='inv_item_load_test.status' ng-init='inv_item_load_test.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class='row'>
+									<div class='col-sm-12'>
+										<table class='table table-bordered table-condensed table-bordered'>
+											<thead>
+												<tr>
+													<th >Item Id</th>
+													<th>Load seq</th>
+													<th>Load value</th>
+													<th>Load uom</th>
+													<th>Load time</th>
+													<th>Load time uom</th>
+													<th>Length original</th>
+													<th>Length final</th>
+													<th>Length variance allowed</th>
+													<th>Length uom</th>
+													<th>Status</th>
+													<th >Header</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr dir-paginate='x in inv_item_load_test1List| itemsPerPage: 12'>
+													<td><a  href='#'  ng-click='update_inv_item_load_test_record(x)' ng-model='inv_item_load_test1.item_id'> {{x.item_id}}</a></td>
+													<td>{{x.load_seq}}</td>
+													<td>{{x.load_value}}</td>
+													<td>{{x.load_uom}}</td>
+													<td>{{x.load_time}}</td>
+													<td>{{x.load_time_uom}}</td>
+													<td>{{x.length_original}}</td>
+													<td>{{x.length_final}}</td>
+													<td>{{x.length_variance_allowed}}</td>
+													<td>{{x.length_uom}}</td>
+													<td>{{x.status}}</td>
+													<td><a  class='btn btn-default btn-sm'  style='color:red'  ng-click='delete_inv_item_load_test_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+												</tr>
+											</tbody>
+										</table>
+										<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+										</dir-pagination-controls>
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+				<div class='col-sm-1'>
+				</div>
+		</div>
+	</div>
+</form>

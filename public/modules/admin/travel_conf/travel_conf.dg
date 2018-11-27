@@ -1,0 +1,2100 @@
+{
+    "child": [
+        {
+            "child": [
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "IncludePage",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "Controller": "travel_menuCtrl",
+                                        "ID": "",
+                                        "PageSource": "modules/admin/travel_menu/travel_menu.html",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "IncludePage"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding: 0px; ",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "2",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header-title",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "Travel configurations",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "HLine",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "HLine"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding-top: 20px",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Image",
+                                                    "props": {
+                                                        "Class": "",
+                                                        "Columns": "4",
+                                                        "Control Name": "",
+                                                        "ID": "",
+                                                        "Image-source": "country2.png",
+                                                        "Parent-style": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Image"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Link",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "ClickEvent": "insert_admin_travel_country_record()",
+                                                        "Columns": "8",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "Data-dismiss": "",
+                                                        "Data-target": "#countryDlg",
+                                                        "Data-toggle": "modal",
+                                                        "DisplayLabel": "Header",
+                                                        "Glyphicon": "",
+                                                        "ID": "",
+                                                        "Icon": "",
+                                                        "Label-type": "label",
+                                                        "Model": "",
+                                                        "Parent-style": "padding-top: 15px",
+                                                        "Readonly": "",
+                                                        "Ref": "#",
+                                                        "Style": "color: #ffffff;",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Register country",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Link"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "12",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Define country type and its class",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "background-color: #fcaf3e; padding: 10px;",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "3",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "max-width: 200px; ",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Image",
+                                                    "props": {
+                                                        "Class": "",
+                                                        "Columns": "4",
+                                                        "Control Name": "",
+                                                        "ID": "",
+                                                        "Image-source": "city.png",
+                                                        "Parent-style": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Image"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Link",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "ClickEvent": "insert_admin_travel_city_record()",
+                                                        "Columns": "8",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "Data-dismiss": "",
+                                                        "Data-target": "#cityDlg",
+                                                        "Data-toggle": "modal",
+                                                        "DisplayLabel": "Header",
+                                                        "Glyphicon": "",
+                                                        "ID": "",
+                                                        "Icon": "",
+                                                        "Label-type": "label",
+                                                        "Model": "",
+                                                        "Parent-style": "padding-top: 15px",
+                                                        "Readonly": "",
+                                                        "Ref": "#",
+                                                        "Style": "color: #ffffff;",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Register city",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Link"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "12",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Define city type and its class",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "background-color: #4e9a06; padding: 10px;",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "3",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "margin-left: 8px; max-width: 200px; ",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Image",
+                                                    "props": {
+                                                        "Class": "",
+                                                        "Columns": "4",
+                                                        "Control Name": "",
+                                                        "ID": "",
+                                                        "Image-source": "expense.png",
+                                                        "Parent-style": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Image"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Link",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "ClickEvent": "",
+                                                        "Columns": "8",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "Data-dismiss": "",
+                                                        "Data-target": "expDlg",
+                                                        "Data-toggle": "modal",
+                                                        "DisplayLabel": "Header",
+                                                        "Glyphicon": "",
+                                                        "ID": "",
+                                                        "Icon": "",
+                                                        "Label-type": "label",
+                                                        "Model": "",
+                                                        "Parent-style": "padding-top: 15px",
+                                                        "Readonly": "",
+                                                        "Ref": "#",
+                                                        "Style": "color: #ffffff;",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Expense heads",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Link"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "12",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Define all allowed expenses",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "background-color: #ef2929; padding: 10px;",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "3",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "margin-left: 8px; max-width: 200px; ",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Image",
+                                                    "props": {
+                                                        "Class": "",
+                                                        "Columns": "4",
+                                                        "Control Name": "",
+                                                        "ID": "",
+                                                        "Image-source": "class.png",
+                                                        "Parent-style": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Image"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Link",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "ClickEvent": "",
+                                                        "Columns": "8",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "Data-dismiss": "",
+                                                        "Data-target": "typeDlg",
+                                                        "Data-toggle": "modal",
+                                                        "DisplayLabel": "Header",
+                                                        "Glyphicon": "",
+                                                        "ID": "",
+                                                        "Icon": "",
+                                                        "Label-type": "label",
+                                                        "Model": "",
+                                                        "Parent-style": "padding-top: 15px",
+                                                        "Readonly": "",
+                                                        "Ref": "#",
+                                                        "Style": "color: #ffffff;",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Travel types",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Link"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "12",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "Define travel types for commute",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "background-color: #c4a000; padding: 10px; ",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "3",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "margin-left: 8px; max-width: 200px; ",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding-left: 20px; padding-right: 20px; padding-bottom: 10px",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                        {
+                                                            "child": [
+                                                                {
+                                                                    "child": [
+                                                                        {
+                                                                            "child": [
+                                                                            ],
+                                                                            "name": "country_code",
+                                                                            "props": {
+                                                                                "Class": "",
+                                                                                "ClickEvent": "update_admin_travel_country_record(x)",
+                                                                                "Columns": "12",
+                                                                                "Control Name": "",
+                                                                                "DB-table": "admin_travel_country",
+                                                                                "Data-dismiss": "",
+                                                                                "Data-target": "#countryDlg",
+                                                                                "Data-toggle": "modal",
+                                                                                "DisplayLabel": "Country code",
+                                                                                "Glyphicon": "",
+                                                                                "ID": "",
+                                                                                "Icon": "",
+                                                                                "Label-type": "label",
+                                                                                "Model": "country_code",
+                                                                                "Parent-style": "",
+                                                                                "Readonly": "",
+                                                                                "Ref": "#",
+                                                                                "Style": "",
+                                                                                "TableColumnWidth": "",
+                                                                                "Value": "",
+                                                                                "Visible": ""
+                                                                            },
+                                                                            "type": "Link"
+                                                                        },
+                                                                        {
+                                                                            "child": [
+                                                                            ],
+                                                                            "name": "country_name",
+                                                                            "props": {
+                                                                                "Class": "header2",
+                                                                                "Columns": "12",
+                                                                                "Control Name": "",
+                                                                                "DB-table": "admin_travel_country",
+                                                                                "DisplayLabel": "Country name",
+                                                                                "ID": "",
+                                                                                "Label class": "",
+                                                                                "Label-type": "span",
+                                                                                "Model": "country_name",
+                                                                                "Required": "",
+                                                                                "Style": "",
+                                                                                "TableColumnWidth": "",
+                                                                                "Value": "",
+                                                                                "Visible": ""
+                                                                            },
+                                                                            "type": "Label"
+                                                                        },
+                                                                        {
+                                                                            "child": [
+                                                                            ],
+                                                                            "name": "language",
+                                                                            "props": {
+                                                                                "Class": "header2",
+                                                                                "Columns": "12",
+                                                                                "Control Name": "",
+                                                                                "DB-table": "admin_travel_country",
+                                                                                "DisplayLabel": "Language",
+                                                                                "ID": "",
+                                                                                "Label class": "",
+                                                                                "Label-type": "span",
+                                                                                "Model": "language",
+                                                                                "Required": "",
+                                                                                "Style": "",
+                                                                                "TableColumnWidth": "",
+                                                                                "Value": "",
+                                                                                "Visible": ""
+                                                                            },
+                                                                            "type": "Label"
+                                                                        },
+                                                                        {
+                                                                            "child": [
+                                                                            ],
+                                                                            "name": "curr_id",
+                                                                            "props": {
+                                                                                "Class": "header2",
+                                                                                "Columns": "12",
+                                                                                "Control Name": "",
+                                                                                "DB-table": "admin_travel_country",
+                                                                                "DisplayLabel": "Currency",
+                                                                                "ID": "",
+                                                                                "Label class": "",
+                                                                                "Label-type": "span",
+                                                                                "Model": "curr_name",
+                                                                                "Required": "",
+                                                                                "Style": "",
+                                                                                "TableColumnWidth": "",
+                                                                                "Value": "",
+                                                                                "Visible": ""
+                                                                            },
+                                                                            "type": "Label"
+                                                                        },
+                                                                        {
+                                                                            "child": [
+                                                                            ],
+                                                                            "name": "country_class",
+                                                                            "props": {
+                                                                                "Class": "header2",
+                                                                                "Columns": "12",
+                                                                                "Control Name": "",
+                                                                                "DB-table": "admin_travel_country",
+                                                                                "DisplayLabel": "Country class",
+                                                                                "ID": "",
+                                                                                "Label class": "",
+                                                                                "Label-type": "span",
+                                                                                "Model": "country_class",
+                                                                                "Required": "",
+                                                                                "Style": "",
+                                                                                "TableColumnWidth": "",
+                                                                                "Value": "",
+                                                                                "Visible": ""
+                                                                            },
+                                                                            "type": "Label"
+                                                                        },
+                                                                        {
+                                                                            "child": [
+                                                                            ],
+                                                                            "name": "status",
+                                                                            "props": {
+                                                                                "Class": "header2",
+                                                                                "Columns": "12",
+                                                                                "Control Name": "",
+                                                                                "DB-table": "admin_travel_country",
+                                                                                "DisplayLabel": "Status",
+                                                                                "ID": "",
+                                                                                "Label class": "",
+                                                                                "Label-type": "span",
+                                                                                "Model": "status",
+                                                                                "Required": "",
+                                                                                "Style": "",
+                                                                                "TableColumnWidth": "",
+                                                                                "Value": "",
+                                                                                "Visible": ""
+                                                                            },
+                                                                            "type": "Label"
+                                                                        },
+                                                                        {
+                                                                            "child": [
+                                                                            ],
+                                                                            "name": "Link",
+                                                                            "props": {
+                                                                                "Class": "",
+                                                                                "ClickEvent": "delete_admin_travel_country_record(x.sysid)",
+                                                                                "Columns": "12",
+                                                                                "Control Name": "",
+                                                                                "DB-table": "",
+                                                                                "Data-dismiss": "",
+                                                                                "Data-target": "",
+                                                                                "Data-toggle": "",
+                                                                                "DisplayLabel": "",
+                                                                                "Glyphicon": "trash",
+                                                                                "ID": "",
+                                                                                "Icon": "",
+                                                                                "Label-type": "label",
+                                                                                "Model": "",
+                                                                                "Parent-style": "",
+                                                                                "Readonly": "",
+                                                                                "Ref": "#",
+                                                                                "Style": "color: red",
+                                                                                "TableColumnWidth": "",
+                                                                                "Value": "Delete",
+                                                                                "Visible": ""
+                                                                            },
+                                                                            "type": "Link"
+                                                                        }
+                                                                    ],
+                                                                    "name": "Table",
+                                                                    "props": {
+                                                                        "Class": "table table-bordered table-condensed table-bordered",
+                                                                        "Columns": "12",
+                                                                        "Control Name": "",
+                                                                        "DataSource": "admin_travel_countryList",
+                                                                        "Filter": "",
+                                                                        "ID": "",
+                                                                        "ItemsPerPage": "12",
+                                                                        "NoOfPagesDisplay": "10",
+                                                                        "Pagination": "Yes",
+                                                                        "Parent-style": "",
+                                                                        "Style": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "Table"
+                                                                }
+                                                            ],
+                                                            "name": "Row",
+                                                            "props": {
+                                                                "Class": "row",
+                                                                "Control Name": "",
+                                                                "DB-table": "",
+                                                                "ID": "",
+                                                                "Parent-style": "",
+                                                                "Repeat": "",
+                                                                "Style": "padding-top: 10px",
+                                                                "Visible": ""
+                                                            },
+                                                            "type": "Row"
+                                                        }
+                                                    ],
+                                                    "name": "country",
+                                                    "props": {
+                                                        "Active": "Yes",
+                                                        "Class": "tab-pane fade in active",
+                                                        "Columns": "12",
+                                                        "Control Name": "country",
+                                                        "Data-target": "country",
+                                                        "ID": "country",
+                                                        "Parent-style": "",
+                                                        "Style": "",
+                                                        "Title": "Countries",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TabPage"
+                                                },
+                                                {
+                                                    "child": [
+                                                        {
+                                                            "child": [
+                                                                {
+                                                                    "child": [
+                                                                        {
+                                                                            "child": [
+                                                                            ],
+                                                                            "name": "city_code",
+                                                                            "props": {
+                                                                                "Class": "",
+                                                                                "ClickEvent": "update_admin_travel_city_record(x)",
+                                                                                "Columns": "12",
+                                                                                "Control Name": "",
+                                                                                "DB-table": "admin_travel_city",
+                                                                                "Data-dismiss": "",
+                                                                                "Data-target": "#cityDlg",
+                                                                                "Data-toggle": "modal",
+                                                                                "DisplayLabel": "City code",
+                                                                                "Glyphicon": "",
+                                                                                "ID": "",
+                                                                                "Icon": "",
+                                                                                "Label-type": "label",
+                                                                                "Model": "city_code",
+                                                                                "Parent-style": "",
+                                                                                "Readonly": "",
+                                                                                "Ref": "#",
+                                                                                "Style": "",
+                                                                                "TableColumnWidth": "",
+                                                                                "Value": "",
+                                                                                "Visible": ""
+                                                                            },
+                                                                            "type": "Link"
+                                                                        },
+                                                                        {
+                                                                            "child": [
+                                                                            ],
+                                                                            "name": "city_name",
+                                                                            "props": {
+                                                                                "Class": "header2",
+                                                                                "Columns": "12",
+                                                                                "Control Name": "",
+                                                                                "DB-table": "admin_travel_city",
+                                                                                "DisplayLabel": "City name",
+                                                                                "ID": "",
+                                                                                "Label class": "",
+                                                                                "Label-type": "span",
+                                                                                "Model": "city_name",
+                                                                                "Required": "",
+                                                                                "Style": "",
+                                                                                "TableColumnWidth": "",
+                                                                                "Value": "",
+                                                                                "Visible": ""
+                                                                            },
+                                                                            "type": "Label"
+                                                                        },
+                                                                        {
+                                                                            "child": [
+                                                                            ],
+                                                                            "name": "country_id",
+                                                                            "props": {
+                                                                                "Class": "header2",
+                                                                                "Columns": "12",
+                                                                                "Control Name": "",
+                                                                                "DB-table": "admin_travel_city",
+                                                                                "DisplayLabel": "Country",
+                                                                                "ID": "",
+                                                                                "Label class": "",
+                                                                                "Label-type": "span",
+                                                                                "Model": "country_name",
+                                                                                "Required": "",
+                                                                                "Style": "",
+                                                                                "TableColumnWidth": "",
+                                                                                "Value": "",
+                                                                                "Visible": ""
+                                                                            },
+                                                                            "type": "Label"
+                                                                        },
+                                                                        {
+                                                                            "child": [
+                                                                            ],
+                                                                            "name": "language",
+                                                                            "props": {
+                                                                                "Class": "header2",
+                                                                                "Columns": "12",
+                                                                                "Control Name": "",
+                                                                                "DB-table": "admin_travel_city",
+                                                                                "DisplayLabel": "Language",
+                                                                                "ID": "",
+                                                                                "Label class": "",
+                                                                                "Label-type": "span",
+                                                                                "Model": "language",
+                                                                                "Required": "",
+                                                                                "Style": "",
+                                                                                "TableColumnWidth": "",
+                                                                                "Value": "",
+                                                                                "Visible": ""
+                                                                            },
+                                                                            "type": "Label"
+                                                                        },
+                                                                        {
+                                                                            "child": [
+                                                                            ],
+                                                                            "name": "curr_id",
+                                                                            "props": {
+                                                                                "Class": "header2",
+                                                                                "Columns": "12",
+                                                                                "Control Name": "",
+                                                                                "DB-table": "admin_travel_city",
+                                                                                "DisplayLabel": "Currency",
+                                                                                "ID": "",
+                                                                                "Label class": "",
+                                                                                "Label-type": "span",
+                                                                                "Model": "curr_name",
+                                                                                "Required": "",
+                                                                                "Style": "",
+                                                                                "TableColumnWidth": "",
+                                                                                "Value": "",
+                                                                                "Visible": ""
+                                                                            },
+                                                                            "type": "Label"
+                                                                        },
+                                                                        {
+                                                                            "child": [
+                                                                            ],
+                                                                            "name": "city_class",
+                                                                            "props": {
+                                                                                "Class": "header2",
+                                                                                "Columns": "12",
+                                                                                "Control Name": "",
+                                                                                "DB-table": "admin_travel_city",
+                                                                                "DisplayLabel": "City class",
+                                                                                "ID": "",
+                                                                                "Label class": "",
+                                                                                "Label-type": "span",
+                                                                                "Model": "city_class",
+                                                                                "Required": "",
+                                                                                "Style": "",
+                                                                                "TableColumnWidth": "",
+                                                                                "Value": "",
+                                                                                "Visible": ""
+                                                                            },
+                                                                            "type": "Label"
+                                                                        },
+                                                                        {
+                                                                            "child": [
+                                                                            ],
+                                                                            "name": "status",
+                                                                            "props": {
+                                                                                "Class": "header2",
+                                                                                "Columns": "12",
+                                                                                "Control Name": "",
+                                                                                "DB-table": "admin_travel_city",
+                                                                                "DisplayLabel": "Status",
+                                                                                "ID": "",
+                                                                                "Label class": "",
+                                                                                "Label-type": "span",
+                                                                                "Model": "status",
+                                                                                "Required": "",
+                                                                                "Style": "",
+                                                                                "TableColumnWidth": "",
+                                                                                "Value": "",
+                                                                                "Visible": ""
+                                                                            },
+                                                                            "type": "Label"
+                                                                        },
+                                                                        {
+                                                                            "child": [
+                                                                            ],
+                                                                            "name": "Link",
+                                                                            "props": {
+                                                                                "Class": "",
+                                                                                "ClickEvent": "delete_admin_travel_city_record(x.sysid)",
+                                                                                "Columns": "12",
+                                                                                "Control Name": "",
+                                                                                "DB-table": "",
+                                                                                "Data-dismiss": "",
+                                                                                "Data-target": "",
+                                                                                "Data-toggle": "",
+                                                                                "DisplayLabel": "",
+                                                                                "Glyphicon": "trash",
+                                                                                "ID": "",
+                                                                                "Icon": "",
+                                                                                "Label-type": "label",
+                                                                                "Model": "",
+                                                                                "Parent-style": "",
+                                                                                "Readonly": "",
+                                                                                "Ref": "#",
+                                                                                "Style": "color: red",
+                                                                                "TableColumnWidth": "",
+                                                                                "Value": "Delete",
+                                                                                "Visible": ""
+                                                                            },
+                                                                            "type": "Link"
+                                                                        }
+                                                                    ],
+                                                                    "name": "Table",
+                                                                    "props": {
+                                                                        "Class": "table table-bordered table-condensed table-bordered",
+                                                                        "Columns": "12",
+                                                                        "Control Name": "",
+                                                                        "DataSource": "admin_travel_cityList",
+                                                                        "Filter": "",
+                                                                        "ID": "",
+                                                                        "ItemsPerPage": "12",
+                                                                        "NoOfPagesDisplay": "10",
+                                                                        "Pagination": "Yes",
+                                                                        "Parent-style": "",
+                                                                        "Style": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "Table"
+                                                                }
+                                                            ],
+                                                            "name": "Row",
+                                                            "props": {
+                                                                "Class": "row",
+                                                                "Control Name": "",
+                                                                "DB-table": "",
+                                                                "ID": "",
+                                                                "Parent-style": "",
+                                                                "Repeat": "",
+                                                                "Style": "padding-top: 10px",
+                                                                "Visible": ""
+                                                            },
+                                                            "type": "Row"
+                                                        }
+                                                    ],
+                                                    "name": "city",
+                                                    "props": {
+                                                        "Active": "",
+                                                        "Class": "tab-pane fade in active",
+                                                        "Columns": "12",
+                                                        "Control Name": "city",
+                                                        "Data-target": "city",
+                                                        "ID": "city",
+                                                        "Parent-style": "",
+                                                        "Style": "",
+                                                        "Title": "Cities",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TabPage"
+                                                },
+                                                {
+                                                    "child": [
+                                                        {
+                                                            "child": [
+                                                            ],
+                                                            "name": "Row",
+                                                            "props": {
+                                                                "Class": "row",
+                                                                "Control Name": "",
+                                                                "DB-table": "",
+                                                                "ID": "",
+                                                                "Parent-style": "",
+                                                                "Repeat": "",
+                                                                "Style": "",
+                                                                "Visible": ""
+                                                            },
+                                                            "type": "Row"
+                                                        }
+                                                    ],
+                                                    "name": "exp_heads",
+                                                    "props": {
+                                                        "Active": "",
+                                                        "Class": "tab-pane fade in active",
+                                                        "Columns": "12",
+                                                        "Control Name": "exp_heads",
+                                                        "Data-target": "exp_heads",
+                                                        "ID": "exp_heads",
+                                                        "Parent-style": "",
+                                                        "Style": "",
+                                                        "Title": "Expense heads",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TabPage"
+                                                }
+                                            ],
+                                            "name": "TabPanel",
+                                            "props": {
+                                                "Class": "row",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "TabPanel"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding: 20px; ",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "10",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                }
+            ],
+            "name": "Row",
+            "props": {
+                "Class": "row",
+                "Control Name": "",
+                "DB-table": "",
+                "ID": "",
+                "Parent-style": "",
+                "Repeat": "",
+                "Style": "background-color: #ffffff; padding: 0px; ",
+                "Visible": ""
+            },
+            "type": "Row"
+        },
+        {
+            "child": [
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header1",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "Register country",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogHeader",
+                    "props": {
+                        "Class": "modal-header",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogHeader"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "country_code",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "admin_travel_country",
+                                                        "DisplayLabel": "Country code",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "country_code",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "country_name",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "admin_travel_country",
+                                                        "DisplayLabel": "Country name",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "country_name",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "descr",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "DB-table": "admin_travel_country",
+                                                        "DisplayLabel": "Description",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "descr",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Rows": "5",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextArea"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "6",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "language",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "admin_travel_country",
+                                                        "DisplayLabel": "Language",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "language",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "curr_id",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "DB-table": "admin_travel_country",
+                                                        "DataSource": "sysid.curr_name.admin_currency",
+                                                        "DisplayLabel": "Currency",
+                                                        "ID": "",
+                                                        "Init": "Yes",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "curr_id",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "StaticValues": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "ComboBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "country_class",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "admin_travel_country",
+                                                        "DisplayLabel": "Country class",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "country_class",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "status",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "DB-table": "admin_travel_country",
+                                                        "DataSource": "statusList",
+                                                        "DisplayLabel": "Status",
+                                                        "ID": "",
+                                                        "Init": "Yes",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "status",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "StaticValues": "Active,Inactive",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "ComboBox"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "6",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogBody",
+                    "props": {
+                        "Class": "modal-body",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogBody"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header2",
+                                        "Columns": "9",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "{{admin_travel_country_status}}",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "save_admin_travel_country_record()",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "saved",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Save",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "modal",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "remove",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Close",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        }
+                                    ],
+                                    "name": "ButtonGroup",
+                                    "props": {
+                                        "Class": "btn-group",
+                                        "Columns": "3",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "text-align: right",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ButtonGroup"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding: 10px; ",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogFooter",
+                    "props": {
+                        "Class": "footer",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogFooter"
+                }
+            ],
+            "name": "Dialog",
+            "props": {
+                "Class": "modal fade",
+                "Columns": "12",
+                "Control Name": "",
+                "ID": "countryDlg",
+                "Parent-style": "height: 700px; ; width: 1000px; ",
+                "Style": "",
+                "Visible": ""
+            },
+            "type": "Dialog"
+        },
+        {
+            "child": [
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header1",
+                                        "Columns": "12",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "Register city",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogHeader",
+                    "props": {
+                        "Class": "modal-header",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogHeader"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "city_code",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "admin_travel_city",
+                                                        "DisplayLabel": "City code",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "city_code",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ","
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "city_name",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "admin_travel_city",
+                                                        "DisplayLabel": "City name",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "city_name",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "descr",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "DB-table": "admin_travel_city",
+                                                        "DisplayLabel": "Description",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "descr",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Rows": "5",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextArea"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "6",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "country_id",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "DB-table": "admin_travel_city",
+                                                        "DataSource": "sysid.country_name.admin_travel_country",
+                                                        "DisplayLabel": "Country",
+                                                        "ID": "",
+                                                        "Init": "Yes",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "country_id",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "StaticValues": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "ComboBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "language",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "admin_travel_city",
+                                                        "DisplayLabel": "Language",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "language",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "curr_id",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "DB-table": "admin_travel_city",
+                                                        "DataSource": "sysid.curr_name.admin_currency",
+                                                        "DisplayLabel": "Currency",
+                                                        "ID": "",
+                                                        "Init": "Yes",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "curr_id",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "StaticValues": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "ComboBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "city_class",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "Control-type": "text",
+                                                        "DB-table": "admin_travel_city",
+                                                        "DisplayLabel": "City class",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "city_class",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "TextBox"
+                                                },
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "status",
+                                                    "props": {
+                                                        "ChangeEvent": "",
+                                                        "Class": "form-control",
+                                                        "Columns": "3,9",
+                                                        "Control Name": "",
+                                                        "DB-table": "admin_travel_city",
+                                                        "DataSource": "statusList",
+                                                        "DisplayLabel": "Status",
+                                                        "ID": "",
+                                                        "Init": "Yes",
+                                                        "Label class": "",
+                                                        "Label-type": "label",
+                                                        "Model": "status",
+                                                        "Parent-style": "",
+                                                        "Placeholder": "",
+                                                        "Readonly": "",
+                                                        "Required": "",
+                                                        "StaticValues": "Active,Inactive",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "ComboBox"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "Column",
+                                    "props": {
+                                        "Class": "",
+                                        "Columns": "6",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "ID": "",
+                                        "Parent-style": "",
+                                        "Repeat": "",
+                                        "Style": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "Column"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogBody",
+                    "props": {
+                        "Class": "modal-body",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogBody"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "Label",
+                                    "props": {
+                                        "Class": "header2",
+                                        "Columns": "9",
+                                        "Control Name": "",
+                                        "DB-table": "",
+                                        "DisplayLabel": "",
+                                        "ID": "",
+                                        "Label class": "",
+                                        "Label-type": "span",
+                                        "Model": "",
+                                        "Required": "",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Value": "{{admin_travel_city_status}}",
+                                        "Visible": ""
+                                    },
+                                    "type": "Label"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "save_admin_travel_city_record()",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "saved",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Save",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        },
+                                        {
+                                            "child": [
+                                            ],
+                                            "name": "Button",
+                                            "props": {
+                                                "Class": "btn btn-default btn-sm",
+                                                "ClickEvent": "",
+                                                "Columns": "12",
+                                                "Control Name": "",
+                                                "Data-dismiss": "modal",
+                                                "Data-target": "",
+                                                "Data-toggle": "",
+                                                "Glyphicon": "remove",
+                                                "ID": "",
+                                                "Icon": "",
+                                                "Model": "",
+                                                "Parent-style": "",
+                                                "Readonly": "",
+                                                "Style": "",
+                                                "TableColumnWidth": "",
+                                                "Value": "Close",
+                                                "Visible": ""
+                                            },
+                                            "type": "Button"
+                                        }
+                                    ],
+                                    "name": "ButtonGroup",
+                                    "props": {
+                                        "Class": "btn-group",
+                                        "Columns": "3",
+                                        "Control Name": "",
+                                        "ID": "",
+                                        "Parent-style": "text-align: right",
+                                        "Style": "",
+                                        "TableColumnWidth": "",
+                                        "Visible": ""
+                                    },
+                                    "type": "ButtonGroup"
+                                }
+                            ],
+                            "name": "Row",
+                            "props": {
+                                "Class": "row",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Repeat": "",
+                                "Style": "padding: 10px; ",
+                                "Visible": ""
+                            },
+                            "type": "Row"
+                        }
+                    ],
+                    "name": "DialogFooter",
+                    "props": {
+                        "Class": "footer",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "DialogFooter"
+                }
+            ],
+            "name": "Dialog",
+            "props": {
+                "Class": "modal fade",
+                "Columns": "12",
+                "Control Name": "",
+                "ID": "cityDlg",
+                "Parent-style": "height: 700px; ; width: 1000px; ",
+                "Style": "",
+                "Visible": ""
+            },
+            "type": "Dialog"
+        }
+    ],
+    "name": "Container",
+    "props": {
+        "Class": "container-fluid",
+        "Control Name": "",
+        "ID": "",
+        "Style": "",
+        "Visible": ""
+    },
+    "type": "Container"
+}

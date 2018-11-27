@@ -1,0 +1,187 @@
+<form role='form'>
+				<script type='text/javascript'>
+					$(function () {
+						$('#').datetimepicker({format: 'YYYY-MM-DD'});
+						$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+						$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+						$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+					});
+					$('#clear').click(function(){
+						$('#').data('DateTimePicker').clear();
+						$('#dt1').data('DateTimePicker').clear();
+						$('#dt2').data('DateTimePicker').clear();
+						$('#dt3').data('DateTimePicker').clear();
+					});
+						$('#').click(function(){
+							var sysdate = new Date();
+							$('#').data('DateTimePicker').date(sysdate);
+						})
+						$('#dt1').click(function(){
+							var sysdate = new Date();
+							$('#dt1').data('DateTimePicker').date(sysdate);
+						})
+						$('#dt2').click(function(){
+							var sysdate = new Date();
+							$('#dt2').data('DateTimePicker').date(sysdate);
+						})
+						$('#dt3').click(function(){
+							var sysdate = new Date();
+							$('#dt3').data('DateTimePicker').date(sysdate);
+						})
+				</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; min-height: 600px;'>
+			<div class='col-sm-2'>
+				<div ng-controller='leaves_menuCtrl' ng-include src="'modules/hrms/leaves_menu/leaves_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header1 col-sm-2' class='col-sm-2'>Leave application</span>
+				<div class='col-sm-3'>
+					<div class='input-group'>
+						<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+						<div class='input-group-btn'>
+							<button class='btn btn-success btn-sm searchBox' type='submit'>
+								<i class='glyphicon glyphicon-search'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<span class='header2 col-sm-4' class='col-sm-4'></span>
+				<div class='col-sm-3' style='text-align: right'>
+					<div class='btn-group'>
+						<a  class='btn btn-default btn-sm'  href='#'  ng-click='insert_hrms_leave_type_record()' data-target='#appDlg' data-toggle='modal'>
+							<span class='glyphicon glyphicon-plus'></span> Add
+						</a>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-download'></span> Download
+						</button>
+					</div>
+				</div>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'>
+							<thead>
+								<tr>
+									<th>Leave type</th>
+									<th>From date</th>
+									<th>To date</th>
+									<th>Application date</th>
+									<th>Remarks</th>
+									<th>Approver</th>
+									<th>Approver remarks</th>
+									<th>Reason code</th>
+									<th>Status</th>
+									<th ></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in hrms_leave_applList| filter: search| itemsPerPage: 12'>
+									<td>{{x.type_name}}</td>
+									<td>{{x.from_date}}</td>
+									<td>{{x.to_date}}</td>
+									<td>{{x.app_date}}</td>
+									<td>{{x.remarks}}</td>
+									<td>{{x.approver_id}}</td>
+									<td>{{x.approver_remarks}}</td>
+									<td>{{x.reason_code}}</td>
+									<td>{{x.status}}</td>
+									<td><a  style='color: red'  href='#'> Cancel leave</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+			</div>
+		</div>
+		</div>
+	<div class='modal fade'  id='appDlg' role='dialog'>
+		<div class='modal-dialog' style='height: 700px; ; width: 1000px; '>
+			<div class='modal-content'>
+				<div class='modal-header'>
+					<div class='row'>
+						<span class='header1 col-sm-12' class='col-sm-12'>Leave application</span>
+					</div>
+				</div>
+				<div class='modal-body'>
+					<div class='row'>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Emp ID</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_leave_appl.emp_id'>
+								</div>
+								<label class='col-sm-5'>Leave type</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='hrms_leave_appl.leave_type' ng-init='hrms_leave_appl.leave_type=hrms_leave_type[0].sysid' ng-options='x.sysid as x.leave_type for x in hrms_leave_typeList'></select>
+								</div>
+								<label class='col-sm-5'>From date</label>
+								<div class='col-sm-7'>
+									<div datetimepicker class='input-group date'  id='dt1' ng-model='hrms_leave_appl.from_date'>
+										<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-calendar'></span>
+										</span>
+									</div>
+								</div>
+								<label class='col-sm-5'>To date</label>
+								<div class='col-sm-7'>
+									<div datetimepicker class='input-group date'  id='dt2' ng-model='hrms_leave_appl.to_date'>
+										<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-calendar'></span>
+										</span>
+									</div>
+								</div>
+								<label class='col-sm-5'>Remarks</label>
+								<div class='col-sm-7'>
+									<textarea class='form-control' ng-model='hrms_leave_appl.remarks' rows='5'></textarea>
+								</div>
+							</div>
+						</div>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>App date</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_leave_appl.app_date'>
+								</div>
+								<label class='col-sm-5'>Approver</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_leave_appl.approver_id'>
+								</div>
+								<label class='col-sm-5'>Approver remarks</label>
+								<div class='col-sm-7'>
+									<textarea class='form-control'  ng-readonly='true' ng-model='hrms_leave_appl.approver_remarks' rows='5'></textarea>
+								</div>
+								<label class='col-sm-5'>Reason code</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_leave_appl.reason_code'>
+								</div>
+								<label class='col-sm-5'>Status</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_leave_appl.status'>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='footer'>
+					<div class='row'  style='padding: 10px;'>
+						<span class='header2 col-sm-9' class='col-sm-9'>{{hrms_leave_appl_status}}</span>
+						<div class='col-sm-3' style='text-align: right'>
+							<div class='btn-group'>
+								<button  class='btn btn-default btn-sm'  ng-click='save_hrms_leave_appl_record()'>
+									<span class='glyphicon glyphicon-saved'></span> Save
+								</button>
+								<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+									<span class='glyphicon glyphicon-remove'></span> Close
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</form>

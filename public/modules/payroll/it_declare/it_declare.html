@@ -1,0 +1,147 @@
+<form role='form'>
+					<script type='text/javascript'>
+						$(function () {
+							$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+						});
+						$('#clear').click(function(){
+							$('#dt1').data('DateTimePicker').clear();
+						});
+							$('#dt1').click(function(){
+								var sysdate = new Date();
+								$('#dt1').data('DateTimePicker').date(sysdate);
+							})
+					</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; min-height: 600px;'>
+			<div class='col-sm-2'>
+				<div ng-controller='income_tax_menuCtrl' ng-include src="'modules/payroll/income_tax_menu/income_tax_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-3' class='col-sm-3'>Income tax declarations</span>
+				<span class='header2 col-sm-4' class='col-sm-4'>{{payroll_it_declaration_status}}</span>
+				<div class='col-sm-3'>
+					<div class='input-group'>
+						<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+						<div class='input-group-btn'>
+							<button class='btn btn-success btn-sm searchBox' type='submit'>
+								<i class='glyphicon glyphicon-search'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class='col-sm-2' style='text-align: right'>
+					<div class='btn-group'>
+						<button  class='btn btn-default btn-sm'  ng-click='insert_payroll_it_declaration_record()' data-target='#decDlg' data-toggle='modal'>
+							<span class='glyphicon glyphicon-plus'></span> Add
+						</button>
+					</div>
+				</div>
+					<div class='col-sm-12' style='padding-top: 5px'>
+						<hr>
+					</div>
+			</div>
+					<div class='row'>
+						<div class='col-sm-12'>
+							<table class='table table-bordered table-condensed table-bordered'>
+								<thead>
+									<tr>
+										<th >Assessment year</th>
+										<th>Employee</th>
+										<th>Tax section</th>
+										<th>Expense head</th>
+										<th>Declared amount</th>
+										<th>Eligible amount</th>
+										<th>Unit name</th>
+										<th>Status</th>
+										<th >Header</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr dir-paginate='x in payroll_it_declarationList| itemsPerPage: 12'>
+										<td><a  href='#'  ng-click='update_payroll_it_declaration_record(x)' ng-model='payroll_it_declaration.assessment_year' data-target='#decDlg' data-toggle='modal'> {{x.assessment_year}}</a></td>
+										<td>{{x.empid}}</td>
+										<td>{{x.tax_section_id}}</td>
+										<td>{{x.tax_sub_section_id}}</td>
+										<td>{{x.declared_amount}}</td>
+										<td>{{x.eligible_amount}}</td>
+										<td>{{x.company_id}}</td>
+										<td>{{x.status}}</td>
+										<td><a  style='color: red'  href='#'  ng-click='delete_payroll_it_declaration_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+									</tr>
+								</tbody>
+							</table>
+							<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+							</dir-pagination-controls>
+						</div>
+					</div>
+		</div>
+		</div>
+		<div class='modal fade'  id='decDlg' role='dialog'>
+			<div class='modal-dialog' style='height: 700px; ; width: 700px; '>
+				<div class='modal-content'>
+					<div class='modal-header'>
+						<div class='row'>
+							<span class='header1 col-sm-12' class='col-sm-12'>Income tax declarations</span>
+						</div>
+					</div>
+					<div class='modal-body'>
+						<div class='row'>
+							<label class='col-sm-3'>Trans ID</label>
+							<div class='col-sm-9'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='payroll_it_declaration.sysid'>
+							</div>
+							<label class='col-sm-3'>Employee</label>
+							<div class='col-sm-9'>
+								<select class='form-control' ng-model='payroll_it_declaration.empid' ng-init='payroll_it_declaration.empid=hrms_employees[0].sysid' ng-options='x.sysid as x.complete_name for x in hrms_employeesList'></select>
+							</div>
+							<label class='col-sm-3'>Assessment year</label>
+							<div class='col-sm-9'>
+								<input class='form-control'  type='text' ng-model='payroll_it_declaration.assessment_year'>
+							</div>
+							<label class='col-sm-3'>Tax section</label>
+							<div class='col-sm-9'>
+								<select class='form-control' ng-model='payroll_it_declaration.tax_section_id' ng-init='payroll_it_declaration.tax_section_id=payroll_it_section[0].sysid' ng-options='x.sysid as x.section_name for x in payroll_it_sectionList'></select>
+							</div>
+							<label class='col-sm-3'>Expense head</label>
+							<div class='col-sm-9'>
+								<select class='form-control' ng-model='payroll_it_declaration.tax_sub_section_id' ng-init='payroll_it_declaration.tax_sub_section_id=payroll_it_section_details[0].sysid' ng-options='x.sysid as x.item_descr for x in payroll_it_section_detailsList'></select>
+							</div>
+							<label class='col-sm-3'>Declared amount</label>
+							<div class='col-sm-9'>
+								<input class='form-control'  type='text' ng-model='payroll_it_declaration.declared_amount'>
+							</div>
+							<label class='col-sm-3'>Eligible amount</label>
+							<div class='col-sm-9'>
+								<input class='form-control'  type='text' ng-model='payroll_it_declaration.eligible_amount'>
+							</div>
+							<label class='col-sm-3'>Unit name</label>
+							<div class='col-sm-9'>
+								<select class='form-control' ng-model='payroll_it_declaration.company_id' ng-init='payroll_it_declaration.company_id=admin_company[0].sysid' ng-options='x.sysid as x.company_name for x in admin_companyList'></select>
+							</div>
+							<label class='col-sm-3'>Status</label>
+							<div class='col-sm-9'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='payroll_it_declaration.status'>
+							</div>
+						</div>
+					</div>
+					<div class='footer'>
+						<div class='row'  style='padding: 10px;'>
+							<span class='header2 col-sm-7' class='col-sm-7'>{{payroll_it_declaration_status}}</span>
+							<div class='col-sm-5' style='text-align: right'>
+								<div class='btn-group'>
+									<button  class='btn btn-default btn-sm'  ng-click='save_payroll_it_declaration_record()'>
+										<span class='glyphicon glyphicon-saved'></span> Save
+									</button>
+									<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+										<span class='glyphicon glyphicon-remove'></span> Close
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

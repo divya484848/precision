@@ -1,0 +1,932 @@
+{
+    "child": [
+        {
+            "child": [
+                {
+                    "child": [
+                    ],
+                    "name": "IncludePage",
+                    "props": {
+                        "Class": "",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "Controller": "item_menuCtrl",
+                        "ID": "",
+                        "PageSource": "modules/inv/item_menu/item_menu.html",
+                        "Parent-style": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "IncludePage"
+                }
+            ],
+            "name": "Row",
+            "props": {
+                "Class": "row",
+                "Control Name": "",
+                "DB-table": "",
+                "ID": "",
+                "Parent-style": "",
+                "Repeat": "",
+                "Style": "",
+                "Visible": ""
+            },
+            "type": "Row"
+        },
+        {
+            "child": [
+                {
+                    "child": [
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "1",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                            ],
+                            "name": "Label",
+                            "props": {
+                                "Class": "header1",
+                                "Columns": "12",
+                                "Control Name": "",
+                                "DB-table": "",
+                                "DisplayLabel": "",
+                                "ID": "",
+                                "Label class": "",
+                                "Label-type": "span",
+                                "Model": "",
+                                "Style": "color: #C70039; padding: 0px; padding-bottom: 10px;",
+                                "TableColumnWidth": "",
+                                "Value": "Raw material",
+                                "Visible": ""
+                            },
+                            "type": "Label"
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                    ],
+                                                    "name": "Label",
+                                                    "props": {
+                                                        "Class": "header2",
+                                                        "Columns": "10",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "DisplayLabel": "",
+                                                        "ID": "",
+                                                        "Label class": "",
+                                                        "Label-type": "span",
+                                                        "Model": "",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Value": "{{inv_item_master_status}}",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Label"
+                                                },
+                                                {
+                                                    "child": [
+                                                        {
+                                                            "child": [
+                                                            ],
+                                                            "name": "Button",
+                                                            "props": {
+                                                                "Class": "btn btn-default btn-sm",
+                                                                "ClickEvent": "save_inv_item_master_record()",
+                                                                "Columns": "12",
+                                                                "Control Name": "",
+                                                                "Data-dismiss": "",
+                                                                "Data-target": "",
+                                                                "Data-toggle": "",
+                                                                "Glyphicon": "saved",
+                                                                "ID": "",
+                                                                "Icon": "",
+                                                                "Model": "",
+                                                                "Parent-style": "",
+                                                                "Readonly": "",
+                                                                "Style": "",
+                                                                "TableColumnWidth": "",
+                                                                "Value": "Save",
+                                                                "Visible": ""
+                                                            },
+                                                            "type": "Button"
+                                                        },
+                                                        {
+                                                            "child": [
+                                                            ],
+                                                            "name": "Link",
+                                                            "props": {
+                                                                "Class": "btn btn-default btn-sm",
+                                                                "ClickEvent": "",
+                                                                "Columns": "12",
+                                                                "Control Name": "",
+                                                                "DB-table": "",
+                                                                "Data-dismiss": "",
+                                                                "Data-target": "",
+                                                                "Data-toggle": "",
+                                                                "DisplayLabel": "Header",
+                                                                "Glyphicon": "arrow-left",
+                                                                "ID": "",
+                                                                "Icon": "",
+                                                                "Label-type": "label",
+                                                                "Model": "",
+                                                                "Parent-style": "",
+                                                                "Readonly": "",
+                                                                "Ref": "/itemlist",
+                                                                "Style": "",
+                                                                "TableColumnWidth": "",
+                                                                "Value": "Back",
+                                                                "Visible": ""
+                                                            },
+                                                            "type": "Link"
+                                                        }
+                                                    ],
+                                                    "name": "ButtonGroup",
+                                                    "props": {
+                                                        "Class": "btn-group",
+                                                        "Columns": "2",
+                                                        "Control Name": "",
+                                                        "ID": "",
+                                                        "Parent-style": "text-align: right",
+                                                        "Style": "",
+                                                        "TableColumnWidth": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "ButtonGroup"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "padding-bottom: 10px; padding-top: 6px;",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        },
+                                        {
+                                            "child": [
+                                                {
+                                                    "child": [
+                                                        {
+                                                            "child": [
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "short_code",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "Control-type": "text",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DisplayLabel": "Short code",
+                                                                        "ID": "",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "short_code",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "TextBox"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "item_name",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "Control-type": "text",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DisplayLabel": "Item name",
+                                                                        "ID": "",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "item_name",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "TextBox"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "item_descr",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DisplayLabel": "Description",
+                                                                        "ID": "",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "item_descr",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "Rows": "5",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "TextArea"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "item_serial",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "Control-type": "text",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DisplayLabel": "Item serial",
+                                                                        "ID": "",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "item_serial",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "TextBox"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "item_type",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DataSource": "sysid.type_name.admin_lov",
+                                                                        "DisplayLabel": "Item type",
+                                                                        "ID": "",
+                                                                        "Init": "Yes",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "item_type",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "StaticValues": "",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "ComboBox"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "item_subtype",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DataSource": "sysid.type_name.admin_lov",
+                                                                        "DisplayLabel": "Item subtype",
+                                                                        "ID": "",
+                                                                        "Init": "Yes",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "item_subtype",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "StaticValues": "",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "ComboBox"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "item_category",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DataSource": "sysid.type_name.admin_lov",
+                                                                        "DisplayLabel": "Item category",
+                                                                        "ID": "",
+                                                                        "Init": "Yes",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "item_category",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "StaticValues": "",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "ComboBox"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "item_source",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DataSource": "sysid.type_name.admin_lov",
+                                                                        "DisplayLabel": "Item source",
+                                                                        "ID": "",
+                                                                        "Init": "Yes",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "item_source",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "StaticValues": "",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "ComboBox"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "unit_wt",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "Control-type": "text",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DisplayLabel": "Unit wt",
+                                                                        "ID": "",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "unit_wt",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "TextBox"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "unit_wt_uom",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DataSource": "wtUomList",
+                                                                        "DisplayLabel": "Unit wt uom",
+                                                                        "ID": "",
+                                                                        "Init": "Yes",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "unit_wt_uom",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "StaticValues": "Kgs,Gm,Tonne,Mg",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "ComboBox"
+                                                                }
+                                                            ],
+                                                            "name": "Row",
+                                                            "props": {
+                                                                "Class": "row",
+                                                                "Control Name": "",
+                                                                "DB-table": "",
+                                                                "ID": "",
+                                                                "Parent-style": "",
+                                                                "Repeat": "",
+                                                                "Style": "",
+                                                                "Visible": ""
+                                                            },
+                                                            "type": "Row"
+                                                        }
+                                                    ],
+                                                    "name": "Column",
+                                                    "props": {
+                                                        "Class": "",
+                                                        "Columns": "6",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "ID": "",
+                                                        "Parent-style": "",
+                                                        "Repeat": "",
+                                                        "Style": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Column"
+                                                },
+                                                {
+                                                    "child": [
+                                                        {
+                                                            "child": [
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "hsn_no",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "Control-type": "text",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DisplayLabel": "HSN no",
+                                                                        "ID": "",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "hsn_no",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "TextBox"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "drg_no",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "Control-type": "text",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DisplayLabel": "Drawing no",
+                                                                        "ID": "",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "drg_no",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "true",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "TextBox"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "drg_file",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "Control-type": "text",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DisplayLabel": "Drawing file",
+                                                                        "ID": "",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "drg_file",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "true",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "TextBox"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "die_serial",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "Control-type": "text",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DisplayLabel": "Die serial",
+                                                                        "ID": "",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "die_serial",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "TextBox"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "specification",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DisplayLabel": "Specification",
+                                                                        "ID": "",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "specification",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "Rows": "5",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "TextArea"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "uom",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DataSource": "uomList",
+                                                                        "DisplayLabel": "UoM",
+                                                                        "ID": "",
+                                                                        "Init": "Yes",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "uom",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "StaticValues": "Pcs,Set,No",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "ComboBox"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "is_qa_required",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DataSource": "qareqList",
+                                                                        "DisplayLabel": "Is QA required",
+                                                                        "ID": "",
+                                                                        "Init": "Yes",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "is_qa_required",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "StaticValues": "Yes,No",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "ComboBox"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "reject_action",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DataSource": "rejActList",
+                                                                        "DisplayLabel": "Reject action",
+                                                                        "ID": "",
+                                                                        "Init": "Yes",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "reject_action",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "StaticValues": "",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "ComboBox"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "item_group_id",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DataSource": "sysid.group_name.inv_item_group",
+                                                                        "DisplayLabel": "Item group ID",
+                                                                        "ID": "",
+                                                                        "Init": "Yes",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "item_group_id",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "StaticValues": "",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "ComboBox"
+                                                                },
+                                                                {
+                                                                    "child": [
+                                                                    ],
+                                                                    "name": "status",
+                                                                    "props": {
+                                                                        "ChangeEvent": "",
+                                                                        "Class": "form-control",
+                                                                        "Columns": "5,7",
+                                                                        "Control Name": "",
+                                                                        "DB-table": "inv_item_master",
+                                                                        "DataSource": "statusList",
+                                                                        "DisplayLabel": "Status",
+                                                                        "ID": "",
+                                                                        "Init": "Yes",
+                                                                        "Label class": "",
+                                                                        "Label-type": "label",
+                                                                        "Model": "status",
+                                                                        "Parent-style": "",
+                                                                        "Placeholder": "",
+                                                                        "Readonly": "",
+                                                                        "StaticValues": "Active,Inactive",
+                                                                        "Style": "",
+                                                                        "TableColumnWidth": "",
+                                                                        "Value": "",
+                                                                        "Visible": ""
+                                                                    },
+                                                                    "type": "ComboBox"
+                                                                }
+                                                            ],
+                                                            "name": "Row",
+                                                            "props": {
+                                                                "Class": "row",
+                                                                "Control Name": "",
+                                                                "DB-table": "",
+                                                                "ID": "",
+                                                                "Parent-style": "",
+                                                                "Repeat": "",
+                                                                "Style": "",
+                                                                "Visible": ""
+                                                            },
+                                                            "type": "Row"
+                                                        }
+                                                    ],
+                                                    "name": "Column",
+                                                    "props": {
+                                                        "Class": "",
+                                                        "Columns": "6",
+                                                        "Control Name": "",
+                                                        "DB-table": "",
+                                                        "ID": "",
+                                                        "Parent-style": "",
+                                                        "Repeat": "",
+                                                        "Style": "",
+                                                        "Visible": ""
+                                                    },
+                                                    "type": "Column"
+                                                }
+                                            ],
+                                            "name": "Row",
+                                            "props": {
+                                                "Class": "row",
+                                                "Control Name": "",
+                                                "DB-table": "",
+                                                "ID": "",
+                                                "Parent-style": "",
+                                                "Repeat": "",
+                                                "Style": "",
+                                                "Visible": ""
+                                            },
+                                            "type": "Row"
+                                        }
+                                    ],
+                                    "name": "details",
+                                    "props": {
+                                        "Active": "Yes",
+                                        "Class": "tab-pane fade in active",
+                                        "Columns": "12",
+                                        "Control Name": "details",
+                                        "Data-target": "details",
+                                        "ID": "details",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Title": "Details",
+                                        "Visible": ""
+                                    },
+                                    "type": "TabPage"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "attrTab",
+                                    "props": {
+                                        "Active": "",
+                                        "Class": "tab-pane fade in active",
+                                        "Columns": "12",
+                                        "Control Name": "attrTab",
+                                        "Data-target": "attrTab",
+                                        "ID": "attrTab",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Title": "Attributes",
+                                        "Visible": ""
+                                    },
+                                    "type": "TabPage"
+                                },
+                                {
+                                    "child": [
+                                    ],
+                                    "name": "suppTab",
+                                    "props": {
+                                        "Active": "",
+                                        "Class": "tab-pane fade in active",
+                                        "Columns": "12",
+                                        "Control Name": "suppTab",
+                                        "Data-target": "suppTab",
+                                        "ID": "suppTab",
+                                        "Parent-style": "",
+                                        "Style": "",
+                                        "Title": "Supplier",
+                                        "Visible": ""
+                                    },
+                                    "type": "TabPage"
+                                }
+                            ],
+                            "name": "TabPanel",
+                            "props": {
+                                "Class": "row",
+                                "Columns": "12",
+                                "Control Name": "",
+                                "ID": "",
+                                "Parent-style": "",
+                                "Style": "",
+                                "Visible": ""
+                            },
+                            "type": "TabPanel"
+                        }
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "10",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                },
+                {
+                    "child": [
+                    ],
+                    "name": "Column",
+                    "props": {
+                        "Class": "",
+                        "Columns": "1",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "ID": "",
+                        "Parent-style": "",
+                        "Repeat": "",
+                        "Style": "",
+                        "Visible": ""
+                    },
+                    "type": "Column"
+                }
+            ],
+            "name": "Row",
+            "props": {
+                "Class": "row",
+                "Control Name": "",
+                "DB-table": "",
+                "ID": "",
+                "Parent-style": "",
+                "Repeat": "",
+                "Style": "background-color: #ffffff; padding-top: 10px",
+                "Visible": ""
+            },
+            "type": "Row"
+        }
+    ],
+    "name": "Container",
+    "props": {
+        "Class": "container-fluid",
+        "Control Name": "",
+        "ID": "",
+        "Style": "padding: 0px; ",
+        "Visible": ""
+    },
+    "type": "Container"
+}

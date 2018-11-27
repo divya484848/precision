@@ -1,0 +1,99 @@
+<form role='form'>
+		<script type='text/javascript'>
+			$(function () {
+				$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+			});
+			$('#clear').click(function(){
+				$('#dt1').data('DateTimePicker').clear();
+			});
+		</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; min-height: 600px;'>
+			<div class='col-sm-2'>
+				<div ng-controller='emp_sep_menuCtrl' ng-include src="'modules/hrms/emp_sep_menu/emp_sep_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 10px; padding-bottom: 15px'>
+				<span class='header1 col-sm-2' class='col-sm-2'>My approvals</span>
+				<span class='header2 col-sm-7' class='col-sm-7'>{{hrms_emp_resign_status}}</span>
+				<div class='col-sm-3' style='text-align: right'>
+					<div class='btn-group'>
+						<a  class='btn btn-default btn-sm'  href='#'  ng-click='save_hrms_emp_resign_record()'>
+							<span class='glyphicon glyphicon-plus'></span> Save
+						</a>
+						<a  class='btn btn-default btn-sm'  href='#'>
+							<span class='glyphicon glyphicon-cancel'></span> Withdraw resignation
+						</a>
+					</div>
+				</div>
+			</div>
+				<div class='row'>
+					<div class='col-sm-6'>
+						<div class='row'>
+							<label class='col-sm-5'>Employee id</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_resign.emp_id'>
+							</div>
+							<label class='col-sm-5'>Employee name</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true'>
+							</div>
+							<label class='col-sm-5'>Resign date</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_resign.resign_date'>
+							</div>
+							<label class='col-sm-5'>Requested release date</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_resign.requested_release_date'>
+							</div>
+							<label class='col-sm-5'>Notice period days</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_resign.notice_period_days'>
+							</div>
+							<label class='col-sm-5'>System exit date</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_resign.sys_exit_date'>
+							</div>
+							<label class='col-sm-5'>Approved exit date</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_resign.approved_exit_date'>
+							</div>
+							<label class='col-sm-5'>Actual exit date</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_resign.actual_exit_date'>
+							</div>
+							<label class='col-sm-5'>Manager</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_resign.manager_id'>
+							</div>
+						</div>
+					</div>
+					<div class='col-sm-6'>
+						<div class='row'>
+							<label class='col-sm-5'>Exit reason</label>
+							<div class='col-sm-7'>
+								<textarea class='form-control'  ng-readonly='true' ng-model='hrms_emp_resign.exit_reason' rows='5'></textarea>
+							</div>
+							<label class='col-sm-5'>Approver</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_resign.approver_id'>
+							</div>
+							<label class='col-sm-5'>Approver remarks</label>
+							<div class='col-sm-7'>
+								<textarea class='form-control' ng-model='hrms_emp_resign.approver_remarks' rows='5'></textarea>
+							</div>
+							<label class='col-sm-5'>Unit name</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_resign.company_id'>
+							</div>
+							<label class='col-sm-5'>Status</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_resign.status'>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+		</div>
+	</div>
+</form>

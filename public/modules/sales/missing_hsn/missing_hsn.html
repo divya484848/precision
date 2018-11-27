@@ -1,0 +1,177 @@
+<form role='form'>
+			<script type='text/javascript'>
+				$(function () {
+					$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+					$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+					$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+					$('#dt4').datetimepicker({format: 'YYYY-MM-DD'});
+				});
+				$('#clear').click(function(){
+					$('#dt1').data('DateTimePicker').clear();
+					$('#dt2').data('DateTimePicker').clear();
+					$('#dt3').data('DateTimePicker').clear();
+					$('#dt4').data('DateTimePicker').clear();
+				});
+					$('#dt1').click(function(){
+						var sysdate = new Date();
+						$('#dt1').data('DateTimePicker').date(sysdate);
+					})
+					$('#dt2').click(function(){
+						var sysdate = new Date();
+						$('#dt2').data('DateTimePicker').date(sysdate);
+					})
+					$('#dt3').click(function(){
+						var sysdate = new Date();
+						$('#dt3').data('DateTimePicker').date(sysdate);
+					})
+					$('#dt4').click(function(){
+						var sysdate = new Date();
+						$('#dt4').data('DateTimePicker').date(sysdate);
+					})
+			</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; padding-top: 10px;'>
+			<div class='col-sm-2'>
+				<div ng-controller='invoice_reports_menuCtrl' ng-include src="'modules/sales/invoice_reports_menu/invoice_reports_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-2' class='col-sm-2'>Missing HSN</span>
+				<div class='col-sm-3'>
+					<div class='input-group'>
+						<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+						<div class='input-group-btn'>
+							<button class='btn btn-success btn-sm searchBox' type='submit'>
+								<i class='glyphicon glyphicon-search'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<span class='header2 col-sm-8' class='col-sm-8'>{{inv_finished_goods_status}}</span>
+			</div>
+			<div class='row'>
+				<div class='col-sm-12'>
+					<table class='table table-bordered table-condensed table-bordered'  style='padding-top: 5px'>
+						<thead>
+							<tr>
+								<th >Item name</th>
+								<th>Trans ID</th>
+								<th>Short code</th>
+								<th>Customer</th>
+								<th>Unit rate</th>
+								<th>Currency</th>
+								<th>UoM</th>
+								<th>Item wt</th>
+								<th>HSN code</th>
+								<th>Internal item</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr dir-paginate='x in inv_finished_goodsList| filter: search| itemsPerPage: 12'>
+								<td><a  href='#'  ng-click='update_inv_finished_goods_record(x)' ng-model='inv_finished_goods.fg_name' data-target='#fgDlg' data-toggle='modal'> {{x.fg_name}}</a></td>
+								<td>{{x.sysid}}</td>
+								<td>{{x.fg_code}}</td>
+								<td>{{x.cust_name}}</td>
+								<td>{{x.unit_rate}}</td>
+								<td>{{x.curr_name}}</td>
+								<td>{{x.fg_uom}}</td>
+								<td>{{x.fg_wt}}</td>
+								<td>{{x.hsn_code}}</td>
+								<td>{{x.int_item_id}}</td>
+							</tr>
+						</tbody>
+					</table>
+					<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+					</dir-pagination-controls>
+				</div>
+			</div>
+		</div>
+		</div>
+<div class='modal fade'  id='fgDlg' role='dialog'>
+	<div class='modal-dialog' style='height: 700px; ; width: 1000px; '>
+		<div class='modal-content'>
+			<div class='modal-header'>
+				<div class='row'>
+					<span class='header1 col-sm-12' class='col-sm-12'>Missing HSN update</span>
+				</div>
+			</div>
+			<div class='modal-body'>
+				<div class='row'>
+					<div class='col-sm-6'>
+						<div class='row'>
+							<label class='col-sm-5'>Trans ID</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_finished_goods.sysid'>
+							</div>
+							<label class='col-sm-5'>Short code</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_finished_goods.fg_code'>
+							</div>
+							<label class='col-sm-5'>Item name</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_finished_goods.fg_name'>
+							</div>
+							<label class='col-sm-5'>Description</label>
+							<div class='col-sm-7'>
+								<textarea class='form-control'  ng-readonly='true' ng-model='inv_finished_goods.fg_descr' rows='5'></textarea>
+							</div>
+							<label class='col-sm-5'>Customer</label>
+							<div class='col-sm-7'>
+								<select class='form-control' ng-model='inv_finished_goods.cust_id' ng-init='inv_finished_goods.cust_id=inv_customer[0].sysid' ng-options='x.sysid as x.cust_name for x in inv_customerList'></select>
+							</div>
+						</div>
+					</div>
+					<div class='col-sm-6'>
+						<div class='row'>
+							<label class='col-sm-5'>Internal item</label>
+							<div class='col-sm-7'>
+								<select class='form-control' ng-model='inv_finished_goods.int_item_id' ng-init='inv_finished_goods.int_item_id=inv_item_master[0].sysid' ng-options='x.sysid as x.item_name for x in inv_item_masterList'></select>
+							</div>
+							<label class='col-sm-5'>Unit rate</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_finished_goods.unit_rate'>
+							</div>
+							<label class='col-sm-5'>Currency</label>
+							<div class='col-sm-7'>
+								<select class='form-control' ng-model='inv_finished_goods.curr_id' ng-init='inv_finished_goods.curr_id=admin_currency[0].sysid' ng-options='x.sysid as x.curr_name for x in admin_currencyList'></select>
+							</div>
+							<label class='col-sm-5'>UoM</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_finished_goods.fg_uom'>
+							</div>
+							<label class='col-sm-5'>Item wt</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_finished_goods.fg_wt'>
+							</div>
+							<label class='col-sm-5'>HSN code</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='inv_finished_goods.hsn_code'>
+							</div>
+							<label class='col-sm-5'>Status</label>
+							<div class='col-sm-7'>
+								<select class='form-control' ng-model='inv_finished_goods.status' ng-init='inv_finished_goods.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='footer'>
+				<div class='row'  style='padding: 10px;'>
+					<span class='header2 col-sm-9' class='col-sm-9'>{{inv_finished_goods_status}}</span>
+					<div class='col-sm-3' style='text-align: right'>
+						<div class='btn-group'>
+							<button  class='btn btn-default btn-sm'  ng-click='save_inv_finished_goods_record()'>
+								<span class='glyphicon glyphicon-saved'></span> Save
+							</button>
+							<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+								<span class='glyphicon glyphicon-remove'></span> Close
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	</div>
+</form>

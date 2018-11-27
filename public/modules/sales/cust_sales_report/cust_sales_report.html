@@ -1,0 +1,128 @@
+<form role='form'>
+	<script type='text/javascript'>
+		$(function () {
+			$('#').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt4').datetimepicker({format: 'YYYY-MM-DD'});
+		});
+		$('#clear').click(function(){
+			$('#').data('DateTimePicker').clear();
+			$('#dt1').data('DateTimePicker').clear();
+			$('#dt2').data('DateTimePicker').clear();
+			$('#dt3').data('DateTimePicker').clear();
+			$('#dt4').data('DateTimePicker').clear();
+		});
+			$('#').click(function(){
+				var sysdate = new Date();
+				$('#').data('DateTimePicker').date(sysdate);
+			})
+			$('#dt1').click(function(){
+				var sysdate = new Date();
+				$('#dt1').data('DateTimePicker').date(sysdate);
+			})
+			$('#dt2').click(function(){
+				var sysdate = new Date();
+				$('#dt2').data('DateTimePicker').date(sysdate);
+			})
+			$('#dt3').click(function(){
+				var sysdate = new Date();
+				$('#dt3').data('DateTimePicker').date(sysdate);
+			})
+			$('#dt4').click(function(){
+				var sysdate = new Date();
+				$('#dt4').data('DateTimePicker').date(sysdate);
+			})
+	</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; padding-top: 10px;'>
+			<div class='col-sm-2'>
+				<div ng-controller='invoice_reports_menuCtrl' ng-include src="'modules/sales/invoice_reports_menu/invoice_reports_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-9' class='col-sm-9'>Customer-wise sales</span>
+				<div class='col-sm-3' style='text-align: right'>
+					<div class='btn-group'>
+						<button  class='btn btn-default btn-sm'  ng-click='select_sales_invoice_record()'>
+							<span class='glyphicon glyphicon-cog'></span> Show
+						</button>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-download'></span> Download
+						</button>
+					</div>
+				</div>
+			</div>
+				<div class='row'  style='padding-top: 10px; padding-bottom: 10px'>
+					<span class='col-sm-1 header3'>Customer</span>
+					<div class='col-sm-3'>
+						<select class='form-control' ng-model='sales_invoice.cust_id' ng-init='sales_invoice.cust_id=inv_customer[0].sysid' ng-options='x.sysid as x.cust_name for x in inv_customerList'></select>
+					</div>
+					<label class='col-sm-1'>From date</label>
+					<div class='col-sm-3'>
+						<div datetimepicker class='input-group date'  id='dt1' ng-model='sales_invoice.from_date'>
+							<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+							<span class='input-group-addon'>
+								<span class='glyphicon glyphicon-calendar'></span>
+							</span>
+						</div>
+					</div>
+					<label class='col-sm-1'>To date</label>
+					<div class='col-sm-3'>
+						<div datetimepicker class='input-group date'  id='dt2' ng-model='sales_invoice.to_date'>
+							<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+							<span class='input-group-addon'>
+								<span class='glyphicon glyphicon-calendar'></span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'  style='padding-top: 5px'>
+							<thead>
+								<tr>
+									<th>Inv no</th>
+									<th>Inv date</th>
+									<th>Customer</th>
+									<th>Country dest</th>
+									<th>Currency</th>
+									<th>Total invoice amount</th>
+									<th>Total pcs</th>
+									<th>Total net wt</th>
+									<th>Total gross wt</th>
+									<th>Percent adjust</th>
+									<th>Amount adjust</th>
+									<th>Final total inv amt</th>
+									<th>Exchange rate</th>
+									<th>Final amount (INR)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in sales_invoiceList| filter: search| itemsPerPage: 12'>
+									<td>{{x.inv_no}}</td>
+									<td>{{x.inv_date}}</td>
+									<td>{{x.cust_name}}</td>
+									<td>{{x.country_dest}}</td>
+									<td>{{x.short_code}}</td>
+									<td>{{x.total_invoice_amount}}</td>
+									<td>{{x.total_pcs}}</td>
+									<td>{{x.total_net_wt}}</td>
+									<td>{{x.total_gross_wt}}</td>
+									<td>{{x.percent_adjust}}</td>
+									<td>{{x.amount_adjust}}</td>
+									<td>{{x.final_total_inv_amt}}</td>
+									<td>{{x.exchange_rate}}</td>
+									<td>{{x.inr_final_amount}}</td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+				</div>
+		</div>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,41 @@
+<form role='form'>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; min-height: 600px;'>
+			<div class='col-sm-2'>
+				<div ng-controller='emp_sep_menuCtrl' ng-include src="'modules/hrms/emp_sep_menu/emp_sep_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 10px'>
+				<span class='header1 col-sm-2' class='col-sm-2'>My approvals</span>
+				<span class='header2 col-sm-4' class='col-sm-4'>{{hrms_emp_resign_status}}</span>
+				<div class='col-sm-12'>
+					<table class='table table-bordered table-condensed table-bordered'>
+						<thead>
+							<tr>
+								<th >Employee name</th>
+								<th>Resign date</th>
+								<th>Notice period days</th>
+								<th>System exit date</th>
+								<th>Unit name</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr dir-paginate='x in hrms_shift_masterList| filter: search| itemsPerPage: 12'>
+								<td><a  href='#'  ng-click='update_hrms_emp_resign_record(x)' ng-model='hrms_emp_resign.emp_id'> {{x.emp_id}}</a></td>
+								<td>{{x.resign_date}}</td>
+								<td>{{x.notice_period_days}}</td>
+								<td>{{x.sys_exit_date}}</td>
+								<td>{{x.company_id}}</td>
+								<td>{{x.status}}</td>
+							</tr>
+						</tbody>
+					</table>
+					<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+					</dir-pagination-controls>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</form>

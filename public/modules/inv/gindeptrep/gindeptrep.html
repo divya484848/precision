@@ -1,0 +1,106 @@
+<form role='form'>
+		<script type='text/javascript'>
+			$(function () {
+				$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+				$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+			});
+			$('#clear').click(function(){
+				$('#dt1').data('DateTimePicker').clear();
+				$('#dt2').data('DateTimePicker').clear();
+			});
+		</script>
+	<div class='container-fluid'>
+		<div class='row'  style='padding-top: 10px;'>
+			<div class='panel panel-default'>
+				<div class='panel-heading'>
+					<div class='row'  style='padding-top: 10px;'>
+						<span class='col-sm-3'>Department</span>
+						<span class='col-sm-2'>Employee</span>
+						<span class='col-sm-3'>Item</span>
+						<span class='col-sm-2'>From date</span>
+						<span class='col-sm-2'>To date</span>
+					</div>
+					<div class='row'>
+						<div class='col-sm-3'>
+							<select class='form-control'  ng-change='filterDeptEmp(dept_id)' ng-model='dept_id' ng-options='x.sys_dept_id as x.dept_name for x in deptList'></select>
+						</div>
+						<div class='col-sm-2'>
+							<select class='form-control' ng-model='emp_id'  ng-options='x.sys_emp_id as x.complete_name for x in empList'></select>
+						</div>
+						<div class='col-sm-3'>
+							<select class='form-control' ng-model='item_id'  ng-options='x.sys_item_id as x.item_name for x in itemList'></select>
+						</div>
+						<div class='col-sm-2'>
+							<div datetimepicker class='input-group date'  id='dt1' ng-model='from_date'>
+								<input type='text' class='form-control' placeholder='YYYY-MM-DD'>
+								<span class='input-group-addon'>
+									<span class='glyphicon glyphicon-calendar'></span>
+								</span>
+							</div>
+						</div>
+						<div class='col-sm-2'>
+							<div datetimepicker class='input-group date'  id='dt2' ng-model='to_date'>
+								<input type='text' class='form-control' placeholder='YYYY-MM-DD'>
+								<span class='input-group-addon'>
+									<span class='glyphicon glyphicon-calendar'></span>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class='row'>
+						<span class='col-sm-9'></span>
+						<div class='col-sm-3' style="text-align: right">
+							<div class='btn-group'>
+								<a class='btn btn-default btn-sm'  href='#'  ng-click='select_report_data()'>
+									<span class='glyphicon glyphicon-search'></span> Generate
+								</a>
+								<a target='_self' class='btn btn-default btn-sm'  href='./data/GIN_DEPT.xlsx'  download="GIN_DEPT.xlsx">
+									<span class='glyphicon glyphicon-download'></span> Download
+								</a>
+								<a class='btn btn-default btn-sm'  href='/gin'>
+									<span class='glyphicon glyphicon-arrow-left'></span> Back
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+					<div class='panel-body'>
+						<div class='row'>
+							<div class='col-sm-12'>
+								<table class='table table-bordered table-condensed table-bordered'>
+									<thead>
+										<tr>
+											<th>Transaction #</th>
+											<th>Dept name</th>
+											<th>Employee name</th>
+											<th>Transaction date</th>
+											<th>Item</th>
+											<th>Qty</th>
+											<th>Item UoM</th>
+											<th>Unit wt</th>
+											<th>Total wt</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr dir-paginate='x in gindeptList| itemsPerPage: 12'>
+											<td>{{x.sys_mrh_id}}</td>
+											<td>{{x.dept_name}}</td>
+											<td>{{x.party_name}}</td>
+											<td>{{x.trans_date}}</td>
+											<td>{{x.item_name}}</td>
+											<td>{{x.item_qty}}</td>
+											<td>{{x.item_uom}}</td>
+											<td>{{x.unit_wt}}</td>
+											<td>{{x.total_wt}}</td>
+										</tr>
+									</tbody>
+								</table>
+								<dir-pagination-controls max-size="10" direction-links="true" boundray-links="true">
+								</dir-pagination-controls>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+</form>

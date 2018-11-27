@@ -1,0 +1,97 @@
+<form role='form'>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-2'>
+				<div class='row'  style='padding: 0px;'>
+					<div ng-controller='stores_menuCtrl' ng-include src="'modules/inv/stores_menu/stores_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-2' class='col-sm-2'>Material issue (External)</span>
+				<div class='col-sm-3'>
+					<div class='input-group'>
+						<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+						<div class='input-group-btn'>
+							<button class='btn btn-success btn-sm searchBox' type='submit'>
+								<i class='glyphicon glyphicon-search'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<span class='header2 col-sm-5' class='col-sm-5'>{{inv_mat_reg_header_status}}</span>
+				<div class='col-sm-2' style='text-align: right'>
+					<div class='btn-group'>
+						<a  class='btn btn-default btn-sm'  href='/ginvendor'>
+							<span class='glyphicon glyphicon-plus'></span> Add
+						</a>
+					</div>
+				</div>
+			</div>
+				<div class='row'>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'>
+							<thead>
+								<tr>
+									<th>Trans ID</th>
+									<th>Vendor name</th>
+									<th>Trans type</th>
+									<th>Trans date</th>
+									<th>Return type</th>
+									<th>Status</th>
+									<th ></th>
+									<th ></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in inv_mat_headerList| itemsPerPage: 12'>
+									<td>{{x.sysid}}</td>
+									<td>{{x.supp_name}}</td>
+									<td>{{x.trans_type}}</td>
+									<td>{{x.trans_date}}</td>
+									<td>{{x.return_type}}</td>
+									<td>{{x.status}}</td>
+									<td><a  style='color: red'  href='/ginvendor_print/{{x.sysid}}'><span class='glyphicon glyphicon-print'></span> Print</a></td>
+									<td><a  style='color: red'  href='#'  ng-show='false' data-target='#queDlg' data-toggle='modal'><span class='glyphicon glyphicon-search'></span> View</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+				</div>
+		</div>
+		</div>
+	<div class='modal fade'  id='queDlg' role='dialog'>
+		<div class='modal-dialog' style='height: 700px; ; width: 700px; '>
+			<div class='modal-content'>
+				<div class='modal-header'>
+					<div class='row'>
+						<span class='header1 col-sm-12' class='col-sm-12'>Cancel GIN?</span>
+					</div>
+				</div>
+				<div class='modal-body'>
+					<div class='row'>
+						<span class='header2 col-sm-12' class='col-sm-12'>Are you sure, you want to cancel this document? You will not be able to use this again.</span>
+					</div>
+				</div>
+				<div class='footer'>
+					<div class='row'  style='padding: 10px;'>
+						<span class='header2 col-sm-9' class='col-sm-9'>{{inv_mat_header_status}}</span>
+						<div class='col-sm-3' style='text-align: right'>
+							<div class='btn-group'>
+								<button  class='btn btn-default btn-sm'>
+									<span class='glyphicon glyphicon-saved'></span> Save
+								</button>
+								<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+									<span class='glyphicon glyphicon-remove'></span> Close
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</form>

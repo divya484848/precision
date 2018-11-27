@@ -1,0 +1,159 @@
+<form role='form'>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-2'>
+				<div class='row'  style='padding: 0px;'>
+					<div ng-controller='bank_menuCtrl' ng-include src="'modules/payroll/bank_menu/bank_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-2' class='col-sm-2'>Corporate bank master</span>
+				<div class='col-sm-3'>
+					<div class='input-group'>
+						<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+						<div class='input-group-btn'>
+							<button class='btn btn-success btn-sm searchBox' type='submit'>
+								<i class='glyphicon glyphicon-search'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<span class='header2 col-sm-4' class='col-sm-4'></span>
+				<div class='col-sm-3' style='text-align: right'>
+					<div class='btn-group'>
+						<a  class='btn btn-default btn-sm'  href='#'  ng-click='insert_payroll_banks_record()' data-target='#banksDlg' data-toggle='modal'>
+							<span class='glyphicon glyphicon-plus'></span> Add
+						</a>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-refresh'></span> Refresh
+						</button>
+					</div>
+				</div>
+			</div>
+				<div class='row'>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'>
+							<thead>
+								<tr>
+									<th >Bank name</th>
+									<th>Bank code</th>
+									<th>Account type</th>
+									<th>Branch city</th>
+									<th>IFSC code</th>
+									<th>Account no</th>
+									<th>Status</th>
+									<th ></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in payroll_banksList| filter: search| itemsPerPage: 12'>
+									<td><a  href='#'  ng-click='update_payroll_banks_record(x)' ng-model='payroll_banks.bank_name' data-target='#banksDlg' data-toggle='modal'> {{x.bank_name}}</a></td>
+									<td>{{x.bank_code}}</td>
+									<td>{{x.acc_type}}</td>
+									<td>{{x.branch_city}}</td>
+									<td>{{x.ifsc_code}}</td>
+									<td>{{x.acc_no}}</td>
+									<td>{{x.status}}</td>
+									<td><a  style='color: #ef2929'  href='#'  ng-click='delete_payroll_banks_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+				</div>
+		</div>
+		</div>
+	<div class='modal fade'  id='banksDlg' role='dialog'>
+		<div class='modal-dialog' style='min-height: 700px; ; min-width: 1000px; '>
+			<div class='modal-content'>
+				<div class='modal-header'>
+					<div class='row'>
+						<span class='header1 col-sm-12' class='col-sm-12'>Corporate bank master</span>
+					</div>
+				</div>
+				<div class='modal-body'>
+					<div class='row'>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Bank code</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.bank_code'>
+								</div>
+								<label class='col-sm-5'>Bank name</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.bank_name'>
+								</div>
+								<label class='col-sm-5'>Account type</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='payroll_banks.acc_type' ng-init='payroll_banks.acc_type=accTypeList[0]' ng-options='x as x for x in accTypeList'></select>
+								</div>
+								<label class='col-sm-5'>IFSC code</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.ifsc_code'>
+								</div>
+								<label class='col-sm-5'>Account no</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.acc_no'>
+								</div>
+								<label class='col-sm-5'>Status</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='payroll_banks.status' ng-init='payroll_banks.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+								</div>
+							</div>
+						</div>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Branch address line1</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.branch_address_line1'>
+								</div>
+								<label class='col-sm-5'>Branch address line2</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.branch_address_line2'>
+								</div>
+								<label class='col-sm-5'>Branch address line3</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.branch_address_line3'>
+								</div>
+								<label class='col-sm-5'>Branch city</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.branch_city'>
+								</div>
+								<label class='col-sm-5'>Branch state</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.branch_state'>
+								</div>
+								<label class='col-sm-5'>Branch country</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.branch_country'>
+								</div>
+								<label class='col-sm-5'>Branch pin</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='payroll_banks.branch_pin'>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='footer'>
+					<div class='row'  style='padding: 10px'>
+						<span class='header2 col-sm-9' class='col-sm-9'>{{payroll_banks_status}}</span>
+						<div class='col-sm-3' style='text-align: right'>
+							<div class='btn-group'>
+								<button  class='btn btn-default btn-sm'  ng-click='save_payroll_banks_record()'>
+									<span class='glyphicon glyphicon-saved'></span> Save
+								</button>
+								<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+									<span class='glyphicon glyphicon-remove'></span> Close
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</form>

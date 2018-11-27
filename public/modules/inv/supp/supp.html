@@ -1,0 +1,206 @@
+<form role='form'>
+					<script type='text/javascript'>
+						$(function () {
+							$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+							$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+						});
+						$('#clear').click(function(){
+							$('#dt1').data('DateTimePicker').clear();
+							$('#dt2').data('DateTimePicker').clear();
+						});
+							$('#dt1').click(function(){
+								var sysdate = new Date();
+								$('#dt1').data('DateTimePicker').date(sysdate);
+							})
+							$('#dt2').click(function(){
+								var sysdate = new Date();
+								$('#dt2').data('DateTimePicker').date(sysdate);
+							})
+					</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; padding-top: 10px;'>
+			<div class='col-sm-1'>
+			</div>
+			<div class='col-sm-10'>
+				<div class='row'  style='padding-top: 20px'>
+					<span class='header-title col-sm-2' class='col-sm-2'>Suppliers</span>
+					<span class='header2 col-sm-8' class='col-sm-8'>{{inv_supplier_status}}</span>
+					<div class='col-sm-2' style='text-align: right'>
+						<div class='btn-group'>
+							<button  class='btn btn-default btn-sm'  ng-click='save_inv_supplier_record()'>
+								<span class='glyphicon glyphicon-saved'></span> Save
+							</button>
+							<a  class='btn btn-default btn-sm'  href='/supplist'>
+								<span class='glyphicon glyphicon-arrow-left'></span> Back
+							</a>
+						</div>
+					</div>
+						<div class='col-sm-12' style='padding-top: 10px'>
+							<hr>
+						</div>
+				</div>
+						<div class='row'>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>Supplier code</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_supplier.supp_id'>
+									</div>
+									<label class='col-sm-5'>Supplier name</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_supplier.supp_name'>
+									</div>
+									<label class='col-sm-5'>Registration no</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_supplier.reg_no'>
+									</div>
+									<label class='col-sm-5'>PAN No</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_supplier.pan_no'>
+									</div>
+									<label class='col-sm-5'>GST No</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_supplier.gst_no'>
+									</div>
+									<label class='col-sm-5'>Supplier type</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_supplier.supp_type' ng-init='inv_supplier.supp_type=typeList[0]' ng-options='x as x for x in typeList'></select>
+									</div>
+									<label class='col-sm-5'>Supplier subtype</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_supplier.supp_subtype' ng-init='inv_supplier.supp_subtype=subtypeList[0]' ng-options='x as x for x in subtypeList'></select>
+									</div>
+									<label class='col-sm-5'>Supplier category</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_supplier.supp_category' ng-init='inv_supplier.supp_category=catList[0]' ng-options='x as x for x in catList'></select>
+									</div>
+									<label class='col-sm-5'>Email</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_supplier.email'>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>Website</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_supplier.website'>
+									</div>
+									<label class='col-sm-5'>Contact person</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_supplier.contact_person'>
+									</div>
+									<label class='col-sm-5'>Contact number</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_supplier.contact_number'>
+									</div>
+									<label class='col-sm-5'>Contact email</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='inv_supplier.contact_email'>
+									</div>
+									<label class='col-sm-5'>Start date</label>
+									<div class='col-sm-7'>
+										<div datetimepicker class='input-group date'  id='dt1' ng-model='inv_supplier.start_date'>
+											<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+									<label class='col-sm-5'>End date</label>
+									<div class='col-sm-7'>
+										<div datetimepicker class='input-group date'  id='dt2' ng-model='inv_supplier.end_date'>
+											<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+									<label class='col-sm-5'>Default currency</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_supplier.default_currency' ng-init='inv_supplier.default_currency=admin_currency[0].sysid' ng-options='x.sysid as x.curr_name for x in admin_currencyList'></select>
+									</div>
+									<label class='col-sm-5'>Status</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='inv_supplier.status' ng-init='inv_supplier.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-12'>
+								<hr>
+							</div>
+						</div>
+							<div class='row'>
+								<div class='col-sm-6'>
+									<div class='row'>
+										<span class='header1 col-sm-12'  style='text-align: center; color: #C70039;' class='col-sm-12'>Billing address</span>
+										<label class='col-sm-5'>Line 1</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_supplier.bill_address1'>
+										</div>
+										<label class='col-sm-5'>Line 2</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_supplier.bill_address2'>
+										</div>
+										<label class='col-sm-5'>Line 3</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_supplier.bill_address3'>
+										</div>
+										<label class='col-sm-5'>City</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_supplier.bill_city'>
+										</div>
+										<label class='col-sm-5'>State</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_supplier.bill_state'>
+										</div>
+										<label class='col-sm-5'>Country</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_supplier.bill_country'>
+										</div>
+										<label class='col-sm-5'>Pincode</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_supplier.bill_pincode'>
+										</div>
+									</div>
+								</div>
+								<div class='col-sm-6'>
+									<div class='row'>
+										<span class='header1 col-sm-12'  style='text-align: center; color: #C70039;' class='col-sm-12'>Delivery address</span>
+										<label class='col-sm-5'>Line 1</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_supplier.del_address1'>
+										</div>
+										<label class='col-sm-5'>Line 2</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_supplier.del_address2'>
+										</div>
+										<label class='col-sm-5'>Line 3</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_supplier.del_address3'>
+										</div>
+										<label class='col-sm-5'>City</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_supplier.del_city'>
+										</div>
+										<label class='col-sm-5'>State</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_supplier.del_state'>
+										</div>
+										<label class='col-sm-5'>Country</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_supplier.del_country'>
+										</div>
+										<label class='col-sm-5'>Pincode</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_supplier.del_pin'>
+										</div>
+									</div>
+								</div>
+							</div>
+			</div>
+						<div class='col-sm-1'>
+						</div>
+		</div>
+	</div>
+</form>

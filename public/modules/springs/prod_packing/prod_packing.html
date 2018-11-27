@@ -1,0 +1,220 @@
+<form role='form'>
+	<div class='container-fluid'>
+		<div class='row'  style='padding-top: 15px'>
+			<span class='header-label col-sm-1' class='col-sm-1'>Packing</span>
+			<div class='col-sm-10'>
+				<div class='d-flex flex-row' ng-repeat='x in sales_so_springsList'>
+					<div class='col-sm-1' style='padding-right: 0px; padding-top: 0px; padding-bottom: 0px'>
+						<button  class='btn btn-default btn-sm btn-block'  style='color: #cc0000;; font: 18 DejaVu Sans; border-color: #cc0000'  ng-click='select_prod_spring_trans_record(x.sysid)'>
+							 {{x.so_no}}
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class='col-sm-12'>
+				<hr>
+			</div>
+		</div>
+			<div class='row'>
+				<div class='col-sm-6'>
+					<div class='row'>
+						<span class='header1 col-sm-2'  style='color:blue' class='col-sm-2'>Packing Department</span>
+						<div class='col-sm-6'>
+							<div class='input-group'>
+								<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+								<div class='input-group-btn'>
+									<button class='btn btn-success btn-sm searchBox' type='submit'>
+										<i class='glyphicon glyphicon-search'></i>
+									</button>
+								</div>
+							</div>
+						</div>
+						<label class='col-sm-2'  style='color: #000' class='col-sm-2'>Current order</label>
+						<span class='header-title col-sm-2'  style='color:blue' class='col-sm-2'>{{select_so}}</span>
+					</div>
+					<div class='row'>
+						<div class='col-sm-12'>
+							<table class='table table-bordered table-condensed table-bordered'>
+								<thead>
+									<tr>
+										<th >Internal ID</th>
+										<th>Item code</th>
+										<th>Item name</th>
+										<th>SO qty</th>
+										<th>Completed qty</th>
+										<th>Total Weight</th>
+										<th>Balance qty</th>
+										<th >Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr dir-paginate='x in prod_spring_transList| filter: search| itemsPerPage: 12'>
+										<td><a  href='#'  ng-click='insert_prod_spring_packing_record(x)' ng-model='prod_spring_trans.item_id' data-target='#qtyDlg' data-toggle='modal'> {{x.item_id}}</a></td>
+										<td>{{x.short_code}}</td>
+										<td>{{x.item_name}}</td>
+										<td>{{x.so_qty}}</td>
+										<td>{{x.total_qty}}</td>
+										<td>{{x.total_gross_wt}}</td>
+										<td>{{x.bal_qty}}</td>
+										<td><a  style='color:red'  href='#'  ng-click='packing_details(x)'> Details</a></td>
+									</tr>
+								</tbody>
+							</table>
+							<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+							</dir-pagination-controls>
+						</div>
+					</div>
+				</div>
+			<div class='col-sm-6'>
+				<div class='row'>
+					<span class='header2 col-sm-12' class='col-sm-12'></span>
+				</div>
+				<div class='row'>
+					<span class='header-title col-sm-12' class='col-sm-12'>Packing Details</span>
+				</div>
+				<div class='row'>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'>
+							<thead>
+								<tr>
+									<th>Trans date</th>
+									<th>Item id</th>
+									<th>No of packets</th>
+									<th>Qty per packet</th>
+									<th>Total qty</th>
+									<th>Wt per unit</th>
+									<th>Total gross wt</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in salesPackingList| itemsPerPage: 12'>
+									<td>{{x.trans_date}}</td>
+									<td>{{x.item_id}}</td>
+									<td>{{x.no_of_packets}}</td>
+									<td>{{x.qty_per_packet}}</td>
+									<td>{{x.total_qty}}</td>
+									<td>{{x.wt_per_unit}}</td>
+									<td>{{x.total_gross_wt}}</td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+				</div>
+			</div>
+			</div>
+	<div class='modal fade'  id='qtyDlg' role='dialog'>
+		<div class='modal-dialog' style='height: 800px; ; width: 800px; '>
+			<div class='modal-content'>
+				<div class='modal-header'>
+					<div class='row'>
+						<span class='header1 col-sm-12' class='col-sm-12'>Production quantity</span>
+					</div>
+				</div>
+				<div class='modal-body'>
+					<div class='row'>
+						<div class='col-sm-6'>
+							<label class='col-sm-5'>Order id</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='sales_packing_list_springs.order_id'>
+							</div>
+							<label class='col-sm-5'>Item id</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='sales_packing_list_springs.item_id'>
+							</div>
+							<label class='col-sm-5'>No of packets</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-change='select_prod_spring_trans_record(sysid)' ng-model='sales_packing_list_springs.no_of_packets'>
+							</div>
+							<label class='col-sm-5'>Qty per packet</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-change='item_qty()' ng-model='sales_packing_list_springs.qty_per_packet'>
+							</div>
+							<label class='col-sm-5'>Total qty</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='sales_packing_list_springs.total_qty'>
+							</div>
+						</div>
+						<div class='col-sm-6'>
+							<label class='col-sm-5'>Uom</label>
+							<div class='col-sm-7'>
+								<select class='form-control' ng-model='sales_packing_list_springs.uom' ng-init='sales_packing_list_springs.uom=[0]' ng-options='x as x for x in '></select>
+							</div>
+							<label class='col-sm-5'>Wt per unit</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-change='item_qty()' ng-model='sales_packing_list_springs.wt_per_unit'>
+							</div>
+							<label class='col-sm-5'>Total gross wt</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='sales_packing_list_springs.total_gross_wt'>
+							</div>
+							<label class='col-sm-5'>Unit rate</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-change='item_qty()' ng-model='sales_packing_list_springs.unit_rate'>
+							</div>
+							<label class='col-sm-5'>Item value</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='sales_packing_list_springs.item_value'>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='footer'>
+					<div class='row'  style='padding: 10px;'>
+						<span class='header2 col-sm-7' class='col-sm-7'>{{sales_packing_list_springs_status}}</span>
+						<div class='col-sm-5' style='text-align: right'>
+							<div class='btn-group'>
+								<button  class='btn btn-default btn-sm'  ng-click='save_prod_spring_packing_record()'>
+									<span class='glyphicon glyphicon-saved'></span> Save
+								</button>
+								<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+									<span class='glyphicon glyphicon-remove'></span> Close
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+				<div class='modal fade'  id='transDlg' role='dialog'>
+					<div class='modal-dialog' style='height: 500px; ; width: 500px; '>
+						<div class='modal-content'>
+							<div class='modal-header'>
+								<div class='row'>
+									<span class='header1 col-sm-12' class='col-sm-12'>Transfer quantity</span>
+								</div>
+							</div>
+							<div class='modal-body'>
+								<div class='row'>
+									<label class='col-sm-3'>Next Process</label>
+									<div class='col-sm-9'>
+										<select class='form-control' ng-model='prod_spring_trans.to_proc_id' ng-init='prod_spring_trans.to_proc_id=prod_springs_process_master[0].sysid' ng-options='x.sysid as x.process_name for x in prod_springs_process_masterList'></select>
+									</div>
+									<label class='col-sm-3'>Transfer qty</label>
+									<div class='col-sm-9'>
+										<input class='form-control'  type='text' ng-model='prod_spring_trans.recd_qty'>
+									</div>
+								</div>
+							</div>
+							<div class='footer'>
+								<div class='row'  style='padding: 10px;'>
+									<span class='header2 col-sm-7' class='col-sm-7'>{{prod_spring_trans_status}}</span>
+									<div class='col-sm-5' style='text-align: right'>
+										<div class='btn-group'>
+											<button  class='btn btn-default btn-sm'  ng-click='save_prod_spring_trans_record()'>
+												<span class='glyphicon glyphicon-saved'></span> Save
+											</button>
+											<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+												<span class='glyphicon glyphicon-remove'></span> Close
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	</div>
+</form>

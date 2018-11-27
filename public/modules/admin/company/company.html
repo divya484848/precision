@@ -1,0 +1,276 @@
+<form role='form'>
+		<script type='text/javascript'>
+			$(function () {
+				$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+			});
+			$('#clear').click(function(){
+				$('#dt1').data('DateTimePicker').clear();
+			});
+				$('#dt1').click(function(){
+					var sysdate = new Date();
+					$('#dt1').data('DateTimePicker').date(sysdate);
+				})
+		</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; padding-top: 10px;'>
+			<div class='col-sm-2'  style='min-height: 600px;'>
+				<div class='row'  style='padding-top: 20px'>
+					<span class='header-title col-sm-12'  style='color: #c70039;' class='col-sm-12'>Registered units</span>
+					<div class='col-sm-12'>
+						<div class='input-group'>
+							<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+							<div class='input-group-btn'>
+								<button class='btn btn-success btn-sm searchBox' type='submit'>
+									<i class='glyphicon glyphicon-search'></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'>
+							<thead>
+								<tr>
+									<th >Unit name</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in admin_companyList| itemsPerPage: 12'>
+									<td><a  class='header2'  href='#'  ng-click='update_admin_company_record(x)' ng-model='admin_company.company_name'> {{x.company_name}}</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='border-bottom: 1px solid lightgray;  padding-bottom: 10px; padding-top: 20px'>
+				<span class='header-title col-sm-2' class='col-sm-2'>Unit details</span>
+				<span class='header2 col-sm-8' class='col-sm-8'>{{admin_company_status}}</span>
+				<div class='col-sm-2' style='text-align: right'>
+					<div class='btn-group'>
+						<button  class='btn btn-default btn-sm'  ng-click='save_admin_company_record()'>
+							<span class='glyphicon glyphicon-saved'></span> Save
+						</button>
+						<button  class='btn btn-default btn-sm'  ng-click='delete_admin_company_record(x.sysid)'>
+							<span class='glyphicon glyphicon-trash'></span> Delete
+						</button>
+					</div>
+				</div>
+			</div>
+				<div class='row'  style='padding: 10px;'>
+					<div class='col-sm-4'>
+						<div class='row'>
+							<label class='col-sm-5'>Unit code</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.unit_code'>
+							</div>
+							<label class='col-sm-5'>Company name</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.company_name'>
+							</div>
+							<label class='col-sm-5'>Registration no</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.reg_no'>
+							</div>
+							<label class='col-sm-5'>Registration date</label>
+							<div class='col-sm-7'>
+								<div datetimepicker class='input-group date'  id='dt1' ng-model='admin_company.reg_date'>
+									<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+									<span class='input-group-addon'>
+										<span class='glyphicon glyphicon-calendar'></span>
+									</span>
+								</div>
+							</div>
+							<label class='col-sm-5'>Juridiction</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.reg_juridiction'>
+							</div>
+							<label class='col-sm-5'>PAN number</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.pan_number'>
+							</div>
+							<label class='col-sm-5'>GST number</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.gst_number'>
+							</div>
+							<label class='col-sm-5'>Company type</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.company_type'>
+							</div>
+						</div>
+					</div>
+					<div class='col-sm-4'>
+						<div class='row'>
+							<label class='col-sm-5'>Phone1</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.phone1'>
+							</div>
+							<label class='col-sm-5'>Phone2</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.phone2'>
+							</div>
+							<label class='col-sm-5'>Website</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.website'>
+							</div>
+							<label class='col-sm-5'>Corp email</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.corp_email'>
+							</div>
+							<label class='col-sm-5'>Facebook</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.facebook'>
+							</div>
+							<label class='col-sm-5'>Twitter</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.twitter'>
+							</div>
+							<label class='col-sm-5'>Youtube</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.youtube'>
+							</div>
+							<label class='col-sm-5'>Company segment</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.company_segment'>
+							</div>
+						</div>
+					</div>
+					<div class='col-sm-4'>
+						<div class='row'>
+							<label class='col-sm-5'>Contact person</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.contact_person'>
+							</div>
+							<label class='col-sm-5'>Contact email</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.contact_person_email'>
+							</div>
+							<label class='col-sm-5'>Contact phone</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.contact_person_phone'>
+							</div>
+							<label class='col-sm-5'>Nature of business</label>
+							<div class='col-sm-7'>
+								<textarea class='form-control' ng-model='admin_company.nature_of_business' rows='5'></textarea>
+							</div>
+							<label class='col-sm-5'>Parent unit</label>
+							<div class='col-sm-7'>
+								<select class='form-control' ng-model='admin_company.parent_org' ng-init='admin_company.parent_org=admin_company[0].sysid' ng-options='x.sysid as x.unit_code for x in admin_companyList'></select>
+							</div>
+							<label class='col-sm-5'>Status</label>
+							<div class='col-sm-7'>
+								<select class='form-control' ng-model='admin_company.status' ng-init='admin_company.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='row'  style='border-bottom: 1px solid lightgray;'>
+					<span class='header1 col-sm-12'  style='color: #204a87;' class='col-sm-12'>Addresses</span>
+				</div>
+				<div class='row'>
+					<div class='col-sm-4'>
+						<div class='row'  style='padding-top: 10px'>
+							<span class='header1 col-sm-12'  style='color: #00557f; text-align: center' class='col-sm-12'>Factory address</span>
+							<label class='col-sm-5'>Line 1</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.factory_address1'>
+							</div>
+							<label class='col-sm-5'>Line 2</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.factory_address2'>
+							</div>
+							<label class='col-sm-5'>Line 3</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.factory_address3'>
+							</div>
+							<label class='col-sm-5'>City</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.factory_city'>
+							</div>
+							<label class='col-sm-5'>State</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.factory_state'>
+							</div>
+							<label class='col-sm-5'>Country</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.factory_country'>
+							</div>
+							<label class='col-sm-5'>Pincode</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.factory_pin'>
+							</div>
+						</div>
+					</div>
+					<div class='col-sm-4'>
+						<div class='row'  style='padding-top: 10px'>
+							<span class='header1 col-sm-12'  style='color: #00557f; text-align: center' class='col-sm-12'>Corporate address</span>
+							<label class='col-sm-5'>Line 1</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.corp_address1'>
+							</div>
+							<label class='col-sm-5'>Line 2</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.corp_address2'>
+							</div>
+							<label class='col-sm-5'>Line 3</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.corp_address3'>
+							</div>
+							<label class='col-sm-5'>City</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.corp_city'>
+							</div>
+							<label class='col-sm-5'>State</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.corp_state'>
+							</div>
+							<label class='col-sm-5'>Country</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.corp_country'>
+							</div>
+							<label class='col-sm-5'>Pincode</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.corp_pin'>
+							</div>
+						</div>
+					</div>
+					<div class='col-sm-4'>
+						<div class='row'  style='padding-top: 10px'>
+							<span class='header1 col-sm-12'  style='color: #00557f; text-align: center' class='col-sm-12'>Billing address</span>
+							<label class='col-sm-5'>Line 1</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.billing_factory_address1'>
+							</div>
+							<label class='col-sm-5'>Line 2</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.billing_address2'>
+							</div>
+							<label class='col-sm-5'>Line 3</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.billing_address3'>
+							</div>
+							<label class='col-sm-5'>City</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.billing_city'>
+							</div>
+							<label class='col-sm-5'>State</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.billing_state'>
+							</div>
+							<label class='col-sm-5'>Country</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.billing_country'>
+							</div>
+							<label class='col-sm-5'>Pincode</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='admin_company.billing_pin'>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+		</div>
+	</div>
+</form>

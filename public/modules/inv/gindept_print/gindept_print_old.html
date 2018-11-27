@@ -1,0 +1,61 @@
+<form role='form'>
+	<div class='container-fluid'>
+		<div class='row'  style='padding: 10px;'  id='printMenu'>
+			<div class='col-sm-12' style='text-align: right'>
+				<div class='btn-group'>
+					<a class='btn btn-default btn-sm'  href='#'  ng-click='doPrint()'>
+						<span class='glyphicon glyphicon-print'></span> Print
+					</a>
+					<a class='btn btn-default btn-sm'  href='/gindept/{{inv_mat_header.sysid}}'>
+						<span class='glyphicon glyphicon-arrow-left'></span> Back
+					</a>
+				</div>
+			</div>
+		</div>
+			<div class='row'  style='width: 80mm; height: 148mm; float: none; margin-left: auto; margin-right: auto; background-color: #fff; border: 1px solid #000; text-align: center'>
+				<div class='col-sm-12'>
+					<div class='row'  style='border-bottom: 1px solid #000;'>
+						<span class='print-main-header col-sm-12'  style='padding-top: 10px;'>Goods Issue Note (Internal)</span>
+					</div>
+					<div class='row print-body'  style='padding-top: 15px;'>
+						<span class='print-body-bold col-sm-6'>Challan no: </span>
+						<span class='col-sm-6'>{{inv_mat_header.sysid}}</span>
+					</div>
+					<div class='row print-body'  style='padding-top: 8px;'>
+						<span class='print-body-bold col-sm-6'>Date:</span>
+						<span class='col-sm-6'>{{inv_mat_header.trans_date}}</span>
+					</div>
+					<div class='row print-body'  style='padding-top: 8px;'>
+						<span class='print-body-bold col-sm-6'>Employee name:</span>
+						<span class='col-sm-6'>{{inv_mat_header.emp_name}}</span>
+					</div>
+					<div class='row print-body'  style='border-bottom: 1px solid #000; padding-top: 8px; padding-bottom: 8px;'>
+						<span class='print-body-bold col-sm-6'>Department:</span>
+						<span class='col-sm-6'>{{inv_mat_header.dept_name}}</span>
+					</div>
+					<div class='row'  style='text-align: center; border-bottom: 1px solid #000; padding-top: 8px; padding-bottom: 8px;'>
+						<!-- <span class='print-body-bold col-sm-1'>Sr.</span> -->
+						<span class='print-body-bold col-sm-6'>Item description</span>
+						<span class='print-body-bold col-sm-3'  style='text-align: right'>Qty</span>
+						<span class='print-body-bold col-sm-3'  style='text-align: right'>Total wt.</span>
+					</div>
+					<div class='row'  style='min-height: 20px;' ng-repeat='x in inv_mat_detailsList'>
+						<!-- <span class='print-body col-sm-1'>{{x.sr_no}}</span> -->
+						<span class='print-body col-sm-6'>{{x.item_name}}</span>
+						<span class='print-body col-sm-3'  style='text-align: right'>{{x.iss_qty}} {{x.item_uom}}</span>
+						<span class='print-body col-sm-3'  style='text-align: right'>{{x.iss_wt}} {{x.wt_uom}}</span>
+					</div>
+					<div class='row'  style='border-top: 1px solid #000; margin-top: 10px; padding-top: 10px;'>
+						<span class='print-body-bold col-sm-6'>Prepared by:</span>
+						<span class='print-body col-sm-6'>{{logged_user}}</span>
+					</div>
+					<div class='row'  style='padding-top: 10px;'>
+						<span class='print-body-bold col-sm-6'>Ledger No:</span>
+					</div>
+					<div class='row'  style='border-bottom: 1px solid #000; padding-top: 10px; margin-bottom: 100px; padding-bottom: 10px;'>
+						<span class='print-body-bold col-sm-6'>Page no:</span>
+					</div>
+				</div>
+			</div>
+	</div>
+</form>

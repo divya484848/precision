@@ -1,0 +1,111 @@
+{
+    "child": [
+        {
+            "child": [
+                {
+                    "child": [
+                    ],
+                    "name": "Label",
+                    "props": {
+                        "Class": "header1",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "DisplayLabel": "",
+                        "ID": "",
+                        "Label class": "",
+                        "Label-type": "span",
+                        "Model": "",
+                        "Required": "",
+                        "Style": "",
+                        "TableColumnWidth": "",
+                        "Value": "Vendor management",
+                        "Visible": ""
+                    },
+                    "type": "Label"
+                }
+            ],
+            "name": "Row",
+            "props": {
+                "Class": "row",
+                "Control Name": "",
+                "DB-table": "",
+                "ID": "",
+                "Parent-style": "",
+                "Repeat": "",
+                "Style": "background-color: lightgray; margin-top: 20px; padding-top: 10px; text-align: center; margin-bottom: 10px;",
+                "Visible": ""
+            },
+            "type": "Row"
+        },
+        {
+            "child": [
+                {
+                    "child": [
+                    ],
+                    "name": "Link",
+                    "props": {
+                        "Class": "header2",
+                        "ClickEvent": "",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "DB-table": "",
+                        "Data-dismiss": "",
+                        "Data-target": "",
+                        "Data-toggle": "",
+                        "DisplayLabel": "Header",
+                        "Glyphicon": "",
+                        "ID": "",
+                        "Icon": "",
+                        "Label-type": "label",
+                        "Model": "",
+                        "Parent-style": "",
+                        "Readonly": "",
+                        "Ref": "/{{x.menu_route}}",
+                        "Style": " padding-bottom: 10px; color: #000",
+                        "TableColumnWidth": "",
+                        "Value": "{{x.menu_name}}",
+                        "Visible": ""
+                    },
+                    "type": "Link"
+                },
+                {
+                    "child": [
+                    ],
+                    "name": "HLine",
+                    "props": {
+                        "Class": "",
+                        "Columns": "12",
+                        "Control Name": "",
+                        "ID": "",
+                        "Parent-style": "padding: 0px; padding-top: 5px;\n",
+                        "Style": "padding-top: 5px",
+                        "Visible": ""
+                    },
+                    "type": "HLine"
+                }
+            ],
+            "name": "Row",
+            "props": {
+                "Class": "row",
+                "Control Name": "",
+                "DB-table": "",
+                "ID": "",
+                "Parent-style": "",
+                "Repeat": "x in sub_sub_menu_list",
+                "Style": "padding: 0px; ",
+                "Visible": ""
+            },
+            "type": "Row"
+        }
+    ],
+    "name": "Container",
+    "props": {
+        "Class": "container-fluid",
+        "Control Name": "",
+        "ID": "",
+        "Style": "",
+        "Visible": ""
+    },
+    "type": "Container"
+}

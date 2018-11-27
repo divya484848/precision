@@ -1,0 +1,52 @@
+<form role='form'>
+	<script type='text/javascript'>
+		$(function () {
+			$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt4').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt5').datetimepicker({format: 'YYYY-MM-DD'});
+		});
+		$('#clear').click(function(){
+			$('#dt1').data('DateTimePicker').clear();
+			$('#dt2').data('DateTimePicker').clear();
+			$('#dt3').data('DateTimePicker').clear();
+			$('#dt4').data('DateTimePicker').clear();
+			$('#dt5').data('DateTimePicker').clear();
+		});
+			$('#dt1').click(function(){
+				var sysdate = new Date();
+				$('#dt1').data('DateTimePicker').date(sysdate);
+			})
+			$('#dt2').click(function(){
+				var sysdate = new Date();
+				$('#dt2').data('DateTimePicker').date(sysdate);
+			})
+			$('#dt3').click(function(){
+				var sysdate = new Date();
+				$('#dt3').data('DateTimePicker').date(sysdate);
+			})
+			$('#dt4').click(function(){
+				var sysdate = new Date();
+				$('#dt4').data('DateTimePicker').date(sysdate);
+			})
+			$('#dt5').click(function(){
+				var sysdate = new Date();
+				$('#dt5').data('DateTimePicker').date(sysdate);
+			})
+	</script>
+	<div class='container-fluid'>
+		<div class='row'>
+			<div class='col-sm-2'>
+				<div class='row'>
+					<div ng-controller='sal_menuCtrl' ng-include src="'modules/payroll/sal_menu/sal_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header2 col-sm-12'  style='color: #c70039' class='col-sm-12'>Provisioning pending, configuration required: Status code - P1006</span>
+			</div>
+		</div>
+		</div>
+	</div>
+</form>

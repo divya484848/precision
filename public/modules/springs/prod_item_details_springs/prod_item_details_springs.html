@@ -1,0 +1,164 @@
+<form role='form'>
+	<div class='container-fluid'  style='margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; background-color: #ffffff'>
+		<div class='row'  style='text-align: right; padding-left: 0px; padding-right: 0px; padding-top: 10px; padding-bottom: 10px; padding-left: 0px; padding-right: 0px'  id='printMenu'>
+			<div class='col-sm-4'>
+			</div>
+			<div class='col-sm-4'>
+				<div class='row'  style='text-align: center'>
+					<div class='col-sm-12'>
+						<div class='btn-group'>
+							<button  class='btn btn-success btn-sm'  style='color: #000000;'  ng-click='doPrint()'>
+								<span class='glyphicon glyphicon-print'></span> Print
+							</button>
+							<a  class='btn btn-success btn-sm'  style='color: #000000;'  href='/prod_cust_item_list'>
+								<span class='glyphicon glyphicon-arrow-left'></span> Back
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class='col-sm-4'>
+				</div>
+		</div>
+			<div class='row'  style='width: 100%; height: 100%; float: none; margin-left: auto; margin-right: auto; background-color: #fff; border: 1px solid #000; text-align: center'>
+				<span class='header1 col-sm-12' class='col-sm-12'>Item Card</span>
+				<span class='header1 col-sm-12'  style='color: darkblue' class='col-sm-12'>{{inv_item_header.item_name}}</span>
+				<div class='col-sm-12'>
+					<hr>
+				</div>
+					<div class='row'>
+						<div class='col-sm-6'>
+							<label class='col-sm-5'>Item Id</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='inv_item_header.sysid'>
+							</div>
+							<label class='col-sm-5'>Item serial</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text' ng-model='inv_item_header.item_serial'>
+							</div>
+							<label class='col-sm-5'>Short code</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_item_header.short_code'>
+							</div>
+							<label class='col-sm-5'>Drg no</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_item_header.drg_no'>
+							</div>
+							<label class='col-sm-5'>Drg file</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_item_header.drg_file'>
+							</div>
+							<label class='col-sm-5'>Specification</label>
+							<div class='col-sm-7'>
+								<textarea class='form-control'  ng-readonly='true' ng-model='inv_item_header.specification' rows='5'></textarea>
+							</div>
+						</div>
+						<div class='col-sm-6'>
+							<label class='col-sm-5'>Spring finish</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_item_header.spring_finish'>
+							</div>
+							<label class='col-sm-5'>Wire size mm</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_item_header.wire_size_mm'>
+							</div>
+							<label class='col-sm-5'>Wire finish</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_item_header.wire_finish'>
+							</div>
+							<label class='col-sm-5'>Other material req spec</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_item_header.other_material_req_spec'>
+							</div>
+							<div class='col-sm-12'>
+								<img style='width: 200px; height: 200px'  src='../data/{{inv_item_header.drg_file}}'></img>
+							</div>
+						</div>
+					</div>
+						<div class='col-sm-12'>
+							<table class='table table-bordered table-condensed table-bordered'>
+								<thead>
+									<tr>
+										<th>Process name</th>
+										<th>Process time</th>
+										<th>Attrib id</th>
+										<th>Attrib value</th>
+										<th>Attrib uom</th>
+										<th>Attrib min dev</th>
+										<th>Attrib max dev</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr dir-paginate='x in inv_item_attribList| itemsPerPage: 12'>
+										<td>{{x.process_name}}</td>
+										<td>{{x.process_time}}</td>
+										<td>{{x.attrib_id}}</td>
+										<td>{{x.attrib_value}}</td>
+										<td>{{x.attrib_uom}}</td>
+										<td>{{x.attrib_min_dev}}</td>
+										<td>{{x.attrib_max_dev}}</td>
+									</tr>
+								</tbody>
+							</table>
+							<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+							</dir-pagination-controls>
+						</div>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'>
+							<thead>
+								<tr>
+									<th>Furnace name</th>
+									<th>Heating temp</th>
+									<th>Temprature uom</th>
+									<th>Heating time</th>
+									<th>Heating time uom</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in inv_item_heatList| itemsPerPage: 12'>
+									<td>{{x.furnace_name}}</td>
+									<td>{{x.heating_temp}}</td>
+									<td>{{x.temprature_uom}}</td>
+									<td>{{x.heating_time}}</td>
+									<td>{{x.heating_time_uom}}</td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+				<div class='col-sm-12'>
+					<table class='table table-bordered table-condensed table-bordered'>
+						<thead>
+							<tr>
+								<th>Load seq</th>
+								<th>Load value</th>
+								<th>Load uom</th>
+								<th>Load time</th>
+								<th>Load time uom</th>
+								<th>Length original</th>
+								<th>Length final</th>
+								<th>Length variance allowed</th>
+								<th>Length uom</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr dir-paginate='x in inv_item_loadList| itemsPerPage: 12'>
+								<td>{{x.load_seq}}</td>
+								<td>{{x.load_value}}</td>
+								<td>{{x.load_uom}}</td>
+								<td>{{x.load_time}}</td>
+								<td>{{x.load_time_uom}}</td>
+								<td>{{x.length_original}}</td>
+								<td>{{x.length_final}}</td>
+								<td>{{x.length_variance_allowed}}</td>
+								<td>{{x.length_uom}}</td>
+							</tr>
+						</tbody>
+					</table>
+					<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+					</dir-pagination-controls>
+				</div>
+			</div>
+	</div>
+</form>

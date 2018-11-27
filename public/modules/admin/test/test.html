@@ -1,0 +1,150 @@
+<form role='form'>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; padding-top: 10px;'>
+			<div class='col-sm-1'>
+			</div>
+			<div class='col-sm-10'>
+				<div class='row'  style='padding-top: 20px'>
+					<span class='header-title col-sm-2' class='col-sm-2'>Product material</span>
+					<span class='header2 col-sm-7' class='col-sm-7'>{{prod_product_assembly_status}}</span>
+					<div class='col-sm-3' style='text-align: right'>
+						<div class='btn-group'>
+							<button  class='btn btn-default btn-sm'  ng-click='save_prod_product_assembly_record()'>
+								<span class='glyphicon glyphicon-saved'></span> Save
+							</button>
+							<a  class='btn btn-default btn-sm'  href='/item_process_list'>
+								<span class='glyphicon glyphicon-arrow-left'></span> Back
+							</a>
+						</div>
+					</div>
+						<div class='col-sm-12' style='padding-top: 5px'>
+							<hr>
+						</div>
+				</div>
+						<div class='row'>
+							<div class='col-sm-4'>
+								<div class='row'>
+									<label class='col-sm-5'>Trans ID</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='prod_product_assembly.sysid'>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-4'>
+								<div class='row'>
+									<label class='col-sm-3'>Item name</label>
+									<div class='col-sm-9'>
+										<select class='form-control' ng-model='prod_product_assembly.fin_item_id' ng-init='prod_product_assembly.fin_item_id=inv_item_master[0].sysid' ng-options='x.sysid as x.item_name for x in inv_item_masterList'></select>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-4'>
+								<div class='row'>
+									<label class='col-sm-5'>Status</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='prod_product_assembly.status' ng-init='prod_product_assembly.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-12' style='padding-top: 10px'>
+								<hr>
+							</div>
+						</div>
+							<div class='row'>
+								<div class='col-sm-12' style='text-align: right; padding-bottom: 10px'>
+									<button  class='btn btn-default btn-sm'  ng-click='insert_prod_product_assembly_details_record()' data-target='#procDlg' data-toggle='modal'>
+										<span class='glyphicon glyphicon-plus'></span> Add
+									</button>
+								</div>
+								<div class='col-sm-12'>
+									<table class='table table-bordered table-condensed table-bordered'>
+										<thead>
+											<tr>
+												<th >Item name</th>
+												<th>Trans ID</th>
+												<th>Item qty</th>
+												<th>Item wt</th>
+												<th>Status</th>
+												<th >Header</th>
+												<th>Item value</th>
+												<th>Tax code</th>
+												<th>Discount uom</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr dir-paginate='x in prod_product_assembly_detailsList| itemsPerPage: 12'>
+												<td><a  href='#'  ng-click='update_prod_product_assembly_details_record(x)' ng-model='prod_product_assembly_details.item_name' data-target='#procDlg' data-toggle='modal'> {{x.item_name}}</a></td>
+												<td>{{x.sysid}}</td>
+												<td>{{x.item_qty}}</td>
+												<td>{{x.item_wt}}</td>
+												<td>{{x.status}}</td>
+												<td><a  style='color: red'  href='#'  ng-click='delete_prod_product_assembly_details_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+												<td>{{x.item_value}}</td>
+												<td>{{x.tax_code}}</td>
+												<td>{{x.discount_uom}}</td>
+											</tr>
+										</tbody>
+									</table>
+									<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+									</dir-pagination-controls>
+								</div>
+							</div>
+			</div>
+					<div class='col-sm-1'>
+					</div>
+		</div>
+				<div class='modal fade'  id='procDlg' role='dialog'>
+					<div class='modal-dialog' style='height: 700px; ; width: 700px; '>
+						<div class='modal-content'>
+							<div class='modal-header'>
+								<div class='row'>
+									<span class='header1 col-sm-12' class='col-sm-12'>Product material</span>
+								</div>
+							</div>
+							<div class='modal-body'>
+								<div class='row'>
+									<label class='col-sm-5'>Trans ID</label>
+									<div class='col-sm-5'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='prod_product_assembly_details.sysid'>
+									</div>
+									<div class='col-sm-2'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='prod_product_assembly_details.fin_item_id'>
+									</div>
+									<label class='col-sm-5'>Item name</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='prod_product_assembly_details.comp_item_id' ng-init='prod_product_assembly_details.comp_item_id=inv_item_master[0].sysid' ng-options='x.sysid as x.item_name for x in inv_item_masterList'></select>
+									</div>
+									<label class='col-sm-5'>Item qty</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-change='update_wt()' ng-model='prod_product_assembly_details.item_qty'>
+									</div>
+									<label class='col-sm-5'>Item wt</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='prod_product_assembly_details.item_wt'>
+									</div>
+									<label class='col-sm-5'>Status</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='prod_product_assembly_details.status' ng-init='prod_product_assembly_details.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+									</div>
+								</div>
+							</div>
+							<div class='footer'>
+								<div class='row'  style='padding: 10px;'>
+									<span class='header2 col-sm-9' class='col-sm-9'>{{prod_product_assembly_details_status}}</span>
+									<div class='col-sm-3' style='text-align: right'>
+										<div class='btn-group'>
+											<button  class='btn btn-default btn-sm'  ng-click='save_prod_product_assembly_details_record()'>
+												<span class='glyphicon glyphicon-saved'></span> Save
+											</button>
+											<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+												<span class='glyphicon glyphicon-remove'></span> Close
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	</div>
+</form>

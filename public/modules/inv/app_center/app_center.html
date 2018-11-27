@@ -1,0 +1,308 @@
+<form role='form'>
+					<script type='text/javascript'>
+						$(function () {
+							$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+							$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+						});
+						$('#clear').click(function(){
+							$('#dt1').data('DateTimePicker').clear();
+							$('#dt2').data('DateTimePicker').clear();
+						});
+							$('#dt1').click(function(){
+								var sysdate = new Date();
+								$('#dt1').data('DateTimePicker').date(sysdate);
+							})
+							$('#dt2').click(function(){
+								var sysdate = new Date();
+								$('#dt2').data('DateTimePicker').date(sysdate);
+							})
+					</script>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-12'>
+				<div class='row'  style='padding-top: 20px'>
+					<span class='header-title col-sm-2' class='col-sm-2'>Approval center</span>
+					<div class='col-sm-7'>
+						<div class='row'>
+							<label class='col-sm-2'>From date</label>
+							<div class='col-sm-4'>
+								<div datetimepicker class='input-group date'  id='dt1' ng-model='inv_ledger_view.from_date'>
+									<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+									<span class='input-group-addon'>
+										<span class='glyphicon glyphicon-calendar'></span>
+									</span>
+								</div>
+							</div>
+							<label class='col-sm-2'>To date</label>
+							<div class='col-sm-4'>
+								<div datetimepicker class='input-group date'  id='dt2' ng-model='inv_ledger_view.to_date'>
+									<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+									<span class='input-group-addon'>
+										<span class='glyphicon glyphicon-calendar'></span>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='col-sm-3' style='text-align: right'>
+						<div class='btn-group'>
+							<button  class='btn btn-default btn-sm'  ng-click='select_inv_ledger_view_record()'>
+								<span class='glyphicon glyphicon-cog'></span> Generate
+							</button>
+							<button  class='btn btn-default btn-sm'>
+								<span class='glyphicon glyphicon-download'></span> Download
+							</button>
+							<a  class='btn btn-default btn-sm'  href='/mat_ledger'>
+								<span class='glyphicon glyphicon-arrow-left'></span> Back
+							</a>
+						</div>
+					</div>
+				</div>
+					<div class='row'>
+						<div class='col-sm-3'>
+							<div class='input-group'>
+								<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+								<div class='input-group-btn'>
+									<button class='btn btn-success btn-sm searchBox' type='submit'>
+										<i class='glyphicon glyphicon-search'></i>
+									</button>
+								</div>
+							</div>
+						</div>
+						<span class='header2 col-sm-9'  style='padding-top: 5px' class='col-sm-9'>{{inv_ledger_view_status}}</span>
+					</div>
+					<div class='row table-responsive'>
+						<div class='col-sm-12'>
+							<table class='table table-bordered table-condensed table-bordered table-responsive'>
+								<thead>
+									<tr>
+										<th>Trans ID</th>
+										<th>Employee</th>
+										<th>Department</th>
+										<th>Supplier</th>
+										<th>Item</th>
+										<th>Trans type</th>
+										<th>Trans date</th>
+										<th>Return type</th>
+										<th>Op qty</th>
+										<th>Issue qty</th>
+										<th>Rec ok qty</th>
+										<th>Rec rej qty</th>
+										<th>Rec scrap qty</th>
+										<th>Rec unused qty</th>
+										<th>Loss qty</th>
+										<th>Cl qty</th>
+										<th>Status</th>
+										<th ></th>
+										<th ></th>
+										<th ></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr dir-paginate='x in inv_ledger_viewList| filter: search| itemsPerPage: 10'>
+										<td>{{x.sysid}}</td>
+										<td>{{x.complete_name}}</td>
+										<td>{{x.dept_name}}</td>
+										<td>{{x.supp_name}}</td>
+										<td>{{x.item_name}}</td>
+										<td>{{x.trans_type}}</td>
+										<td>{{x.trans_date}}</td>
+										<td>{{x.return_type}}</td>
+										<td>{{x.op_qty}}</td>
+										<td>{{x.iss_qty}}</td>
+										<td>{{x.rec_ok_qty}}</td>
+										<td>{{x.rec_rej_qty}}</td>
+										<td>{{x.rec_scrap_qty}}</td>
+										<td>{{x.rec_unused_qty}}</td>
+										<td>{{x.loss_qty}}</td>
+										<td>{{x.cl_qty}}</td>
+										<td>{{x.status}}</td>
+										<td><a  class='btn btn-default btn-sm'  style='color: green'  href='#'  ng-click='update_status_challan(x.sysid, "Approved")'><span class='glyphicon glyphicon-saved'></span> </a></td>
+										<td><a  class='btn btn-default btn-sm'  style='color: red'  href='#'  ng-click='update_status_challan(x.sysid, "Rejected")'><span class='glyphicon glyphicon-remove'></span> </a></td>
+										<td><a  class='btn btn-default btn-sm'  style='color: #c70039'  href='#'  ng-click='show_details(x)' data-target='#detDlg' data-toggle='modal'><span class='glyphicon glyphicon-search'></span> </a></td>
+									</tr>
+								</tbody>
+							</table>
+							<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+							</dir-pagination-controls>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class='modal fade'  id='detDlg' role='dialog'>
+			<div class='modal-dialog' style='height: 700px; ; width: 1000px; '>
+				<div class='modal-content'>
+					<div class='modal-header'>
+						<div class='row'>
+							<span class='header1 col-sm-12' class='col-sm-12'>Challan details</span>
+						</div>
+					</div>
+					<div class='modal-body'>
+						<div class='row'>
+							<div class='col-sm-4'>
+								<div class='row'>
+									<label class='col-sm-5'>Trans ID</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.sysid'>
+									</div>
+									<label class='col-sm-5'>Dept name</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.dept_name'>
+									</div>
+									<label class='col-sm-5'>Complete name</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.complete_name'>
+									</div>
+									<label class='col-sm-5'>Supp name</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.supp_name'>
+									</div>
+									<label class='col-sm-5'>Cust name</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.cust_name'>
+									</div>
+									<label class='col-sm-5'>Item name</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.item_name'>
+									</div>
+									<label class='col-sm-5'>So No</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.so_id'>
+									</div>
+									<label class='col-sm-5'>Trans type</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.trans_type'>
+									</div>
+									<label class='col-sm-5'>Trans date</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.trans_date'>
+									</div>
+									<label class='col-sm-5'>Return type</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.return_type'>
+									</div>
+									<label class='col-sm-5'>Ref issue ID</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.ref_issue_id'>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-4'>
+								<div class='row'>
+									<label class='col-sm-5'>Party doc ID</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.party_doc_id'>
+									</div>
+									<label class='col-sm-5'>Party doc date</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.party_doc_date'>
+									</div>
+									<label class='col-sm-5'>Op qty</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.op_qty'>
+									</div>
+									<label class='col-sm-5'>Op wt</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.op_wt'>
+									</div>
+									<label class='col-sm-5'>Wt uom</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.wt_uom'>
+									</div>
+									<label class='col-sm-5'>Iss qty</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.iss_qty'>
+									</div>
+									<label class='col-sm-5'>Iss wt</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.iss_wt'>
+									</div>
+									<label class='col-sm-5'>Rec ok qty</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.rec_ok_qty'>
+									</div>
+									<label class='col-sm-5'>Rec ok wt</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.rec_ok_wt'>
+									</div>
+									<label class='col-sm-5'>Rec rej qty</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.rec_rej_qty'>
+									</div>
+									<label class='col-sm-5'>Rec rej wt</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.rec_rej_wt'>
+									</div>
+									<label class='col-sm-5'>Rec scrap qty</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.rec_scrap_qty'>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-4'>
+								<div class='row'>
+									<label class='col-sm-5'>Rec scrap wt</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.rec_scrap_wt'>
+									</div>
+									<label class='col-sm-5'>Rec unused qty</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.rec_unused_qty'>
+									</div>
+									<label class='col-sm-5'>Rec unused wt</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.rec_unused_wt'>
+									</div>
+									<label class='col-sm-5'>Loss qty</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.loss_qty'>
+									</div>
+									<label class='col-sm-5'>Loss wt</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.loss_wt'>
+									</div>
+									<label class='col-sm-5'>Cl qty</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.cl_qty'>
+									</div>
+									<label class='col-sm-5'>Cl wt</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.cl_wt'>
+									</div>
+									<label class='col-sm-5'>Item uom</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.item_uom'>
+									</div>
+									<label class='col-sm-5'>Unit wt</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.unit_wt'>
+									</div>
+									<label class='col-sm-5'>Status</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_ledger_view.status'>
+									</div>
+									<label class='col-sm-5'>Remarks</label>
+									<div class='col-sm-7'>
+										<textarea class='form-control'  ng-readonly='true' ng-model='inv_ledger_view.remarks' rows='5'></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='footer'>
+						<div class='row'  style='padding: 10px;'>
+							<span class='header2 col-sm-9' class='col-sm-9'>{{value}}</span>
+							<div class='col-sm-3' style='text-align: right'>
+								<div class='btn-group'>
+									<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+										<span class='glyphicon glyphicon-remove'></span> Close
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

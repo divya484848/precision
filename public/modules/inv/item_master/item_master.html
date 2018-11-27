@@ -1,0 +1,158 @@
+<form role='form'>
+			<script type='text/javascript'>
+				$(function () {
+					$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+					$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+				});
+				$('#clear').click(function(){
+					$('#dt1').data('DateTimePicker').clear();
+					$('#dt2').data('DateTimePicker').clear();
+				});
+					$('#dt1').click(function(){
+						var sysdate = new Date();
+						$('#dt1').data('DateTimePicker').date(sysdate);
+					})
+					$('#dt2').click(function(){
+						var sysdate = new Date();
+						$('#dt2').data('DateTimePicker').date(sysdate);
+					})
+			</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; padding-top: 10px;'>
+			<div class='col-sm-1'>
+			</div>
+			<div class='col-sm-10'>
+				<div class='row'  style='padding-top: 20px'>
+					<span class='header-title col-sm-2' class='col-sm-2'>Item master (Raw)</span>
+				</div>
+				<div class='row'>
+					<ul class='nav nav-tabs'>
+						<li class='active'><a data-toggle='tab' data-target='#'><b>Item details</b></a></li>
+						<li><a data-toggle='tab' data-target='#'><b>Attributes</b></a></li>
+						<li><a data-toggle='tab' data-target='#'><b>Suppliers</b></a></li>
+					</ul>
+					<div class='tab-content'>
+						<div id='' class='tab-pane fade in active'>
+						<div class='row'  style='padding-top: 10px'>
+							<span class='header2 col-sm-8'  style='color: #c70039' class='col-sm-8'>{{inv_item_master_status}}</span>
+							<div class='col-sm-4' style='text-align: right'>
+								<div class='btn-group'>
+									<button  class='btn btn-default btn-sm'  ng-click='save_inv_item_master_record()'>
+										<span class='glyphicon glyphicon-saved'></span> Save
+									</button>
+									<a  class='btn btn-default btn-sm'  href='/item_master_list'>
+										<span class='glyphicon glyphicon-arrow-left'></span> Back
+									</a>
+								</div>
+							</div>
+						</div>
+							<div class='row'  style='padding-top: 10px'>
+								<div class='col-sm-6'>
+									<div class='row'>
+										<label class='col-sm-5'>Short code</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master.short_code'>
+										</div>
+										<label class='col-sm-5'>Item name</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master.item_name'>
+										</div>
+										<label class='col-sm-5'>Description</label>
+										<div class='col-sm-7'>
+											<textarea class='form-control' ng-model='inv_item_master.item_descr' rows='5'></textarea>
+										</div>
+										<label class='col-sm-5'>Item serial</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master.item_serial'>
+										</div>
+										<label class='col-sm-5'>Item type</label>
+										<div class='col-sm-7'>
+											<select class='form-control' ng-model='inv_item_master.item_type' ng-init='inv_item_master.item_type=admin_lov[0].sysid' ng-options='x.sysid as x.type_name for x in admin_lovList'></select>
+										</div>
+										<label class='col-sm-5'>Item subtype</label>
+										<div class='col-sm-7'>
+											<select class='form-control' ng-model='inv_item_master.item_subtype' ng-init='inv_item_master.item_subtype=admin_lov[0].sysid' ng-options='x.sysid as x.type_name for x in admin_lovList'></select>
+										</div>
+										<label class='col-sm-5'>Item category</label>
+										<div class='col-sm-7'>
+											<select class='form-control' ng-model='inv_item_master.item_category' ng-init='inv_item_master.item_category=admin_lov[0].sysid' ng-options='x.sysid as x.type_name for x in admin_lovList'></select>
+										</div>
+										<label class='col-sm-5'>Item source</label>
+										<div class='col-sm-7'>
+											<select class='form-control' ng-model='inv_item_master.item_source' ng-init='inv_item_master.item_source=admin_lov[0].sysid' ng-options='x.sysid as x.type_name for x in admin_lovList'></select>
+										</div>
+										<label class='col-sm-5'>HSN no</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master.hsn_no'>
+										</div>
+										<label class='col-sm-5'>Drg no</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master.drg_no'>
+										</div>
+									</div>
+								</div>
+								<div class='col-sm-6'>
+
+									<div class='row'>
+										<label class='col-sm-5'>Drg file</label>
+										
+										<div class='col-sm-7'>
+											<input class='form-control'  type='file' ng-model='inv_item_master.drg_file'>
+										</div>
+										<div class='col-sm-2'>
+											<button  class='btn btn-default btn-sm'  ng-click='upload_file()'>
+											<span class='glyphicon glyphicon-upload'></span> Upload
+											</button>
+										</div>
+										<label class='col-sm-5'>Die serial</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master.die_serial'>
+										</div>
+										<label class='col-sm-5'>Specification</label>
+										<div class='col-sm-7'>
+											<textarea class='form-control' ng-model='inv_item_master.specification' rows='5'></textarea>
+										</div>
+										<label class='col-sm-5'>UoM</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master.uom'>
+										</div>
+										<label class='col-sm-5'>Unit wt</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master.unit_wt'>
+										</div>
+										<label class='col-sm-5'>Unit wt UoM</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master.unit_wt_uom'>
+										</div>
+										<label class='col-sm-5'>QA required</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master.is_qa_required'>
+										</div>
+										<label class='col-sm-5'>Reject action</label>
+										<div class='col-sm-7'>
+											<input class='form-control'  type='text' ng-model='inv_item_master.reject_action'>
+										</div>
+										<label class='col-sm-5'>Item group</label>
+										<div class='col-sm-7'>
+											<select class='form-control' ng-model='inv_item_master.item_group_id' ng-init='inv_item_master.item_group_id=inv_item_group[0].sysid' ng-options='x.sysid as x.group_name for x in inv_item_groupList'></select>
+										</div>
+										<label class='col-sm-5'>Status</label>
+										<div class='col-sm-7'>
+											<select class='form-control' ng-model='inv_item_master.status' ng-init='inv_item_master.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+							<div id='' class='tab-pane fade'>
+							</div>
+							<div id='' class='tab-pane fade'>
+							</div>
+					</div>
+				</div>
+			</div>
+				<div class='col-sm-1'>
+				</div>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,97 @@
+<form role='form'>
+		<script type='text/javascript'>
+			$(function () {
+				$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+				$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+			});
+			$('#clear').click(function(){
+				$('#dt1').data('DateTimePicker').clear();
+				$('#dt2').data('DateTimePicker').clear();
+			});
+				$('#dt1').click(function(){
+					var sysdate = new Date();
+					$('#dt1').data('DateTimePicker').date(sysdate);
+				})
+				$('#dt2').click(function(){
+					var sysdate = new Date();
+					$('#dt2').data('DateTimePicker').date(sysdate);
+				})
+		</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; padding-top: 10px;'>
+			<div class='col-sm-1'>
+			</div>
+			<div class='col-sm-10'>
+				<div class='row'  style='padding-top: 20px'>
+					<span class='header-title col-sm-2' class='col-sm-2'>DBK details</span>
+					<label class='col-sm-1'>From date</label>
+					<div class='col-sm-2'>
+						<div datetimepicker class='input-group date'  id='dt1' ng-model='sales_invoice.from_date'>
+							<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+							<span class='input-group-addon'>
+								<span class='glyphicon glyphicon-calendar'></span>
+							</span>
+						</div>
+					</div>
+					<label class='col-sm-1'>To date</label>
+					<div class='col-sm-2'>
+						<div datetimepicker class='input-group date'  id='dt2' ng-model='sales_invoice.to_date'>
+							<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+							<span class='input-group-addon'>
+								<span class='glyphicon glyphicon-calendar'></span>
+							</span>
+						</div>
+					</div>
+					<div class='col-sm-4' style='text-align: right'>
+						<div class='btn-group'>
+							<a  class='btn btn-default btn-sm'  href='#'  ng-click='select_sales_invoice_record()'>
+								<span class='glyphicon glyphicon-cog'></span> Generate
+							</a>
+							<a  class='btn btn-default btn-sm'  href='./data/DBK_REPORT.xlsx' target='_self' download='DBK_REPORT.xlsx'>
+								<span class='glyphicon glyphicon-download'></span> Download
+							</a>
+						</div>
+					</div>
+				</div>
+					<div class='row'>
+						<div class='col-sm-12'>
+							<table class='table table-bordered table-condensed table-bordered'  style='padding-top: 5px'>
+								<thead>
+									<tr>
+										<th>Inv no</th>
+										<th>Invoice date</th>
+										<th>Currency</th>
+										<th>Exchange rate</th>
+										<th>INR (Value)</th>
+										<th>Shipping value</th>
+										<th>Shipping date</th>
+										<th>Port code (Indian)</th>
+										<th>DBK amount</th>
+										<th>DBK date</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr dir-paginate='x in sales_invoiceList| filter: search| itemsPerPage: 12'>
+										<td>{{x.inv_no}}</td>
+										<td>{{x.inv_date}}</td>
+										<td>{{x.curr_name}}</td>
+										<td>{{x.exchange_rate}}</td>
+										<td>{{x.inr_final_amount}}</td>
+										<td>{{x.final_total_inv_amt}}</td>
+										<td>{{x.inv_date}}</td>
+										<td>{{x.dom_port_code}}</td>
+										<td>{{x.dbk_amount}}</td>
+										<td>{{x.dbk_date}}</td>
+									</tr>
+								</tbody>
+							</table>
+							<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+							</dir-pagination-controls>
+						</div>
+					</div>
+			</div>
+			<div class='col-sm-1'>
+			</div>
+		</div>
+	</div>
+</form>

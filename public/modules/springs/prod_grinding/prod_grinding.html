@@ -1,0 +1,192 @@
+<form role='form'>
+	<div class='container-fluid'>
+		<div class='row'  style='padding-top: 15px'>
+			<span class='header-label col-sm-1' class='col-sm-1'>Production</span>
+			<div class='col-sm-10'>
+				<div class='d-flex flex-row' ng-repeat='x in sales_so_springsList'>
+					<div class='col-sm-1' style='padding-right: 0px; padding-top: 0px; padding-bottom: 0px'>
+						<button  class='btn btn-default btn-sm btn-block'  style='color: #cc0000;; font: 18 DejaVu Sans; border-color: #cc0000'  ng-click='select_prod_spring_trans_record(x.sysid)'>
+							 {{x.so_no}}
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class='col-sm-12'>
+				<hr>
+			</div>
+		</div>
+			<div class='row'>
+				<div class='col-sm-6'>
+					<div class='row'>
+						<span class='header1 col-sm-2'  style='color:blue' class='col-sm-2'>Grinding</span>
+						<div class='col-sm-6'>
+							<div class='input-group'>
+								<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+								<div class='input-group-btn'>
+									<button class='btn btn-success btn-sm searchBox' type='submit'>
+										<i class='glyphicon glyphicon-search'></i>
+									</button>
+								</div>
+							</div>
+						</div>
+						<label class='col-sm-2'  style='color: #000' class='col-sm-2'>Current order</label>
+						<span class='header-title col-sm-2'  style='color:blue' class='col-sm-2'>{{select_so}}</span>
+					</div>
+					<div class='row'>
+						<div class='col-sm-12'>
+							<table class='table table-bordered table-condensed table-bordered'>
+								<thead>
+									<tr>
+										<th >Internal ID</th>
+										<th>Item code</th>
+										<th>Item name</th>
+										<th>SO qty</th>
+										<th>Received frm</th>
+										<th>Recd qty</th>
+										<th>Completed qty</th>
+										<th>Rejected qty</th>
+										<th>Balance qty</th>
+										<th >Header</th>
+										<th >Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr dir-paginate='x in prod_spring_transList| filter: search| itemsPerPage: 12'>
+										<td><a  href='#'  ng-click='insert_prod_spring_trans_record(x)' ng-model='prod_spring_trans.item_id' data-target='#qtyDlg' data-toggle='modal'> {{x.item_id}}</a></td>
+										<td>{{x.short_code}}</td>
+										<td>{{x.item_name}}</td>
+										<td>{{x.so_qty}}</td>
+										<td>{{x.from_proc_id}}</td>
+										<td>{{x.recd_qty}}</td>
+										<td>{{x.proc_ok_qty}}</td>
+										<td>{{x.proc_rej_qty}}</td>
+										<td>{{x.bal_qty}}</td>
+										<td><a  style='color: red'  href='#'  ng-click='insert_prod_spring_transfer_record(x)' data-target='#transDlg' data-toggle='modal'> Transfer</a></td>
+										<td><a  style='color:red'  href='#'  ng-click='getItemdet(x)'> Details</a></td>
+									</tr>
+								</tbody>
+							</table>
+							<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+							</dir-pagination-controls>
+						</div>
+					</div>
+				</div>
+			<div class='col-sm-6'>
+				<div class='row'>
+					<span class='header2 col-sm-12' class='col-sm-12'></span>
+				</div>
+				<div class='row'>
+					<span class='header-title col-sm-12' class='col-sm-12'>Item Details</span>
+				</div>
+				<div class='row'>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'>
+							<thead>
+								<tr>
+									<th>Item id</th>
+									<th>Trans date</th>
+									<th>Department From</th>
+									<th>Recd qty</th>
+									<th>Mfg ok qty</th>
+									<th>Mfg rej qty</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in prod_itemDetlist| itemsPerPage: 12'>
+									<td>{{x.item_id}}</td>
+									<td>{{x.trans_date}}</td>
+									<td>{{x.from_proc_name}}</td>
+									<td>{{x.recd_qty}}</td>
+									<td>{{x.mfg_ok_qty}}</td>
+									<td>{{x.mfg_rej_qty}}</td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+				</div>
+			</div>
+			</div>
+	<div class='modal fade'  id='qtyDlg' role='dialog'>
+		<div class='modal-dialog' style='height: 500px; ; width: 500px; '>
+			<div class='modal-content'>
+				<div class='modal-header'>
+					<div class='row'>
+						<span class='header1 col-sm-12' class='col-sm-12'>Production quantity</span>
+					</div>
+				</div>
+				<div class='modal-body'>
+					<div class='row'>
+						<label class='col-sm-3'>Item Name</label>
+						<div class='col-sm-9'>
+							<input class='form-control'  type='text'  ng-readonly='true' ng-model='prod_spring_trans.item_id'>
+						</div>
+						<label class='col-sm-3'>Mfg qty</label>
+						<div class='col-sm-9'>
+							<input class='form-control'  type='text' ng-model='prod_spring_trans.mfg_ok_qty'>
+						</div>
+						<label class='col-sm-3'>Reject qty</label>
+						<div class='col-sm-9'>
+							<input class='form-control'  type='text' ng-model='prod_spring_trans.mfg_rej_qty'>
+						</div>
+					</div>
+				</div>
+				<div class='footer'>
+					<div class='row'  style='padding: 10px;'>
+						<span class='header2 col-sm-7' class='col-sm-7'>{{prod_spring_trans_status}}</span>
+						<div class='col-sm-5' style='text-align: right'>
+							<div class='btn-group'>
+								<button  class='btn btn-default btn-sm'  ng-click='save_prod_spring_trans_record()'>
+									<span class='glyphicon glyphicon-saved'></span> Save
+								</button>
+								<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+									<span class='glyphicon glyphicon-remove'></span> Close
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+				<div class='modal fade'  id='transDlg' role='dialog'>
+					<div class='modal-dialog' style='height: 500px; ; width: 500px; '>
+						<div class='modal-content'>
+							<div class='modal-header'>
+								<div class='row'>
+									<span class='header1 col-sm-12' class='col-sm-12'>Transfer quantity</span>
+								</div>
+							</div>
+							<div class='modal-body'>
+								<div class='row'>
+									<label class='col-sm-3'>Next Process</label>
+									<div class='col-sm-9'>
+										<select class='form-control' ng-model='prod_spring_trans.to_proc_id' ng-init='prod_spring_trans.to_proc_id=prod_springs_process_master[0].sysid' ng-options='x.sysid as x.process_name for x in prod_springs_process_masterList'></select>
+									</div>
+									<label class='col-sm-3'>Transfer qty</label>
+									<div class='col-sm-9'>
+										<input class='form-control'  type='text' ng-model='prod_spring_trans.recd_qty'>
+									</div>
+								</div>
+							</div>
+							<div class='footer'>
+								<div class='row'  style='padding: 10px;'>
+									<span class='header2 col-sm-7' class='col-sm-7'>{{prod_spring_trans_status}}</span>
+									<div class='col-sm-5' style='text-align: right'>
+										<div class='btn-group'>
+											<button  class='btn btn-default btn-sm'  ng-click='save_prod_spring_trans_record()'>
+												<span class='glyphicon glyphicon-saved'></span> Save
+											</button>
+											<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+												<span class='glyphicon glyphicon-remove'></span> Close
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	</div>
+</form>

@@ -1,0 +1,273 @@
+<form role='form'>
+								<script type='text/javascript'>
+									$(function () {
+										$('#').datetimepicker({format: 'YYYY-MM-DD'});
+										$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+										$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+										$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+										$('#dt4').datetimepicker({format: 'YYYY-MM-DD'});
+										$('#dt5').datetimepicker({format: 'YYYY-MM-DD'});
+									});
+									$('#clear').click(function(){
+										$('#').data('DateTimePicker').clear();
+										$('#dt1').data('DateTimePicker').clear();
+										$('#dt2').data('DateTimePicker').clear();
+										$('#dt3').data('DateTimePicker').clear();
+										$('#dt4').data('DateTimePicker').clear();
+										$('#dt5').data('DateTimePicker').clear();
+									});
+										$('#').click(function(){
+											var sysdate = new Date();
+											$('#').data('DateTimePicker').date(sysdate);
+										})
+										$('#dt1').click(function(){
+											var sysdate = new Date();
+											$('#dt1').data('DateTimePicker').date(sysdate);
+										})
+										$('#dt2').click(function(){
+											var sysdate = new Date();
+											$('#dt2').data('DateTimePicker').date(sysdate);
+										})
+										$('#dt3').click(function(){
+											var sysdate = new Date();
+											$('#dt3').data('DateTimePicker').date(sysdate);
+										})
+										$('#dt4').click(function(){
+											var sysdate = new Date();
+											$('#dt4').data('DateTimePicker').date(sysdate);
+										})
+										$('#dt5').click(function(){
+											var sysdate = new Date();
+											$('#dt5').data('DateTimePicker').date(sysdate);
+										})
+								</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; padding-top: 10px;'>
+			<div class='col-sm-1'>
+			</div>
+			<div class='col-sm-10'>
+				<div class='row'  style='padding-top: 20px'>
+					<span class='header-title col-sm-2' class='col-sm-2'>Order Production Details</span>
+					<span class='header2 col-sm-8' class='col-sm-8'>{{prod_order_process_springs_status}}</span>
+					<div class='col-sm-2' style='text-align: right'>
+						<div class='btn-group'>
+							<button  class='btn btn-default btn-sm'  ng-click='save_prod_order_process_springs_record()'>
+								<span class='glyphicon glyphicon-saved'></span> Save
+							</button>
+							<a  class='btn btn-default btn-sm'  href='/prod_order_process_springs_list'>
+								<span class='glyphicon glyphicon-arrow-left'></span> Back
+							</a>
+						</div>
+					</div>
+						<div class='col-sm-12' style='padding-top: 5px'>
+							<hr>
+						</div>
+				</div>
+						<div class='row'>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>Trans ID</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='prod_order_process_springs.sysid'>
+									</div>
+									<label class='col-sm-5'>Order id</label>
+									<div class='col-sm-7'>
+										<select class='form-control'  ng-change='getItem()' ng-model='prod_order_process_springs.order_id' ng-init='prod_order_process_springs.order_id=sales_so_springs[0].sysid' ng-options='x.sysid as x.so_no for x in sales_so_springsList'></select>
+									</div>
+									<label class='col-sm-5'>Order date</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='prod_order_process_springs.order_date'>
+									</div>
+									<label class='col-sm-5'>Item id</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='prod_order_process_springs.item_id' ng-init='prod_order_process_springs.item_id=inv_item_master_springs[0].sysid' ng-options='x.sysid as x.item_name for x in inv_item_master_springsList'></select>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>Item start date</label>
+									<div class='col-sm-7'>
+										<div datetimepicker class='input-group date'  id='dt2' ng-model='prod_order_process_springs.item_start_date'>
+											<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+									<label class='col-sm-5'>item_end_date</label>
+									<div class='col-sm-7'>
+										<div datetimepicker class='input-group date'  id='dt3' ng-model='prod_order_process_springs.item_end_date'>
+											<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+									<label class='col-sm-5'>Item status</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='prod_order_process_springs.item_status' ng-init='prod_order_process_springs.item_status=itemStatusList[0]' ng-options='x as x for x in itemStatusList'></select>
+									</div>
+									<label class='col-sm-5'>Order status</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='prod_order_process_springs.order_status' ng-init='prod_order_process_springs.order_status=orderStatusList[0]' ng-options='x as x for x in orderStatusList'></select>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-12' style='padding-top: 10px'>
+								<hr>
+							</div>
+						</div>
+							<div class='row'>
+								<div class='col-sm-12' style='text-align: right'>
+									<div class='btn-group'>
+										<button  class='btn btn-default btn-sm'  ng-click='insert_prod_order_process_detail_springs_record()' data-target='#soDlg' data-toggle='modal'>
+											<span class='glyphicon glyphicon-plus'></span> Add
+										</button>
+									</div>
+								</div>
+							</div>
+								<div class='row'  style='padding-top: 10px'>
+									<div class='col-sm-12'>
+										<table class='table table-bordered table-condensed table-bordered'>
+											<thead>
+												<tr>
+													<th >Trans ID</th>
+													<th>Order process id</th>
+													<th>Process </th>
+													<th>Machine </th>
+													<th>Process start date</th>
+													<th>Process end date</th>
+													<th>Qty received</th>
+													<th>Qty manufactured</th>
+													<th>Qty rejected</th>
+													<th>Next process id</th>
+													<th>Process status</th>
+													<th>Person name</th>
+													<th >Header</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr dir-paginate='x in prod_order_process_detail_springsList| itemsPerPage: 12'>
+													<td><a  href='#'  ng-click='update_prod_order_process_detail_springs_record(x)' ng-model='prod_order_process_detail_springs.sysid' data-target='#soDlg' data-toggle='modal'> {{x.sysid}}</a></td>
+													<td>{{x.order_process_id}}</td>
+													<td>{{x.process_name}}</td>
+													<td>{{x.machine_name}}</td>
+													<td>{{x.process_start_date}}</td>
+													<td>{{x.process_end_date}}</td>
+													<td>{{x.qty_received}}</td>
+													<td>{{x.qty_manufactured}}</td>
+													<td>{{x.qty_rejected}}</td>
+													<td>{{x.next_process_id}}</td>
+													<td>{{x.process_status}}</td>
+													<td>{{x.person_name}}</td>
+													<td><a  style='color: red'  href='#'  ng-click='delete_prod_order_process_detail_springs_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+												</tr>
+											</tbody>
+										</table>
+										<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+										</dir-pagination-controls>
+									</div>
+								</div>
+			</div>
+						<div class='col-sm-1'>
+						</div>
+		</div>
+					<div class='modal fade'  id='soDlg' role='dialog'>
+						<div class='modal-dialog' style='height: 700px; ; width: 1000px; '>
+							<div class='modal-content'>
+								<div class='modal-header'>
+									<div class='row'>
+										<span class='header1 col-sm-12' class='col-sm-12'>Item Process Details</span>
+									</div>
+								</div>
+								<div class='modal-body'>
+									<div class='row'>
+										<div class='col-sm-6'>
+											<div class='row'>
+												<label class='col-sm-5'>Trans ID</label>
+												<div class='col-sm-7'>
+													<input class='form-control'  type='text'  ng-readonly='true' ng-model='prod_order_process_detail_springs.sysid'>
+												</div>
+												<label class='col-sm-5'>Order process ID</label>
+												<div class='col-sm-7'>
+													<input class='form-control'  type='text'  ng-readonly='true' ng-model='prod_order_process_detail_springs.order_process_id'>
+												</div>
+												<label class='col-sm-5'>Process Name</label>
+												<div class='col-sm-7'>
+													<select class='form-control' ng-model='prod_order_process_detail_springs.process_id' ng-init='prod_order_process_detail_springs.process_id=prod_springs_process_master[0].sysid' ng-options='x.sysid as x.process_name for x in prod_springs_process_masterList'></select>
+												</div>
+												<label class='col-sm-5'>Machine id</label>
+												<div class='col-sm-7'>
+													<select class='form-control' ng-model='prod_order_process_detail_springs.machine_id' ng-init='prod_order_process_detail_springs.machine_id=inv_machines_springs[0].sysid' ng-options='x.sysid as x.short_code for x in inv_machines_springsList'></select>
+												</div>
+												<label class='col-sm-5'>Person name</label>
+												<div class='col-sm-7'>
+													<input class='form-control'  type='text' ng-model='prod_order_process_detail_springs.person_name'>
+												</div>
+												<label class='col-sm-5'>Process start date</label>
+												<div class='col-sm-7'>
+													<div datetimepicker class='input-group date'  id='dt4' ng-model='prod_order_process_detail_springs.process_start_date'>
+														<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+														<span class='input-group-addon'>
+															<span class='glyphicon glyphicon-calendar'></span>
+														</span>
+													</div>
+												</div>
+												<label class='col-sm-5'>Process end date</label>
+												<div class='col-sm-7'>
+													<div datetimepicker class='input-group date'  id='dt5' ng-model='prod_order_process_detail_springs.process_end_date'>
+														<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+														<span class='input-group-addon'>
+															<span class='glyphicon glyphicon-calendar'></span>
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class='col-sm-6'>
+											<div class='row'>
+												<label class='col-sm-5'>Qty received</label>
+												<div class='col-sm-7'>
+													<input class='form-control'  type='text' ng-model='prod_order_process_detail_springs.qty_received'>
+												</div>
+												<label class='col-sm-5'>Qty manufactured</label>
+												<div class='col-sm-7'>
+													<input class='form-control'  type='text' ng-model='prod_order_process_detail_springs.qty_manufactured'>
+												</div>
+												<label class='col-sm-5'>Qty rejected</label>
+												<div class='col-sm-7'>
+													<input class='form-control'  type='text' ng-model='prod_order_process_detail_springs.qty_rejected'>
+												</div>
+												<label class='col-sm-5'>Next process id</label>
+												<div class='col-sm-7'>
+													<select class='form-control' ng-model='prod_order_process_detail_springs.next_process_id' ng-init='prod_order_process_detail_springs.next_process_id=prod_springs_process_master[0].sysid' ng-options='x.sysid as x.process_name for x in prod_springs_process_masterList'></select>
+												</div>
+												<label class='col-sm-5'>Process status</label>
+												<div class='col-sm-7'>
+													<select class='form-control' ng-model='prod_order_process_detail_springs.process_status' ng-init='prod_order_process_detail_springs.process_status=itemStatusList[0]' ng-options='x as x for x in itemStatusList'></select>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class='footer'>
+									<div class='row'  style='padding: 10px;'>
+										<span class='header2 col-sm-9' class='col-sm-9'>{{prod_order_process_detail_springs_status}}</span>
+										<div class='col-sm-3' style='text-align: right'>
+											<div class='btn-group'>
+												<button  class='btn btn-default btn-sm'  ng-click='save_prod_order_process_detail_springs_record()'>
+													<span class='glyphicon glyphicon-saved'></span> Save
+												</button>
+												<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+													<span class='glyphicon glyphicon-remove'></span> Close
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+	</div>
+</form>

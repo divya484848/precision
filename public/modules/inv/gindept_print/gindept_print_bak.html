@@ -1,0 +1,69 @@
+<form role='form'>
+	<div class='container-fluid'  style='margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; background-color: #ffffff'>
+		<div class='row'  style='text-align: right; padding-left: 0px; padding-right: 0px; padding-top: 10px; padding-bottom: 10px; padding-left: 0px; padding-right: 0px'  id='printMenu'>
+			<div class='col-sm-4'>
+			</div>
+			<div class='col-sm-4'>
+				<div class='row'  style='text-align: center'>
+					<div class='col-sm-12'>
+						<div class='btn-group'>
+							<button  class='btn btn-success btn-sm'  style='color: #000000;'  ng-click='doPrint()'>
+								<span class='glyphicon glyphicon-print'></span> Print
+							</button>
+							<a  class='btn btn-success btn-sm'  style='color: #000000;'  href='/gindept_list'>
+								<span class='glyphicon glyphicon-arrow-left'></span> Back
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class='col-sm-4'>
+				</div>
+		</div>
+			<div class='row'  style='width: 80mm; height: 148mm; float: none; margin-left: auto; margin-right: auto; background-color: #fff; border: 1px solid #000; text-align: center'>
+				<div class='col-sm-12'>
+					<div class='row'  style='border-bottom: 1px solid #000;'>
+						<span class='header1 col-sm-12'>Goods Issue Note - Internal</span>
+					</div>
+					<div class='row' style='padding-left: 0px; padding-right: 0px'>
+						<span class='print-body col-sm-6' style='padding-top: 10px;'>Challan no:</span>
+						<span class='print-body col-sm-6' style='padding-top: 10px;'>{{inv_mat_header.sysid}}</span>
+					</div>
+					<div class='row print-body'>
+						<span class='print-body col-sm-6' style='padding-top: 10px;'>Date:</span>
+						<span class='print-body col-sm-6' style='padding-top: 10px;'>{{inv_mat_header.trans_date}}</span>
+					</div>
+					<div class='row print-body'>
+						<span class='print-body col-sm-6' style='padding-top: 10px;'>Employee name:</span>
+						<span class='print-body col-sm-6' style='padding-top: 10px;'>{{inv_mat_header.emp_name}}</span>
+					</div>
+					<div class='row print-body'  style='border-bottom: 1px solid #000; padding-top: 8px; padding-bottom: 8px;'>
+						<span class='print-body col-sm-6' style='padding-top: 10px;'>Department:</span>
+						<span class='print-body col-sm-6' style='padding-top: 10px;'>{{inv_mat_header.dept_name}}</span>
+					</div>
+					<div class='row'  style='border-bottom: 1px solid #000; padding-top: 8px; padding-bottom: 8px;'>
+						<span class='print-body-bold col-sm-6'>Item description</span>
+						<span class='print-body-bold col-sm-3'>Qty</span>
+						<span class='print-body-bold col-sm-3'>Total Wt.</span>
+					</div>
+					<div class='row'  style='min-height: 20px;' ng-repeat='x in inv_mat_detailsList'>
+						<span class='print-body col-sm-6'>{{x.item_name}}</span>
+						<span class='print-body col-sm-3' style='text-align: right'>{{x.iss_qty}} {{x.item_uom}}</span>
+						<span class='print-body col-sm-3' style='text-align: right'>{{x.iss_wt}} {{x.wt_uom}}</span>
+					</div>
+					<div class='row'  style='border-top: 1px solid #000; margin-top: 10px; padding-top: 10px;'>
+						<span class='print-body-bold col-sm-6'>Prepared by:</span>
+						<span class='print-body col-sm-6'>{{logged_user}}</span>
+					</div>
+					<div class='row'>
+						<span class='print-body-bold col-sm-6'>Ledger No:</span>
+						<span class='header2 col-sm-6'></span>
+					</div>
+					<div class='row'>
+						<span class='print-body-bold col-sm-6'>Page No:</span>
+						<span class='header2 col-sm-6'></span>
+					</div>
+				</div>
+			</div>
+	</div>
+</form>

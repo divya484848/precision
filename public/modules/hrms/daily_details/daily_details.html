@@ -1,0 +1,255 @@
+<form role='form'>
+					<script type='text/javascript'>
+						$(function () {
+							$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+							$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+						});
+						$('#clear').click(function(){
+							$('#dt1').data('DateTimePicker').clear();
+							$('#dt2').data('DateTimePicker').clear();
+						});
+							$('#dt1').click(function(){
+								var sysdate = new Date();
+								$('#dt1').data('DateTimePicker').date(sysdate);
+							})
+							$('#dt2').click(function(){
+								var sysdate = new Date();
+								$('#dt2').data('DateTimePicker').date(sysdate);
+							})
+					</script>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-2'>
+				<div class='row'  style='padding: 0px;'>
+					<div ng-controller='att_menuCtrl' ng-include src="'modules/hrms/att_menu/att_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-8' class='col-sm-8'>Daily details</span>
+				<div class='col-sm-4' style='text-align: right'>
+					<div class='btn-group'>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-print'></span> Print
+						</button>
+						<button  class='btn btn-default btn-sm' data-target='#detDlg' data-toggle='modal'>
+							<span class='glyphicon glyphicon-download'></span> Download
+						</button>
+					</div>
+				</div>
+					<div class='col-sm-12' style='padding-top: 5px'>
+						<hr>
+					</div>
+						<label class='col-sm-1'>Employee</label>
+						<div class='col-sm-3'>
+							<select class='form-control' ng-model='hrms_att_daily_log.emp_id' ng-init='hrms_att_daily_log.emp_id=hrms_employees[0].sysid' ng-options='x.sysid as x.complete_name for x in hrms_employeesList'></select>
+						</div>
+						<label class='col-sm-1'>From date</label>
+						<div class='col-sm-2'>
+							<div datetimepicker class='input-group date'  id='dt1' ng-model='hrms_att_daily_details.from_date'>
+								<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+								<span class='input-group-addon'>
+									<span class='glyphicon glyphicon-calendar'></span>
+								</span>
+							</div>
+						</div>
+						<label class='col-sm-1'>To date</label>
+						<div class='col-sm-2'>
+							<div datetimepicker class='input-group date'  id='dt2' ng-model='hrms_att_daily_details.to_date'>
+								<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+								<span class='input-group-addon'>
+									<span class='glyphicon glyphicon-calendar'></span>
+								</span>
+							</div>
+						</div>
+						<div class='col-sm-2' style='text-align: right'>
+							<button  class='btn btn-default btn-sm'  ng-click='select_hrms_att_daily_details_record()'>
+								<span class='glyphicon glyphicon-cog'></span> Generate report
+							</button>
+						</div>
+			</div>
+					<div class='row'  style='padding-top: 10px'>
+						<div class='col-sm-12'>
+							<table class='table table-bordered table-condensed table-bordered'>
+								<thead>
+									<tr>
+										<th >Trans ID</th>
+										<th>Emp ID</th>
+										<th>Employee name</th>
+										<th>Deptartment</th>
+										<th>Shift</th>
+										<th>In date</th>
+										<th>Out date</th>
+										<th>In time</th>
+										<th>Out time</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr dir-paginate='x in hrms_att_daily_detailsList| itemsPerPage: 12'>
+										<td><a  href='#'  ng-click='select_rec(x)' ng-model='hrms_att_daily_details.sysid' data-target='#detDlg' data-toggle='modal'> {{x.sysid}}</a></td>
+										<td>{{x.emp_id}}</td>
+										<td>{{x.complete_name}}</td>
+										<td>{{x.dept_id}}</td>
+										<td>{{x.shift_id}}</td>
+										<td>{{x.in_date}}</td>
+										<td>{{x.out_date}}</td>
+										<td>{{x.in_time}}</td>
+										<td>{{x.out_time}}</td>
+									</tr>
+								</tbody>
+							</table>
+							<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+							</dir-pagination-controls>
+						</div>
+					</div>
+		</div>
+		</div>
+		<div class='modal fade'  id='detDlg' role='dialog'>
+			<div class='modal-dialog' style='height: 700px; ; width: 1000px; '>
+				<div class='modal-content'>
+					<div class='modal-header'>
+						<div class='row'>
+							<span class='header1 col-sm-12' class='col-sm-12'>Attendance details of {{cpmplete_name}}</span>
+						</div>
+					</div>
+					<div class='modal-body'>
+						<div class='row'>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>Trans ID</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.sysid'>
+									</div>
+									<label class='col-sm-5'>Emp ID</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.emp_id'>
+									</div>
+									<label class='col-sm-5'>Header</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.complete_name'>
+									</div>
+									<label class='col-sm-5'>Deptartment</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.dept_id'>
+									</div>
+									<label class='col-sm-5'>Shift name</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.shift_id'>
+									</div>
+									<label class='col-sm-5'>Shift start time</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.shift_start_time'>
+									</div>
+									<label class='col-sm-5'>Shift end time</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.shift_end_time'>
+									</div>
+									<label class='col-sm-5'>Shift duration</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.shift_duration'>
+									</div>
+									<label class='col-sm-5'>In date</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.in_date'>
+									</div>
+									<label class='col-sm-5'>Out date</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.out_date'>
+									</div>
+									<label class='col-sm-5'>In time</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.in_time'>
+									</div>
+									<label class='col-sm-5'>Out time</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.out_time'>
+									</div>
+									<label class='col-sm-5'>Day duration</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.day_duration'>
+									</div>
+									<label class='col-sm-5'>Adjusted in time</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.adjusted_in_time'>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>Adjusted out time</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.adjusted_out_time'>
+									</div>
+									<label class='col-sm-5'>Adjusted total duration</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.adjusted_total_duration'>
+									</div>
+									<label class='col-sm-5'>OT allowed</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.ot_allowed'>
+									</div>
+									<label class='col-sm-5'>OT duration</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.ot_duration'>
+									</div>
+									<label class='col-sm-5'>Min OT duration req</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.min_ot_duration_req'>
+									</div>
+									<label class='col-sm-5'>Adjusted OT duration</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.adjusted_ot_duration'>
+									</div>
+									<label class='col-sm-5'>Total duration</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.total_duration'>
+									</div>
+									<label class='col-sm-5'>Is absent</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.is_absent'>
+									</div>
+									<label class='col-sm-5'>Is weekly off</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.is_weekly_off'>
+									</div>
+									<label class='col-sm-5'>Is holiday</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.is_holiday'>
+									</div>
+									<label class='col-sm-5'>Is leave</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.is_leave'>
+									</div>
+									<label class='col-sm-5'>Is comp off</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.is_comp_off'>
+									</div>
+									<label class='col-sm-5'>Is full day present</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.is_full_day_present'>
+									</div>
+									<label class='col-sm-5'>Is half day present</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_att_daily_details.is_half_day_present'>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='footer'>
+						<div class='row'  style='padding: 10px;'>
+							<span class='header2 col-sm-9' class='col-sm-9'>{{value}}</span>
+							<div class='col-sm-3' style='text-align: right'>
+								<div class='btn-group'>
+									<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+										<span class='glyphicon glyphicon-remove'></span> Close
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

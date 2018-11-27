@@ -1,0 +1,241 @@
+<form role='form'>
+	<div class='container-fluid'>
+		<div class='row'>
+			<div class='col-sm-2'>
+				<div class='row'>
+					<div ng-controller='stores_menuCtrl' ng-include src="'modules/inv/stores_menu/stores_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-3' class='col-sm-3'>Material receipt (Internal)</span>
+				<span class='header2 col-sm-6' class='col-sm-6'>{{inv_mat_header_status}}</span>
+				<div class='col-sm-3' style='text-align: right'>
+					<div class='btn-group'>
+						<button  class='btn btn-default btn-sm'  ng-click='save_inv_mat_header_record()'>
+							<span class='glyphicon glyphicon-saved'></span> Save
+						</button>
+						<a  class='btn btn-default btn-sm'  href='/grndept_list'>
+							<span class='glyphicon glyphicon-arrow-left'></span> Back
+						</a>
+						<a  class='btn btn-default btn-sm'  href='/grndept_print/{{inv_mat_header.sysid}}'>
+							<span class='glyphicon glyphicon-print'></span> Print
+						</a>
+					</div>
+				</div>
+					<div class='col-sm-12' style='padding-top: 5px'>
+						<hr>
+					</div>
+			</div>
+					<div class='row'>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Department</label>
+								<div class='col-sm-7'>
+									<select class='form-control'  ng-change='filter_emp()' ng-model='inv_mat_header.dept_id' ng-init='inv_mat_header.dept_id=admin_dept[0].sysid' ng-options='x.sysid as x.dept_name for x in admin_deptList'></select>
+								</div>
+								<label class='col-sm-5'>Employee</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='inv_mat_header.emp_id' ng-init='inv_mat_header.emp_id=hrms_employees[0].sysid' ng-options='x.sysid as x.complete_name for x in hrms_employeesList'></select>
+								</div>
+								<label class='col-sm-5'>Trans type</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_header.trans_type'>
+								</div>
+							</div>
+						</div>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>SO No</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='inv_mat_header.so_id' ng-init='inv_mat_header.so_id=sales_so[0].sysid' ng-options='x.sysid as x.so_no for x in sales_soList'></select>
+								</div>
+								<label class='col-sm-5'>Trans date</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_header.trans_date'>
+								</div>
+								<label class='col-sm-5'>Return type</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='inv_mat_header.return_type' ng-init='inv_mat_header.return_type=retTypeList[0]' ng-options='x as x for x in retTypeList'></select>
+								</div>
+							</div>
+						</div>
+						<div class='col-sm-12' style='padding-top: 10px'>
+							<hr>
+						</div>
+					</div>
+						<div class='row'>
+							<div class='col-sm-12' style='text-align: right'>
+								<div class='btn-group'>
+									<button  class='btn btn-default btn-sm'  ng-click='insert_inv_mat_details_record()' data-target='#ginDlg' data-toggle='modal'>
+										<span class='glyphicon glyphicon-plus'></span> Add
+									</button>
+								</div>
+							</div>
+						</div>
+							<div class='row'  style='padding-top: 10px'>
+								<div class='col-sm-12'>
+									<table class='table table-bordered table-condensed table-bordered'>
+										<thead>
+											<tr>
+												<th >Trans ID</th>
+												<th>Item name</th>
+												<th>Ok qty</th>
+												<th>Ok wt</th>
+												<th>Rejected qty</th>
+												<th>Rejected wt</th>
+												<th>Scrap qty</th>
+												<th>Scrap wt</th>
+												<th>Unused qty</th>
+												<th>Unused wt</th>
+												<th>Loss qty</th>
+												<th>Loss wt</th>
+												<th ></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr dir-paginate='x in inv_mat_detailsList| itemsPerPage: 12'>
+												<td><a  href='#'  ng-click='update_inv_mat_details_record(x)' ng-model='inv_mat_details.sysid' data-target='#ginDlg' data-toggle='modal'> {{x.sysid}}</a></td>
+												<td>{{x.item_name}}</td>
+												<td>{{x.rec_ok_qty}}</td>
+												<td>{{x.rec_ok_wt}}</td>
+												<td>{{x.rec_rej_qty}}</td>
+												<td>{{x.rec_rej_wt}}</td>
+												<td>{{x.rec_scrap_qty}}</td>
+												<td>{{x.rec_scrap_wt}}</td>
+												<td>{{x.rec_unused_qty}}</td>
+												<td>{{x.rec_unused_wt}}</td>
+												<td>{{x.loss_qty}}</td>
+												<td>{{x.loss_wt}}</td>
+												<td><a  style='color: red'  href='#'  ng-click='delete_inv_mat_details_record(x.sysid, x.item_id)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+											</tr>
+										</tbody>
+									</table>
+									<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+									</dir-pagination-controls>
+								</div>
+							</div>
+		</div>
+		</div>
+				<div class='modal fade'  id='ginDlg' role='dialog'>
+					<div class='modal-dialog' style='height: 700px; ; width: 1000px; '>
+						<div class='modal-content'>
+							<div class='modal-header'>
+								<div class='row'>
+									<span class='header1 col-sm-12' class='col-sm-12'>Material receipt (Internal)</span>
+								</div>
+							</div>
+							<div class='modal-body'>
+								<div class='row'>
+									<div class='col-sm-6'>
+										<div class='row'>
+											<label class='col-sm-5'>Trans ID</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_details.sysid'>
+											</div>
+											<label class='col-sm-5'>Header ID</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_details.hdr_id'>
+											</div>
+											<label class='col-sm-5'>Item name</label>
+											<div class='col-sm-7'>
+												<select class='form-control'  ng-change='get_op_bal()' ng-model='inv_mat_details.item_id' ng-init='inv_mat_details.item_id=inv_item_master[0].sysid' ng-options='x.sysid as x.item_name for x in inv_item_masterList'></select>
+											</div>
+											<label class='col-sm-5'>Ok qty</label>
+											<div class='col-sm-5'>
+												<input class='form-control'  type='text'  ng-change='update_item_qty()' ng-model='inv_mat_details.rec_ok_qty'>
+											</div>
+											<div class='col-sm-2'>
+												<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_details.item_uom'>
+											</div>
+											<label class='col-sm-5'>Ok wt</label>
+											<div class='col-sm-5'>
+												<input class='form-control'  type='text'  ng-change='update_item_wt()' ng-model='inv_mat_details.rec_ok_wt'>
+											</div>
+											<div class='col-sm-2'>
+												<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_details.wt_uom'>
+											</div>
+											<label class='col-sm-5'>Rejected qty</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text'  ng-change='update_item_qty()' ng-model='inv_mat_details.rec_rej_qty'>
+											</div>
+											<label class='col-sm-5'>Rejected wt</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text'  ng-change='update_item_wt()' ng-model='inv_mat_details.rec_rej_wt'>
+											</div>
+											<label class='col-sm-5'>Scrap qty</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text'  ng-change='update_item_qty()' ng-model='inv_mat_details.rec_scrap_qty'>
+											</div>
+											<label class='col-sm-5'>Scrap wt</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text'  ng-change='update_item_wt()' ng-model='inv_mat_details.rec_scrap_wt'>
+											</div>
+											<label class='col-sm-5'>Unused qty</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text'  ng-change='update_item_qty()' ng-model='inv_mat_details.rec_unused_qty'>
+											</div>
+											<label class='col-sm-5'>Unused wt</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text'  ng-change='update_item_wt()' ng-model='inv_mat_details.rec_unused_wt'>
+											</div>
+											<label class='col-sm-5'>Loss qty</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text' ng-model='inv_mat_details.loss_qty'>
+											</div>
+											<label class='col-sm-5'>Loss wt</label>
+											<div class='col-sm-7'>
+												<input class='form-control'  type='text'  ng-change='update_item_wt()' ng-model='inv_mat_details.loss_wt'>
+											</div>
+										</div>
+									</div>
+									<div class='col-sm-6'>
+										<div class='row'>
+											<div class='col-sm-6'>
+												<div class='row'>
+													<label class='col-sm-5'>Opening qty</label>
+													<div class='col-sm-7'>
+														<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_details.op_qty'>
+													</div>
+													<label class='col-sm-5'>Opening wt</label>
+													<div class='col-sm-7'>
+														<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_details.op_wt'>
+													</div>
+												</div>
+											</div>
+											<div class='col-sm-6'>
+												<div class='row'>
+													<label class='col-sm-5'>Closing qty</label>
+													<div class='col-sm-7'>
+														<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_details.cl_qty'>
+													</div>
+													<label class='col-sm-5'>Closing wt</label>
+													<div class='col-sm-7'>
+														<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_mat_details.cl_wt'>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='footer'>
+								<div class='row'  style='padding: 10px;'>
+									<span class='header2 col-sm-9' class='col-sm-9'>{{inv_mat_header_status}}</span>
+									<div class='col-sm-3' style='text-align: right'>
+										<div class='btn-group'>
+											<button  class='btn btn-default btn-sm'  ng-click='save_inv_mat_details_record()'>
+												<span class='glyphicon glyphicon-saved'></span> Save
+											</button>
+											<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+												<span class='glyphicon glyphicon-remove'></span> Close
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	</div>
+</form>

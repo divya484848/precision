@@ -1,0 +1,204 @@
+<form role='form'>
+					<script type='text/javascript'>
+						$(function () {
+							$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+							$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+							$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+						});
+						$('#clear').click(function(){
+							$('#dt1').data('DateTimePicker').clear();
+							$('#dt2').data('DateTimePicker').clear();
+							$('#dt3').data('DateTimePicker').clear();
+						});
+							$('#dt1').click(function(){
+								var sysdate = new Date();
+								$('#dt1').data('DateTimePicker').date(sysdate);
+							})
+							$('#dt2').click(function(){
+								var sysdate = new Date();
+								$('#dt2').data('DateTimePicker').date(sysdate);
+							})
+							$('#dt3').click(function(){
+								var sysdate = new Date();
+								$('#dt3').data('DateTimePicker').date(sysdate);
+							})
+					</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff;  min-height: 600px; padding-top: 15px;'>
+			<div class='col-sm-1'>
+			</div>
+			<div class='col-sm-10'>
+				<div class='row'>
+					<span class='header1 col-sm-2'  style='color: #c70039; padding-top: 5px' class='col-sm-2'>User accounts</span>
+					<span class='header2 col-sm-5'  style='padding-top: 5px' class='col-sm-5'>{{admin_user_accounts_status}}</span>
+					<div class='col-sm-3'>
+						<div class='input-group'>
+							<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+							<div class='input-group-btn'>
+								<button class='btn btn-success btn-sm searchBox' type='submit'>
+									<i class='glyphicon glyphicon-search'></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class='col-sm-2' style='text-align: right'>
+						<div class='btn-group'>
+							<button  class='btn btn-default btn-sm'  ng-click='insert_admin_user_accounts_record()' data-target='#ulDlg' data-toggle='modal'>
+								<span class='glyphicon glyphicon-plus'></span> Add
+							</button>
+						</div>
+					</div>
+				</div>
+					<div class='row'  style='padding-left: 0px; padding-right: 0px'>
+						<div class='col-sm-12'>
+							<table class='table table-bordered table-condensed table-bordered'>
+								<thead>
+									<tr>
+										<th >Username</th>
+										<th>Display name</th>
+										<th>Start date</th>
+										<th>End date</th>
+										<th>Password policy</th>
+										<th>Change on login</th>
+										<th>Password expiry date</th>
+										<th>Profile name</th>
+										<th>Unit name</th>
+										<th>Status</th>
+										<th ></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr dir-paginate='x in admin_user_accountsList| filter: search| itemsPerPage: 12'>
+										<td><a  href='#'  ng-click='update_admin_user_accounts_record(x)' ng-model='admin_user_accounts.username' data-target='#ulDlg' data-toggle='modal'> {{x.username}}</a></td>
+										<td>{{x.display_name}}</td>
+										<td>{{x.start_date}}</td>
+										<td>{{x.end_date}}</td>
+										<td>{{x.password_policy}}</td>
+										<td>{{x.change_on_login}}</td>
+										<td>{{x.password_expiry_date}}</td>
+										<td>{{x.profilename}}</td>
+										<td>{{x.company_name}}</td>
+										<td>{{x.status}}</td>
+										<td><a  style='color: red'  href='#'  ng-click='delete_admin_user_login_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+									</tr>
+								</tbody>
+							</table>
+							<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+							</dir-pagination-controls>
+						</div>
+					</div>
+			</div>
+			<div class='col-sm-1'>
+			</div>
+		</div>
+		<div class='modal fade'  id='ulDlg' role='dialog'>
+			<div class='modal-dialog' style='height: 700px; ; width: 1000px; '>
+				<div class='modal-content'>
+					<div class='modal-header'>
+						<div class='row'>
+							<span class='header1 col-sm-12' class='col-sm-12'>User accounts</span>
+						</div>
+					</div>
+					<div class='modal-body'>
+						<div class='row'>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>Username</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='admin_user_accounts.username'>
+									</div>
+									<label class='col-sm-5'>Password</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='password' ng-model='admin_user_accounts.password'>
+									</div>
+									<label class='col-sm-5'>Employee</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='admin_user_accounts.emp_id' ng-init='admin_user_accounts.emp_id=hrms_employees[0].sysid' ng-options='x.sysid as x.complete_name for x in hrms_employeesList'></select>
+									</div>
+									<label class='col-sm-5'>Start date</label>
+									<div class='col-sm-7'>
+										<div datetimepicker class='input-group date'  id='dt1' ng-model='admin_user_accounts.start_date'>
+											<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+									<label class='col-sm-5'>End date</label>
+									<div class='col-sm-7'>
+										<div datetimepicker class='input-group date'  id='dt2' ng-model='admin_user_accounts.end_date'>
+											<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+									<label class='col-sm-5'>Password policy</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='admin_user_accounts.password_policy' ng-init='admin_user_accounts.password_policy=pwdPolicyList[0]' ng-options='x as x for x in pwdPolicyList'></select>
+									</div>
+									<label class='col-sm-5'>Change on login</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='admin_user_accounts.change_on_login' ng-init='admin_user_accounts.change_on_login=loginChangeList[0]' ng-options='x as x for x in loginChangeList'></select>
+									</div>
+								</div>
+							</div>
+							<div class='col-sm-6'>
+								<div class='row'>
+									<label class='col-sm-5'>Profile</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='admin_user_accounts.profile_id' ng-init='admin_user_accounts.profile_id=admin_access_profile[0].sysid' ng-options='x.sysid as x.profile_name for x in admin_access_profileList'></select>
+									</div>
+									<label class='col-sm-5'>Unit name</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='admin_user_accounts.company_id' ng-init='admin_user_accounts.company_id=admin_company[0].sysid' ng-options='x.sysid as x.unit_code for x in admin_companyList'></select>
+									</div>
+									<label class='col-sm-5'>Password expiry date</label>
+									<div class='col-sm-7'>
+										<div datetimepicker class='input-group date'  id='dt3' ng-model='admin_user_accounts.password_expiry_date'>
+											<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+											<span class='input-group-addon'>
+												<span class='glyphicon glyphicon-calendar'></span>
+											</span>
+										</div>
+									</div>
+									<label class='col-sm-5'>Recovery email</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='admin_user_accounts.recovery_email'>
+									</div>
+									<label class='col-sm-5'>Hint question</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='text' ng-model='admin_user_accounts.hint_question'>
+									</div>
+									<label class='col-sm-5'>Hint answer</label>
+									<div class='col-sm-7'>
+										<input class='form-control'  type='password' ng-model='admin_user_accounts.hint_answer'>
+									</div>
+									<label class='col-sm-5'>Status</label>
+									<div class='col-sm-7'>
+										<select class='form-control' ng-model='admin_user_accounts.status' ng-init='admin_user_accounts.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='footer'>
+						<div class='row'  style='padding: 10px;'>
+							<span class='header2 col-sm-7' class='col-sm-7'>{{admin_user_accounts_status}}</span>
+							<div class='col-sm-5' style='text-align: right'>
+								<div class='btn-group'>
+									<button  class='btn btn-default btn-sm'  ng-click='save_admin_user_accounts_record()'>
+										<span class='glyphicon glyphicon-saved'></span> Save
+									</button>
+									<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+										<span class='glyphicon glyphicon-remove'></span> Close
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

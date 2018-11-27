@@ -1,0 +1,114 @@
+<form role='form'>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; min-height: 600px;'>
+			<div class='col-sm-2'>
+				<div ng-controller='sal_menuCtrl' ng-include src="'modules/payroll/sal_menu/sal_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-2' class='col-sm-2'>Pay cycle</span>
+				<div class='col-sm-3'>
+					<div class='input-group'>
+						<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+						<div class='input-group-btn'>
+							<button class='btn btn-success btn-sm searchBox' type='submit'>
+								<i class='glyphicon glyphicon-search'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<span class='header2 col-sm-4' class='col-sm-4'>{{payroll_pay_cycle_status}}</span>
+				<div class='col-sm-3' style='text-align: right'>
+					<div class='btn-group'>
+						<a  class='btn btn-default btn-sm'  href='#'  ng-click='insert_payroll_pay_cycle_record()' data-target='#ltDlg' data-toggle='modal'>
+							<span class='glyphicon glyphicon-plus'></span> Add
+						</a>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-upload'></span> Upload
+						</button>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-download'></span> Download
+						</button>
+					</div>
+				</div>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'>
+							<thead>
+								<tr>
+									<th >Unit name</th>
+									<th>Pay generate day of month</th>
+									<th>Cut-off day</th>
+									<th>Data correction day</th>
+									<th>Status</th>
+									<th >Header</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in payroll_pay_cycleList| filter: search| itemsPerPage: 12'>
+									<td><a  href='#'  ng-click='update_payroll_pay_cycle_record(x)' ng-model='payroll_pay_cycle.company_name' data-target='#ltDlg' data-toggle='modal'> {{x.company_name}}</a></td>
+									<td>{{x.pay_generate_day_of_month}}</td>
+									<td>{{x.data_collection_day}}</td>
+									<td>{{x.data_correction_day}}</td>
+									<td>{{x.status}}</td>
+									<td><a  style='color:red;'  href='#'  ng-click='delete_payroll_pay_cycle_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+			</div>
+		</div>
+		</div>
+	<div class='modal fade'  id='ltDlg' role='dialog'>
+		<div class='modal-dialog' style='height: 700px; ; width: 700px; '>
+			<div class='modal-content'>
+				<div class='modal-header'>
+					<div class='row'>
+						<span class='header1 col-sm-12' class='col-sm-12'>Pay cycle</span>
+					</div>
+				</div>
+				<div class='modal-body'>
+					<div class='row'>
+						<label class='col-sm-5'>Unit name</label>
+						<div class='col-sm-7'>
+							<select class='form-control' ng-model='payroll_pay_cycle.company_id' ng-init='payroll_pay_cycle.company_id=admin_company[0].sysid' ng-options='x.sysid as x.company_name for x in admin_companyList'></select>
+						</div>
+						<label class='col-sm-5'>Pay generate day of month</label>
+						<div class='col-sm-7'>
+							<input class='form-control'  type='text' ng-model='payroll_pay_cycle.pay_generate_day_of_month'>
+						</div>
+						<label class='col-sm-5'>Cut-off day</label>
+						<div class='col-sm-7'>
+							<input class='form-control'  type='text' ng-model='payroll_pay_cycle.data_collection_day'>
+						</div>
+						<label class='col-sm-5'>Data correction day</label>
+						<div class='col-sm-7'>
+							<input class='form-control'  type='text' ng-model='payroll_pay_cycle.data_correction_day'>
+						</div>
+						<label class='col-sm-5'>Status</label>
+						<div class='col-sm-7'>
+							<select class='form-control' ng-model='payroll_pay_cycle.status' ng-init='payroll_pay_cycle.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+						</div>
+					</div>
+				</div>
+				<div class='footer'>
+					<div class='row'  style='padding: 10px;'>
+						<span class='header2 col-sm-7' class='col-sm-7'>{{payroll_pay_cycle_status}}</span>
+						<div class='col-sm-5' style='text-align: right'>
+							<div class='btn-group'>
+								<button  class='btn btn-default btn-sm'  ng-click='save_payroll_pay_cycle_record()'>
+									<span class='glyphicon glyphicon-saved'></span> Save
+								</button>
+								<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+									<span class='glyphicon glyphicon-remove'></span> Close
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</form>

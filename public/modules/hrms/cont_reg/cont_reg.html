@@ -1,0 +1,137 @@
+<form role='form'>
+			<script type='text/javascript'>
+				$(function () {
+					$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+					$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+					$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+				});
+				$('#clear').click(function(){
+					$('#dt1').data('DateTimePicker').clear();
+					$('#dt2').data('DateTimePicker').clear();
+					$('#dt3').data('DateTimePicker').clear();
+				});
+			</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; min-height: 600px;'>
+			<div class='col-sm-2'>
+				<div ng-controller='cont_menuCtrl' ng-include src="'modules/hrms/cont_menu/cont_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header1 col-sm-1' class='col-sm-1'>Registration</span>
+				<span class='header2 col-sm-8' class='col-sm-8'>{{hrms_contractor_status}}</span>
+				<div class='col-sm-3' style='text-align: right'>
+					<div class='btn-group'>
+						<a  class='btn btn-default btn-sm'  href='cont_reg_list'  ng-click='insert_hrms_shift_master_record()'>
+							<span class='glyphicon glyphicon-arrow-left'></span> Back
+						</a>
+						<button  class='btn btn-default btn-sm'  ng-click='save_hrms_contractor_record()'>
+							<span class='glyphicon glyphicon-saved'></span> Save
+						</button>
+					</div>
+				</div>
+					<div class='col-sm-12' style='padding-top: 10px'>
+						<hr>
+					</div>
+			</div>
+					<div class='row'>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Firm name</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_contractor.firm_name'>
+								</div>
+								<label class='col-sm-5'>Firm registration no</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_contractor.firm_reg_no'>
+								</div>
+								<label class='col-sm-5'>Registration date</label>
+								<div class='col-sm-7'>
+									<div datetimepicker class='input-group date'  id='dt1' ng-model='hrms_contractor.reg_date'>
+										<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-calendar'></span>
+										</span>
+									</div>
+								</div>
+								<label class='col-sm-5'>GST no</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_contractor.gst_no'>
+								</div>
+								<label class='col-sm-5'>Contract start date</label>
+								<div class='col-sm-7'>
+									<div datetimepicker class='input-group date'  id='dt2' ng-model='hrms_contractor.cont_start_date'>
+										<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-calendar'></span>
+										</span>
+									</div>
+								</div>
+								<label class='col-sm-5'>Contract end date</label>
+								<div class='col-sm-7'>
+									<div datetimepicker class='input-group date'  id='dt3' ng-model='hrms_contractor.cont_end_date'>
+										<input type='text' class='form-control datepicker' placeholder='YYYY-MM-DD'>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-calendar'></span>
+										</span>
+									</div>
+								</div>
+								<label class='col-sm-5'>Contact person</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_contractor.contact_person'>
+								</div>
+								<label class='col-sm-5'>Contact phone no</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_contractor.contact_person_phone'>
+								</div>
+								<label class='col-sm-5'>Contact email ID</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_contractor.contact_person_email'>
+								</div>
+							</div>
+						</div>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Address</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_contractor.reg_add_line1'>
+								</div>
+								<label class='col-sm-5'></label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_contractor.reg_add_line2'>
+								</div>
+								<label class='col-sm-5'></label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_contractor.reg_add_line3'>
+								</div>
+								<label class='col-sm-5'>City</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_contractor.reg_add_city'>
+								</div>
+								<label class='col-sm-5'>State</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_contractor.reg_add_state'>
+								</div>
+								<label class='col-sm-5'>Country</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_contractor.reg_add_country'>
+								</div>
+								<label class='col-sm-5'>Pincode</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_contractor.reg_add_pincode'>
+								</div>
+								<label class='col-sm-5'>Unit name</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='hrms_contractor.company_id' ng-init='hrms_contractor.company_id=admin_company[0].sysid' ng-options='x.sysid as x.company_name for x in admin_companyList'></select>
+								</div>
+								<label class='col-sm-5'>Status</label>
+								<div class='col-sm-7'>
+									<select class='form-control' ng-model='hrms_contractor.status' ng-init='hrms_contractor.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+								</div>
+							</div>
+						</div>
+					</div>
+		</div>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,116 @@
+<form role='form'>
+		<script type='text/javascript'>
+			$(function () {
+				$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+				$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+				$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+			});
+			$('#clear').click(function(){
+				$('#dt1').data('DateTimePicker').clear();
+				$('#dt2').data('DateTimePicker').clear();
+				$('#dt3').data('DateTimePicker').clear();
+			});
+		</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; min-height: 600px;'>
+			<div class='col-sm-2'>
+				<div ng-controller='emp_sep_menuCtrl' ng-include src="'modules/hrms/emp_sep_menu/emp_sep_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px; padding-bottom: 15px'>
+				<span class='header1 col-sm-4' class='col-sm-4'>Full and final settlement</span>
+				<span class='header2 col-sm-4' class='col-sm-4'>{{hrms_emp_fnf_status}}</span>
+				<div class='col-sm-12'>
+					<hr>
+				</div>
+			</div>
+				<div class='row'>
+					<div class='col-sm-6'>
+						<div class='row'>
+							<label class='col-sm-5'>Employee id</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_fnf.emp_id'>
+							</div>
+							<label class='col-sm-5'>Employee name</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true'>
+							</div>
+							<label class='col-sm-5'>Salary days</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_fnf.sal_days'>
+							</div>
+							<label class='col-sm-5'>Salary amount</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_fnf.sal_amount'>
+							</div>
+							<label class='col-sm-5'>Gratuity months</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_fnf.gratuity_months'>
+							</div>
+							<label class='col-sm-5'>Gratuity amount</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_fnf.gratuity_amount'>
+							</div>
+							<label class='col-sm-5'>Loan recovery amount</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_fnf.loan_recovery_amount'>
+							</div>
+							<label class='col-sm-5'>Advance recovery amount</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_fnf.adv_recovery_amount'>
+							</div>
+							<label class='col-sm-5'>Bond recovery amount</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_fnf.bond_recovery_amount'>
+							</div>
+							<label class='col-sm-5'>Leaves encash days</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_fnf.leaves_encash_days'>
+							</div>
+							<label class='col-sm-5'>Leaves encash amount</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_fnf.leaves_encash_amount'>
+							</div>
+							<label class='col-sm-5'>Prepared by</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_fnf.prepared_by'>
+							</div>
+						</div>
+					</div>
+					<div class='col-sm-6'>
+						<div class='row'>
+							<label class='col-sm-5'>Prepare date</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_fnf.prepare_date'>
+							</div>
+							<label class='col-sm-5'>Remarks</label>
+							<div class='col-sm-7'>
+								<textarea class='form-control'  ng-readonly='true' ng-model='hrms_emp_fnf.remarks' rows='5'></textarea>
+							</div>
+							<label class='col-sm-5'>Approved by</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_fnf.approved_by'>
+							</div>
+							<label class='col-sm-5'>Approval date</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_fnf.approval_date'>
+							</div>
+							<label class='col-sm-5'>Approval remarks</label>
+							<div class='col-sm-7'>
+								<textarea class='form-control'  ng-readonly='true' ng-model='hrms_emp_fnf.approval_remarks' rows='5'></textarea>
+							</div>
+							<label class='col-sm-5'>Unit name</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_fnf.company_id'>
+							</div>
+							<label class='col-sm-5'>Status</label>
+							<div class='col-sm-7'>
+								<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_fnf.status'>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+		</div>
+	</div>
+</form>

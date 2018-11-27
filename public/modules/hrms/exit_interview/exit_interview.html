@@ -1,0 +1,148 @@
+<form role='form'>
+						<script type='text/javascript'>
+							$(function () {
+								$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+								$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+								$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+							});
+							$('#clear').click(function(){
+								$('#dt1').data('DateTimePicker').clear();
+								$('#dt2').data('DateTimePicker').clear();
+								$('#dt3').data('DateTimePicker').clear();
+							});
+						</script>
+	<div class='container-fluid'  style='padding: 0px;'>
+		<div class='row'  style='background-color: #ffffff; min-height: 600px;'>
+			<div class='col-sm-2'>
+				<div ng-controller='emp_sep_menuCtrl' ng-include src="'modules/hrms/emp_sep_menu/emp_sep_menu.html'"></div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px; padding-bottom: 15px'>
+				<span class='header1 col-sm-2' class='col-sm-2'>Exit interview</span>
+				<span class='header2 col-sm-7' class='col-sm-7'>{{hrms_emp_exit_interview_status}}</span>
+				<div class='col-sm-3' style='text-align: right'>
+					<div class='btn-group'>
+						<a  class='btn btn-default btn-sm'  href='#'  ng-click='insert_hrms_shift_master_record()'>
+							<span class='glyphicon glyphicon-saved'></span> Save
+						</a>
+					</div>
+				</div>
+					<div class='col-sm-12' style='padding-top: 10px'>
+						<hr>
+					</div>
+			</div>
+					<div class='row'  style='padding-bottom: 15px'>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Employee id</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_exit_interview.emp_id'>
+								</div>
+								<label class='col-sm-5'>Employee name</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true'>
+								</div>
+								<label class='col-sm-5'>HR person</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_exit_interview.hr_emp_id'>
+								</div>
+								<label class='col-sm-5'>Interview date</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_exit_interview.interview_date'>
+								</div>
+							</div>
+						</div>
+						<div class='col-sm-6'>
+							<div class='row'>
+								<label class='col-sm-5'>Satisfaction level</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text' ng-model='hrms_emp_exit_interview.satisfaction_level'>
+								</div>
+								<label class='col-sm-5'>Interview duration mins</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_exit_interview.interview_duration_mins'>
+								</div>
+								<label class='col-sm-5'>Unit name</label>
+								<div class='col-sm-7'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_exit_interview.company_id'>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='row'  style='border-top: 1px solid gray ;'>
+						<div class='col-sm-12' style='padding-top: 10px; padding-bottom: 10px; text-align: right'>
+							<div class='btn-group'>
+								<a  class='btn btn-default btn-sm'  href='#'  ng-click='insert_hrms_emp_exit_interview_record()' data-target='#intDlg' data-toggle='modal'>
+									<span class='glyphicon glyphicon-plus'></span> Add
+								</a>
+							</div>
+						</div>
+					</div>
+						<div class='row'>
+							<div class='col-sm-12'>
+								<table class='table table-bordered table-condensed table-bordered'>
+									<thead>
+										<tr>
+											<th >Question</th>
+											<th>Int answer</th>
+											<th ></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr dir-paginate='x in | itemsPerPage: 12'>
+											<td><a  href='#' ng-model='hrms_emp_exit_interview_details.int_question'> {{x.int_question}}</a></td>
+											<td>{{x.Answer}}</td>
+											<td><a  href='#'> </a></td>
+										</tr>
+									</tbody>
+								</table>
+								<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+								</dir-pagination-controls>
+							</div>
+						</div>
+		</div>
+		</div>
+			<div class='modal fade'  id='intDlg' role='dialog'>
+				<div class='modal-dialog' style='height: 700px; ; width: 700px; '>
+					<div class='modal-content'>
+						<div class='modal-header'>
+							<div class='row'>
+								<span class='header1 col-sm-12' class='col-sm-12'>Exit interview</span>
+							</div>
+						</div>
+						<div class='modal-body'>
+							<div class='row'>
+								<label class='col-sm-3'>Interview id</label>
+								<div class='col-sm-9'>
+									<input class='form-control'  type='text'  ng-readonly='true' ng-model='hrms_emp_exit_interview_details.int_id'>
+								</div>
+								<label class='col-sm-3'>Interview question</label>
+								<div class='col-sm-9'>
+									<textarea class='form-control' ng-model='hrms_emp_exit_interview_details.int_question' rows='5'></textarea>
+								</div>
+								<label class='col-sm-3'>Interview answer</label>
+								<div class='col-sm-9'>
+									<textarea class='form-control' ng-model='hrms_emp_exit_interview_details.int_answer' rows='5'></textarea>
+								</div>
+							</div>
+						</div>
+						<div class='footer'>
+							<div class='row'  style='padding: 10px;'>
+								<span class='header2 col-sm-7' class='col-sm-7'>{{hrms_emp_exit_interview_status}}</span>
+								<div class='col-sm-5' style='text-align: right'>
+									<div class='btn-group'>
+										<button  class='btn btn-default btn-sm'  ng-click='save_hrms_shift_master_record()'>
+											<span class='glyphicon glyphicon-saved'></span> Save
+										</button>
+										<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+											<span class='glyphicon glyphicon-remove'></span> Close
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+</form>

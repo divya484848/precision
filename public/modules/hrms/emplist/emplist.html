@@ -1,0 +1,85 @@
+<form role='form'>
+	<script type='text/javascript'>
+		$(function () {
+			$('#dt1').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt2').datetimepicker({format: 'YYYY-MM-DD'});
+			$('#dt3').datetimepicker({format: 'YYYY-MM-DD'});
+		});
+		$('#clear').click(function(){
+			$('#dt1').data('DateTimePicker').clear();
+			$('#dt2').data('DateTimePicker').clear();
+			$('#dt3').data('DateTimePicker').clear();
+		});
+	</script>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-2'>
+				<div class='row'  style='padding: 0px;'>
+					<div ng-controller='emp_menuCtrl' ng-include src="'modules/hrms/emp_menu/emp_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header1 col-sm-2' class='col-sm-2'>Register employee</span>
+				<span class='header2 col-sm-5' class='col-sm-5'>{{hrms_employees_status}}</span>
+				<div class='col-sm-3'>
+					<div class='input-group'>
+						<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+						<div class='input-group-btn'>
+							<button class='btn btn-success btn-sm searchBox' type='submit'>
+								<i class='glyphicon glyphicon-search'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class='col-sm-2' style='text-align: right'>
+					<div class='btn-group'>
+						<a  class='btn btn-default btn-sm'  href='/emp_form'  ng-click='insert_hrms_employees_record()'>
+							<span class='glyphicon glyphicon-plus'></span> Add
+						</a>
+						<button  class='btn btn-default btn-sm'>
+							<span class='glyphicon glyphicon-download'></span> Download
+						</button>
+					</div>
+				</div>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'>
+							<thead>
+								<tr>
+									<th >Complete name</th>
+									<th>Emp ID</th>
+									<th>Birth date</th>
+									<th>Joining date</th>
+									<th>Leaving date</th>
+									<th>Department</th>
+									<th>Designation</th>
+									<th>Manager</th>
+									<th>Grade</th>
+									<th>Status</th>
+									<th >Header</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in hrms_employeesList| filter: search| itemsPerPage: 12'>
+									<td><a  href='/emp_form/{{x.sysid}}'  ng-click='update_hrms_employees_record(x)' ng-model='hrms_employees.complete_name'> {{x.complete_name}}</a></td>
+									<td>{{x.emp_id}}</td>
+									<td>{{x.birth_date}}</td>
+									<td>{{x.joining_date}}</td>
+									<td>{{x.leaving_date}}</td>
+									<td>{{x.dept_name}}</td>
+									<td>{{x.role_name}}</td>
+									<td>{{x.manager}}</td>
+									<td>{{x.grade_code}}</td>
+									<td>{{x.status}}</td>
+									<td><a  style='color: red'  href='#'  ng-click='delete_hrms_employees_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</form>

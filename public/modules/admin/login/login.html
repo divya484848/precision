@@ -1,0 +1,41 @@
+<form role='form'>
+	<div class='container-fluid'  style='padding-left: 0px; padding-right: 0px'>
+		<div class='row'  style='background-image: url(images/w9.jpg); background-size: cover; min-height: 600px;'>
+			<div class='col-sm-7'>
+			</div>
+			<div class='col-sm-4'>
+				<div class='row'  style='padding-top: 50px'>
+					<div class='panel panel-default'>
+						<div class='panel-body'>
+							<div class='row'  style='padding: 20px;'>
+								<span class='col-sm-12'><b>User name</b></span>
+								<div class='col-sm-12'>
+									<input class='form-control'  style='padding-bottom: 15px'  type='text' ng-model='admin_user_login.username'>
+								</div>
+								<span class='col-sm-12'><b>Password</b></span>
+								<div class='col-sm-12'>
+									<input class='form-control'  style='padding-bottom: 15px'  type='password' ng-model='admin_user_login.password'>
+								</div>
+								<span class='col-sm col-sm-12'  style='color: #ff0000' class='col-sm-12'>{{admin_user_login_status}}</span>
+								<div class='col-sm-12'>
+									<div class='btn-group btn-group-justified'  style='padding-top: 15px'>
+										<a  class='btn btn-default btn-sm'  href='#'>
+											<span class='glyphicon glyphicon-lock'></span> Forgot password
+										</a>
+										<a  class='btn btn-default btn-sm'  href='#'  ng-click='auth_me()'>
+											<span class='glyphicon glyphicon-user'></span> Login
+										</a>
+									</div>
+								</div>
+							</div>
+								<div class='row'  style='background-color: #363636; min-height: 200px;'>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class='col-sm-1'>
+				</div>
+		</div>
+	</div>
+</form>

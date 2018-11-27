@@ -1,0 +1,106 @@
+<form role='form'>
+	<div class='container-fluid'>
+		<div class='row'  style='background-color: #ffffff; padding: 0px;'>
+			<div class='col-sm-2'>
+				<div class='row'  style='padding: 0px;'>
+					<div ng-controller='vendor_mgmt_menuCtrl' ng-include src="'modules/inv/vendor_mgmt_menu/vendor_mgmt_menu.html'"></div>
+				</div>
+			</div>
+		<div class='col-sm-10'>
+			<div class='row'  style='padding-top: 20px'>
+				<span class='header-title col-sm-2' class='col-sm-2'>Item processes</span>
+				<div class='col-sm-3'>
+					<div class='input-group'>
+						<input type='text' class='form-control' placeholder='Enter search text' ng-model='search'>
+						<div class='input-group-btn'>
+							<button class='btn btn-success btn-sm searchBox' type='submit'>
+								<i class='glyphicon glyphicon-search'></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<span class='header2 col-sm-5' class='col-sm-5'>{{inv_supp_process_status}}</span>
+				<div class='col-sm-2' style='text-align: right'>
+					<div class='btn-group'>
+						<button  class='btn btn-default btn-sm'  ng-click='insert_inv_supp_process_record()' data-target='#procDlg' data-toggle='modal'>
+							<span class='glyphicon glyphicon-plus'></span> Add
+						</button>
+					</div>
+				</div>
+			</div>
+				<div class='row'>
+					<div class='col-sm-12'>
+						<table class='table table-bordered table-condensed table-bordered'>
+							<thead>
+								<tr>
+									<th >Process name</th>
+									<th>Trans ID</th>
+									<th>Description</th>
+									<th>Status</th>
+									<th ></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr dir-paginate='x in inv_supp_processList| itemsPerPage: 12'>
+									<td><a  href='#'  ng-click='update_inv_supp_process_record(x)' ng-model='inv_supp_process.proc_name' data-target='#procDlg' data-toggle='modal'> {{x.proc_name}}</a></td>
+									<td>{{x.sysid}}</td>
+									<td>{{x.descr}}</td>
+									<td>{{x.status}}</td>
+									<td><a  style='color: red'  href='#'  ng-click='delete_inv_supp_process_record(x.sysid)'><span class='glyphicon glyphicon-trash'></span> Delete</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<dir-pagination-controls max-size='10' direction-links='true' boundray-links='true'>
+						</dir-pagination-controls>
+					</div>
+				</div>
+		</div>
+		</div>
+	<div class='modal fade'  id='procDlg' role='dialog'>
+		<div class='modal-dialog' style='height: 700px; ; width: 700px; '>
+			<div class='modal-content'>
+				<div class='modal-header'>
+					<div class='row'>
+						<span class='header1 col-sm-12' class='col-sm-12'>Item processes</span>
+					</div>
+				</div>
+				<div class='modal-body'>
+					<div class='row'>
+						<label class='col-sm-3'>Trans ID</label>
+						<div class='col-sm-9'>
+							<input class='form-control'  type='text'  ng-readonly='true' ng-model='inv_supp_process.sysid'>
+						</div>
+						<label class='col-sm-3'>Process name</label>
+						<div class='col-sm-9'>
+							<input class='form-control'  type='text' ng-model='inv_supp_process.proc_name'>
+						</div>
+						<label class='col-sm-3'>Description</label>
+						<div class='col-sm-9'>
+							<textarea class='form-control' ng-model='inv_supp_process.descr' rows='5'></textarea>
+						</div>
+						<label class='col-sm-3'>Status</label>
+						<div class='col-sm-9'>
+							<select class='form-control' ng-model='inv_supp_process.status' ng-init='inv_supp_process.status=statusList[0]' ng-options='x as x for x in statusList'></select>
+						</div>
+					</div>
+				</div>
+				<div class='footer'>
+					<div class='row'  style='padding: 10px;'>
+						<span class='header2 col-sm-9' class='col-sm-9'>{{inv_supp_process_status}}</span>
+						<div class='col-sm-3'>
+							<div class='btn-group'>
+								<button  class='btn btn-default btn-sm'  ng-click='save_inv_supp_process_record()'>
+									<span class='glyphicon glyphicon-saved'></span> Save
+								</button>
+								<button  class='btn btn-default btn-sm' data-dismiss='modal'>
+									<span class='glyphicon glyphicon-remove'></span> Close
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</form>
